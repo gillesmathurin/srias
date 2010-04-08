@@ -1,0 +1,13 @@
+<p>
+  <b>Nom:</b>
+  <%=h @partenaire.nom %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @partenaire.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_partenaire_path(@partenaire) %> |
+<%= link_to 'Back', partenaires_path %>

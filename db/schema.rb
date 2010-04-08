@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100408194455) do
+ActiveRecord::Schema.define(:version => 20100408203251) do
 
   create_table "liens", :force => true do |t|
     t.string   "nom"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(:version => 20100408194455) do
   end
 
   create_table "missions", :force => true do |t|
+    t.string   "nom"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "partenaires", :force => true do |t|
     t.string   "nom"
     t.text     "description"
     t.datetime "created_at"
