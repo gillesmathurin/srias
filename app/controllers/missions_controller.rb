@@ -1,4 +1,5 @@
 class MissionsController < ApplicationController
+  before_filter :require_user, :only => [:new, :edit, :create, :update]
   # GET /missions
   # GET /missions.xml
   def index
