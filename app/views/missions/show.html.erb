@@ -1,0 +1,13 @@
+<p>
+  <b>Nom:</b>
+  <%=h @mission.nom %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @mission.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_mission_path(@mission) %> |
+<%= link_to 'Back', missions_path %>
