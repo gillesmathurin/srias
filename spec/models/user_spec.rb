@@ -4,8 +4,9 @@ describe User do
   before(:each) do
     @valid_attributes = {
       :login => "value for login",
-      :email => "value for email",
-      :crypted_password => "value for crypted_password",
+      :email => "foo@bar.com",
+      :password => "value for crypted_password",
+      :password_confirmation => "value for crypted_password",
       :password_salt => "value for password_salt",
       :persistence_token => "value for persistence_token"
     }
