@@ -1,0 +1,19 @@
+<h1>New lien</h1>
+
+<% form_for(@lien) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nom %><br />
+    <%= f.text_field :nom %>
+  </p>
+  <p>
+    <%= f.label :adresse %><br />
+    <%= f.text_field :adresse %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', liens_path %>

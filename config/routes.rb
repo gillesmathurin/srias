@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :liens
+
   map.resources :manifestations
 
   map.resources :missions
