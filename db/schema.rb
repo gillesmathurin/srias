@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100408182541) do
+ActiveRecord::Schema.define(:version => 20100408191900) do
+
+  create_table "manifestations", :force => true do |t|
+    t.string   "nom"
+    t.string   "lieu"
+    t.datetime "date_debut"
+    t.datetime "date_fin"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "missions", :force => true do |t|
     t.string   "nom"
