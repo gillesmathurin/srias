@@ -1,11 +1,21 @@
 require 'spec_helper'
 
 describe LiensController do
+  fixtures :users
 
   def mock_lien(stubs={})
     @mock_lien ||= mock_model(Lien, stubs)
   end
-
+  
+  def mock_user
+    @user ||= users(:ben)
+  end
+  
+  def user_logged_in
+    activate_authlogic
+    UserSession.create(mock_user)
+  end
+  
   describe "GET index" do
     it "assigns all liens as @liens" do
       Lien.stub(:find).with(:all).and_return([mock_lien])
@@ -23,6 +33,11 @@ describe LiensController do
   end
 
   describe "GET new" do
+    
+    before(:each) do
+      user_logged_in
+    end
+    
     it "assigns a new lien as @lien" do
       Lien.stub(:new).and_return(mock_lien)
       get :new
@@ -31,6 +46,10 @@ describe LiensController do
   end
 
   describe "GET edit" do
+    before(:each) do
+      user_logged_in
+    end
+    
     it "assigns the requested lien as @lien" do
       Lien.stub(:find).with("37").and_return(mock_lien)
       get :edit, :id => "37"
@@ -39,7 +58,11 @@ describe LiensController do
   end
 
   describe "POST create" do
-
+    
+    before(:each) do
+      user_logged_in
+    end
+    
     describe "with valid params" do
       it "assigns a newly created lien as @lien" do
         Lien.stub(:new).with({'these' => 'params'}).and_return(mock_lien(:save => true))
@@ -71,6 +94,9 @@ describe LiensController do
   end
 
   describe "PUT update" do
+    before(:each) do
+      user_logged_in
+    end
 
     describe "with valid params" do
       it "updates the requested lien" do
@@ -115,6 +141,10 @@ describe LiensController do
   end
 
   describe "DELETE destroy" do
+    before(:each) do
+      user_logged_in
+    end
+    
     it "destroys the requested lien" do
       Lien.should_receive(:find).with("37").and_return(mock_lien)
       mock_lien.should_receive(:destroy)

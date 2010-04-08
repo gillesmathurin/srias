@@ -1,5 +1,5 @@
 class ManifestationsController < ApplicationController
-  before_filter :require_user, :only => [:new, :edit, :create, :update]
+  before_filter :require_user, :only => [:new, :edit, :create, :update, :destroy]
   # GET /manifestations
   # GET /manifestations.xml
   def index

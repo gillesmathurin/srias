@@ -148,12 +148,13 @@ describe ManifestationsController do
         end
       end
     end
-
-
-
   end
 
   describe "DELETE destroy" do
+    before(:each) do
+      user_logged_in
+    end
+    
     it "destroys the requested manifestation" do
       Manifestation.should_receive(:find).with("37").and_return(mock_manifestation)
       mock_manifestation.should_receive(:destroy)

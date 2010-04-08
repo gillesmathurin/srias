@@ -167,17 +167,24 @@ describe MissionsController do
   end
 
   describe "DELETE destroy" do
-    it "destroys the requested mission" do
-      Mission.should_receive(:find).with("37").and_return(mock_mission)
-      mock_mission.should_receive(:destroy)
-      delete :destroy, :id => "37"
+    context "with a logged_in" do
+      before(:each) do
+        user_logged_in
+      end
+      
+      it "destroys the requested mission" do
+        Mission.should_receive(:find).with("37").and_return(mock_mission)
+        mock_mission.should_receive(:destroy)
+        delete :destroy, :id => "37"
+      end
+
+      it "redirects to the missions list" do
+        Mission.stub(:find).and_return(mock_mission(:destroy => true))
+        delete :destroy, :id => "1"
+        response.should redirect_to(missions_url)
+      end
     end
 
-    it "redirects to the missions list" do
-      Mission.stub(:find).and_return(mock_mission(:destroy => true))
-      delete :destroy, :id => "1"
-      response.should redirect_to(missions_url)
-    end
   end
 
 end
