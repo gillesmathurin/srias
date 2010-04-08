@@ -4,11 +4,12 @@ describe Lien do
   before(:each) do
     @valid_attributes = {
       :nom => "value for nom",
-      :adresse => "value for adresse"
+      :adresse => "http://monsiteweb.com"
     }
+    @lien = Lien.new    
   end
-
-  it "should create a new instance given valid attributes" do
-    Lien.create!(@valid_attributes)
+  
+  it "requires a nom" do
+    @lien.should have(1).error_on(:nom)
   end
 end
