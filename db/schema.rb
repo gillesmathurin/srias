@@ -9,7 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100408203251) do
+ActiveRecord::Schema.define(:version => 20100413201437) do
+
+  create_table "abonnes", :force => true do |t|
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "liens", :force => true do |t|
     t.string   "nom"

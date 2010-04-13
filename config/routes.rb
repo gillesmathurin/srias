@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :abonnes
+
   map.resources :partenaires
 
   map.resources :liens

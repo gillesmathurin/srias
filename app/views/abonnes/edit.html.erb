@@ -1,0 +1,16 @@
+<h1>Editing abonne</h1>
+
+<% form_for(@abonne) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @abonne %> |
+<%= link_to 'Back', abonnes_path %>

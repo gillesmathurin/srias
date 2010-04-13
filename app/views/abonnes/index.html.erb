@@ -1,0 +1,20 @@
+<h1>Listing abonnes</h1>
+
+<table>
+  <tr>
+    <th>Email</th>
+  </tr>
+
+<% @abonnes.each do |abonne| %>
+  <tr>
+    <td><%=h abonne.email %></td>
+    <td><%= link_to 'Show', abonne %></td>
+    <td><%= link_to 'Edit', edit_abonne_path(abonne) %></td>
+    <td><%= link_to 'Destroy', abonne, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New abonne', new_abonne_path %>
