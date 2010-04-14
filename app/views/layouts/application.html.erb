@@ -6,9 +6,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
 	<title><%= h(yield(:title) || "SRIAS GUADELOUPE") %></title>
-	<%# stylesheet_link_tag 'blueprint/print.css', :cache => true %>
-	<%= stylesheet_link_tag 'blueprint/screen.css', 'blueprint/plugins/fancy-type/screen.css', 'base.css', :cache => true %>
-	
+	<%= stylesheet_link_tag 'blueprint/screen.css', 'blueprint/plugins/fancy-type/screen.css', 'base.css', :media => "screen", :cache => true %>	
+	<%= stylesheet_link_tag 'blueprint/print.css', :media => "print", :cache => true %>
 
 	<!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 
@@ -18,7 +17,7 @@
 
 <body>
 	<div class="container">
-		<div id="header" class="span-24 last">
+		<div id="header" class="span-24">
 			<div id="user_nav">
 				<% if current_user %>
 					<%= link_to "Logout", logout_path() %>
@@ -26,6 +25,9 @@
 					<%= link_to "Login", login_path() %>
 				<% end %>
 			</div>
+		</div>
+		<!-- Left Sidebar -->
+		<div class="span-4">
 			<ul class="menubar">
 				<li>Menu1</li>
 				<li>Menu2</li>
@@ -34,7 +36,19 @@
 			</ul>
 		</div>
 		<%= yield %>
+		<!-- Main content -->
+		<div class="span-16">
+			Main content
+		</div>
+		<!-- Right Sidebar -->
+		<div class="span-4 last">
+			Right sidebar
+		</div>
+		<div class="span-24">
+			Footer
+		</div>
 	</div>
+		
 	<div class="subcontainer">
 		&nbsp;		
 	</div>

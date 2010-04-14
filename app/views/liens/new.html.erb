@@ -1,19 +1,13 @@
-<h1>New lien</h1>
+<h1>Nouveau Lien</h1>
 
 <% form_for(@lien) do |f| %>
   <%= f.error_messages %>
 
+	<%= render :partial => 'form', :locals => {:f => f} %>
+
   <p>
-    <%= f.label :nom %><br />
-    <%= f.text_field :nom %>
-  </p>
-  <p>
-    <%= f.label :adresse %><br />
-    <%= f.text_field :adresse %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Enregistrer' %>
   </p>
 <% end %>
 
-<%= link_to 'Back', liens_path %>
+<%= link_to 'Retour', liens_path %>

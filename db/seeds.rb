@@ -1,7 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#   
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Major.create(:name => 'Daley', :city => cities.first)
+# Creation des 2 premiers administrateurs
+User.create(:login => "gillesmath", :email => "gillesmath@me.com", :password => "30carmen30", :password_confirmation => "30carmen30", :category => "admin")
+# TODO : creer le second administrateur à la fin de conception du site

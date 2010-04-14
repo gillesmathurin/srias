@@ -1,16 +1,14 @@
-<h1>Editing abonne</h1>
+<h1>Modifiez l'abonné</h1>
 
 <% form_for(@abonne) do |f| %>
   <%= f.error_messages %>
 
+	<%= render :partial => 'form', :locals => {:f => f} %>
+	
   <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Modifier' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @abonne %> |
-<%= link_to 'Back', abonnes_path %>
+<%= link_to 'Voir', @abonne %> |
+<%= link_to 'Retour', abonnes_path %>
