@@ -1,28 +1,34 @@
-<p>
-  <b>Nom:</b>
-  <%=h @manifestation.nom %>
-</p>
+<div class="span-16">
+	<p>
+	  <b>Nom:</b>
+	  <%=h @manifestation.nom %>
+	</p>
 
-<p>
-  <b>Lieu:</b>
-  <%=h @manifestation.lieu %>
-</p>
+	<p>
+	  <b>Lieu:</b>
+	  <%=h @manifestation.lieu %>
+	</p>
 
-<p>
-  <b>Date debut:</b>
-  <%=h @manifestation.date_debut %>
-</p>
+	<p>
+	  <b>Date debut:</b>
+	  <%=h @manifestation.date_debut %>
+	</p>
 
-<p>
-  <b>Date fin:</b>
-  <%=h @manifestation.date_fin %>
-</p>
+	<p>
+	  <b>Date fin:</b>
+	  <%=h @manifestation.date_fin %>
+	</p>
 
-<p>
-  <b>Description:</b>
-  <%=h @manifestation.description %>
-</p>
+	<p>
+	  <b>Description:</b>
+	  <%=h @manifestation.description %>
+	</p>
 
 
-<%= link_to 'Edit', edit_manifestation_path(@manifestation) %> |
-<%= link_to 'Back', manifestations_path %>
+	<%= link_to 'Edit', edit_manifestation_path(@manifestation) %> |
+	<%= link_to 'Back', manifestations_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	Right sidebar
+</div>

@@ -1,14 +1,20 @@
-<h1>Editing manifestation</h1>
+<div class="span-16">
+	<h1>Modifier Infos Manifestation</h1>
 
-<% form_for(@manifestation) do |f| %>
-  <%= f.error_messages %>
+	<% form_for(@manifestation) do |f| %>
+	  <%= f.error_messages %>
 
-	<%= render :partial => 'form', :locals => {:f => f} %>
-	
-  <p>
-    <%= f.submit 'Modifier' %>
-  </p>
-<% end %>
+		<%= render :partial => 'form', :locals => {:f => f} %>
 
-<%= link_to 'Show', @manifestation %> |
-<%= link_to 'Back', manifestations_path %>
+	  <p>
+	    <%= f.submit 'Modifier' %>
+	  </p>
+	<% end %>
+
+	<%= link_to 'Show', @manifestation %> |
+	<%= link_to 'Back', manifestations_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	Right sidebar
+</div>

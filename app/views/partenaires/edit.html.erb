@@ -1,13 +1,19 @@
-<h1>Modifier Info Partenaire</h1>
+<div class="span-16">
+	<h1>Modifier Info Partenaire</h1>
 
-<% form_for(@partenaire) do |f| %>
-  <%= f.error_messages %>
+	<% form_for(@partenaire) do |f| %>
+	  <%= f.error_messages %>
 
-	<%= render :partial => 'form', :locals => {:f => f} %>
-  <p>
-    <%= f.submit 'Modifier' %>
-  </p>
-<% end %>
+		<%= render :partial => 'form', :locals => {:f => f} %>
+	  <p>
+	    <%= f.submit 'Modifier' %>
+	  </p>
+	<% end %>
 
-<%= link_to 'Voir', @partenaire %> |
-<%= link_to 'Retour', partenaires_path %>
+	<%= link_to 'Voir', @partenaire %> |
+	<%= link_to 'Retour', partenaires_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	Right sidebar
+</div>

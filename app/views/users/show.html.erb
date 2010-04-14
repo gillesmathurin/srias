@@ -1,37 +1,43 @@
-<p>
-  <b>Login:</b>
-  <%=h @user.login %>
-</p>
+<div class="span-16">
+	<p>
+	  <b>Login:</b>
+	  <%=h @user.login %>
+	</p>
 
-<p>
-  <b>Nombre de connexion:</b>
-  <%=h @user.login_count %>
-</p>
+	<p>
+	  <b>Nombre de connexion:</b>
+	  <%=h @user.login_count %>
+	</p>
 
-<p>
-  <b>Dernière requête le:</b>
-  <%=h @user.last_request_at %>
-</p>
+	<p>
+	  <b>Dernière requête le:</b>
+	  <%=h @user.last_request_at %>
+	</p>
 
-<p>
-  <b>Dernière connexion:</b>
-  <%=h @user.last_login_at %>
-</p>
+	<p>
+	  <b>Dernière connexion:</b>
+	  <%=h @user.last_login_at %>
+	</p>
 
-<p>
-  <b>Connecté le:</b>
-  <%=h @user.current_login_at %>
-</p>
+	<p>
+	  <b>Connecté le:</b>
+	  <%=h @user.current_login_at %>
+	</p>
 
-<p>
-  <b>Dernière IP de connexion:</b>
-  <%=h @user.last_login_ip %>
-</p>
+	<p>
+	  <b>Dernière IP de connexion:</b>
+	  <%=h @user.last_login_ip %>
+	</p>
 
-<p>
-  <b>IP actuel:</b>
-  <%=h @user.current_login_ip %>
-</p>
+	<p>
+	  <b>IP actuel:</b>
+	  <%=h @user.current_login_ip %>
+	</p>
 
 
-<%= link_to 'Modifier', edit_account_path %>
+	<%= link_to 'Modifier', edit_account_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	Right sidebar
+</div>

@@ -1,13 +1,19 @@
-<h1>Nouveau partenaire</h1>
+<div class="span-16">
+	<h1>Nouveau partenaire</h1>
 
-<% form_for(@partenaire) do |f| %>
-  <%= f.error_messages %>
+	<% form_for(@partenaire) do |f| %>
+	  <%= f.error_messages %>
 
-	<%= render :partial => 'form', :locals => {:f => f} %>
+		<%= render :partial => 'form', :locals => {:f => f} %>
 
-  <p>
-    <%= f.submit 'Enregistrer' %>
-  </p>
-<% end %>
+	  <p>
+	    <%= f.submit 'Enregistrer' %>
+	  </p>
+	<% end %>
 
-<%= link_to 'Retour', partenaires_path %>
+	<%= link_to 'Retour', partenaires_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	Right sidebar
+</div>

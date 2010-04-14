@@ -1,22 +1,28 @@
-<h1>Listing partenaires</h1>
+<div class="span-16">
+	<h1>Listing partenaires</h1>
 
-<table>
-  <tr>
-    <th>Nom</th>
-    <th>Description</th>
-  </tr>
+	<table>
+	  <tr>
+	    <th>Nom</th>
+	    <th>Description</th>
+	  </tr>
 
-<% @partenaires.each do |partenaire| %>
-  <tr>
-    <td><%=h partenaire.nom %></td>
-    <td><%=h partenaire.description %></td>
-    <td><%= link_to 'Show', partenaire %></td>
-    <td><%= link_to 'Edit', edit_partenaire_path(partenaire) %></td>
-    <td><%= link_to 'Destroy', partenaire, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+	<% @partenaires.each do |partenaire| %>
+	  <tr>
+	    <td><%=h partenaire.nom %></td>
+	    <td><%=h partenaire.description %></td>
+	    <td><%= link_to 'Show', partenaire %></td>
+	    <td><%= link_to 'Edit', edit_partenaire_path(partenaire) %></td>
+	    <td><%= link_to 'Destroy', partenaire, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
 
-<br />
+	<br />
 
-<%= link_to 'New partenaire', new_partenaire_path %>
+	<%= link_to 'New partenaire', new_partenaire_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	Right sidebar
+</div>

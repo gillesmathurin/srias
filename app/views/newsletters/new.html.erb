@@ -1,13 +1,18 @@
-<h1>Rédaction Newsletter</h1>
+<div class="span-16">
+	<h1>Rédaction Newsletter</h1>
 
-<% form_for(@newsletter) do |f| %>
-  <%= f.error_messages %>
+	<% form_for(@newsletter) do |f| %>
+	  <%= f.error_messages %>
 
-	<%= render :partial => 'form', :locals => {:f => f} %>
+		<%= render :partial => 'form', :locals => {:f => f} %>
 
-  <p>
-    <%= f.submit 'Enregistrer' %>
-  </p>
-<% end %>
+	  <p>
+	    <%= f.submit 'Enregistrer' %>
+	  </p>
+	<% end %>
 
-<%= link_to 'Retour', newsletters_path %>
+	<%= link_to 'Retour', newsletters_path %>
+</div>
+<div class="span-4 last">
+	Right sidebar
+</div>

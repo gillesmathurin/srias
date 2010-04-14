@@ -1,22 +1,28 @@
-<h1>Listing missions</h1>
+<div class="span-16">
+	<h1>Listing missions</h1>
 
-<table>
-  <tr>
-    <th>Nom</th>
-    <th>Description</th>
-  </tr>
+	<table>
+	  <tr>
+	    <th>Nom</th>
+	    <th>Description</th>
+	  </tr>
 
-<% @missions.each do |mission| %>
-  <tr>
-    <td><%=h mission.nom %></td>
-    <td><%=h mission.description %></td>
-    <td><%= link_to 'Show', mission %></td>
-    <td><%= link_to 'Edit', edit_mission_path(mission) %></td>
-    <td><%= link_to 'Destroy', mission, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+	<% @missions.each do |mission| %>
+	  <tr>
+	    <td><%=h mission.nom %></td>
+	    <td><%=h mission.description %></td>
+	    <td><%= link_to 'Show', mission %></td>
+	    <td><%= link_to 'Edit', edit_mission_path(mission) %></td>
+	    <td><%= link_to 'Destroy', mission, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
 
-<br />
+	<br />
 
-<%= link_to 'New mission', new_mission_path %>
+	<%= link_to 'New mission', new_mission_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	Right sidebar
+</div>

@@ -1,13 +1,19 @@
-<p>
-  <b>Nom:</b>
-  <%=h @partenaire.nom %>
-</p>
+<div class="span-16">
+	<p>
+	  <b>Nom:</b>
+	  <%=h @partenaire.nom %>
+	</p>
 
-<p>
-  <b>Description:</b>
-  <%=h @partenaire.description %>
-</p>
+	<p>
+	  <b>Description:</b>
+	  <%=h @partenaire.description %>
+	</p>
 
 
-<%= link_to 'Edit', edit_partenaire_path(@partenaire) %> |
-<%= link_to 'Back', partenaires_path %>
+	<%= link_to 'Edit', edit_partenaire_path(@partenaire) %> |
+	<%= link_to 'Back', partenaires_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	Right sidebar
+</div>

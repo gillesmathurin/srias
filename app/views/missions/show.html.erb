@@ -1,13 +1,19 @@
-<p>
-  <b>Nom:</b>
-  <%=h @mission.nom %>
-</p>
+<div class="span-16">
+	<p>
+	  <b>Nom:</b>
+	  <%=h @mission.nom %>
+	</p>
 
-<p>
-  <b>Description:</b>
-  <%=h @mission.description %>
-</p>
+	<p>
+	  <b>Description:</b>
+	  <%=h @mission.description %>
+	</p>
 
 
-<%= link_to 'Edit', edit_mission_path(@mission) %> |
-<%= link_to 'Back', missions_path %>
+	<%= link_to 'Edit', edit_mission_path(@mission) %> |
+	<%= link_to 'Back', missions_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	Right sidebar
+</div>
