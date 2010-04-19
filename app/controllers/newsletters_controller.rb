@@ -1,11 +1,13 @@
 class NewslettersController < ApplicationController
-  
+  before_filter :require_user
+  # GET /newsletter/1/deliver
   def deliver
     @newsletter = Newsletter.find(params[:id])
-    Newsletter.send_later(:deliver)
+    @newsletter.send_later(:deliver)
     flash[:notice] = "Newsletter en cours d'envoi …"
     redirect_to(newsletters_url())
   end
+  
   # GET /newsletters
   # GET /newsletters.xml
   def index

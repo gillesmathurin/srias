@@ -5,16 +5,15 @@
 	  <tr>
 	    <th>Titre</th>
 	    <th>Sommaire</th>
-	    <th>Content</th>
-	    <th>Preview</th>
+		<th>Envoyé le </th>
 	  </tr>
 
 	<% @newsletters.each do |newsletter| %>
 	  <tr>
 	    <td><%=h newsletter.titre %></td>
 	    <td><%=h newsletter.sommaire %></td>
-	    <td><%=h newsletter.content %></td>
-	    <td><%=h newsletter.preview %></td>
+		<td><%= h newsletter.delivered_at %></td>
+		<td><%= link_to "Envoyer", deliver_newsletter_path(newsletter) %></td>
 	    <td><%= link_to 'Show', newsletter %></td>
 	    <td><%= link_to 'Edit', edit_newsletter_path(newsletter) %></td>
 	    <td><%= link_to 'Destroy', newsletter, :confirm => 'Are you sure?', :method => :delete %></td>

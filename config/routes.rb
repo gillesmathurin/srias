@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :newsletters
+  map.resources :newsletters, :member => {:deliver => :get}
 
   map.resources :abonnes
 
