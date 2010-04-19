@@ -1,4 +1,8 @@
 class NewslettersController < ApplicationController
+  
+  def deliver
+    
+  end
   # GET /newsletters
   # GET /newsletters.xml
   def index

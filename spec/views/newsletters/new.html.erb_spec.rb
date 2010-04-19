@@ -4,13 +4,7 @@ describe "/newsletters/new.html.erb" do
   include NewslettersHelper
 
   before(:each) do
-    assigns[:newsletter] = stub_model(Newsletter,
-      :new_record? => true,
-      :titre => "value for titre",
-      :sommaire => "value for sommaire",
-      :content => "value for content",
-      :preview => 
-    )
+    assigns[:newsletter] = mock_model(Newsletter, :titre => "value for titre", :sommaire => "value for sommaire", :content => "value for content")
   end
 
   it "renders new newsletter form" do

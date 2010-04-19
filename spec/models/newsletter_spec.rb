@@ -5,8 +5,7 @@ describe Newsletter do
     @valid_attributes = {
       :titre => "value for titre",
       :sommaire => "value for sommaire",
-      :content => "value for content",
-      :preview => 
+      :content => "value for content"
     }
   end
 
