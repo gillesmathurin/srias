@@ -1,11 +1,19 @@
-<h1>New evenement</h1>
+<div class="span-16">
+<h1>Enregistrer un Evenement</h1>
 
-<% form_for(@evenement) do |f| %>
-  <%= f.error_messages %>
+	<% form_for(@evenement) do |f| %>
+	  <%= f.error_messages %>
 
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
+	<%= render :partial => 'form', :locals => {:f => f} %>
 
-<%= link_to 'Back', evenements_path %>
+	  <p>
+	    <%= f.submit 'Enregistrer' %>
+	  </p>
+	<% end %>
+
+	<%= link_to 'Retour', evenements_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	Right sidebar
+</div>
