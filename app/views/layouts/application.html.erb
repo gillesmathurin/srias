@@ -29,10 +29,11 @@
 		<!-- Left Sidebar -->
 		<div class="span-4">
 			<ul class="menubar">
-				<li>Menu1</li>
-				<li>Menu2</li>
-				<li>Menu3</li>
-				<li>Menu4</li>
+				<li><%= link_to "Accueil", root_path() %></li>
+				<li><%= link_to "Agenda", manifestations_path() %></li>
+				<li><%= link_to "Partenaires", partenaires_path() %></li>
+				<li><%= link_to "Liens", liens_path() %></li>
+				<li><%= link_to "Contacts", "/contacts.html" %></li>
 			</ul>
 			
 			<div id="newsletter-form">

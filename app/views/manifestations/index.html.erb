@@ -1,32 +1,20 @@
 <div class="span-16">
-	<h1>Listing manifestations</h1>
-
-	<table>
-	  <tr>
-	    <th>Nom</th>
-	    <th>Lieu</th>
-	    <th>Date debut</th>
-	    <th>Date fin</th>
-	    <th>Description</th>
-	  </tr>
+	<h1>L' agenda</h1>
 
 	<% @manifestations.each do |manifestation| %>
-	  <tr>
-	    <td><%=h manifestation.nom %></td>
-	    <td><%=h manifestation.lieu %></td>
-	    <td><%=h manifestation.date_debut %></td>
-	    <td><%=h manifestation.date_fin %></td>
-	    <td><%=h manifestation.description %></td>
-	    <td><%= link_to 'Show', manifestation %></td>
-	    <td><%= link_to 'Edit', edit_manifestation_path(manifestation) %></td>
-	    <td><%= link_to 'Destroy', manifestation, :confirm => 'Are you sure?', :method => :delete %></td>
-	  </tr>
+		<p>
+			<b><%=h manifestation.nom %></b> à <%=h manifestation.lieu %> du <%=h manifestation.date_debut %> au <%=h manifestation.date_fin %><br/> <%=h manifestation.description %> <br/>
+		<% if current_user %>	
+			<%= link_to 'Modifier', edit_manifestation_path(manifestation) %> |
+			<%= link_to 'Supprimer', manifestation, :confirm => 'En êtes vous sur ?', :method => :delete %>
+		<% end %>
+		</p>
 	<% end %>
-	</table>
 
 	<br />
-
+<% if current_user %>
 	<%= link_to 'New manifestation', new_manifestation_path %>
+<% end %>
 </div>
 <!-- Right Sidebar -->
 <div class="span-4 last">
