@@ -84,5 +84,16 @@ h1 {
 	color: #bf0d0b;
 }
 
+div#newsletter-form h4 {
+	margin-bottom: 0;
+	font-weight: bold;
+	font-style: italic;
+}
+
+div#newsletter-form div#result {
+	margin-top: -10px;
+	color: #faf21d;
+}
+
 p {
 }

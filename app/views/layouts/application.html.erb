@@ -38,8 +38,8 @@
 			</ul>
 			
 			<div id="newsletter-form">
-				<h3>Newsletter</h3>
-				<% remote_form_for @abonne do |f| %>
+				<h4>Newsletter</h4>
+				<% remote_form_for @abonne, :success => "$('result').show()" do |f| %>
 					<%= f.error_messages %>
 					<p>
 						<%= f.label :email, "Email" %><br/> <%= f.text_field :email, :size => 15 %>
@@ -48,6 +48,9 @@
 						<%= submit_tag "S'abonner" %>
 					</p>
 				<% end %>
+				<div id="result" style="display: none;">
+					Vous êtes abonné(e)s !
+				</div>
 			</div>
 		</div>
 		<%= yield %>
