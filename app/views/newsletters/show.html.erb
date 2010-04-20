@@ -1,9 +1,5 @@
 <div class="span-16">
-	<p>
-	  <b>Titre:</b>
-	  <%=h @newsletter.titre %>
-	</p>
-
+	<h3><%=h @newsletter.titre %> - numéro : <%= h @newsletter.numero %></h3>
 	<p>
 	  <b>Sommaire:</b>
 	  <%=h @newsletter.sommaire %>
@@ -20,10 +16,10 @@
 	</p>
 
 
-	<%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |
-	<%= link_to 'Back', newsletters_path %>
+	<%= link_to 'Modifier', edit_newsletter_path(@newsletter) %> |
+	<%= link_to 'Retour', newsletters_path %>
 </div>
 <!-- Right Sidebar -->
 <div class="span-4 last">
-	Right sidebar
+	<%= render :partial => "shared/right_col" %>
 </div>

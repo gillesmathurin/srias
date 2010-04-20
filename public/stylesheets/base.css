@@ -1,6 +1,6 @@
 div.footer {
 	background: url(../images/bckg-footer.gif) repeat-x;
-	position: absolute;
+	position: relative;
 	bottom: 0;
 	height: 100px;
 	z-index: -2;
@@ -24,9 +24,11 @@ div#header div#user_nav {
 
 div#colibri {
 	position: absolute;
-	bottom: -5px;
 	z-index: -2;
 	background-color: transparent;
+	bottom: -5px;
+	display: inline-block;
+	left: 0;
 }
 
 ul.menubar {
@@ -49,15 +51,15 @@ ul.menubar li:hover {
 	border-bottom: 4px solid #faf21d;
 }
 
-ul.menubar li a {
+ul.menubar li>a {
 	font-weight: bold;
 	text-decoration: none;
 	color: #0a001e;
 	width: 120px;
-	display: inline-block;
+	display: block;
 }
 
-ul.menubar li a:hover {
+ul.menubar li>a:hover {
 	color: #5c06b7;
 	font-size: 1.3em;
 }
@@ -84,6 +86,12 @@ h1 {
 	color: #bf0d0b;
 }
 
+h3 {
+	text-align: center;
+	color: #39485e;
+	font-weight: bold;
+}
+
 div#newsletter-form h4 {
 	margin-bottom: 0;
 	font-weight: bold;
@@ -93,7 +101,20 @@ div#newsletter-form h4 {
 div#newsletter-form div#result {
 	margin-top: -10px;
 	color: #faf21d;
+	visibility: hidden;
 }
 
 p {
+}
+
+a {
+	font-weight: bold;
+	text-decoration: underline;
+	color: #ad2a6b;	
+}
+
+a:hover {
+	font-weight: bold;
+	color: #5c06b7;
+	font-size: 1.1em;
 }

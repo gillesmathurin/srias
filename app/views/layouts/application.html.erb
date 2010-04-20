@@ -35,6 +35,9 @@
 				<li><%= link_to "Partenaires", partenaires_path() %></li>
 				<li><%= link_to "Liens", liens_path() %></li>
 				<li><%= link_to "Contacts", "/contacts.html" %></li>
+				<% if current_user %>
+					<li><%= link_to "Newsletter", newsletters_path() %></li>
+				<% end %>
 			</ul>
 			
 			<div id="newsletter-form">
@@ -42,11 +45,10 @@
 				<% remote_form_for @abonne, :success => "$('result').show()" do |f| %>
 					<%= f.error_messages %>
 					<p>
-						<%= f.label :email, "Email" %><br/> <%= f.text_field :email, :size => 15 %>
+						<%= f.label :email, "Email" %><br/>
+						<%= f.text_field :email, :size => 15 %>
 					</p>
-					<p>
-						<%= submit_tag "S'abonner" %>
-					</p>
+					<p><%= submit_tag "S'abonner" %></p>
 				<% end %>
 				<div id="result" style="display: none;">
 					Vous êtes abonné(e)s !
@@ -56,11 +58,11 @@
 		<%= yield %>
 		<div class="footer span-24">
 			Footer
+			<div id="colibri">
+				<img src="/images/colibri_06.jpg">		
+			</div>
 		</div>
 	</div>
-		
-	<div id="colibri">
-		<img src="/images/colibri_06.jpg">		
-	</div>
+
 </body>
 </html>

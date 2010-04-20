@@ -118,6 +118,7 @@ form.inline p {margin-bottom:0;}
 .span-15 {width:590px;}
 .span-16 {width:630px;
 	margin-top: 20px;
+	min-height: 550px;
 }
 .span-17 {width:670px;}
 .span-18 {width:710px;}
