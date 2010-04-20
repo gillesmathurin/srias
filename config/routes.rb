@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :evenements
+
   map.resources :newsletters, :member => {:deliver => :get}
 
   map.resources :abonnes

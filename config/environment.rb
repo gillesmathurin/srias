@@ -14,6 +14,8 @@ Rails::Initializer.run do |config|
   config.gem 'rspec-rails', :lib => false
   config.gem 'rspec', :lib => false
   config.gem 'delayed_job'
+  config.gem 'paperclip'
+  config.gem 'delayed_paperclip'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
