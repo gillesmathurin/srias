@@ -38,16 +38,7 @@
 			</ul>
 			
 			<div id="newsletter-form">
-				<h3>Newsletter</h3>
-				<% remote_form_for @abonne do |f| %>
-					<%= f.error_messages %>
-					<p>
-						<%= f.label :email, "Email" %><br/> <%= f.text_field :email, :size => 15 %>
-					</p>
-					<p>
-						<%= submit_tag "S'abonner" %>
-					</p>
-				<% end %>
+				form
 			</div>
 		</div>
 		<%= yield %>

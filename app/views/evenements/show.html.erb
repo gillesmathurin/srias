@@ -1,8 +1,8 @@
 <div class="span-16">
-	<%= link_to 'Edit', edit_evenement_path(@evenement) %> |
-	<%= link_to 'Back', evenements_path %>
+	<%= link_to 'Modifier', edit_evenement_path(@evenement) %> |
+	<%= link_to 'Retour', evenements_path %>
 </div>
 <!-- Right Sidebar -->
 <div class="span-4 last">
-	Right sidebar
+	<%= render :partial => "shared/right_col" %>
 </div>

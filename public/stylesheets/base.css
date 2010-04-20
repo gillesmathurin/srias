@@ -45,6 +45,23 @@ ul.menubar li {
 	width: 100px;
 }
 
+ul.menubar li:hover {
+	border-bottom: 4px solid #faf21d;
+}
+
+ul.menubar li a {
+	font-weight: bold;
+	text-decoration: none;
+	color: #0a001e;
+	width: 120px;
+	display: inline-block;
+}
+
+ul.menubar li a:hover {
+	color: #5c06b7;
+	font-size: 1.3em;
+}
+
 div.pubs {
 	height: 424px;
 	width: 150px;

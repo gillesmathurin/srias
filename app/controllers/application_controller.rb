@@ -8,7 +8,13 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password, :password_confirmation
   
+  before_filter :create_abonne
+  
   private
+  
+  def create_abonne
+    @abonne = Abonne.new
+  end
   
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
