@@ -1,0 +1,54 @@
+div.footer {
+	background: url(../images/bckg-footer.gif) repeat-x;
+	position: absolute;
+	bottom: 0;
+	height: 100px;
+	z-index: -2;
+	width: 100%;
+}
+
+div#header {
+	background: url(../images/logo-srias_02.jpg) no-repeat left;
+	height: 90px;
+	border-bottom: 2px solid #9cbd15;
+}
+
+div#colibri {
+	position: absolute;
+	bottom: -5px;
+	z-index: -2;
+	background-color: transparent;
+}
+
+ul.menubar {
+	background: url(../images/bckg-menubar_02.jpg) no-repeat;
+	width: 128px;
+	height: 255px;
+	padding-top: 20px;
+	margin-top: 20px;
+}
+
+ul.menubar li {
+	list-style-type: none;
+	border-bottom: 2px solid #39485e;
+	margin-bottom: 10px;
+	margin-left: -20px;
+	width: 100px;
+}
+
+div.pubs {
+	height: 424px;
+	width: 150px;
+	background: url(../images/bckg-rightcol_05.jpg) no-repeat 0 top;
+	text-align: center;
+	padding-top: 20px;
+	margin-top: 20px;
+}
+
+div#newsletter-form {
+	background: url(../images/bckg-newsletter_05.png) no-repeat;
+	height: 148px;
+	width: 158px;
+	padding-top: 20px;
+	text-align: center;
+}

@@ -24,7 +24,7 @@ a img {border:none;}
 
 /* typography.css */
 html {font-size:100.01%;}
-body {font-size:75%;color:#222;background:#fff;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;}
+body {font-size:75%;color:#222;background: #8cb012 url(../../images/bckg.jpg) repeat-x;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;}
 h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#111;}
 h1 {font-size:3em;line-height:1;margin-bottom:0.5em;}
 h2 {font-size:2em;margin-bottom:0.75em;}
@@ -116,7 +116,9 @@ form.inline p {margin-bottom:0;}
 .span-13 {width:510px;}
 .span-14 {width:550px;}
 .span-15 {width:590px;}
-.span-16 {width:630px;}
+.span-16 {width:630px;
+	margin-top: 20px;
+}
 .span-17 {width:670px;}
 .span-18 {width:710px;}
 .span-19 {width:750px;}
