@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100420201637) do
+ActiveRecord::Schema.define(:version => 20100420201853) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
@@ -48,6 +48,10 @@ ActiveRecord::Schema.define(:version => 20100420201637) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type"
+    t.string   "illustration_content_type"
+    t.integer  "illustration_file_size"
+    t.string   "illustration_file_name"
+    t.datetime "illustration_updated_at"
   end
 
   create_table "missions", :force => true do |t|
