@@ -9,12 +9,13 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
   config.gem 'authlogic'
   config.gem 'will_paginate', :lib => 'will_paginate', :version => '>= 2.3.12'
-  config.gem 'webrat', :lib => false
-  config.gem 'cucumber', :lib => false
-  config.gem 'rspec-rails', :lib => false
-  config.gem 'rspec', :lib => false
+  # config.gem 'webrat', :lib => false
+  # config.gem 'cucumber', :lib => false
+  # config.gem 'rspec-rails', :lib => false
+  # config.gem 'rspec', :lib => false
   config.gem 'paperclip'
-  config.gem 'delayed_paperclip'
+  # config.gem 'delayed_job'
+  # config.gem 'delayed_paperclip'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
