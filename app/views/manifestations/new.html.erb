@@ -1,7 +1,7 @@
 <div class="span-16">
 	<h1>Enregistrer manifestation</h1>
 
-	<% form_for(@manifestation) do |f| %>
+	<% form_for(@manifestation, :html => {:multipart => true}) do |f| %>
 	  <%= f.error_messages %>
 
 		<%= render :partial => 'form', :locals => {:f => f} %>

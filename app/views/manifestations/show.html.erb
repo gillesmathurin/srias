@@ -11,12 +11,12 @@
 
 	<p>
 	  <b>Date debut:</b>
-	  <%=h @manifestation.date_debut %>
+	  <%=h @manifestation.format_datetime(date_debut) %>
 	</p>
 
 	<p>
 	  <b>Date fin:</b>
-	  <%=h @manifestation.date_fin %>
+	  <%=h @manifestation.format_datetime(date_fin) %>
 	</p>
 
 	<p>

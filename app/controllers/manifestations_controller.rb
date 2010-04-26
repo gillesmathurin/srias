@@ -26,6 +26,7 @@ class ManifestationsController < ApplicationController
   # GET /manifestations/new.xml
   def new
     @manifestation = Manifestation.new
+    4.times { @manifestation.photos.build }
 
     respond_to do |format|
       format.html # new.html.erb

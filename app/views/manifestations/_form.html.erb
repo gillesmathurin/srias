@@ -18,3 +18,11 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </p>
+
+	<% f.fields_for :photos do |photo_form| %>
+		<p><%= photo_form.label "Photo" %> : <%= photo_form.file_field :photo %></p>
+		<% unless photo_form.object.new_record? %>
+			<%= photo_form.check_box '_delete' %>
+			<%= photo_form.label '_delete', 'Supprimer' %>
+		<% end %>
+	<% end %>
