@@ -5,6 +5,12 @@ div.footer {
 	height: 100px;
 	z-index: -2;
 	width: 100%;
+	color: white;
+	text-align: center;
+}
+
+div.footer div.texte {
+	margin-top: 15px;
 }
 
 div#header {

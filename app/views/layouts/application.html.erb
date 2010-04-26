@@ -57,7 +57,12 @@
 		</div>
 		<%= yield %>
 		<div class="footer span-24">
-			Footer
+			<div class="texte">
+				<p>Contacts : Mr Guillou George (Président)<br/> 0690 737 979 <%= mail_to("guillou.g3@wanadoo.fr", "guillou.g3@wanadoo.fr", :encode => :javascript) %></p>
+				<p>
+					<pre>Conception : <%= link_to "GMWebAgency", "http://www/gmwebagency.com"%> G.MATHURIN</pre>
+				</p>
+			</div>
 			<div id="colibri">
 				<img src="/images/colibri_06.jpg">		
 			</div>
