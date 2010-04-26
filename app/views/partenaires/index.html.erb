@@ -11,18 +11,20 @@
 	  <tr>
 	    <td><%=h partenaire.nom %></td>
 	    <td><%=h partenaire.description %></td>
-	    <td><%= link_to 'Show', partenaire %></td>
-	    <td><%= link_to 'Edit', edit_partenaire_path(partenaire) %></td>
-	    <td><%= link_to 'Destroy', partenaire, :confirm => 'Are you sure?', :method => :delete %></td>
+	    <td><%= link_to 'Voir', partenaire %></td>
+	<% if current_user %>
+	    <td><%= link_to 'Modifier', edit_partenaire_path(partenaire) %></td>
+	    <td><%= link_to 'Supprimer', partenaire, :confirm => 'En êtes vous sur?', :method => :delete %></td>
+	<% end %>
 	  </tr>
 	<% end %>
 	</table>
 
 	<br />
 
-	<%= link_to 'New partenaire', new_partenaire_path %>
+	<%= link_to 'Ajouter partenaire', new_partenaire_path %>
 </div>
 <!-- Right Sidebar -->
 <div class="span-4 last">
-	Right sidebar
+	<%= render :partial => "shared/right_col" %>
 </div>

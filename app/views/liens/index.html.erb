@@ -1,22 +1,31 @@
-<h1>Listing liens</h1>
+<div class="span-16">
+	<h1>Nos liens</h1>
 
-<table>
-  <tr>
-    <th>Nom</th>
-    <th>Adresse</th>
-  </tr>
+	<table>
+	  <tr>
+	    <th>Nom</th>
+	    <th>Adresse</th>
+	  </tr>
 
-<% @liens.each do |lien| %>
-  <tr>
-    <td><%=h lien.nom %></td>
-    <td><%=h lien.adresse %></td>
-    <td><%= link_to 'Show', lien %></td>
-    <td><%= link_to 'Edit', edit_lien_path(lien) %></td>
-    <td><%= link_to 'Destroy', lien, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<% @liens.each do |lien| %>
+	  <tr>
+	    <td><%=h lien.nom %></td>
+	    <td><%=h lien.adresse %></td>
+	    <td><%= link_to 'Voir', lien %></td>
+		<% if current_user %>
+	    <td><%= link_to 'Modifier', edit_lien_path(lien) %></td>
+	    <td><%= link_to 'Supprimer', lien, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% end %>
+	  </tr>
+	<% end %>
+	</table>
+
+	<br />
+<% if current_user %>
+	<p><%= link_to 'Ajouter lien', new_lien_path %></p>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New lien', new_lien_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	<%= render :partial => "shared/right_col" %>
+</div>

@@ -9,11 +9,10 @@
 	  <%=h @partenaire.description %>
 	</p>
 
-
-	<%= link_to 'Edit', edit_partenaire_path(@partenaire) %> |
-	<%= link_to 'Back', partenaires_path %>
+	<%= link_to 'Modifier', edit_partenaire_path(@partenaire) %> |
+	<%= link_to 'Retour', partenaires_path %>
 </div>
 <!-- Right Sidebar -->
 <div class="span-4 last">
-	Right sidebar
+	<%= render :partial => "shared/right_col" %>
 </div>

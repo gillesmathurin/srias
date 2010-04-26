@@ -9,6 +9,25 @@ div.footer {
 	text-align: center;
 }
 
+div.texte-footer {
+	position: relative;
+	z-index: 0;
+	height: 100px;
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+	bottom: 85px;
+	color: white;
+}
+
+div.texte-footer a {
+	color: yellow;
+}
+
+div.texte-footer a:hover {
+	color: #e5ff24;
+}
+
 div.footer div#texte {
 	margin-top: 15px;
 	display: block;

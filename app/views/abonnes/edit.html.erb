@@ -1,14 +1,20 @@
-<h1>Modifiez l'abonné</h1>
+<div class="span-16">
+	<h1>Modifiez l'abonné</h1>
 
-<% form_for(@abonne) do |f| %>
-  <%= f.error_messages %>
+	<% form_for(@abonne) do |f| %>
+	  <%= f.error_messages %>
 
-	<%= render :partial => 'form', :locals => {:f => f} %>
-	
-  <p>
-    <%= f.submit 'Modifier' %>
-  </p>
-<% end %>
+		<%= render :partial => 'form', :locals => {:f => f} %>
 
-<%= link_to 'Voir', @abonne %> |
-<%= link_to 'Retour', abonnes_path %>
+	  <p>
+	    <%= f.submit 'Modifier' %>
+	  </p>
+	<% end %>
+
+	<%= link_to 'Voir', @abonne %> |
+	<%= link_to 'Retour', abonnes_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	<%= render :partial => "shared/right_col" %>
+</div>

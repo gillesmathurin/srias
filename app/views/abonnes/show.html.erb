@@ -1,8 +1,14 @@
-<p>
-  <b>Email:</b>
-  <%=h @abonne.email %>
-</p>
+<div class="span-16">
+	<p>
+	  <b>Email:</b>
+	  <%=h @abonne.email %>
+	</p>
 
 
-<%= link_to 'Edit', edit_abonne_path(@abonne) %> |
-<%= link_to 'Back', abonnes_path %>
+	<%= link_to 'Edit', edit_abonne_path(@abonne) %> |
+	<%= link_to 'Back', abonnes_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	<%= render :partial => "shared/right_col" %>
+</div>

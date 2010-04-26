@@ -1,13 +1,20 @@
-<p>
-  <b>Nom:</b>
-  <%=h @lien.nom %>
-</p>
+<div class="span-16">
+	<p>
+	  <b>Nom:</b>
+	  <%=h @lien.nom %>
+	</p>
 
-<p>
-  <b>Adresse:</b>
-  <%=h @lien.adresse %>
-</p>
+	<p>
+	  <b>Adresse:</b>
+	  <%=h @lien.adresse %>
+	</p>
 
-
-<%= link_to 'Edit', edit_lien_path(@lien) %> |
-<%= link_to 'Back', liens_path %>
+<% if current_user %>
+	<%= link_to 'Modifier', edit_lien_path(@lien) %> |
+<% end %>
+	<%= link_to 'Retour', liens_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	<%= render :partial => "shared/right_col" %>
+</div>
