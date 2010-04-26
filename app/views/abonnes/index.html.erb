@@ -1,5 +1,5 @@
 <div class="span-16">
-	<h1>Listing abonnes</h1>
+	<h1>Listing des abonnés à la newsletter</h1>
 
 	<table>
 	  <tr>
@@ -9,16 +9,18 @@
 	<% @abonnes.each do |abonne| %>
 	  <tr>
 	    <td><%=h abonne.email %></td>
-	    <td><%= link_to 'Show', abonne %></td>
-	    <td><%= link_to 'Edit', edit_abonne_path(abonne) %></td>
-	    <td><%= link_to 'Destroy', abonne, :confirm => 'Are you sure?', :method => :delete %></td>
+	    <td><%= link_to 'Modifier', edit_abonne_path(abonne) %></td>
+	    <td><%= link_to 'Supprimer', abonne, :confirm => 'En êtes vous sur?', :method => :delete %></td>
 	  </tr>
 	<% end %>
 	</table>
+	<p>
+		<%= will_paginate @abonnes, :previous_label => "Précedent", :next_label => "Suivant" %>
+	</p>
 
 	<br />
 
-	<%= link_to 'New abonne', new_abonne_path %>
+	<%= link_to 'Ajouter abonné', new_abonne_path %> | <%= link_to "Tout supprimer", delete_all_abonnes_path() %>
 </div>
 <!-- Right Sidebar -->
 <div class="span-4 last">

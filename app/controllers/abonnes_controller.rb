@@ -2,7 +2,7 @@ class AbonnesController < ApplicationController
   # GET /abonnes
   # GET /abonnes.xml
   def index
-    @abonnes = Abonne.all
+    @abonnes = Abonne.all.paginate(:page => params[:page], :per_page => 20)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,6 +80,14 @@ class AbonnesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(abonnes_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  def delete_all
+    Abonne.delete_all
+    respond_to do |format|
+      format.html { redirect_to(abonnes_url) }
+      format.xml { head :ok }
     end
   end
 end

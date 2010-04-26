@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :newsletters, :member => {:deliver => :get}
 
-  map.resources :abonnes
+  map.resources :abonnes, :collection => {:delete_all => :get}
 
   map.resources :partenaires
 
