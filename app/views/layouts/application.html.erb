@@ -42,7 +42,7 @@
 			
 			<div id="newsletter-form">
 				<h4>Newsletter</h4>
-				<% remote_form_for @abonne, :success => "$('result').show()" do |f| %>
+				<% remote_form_for @abonne, :url => abonnes_path, :success => "$('result').show()" do |f| %>
 					<%= f.error_messages %>
 					<p>
 						<%= f.label :email, "Email" %><br/>
@@ -50,7 +50,7 @@
 					</p>
 					<p><%= submit_tag "S'abonner" %></p>
 				<% end %>
-				<div id="result" style="display: none;">
+				<div id="result" style="display: none;" >
 					Vous êtes abonné(e)s !
 				</div>
 			</div>

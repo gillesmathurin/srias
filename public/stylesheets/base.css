@@ -101,10 +101,10 @@ div.pubs {
 
 div#newsletter-form {
 	background: url(../images/bckg-newsletter_05.png) no-repeat;
-	height: 148px;
 	width: 158px;
 	padding-top: 20px;
 	text-align: center;
+	height: 133px;
 }
 
 h1 {
@@ -128,7 +128,6 @@ div#newsletter-form h4 {
 div#newsletter-form div#result {
 	margin-top: -10px;
 	color: #faf21d;
-	visibility: hidden;
 }
 
 div#bandeau {
