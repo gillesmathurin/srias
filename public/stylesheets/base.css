@@ -141,6 +141,12 @@ div#bandeau {
 	font-weight: bold;
 }
 
+div.pubs h5 {
+	color: #156f36;
+	margin-bottom: 0;
+	font-size: 1.1em;
+}
+
 p {
 }
 
