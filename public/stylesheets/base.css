@@ -83,7 +83,8 @@ div#newsletter-form {
 
 h1 {
 	text-align: center;
-	color: #bf0d0b;
+	color: #39485e;
+	text-shadow: #aeb0b0 -1px -1px 0;
 }
 
 h3 {
@@ -102,6 +103,17 @@ div#newsletter-form div#result {
 	margin-top: -10px;
 	color: #faf21d;
 	visibility: hidden;
+}
+
+div#bandeau {
+	background: url(../images/bg-bandeau.png) no-repeat left top;
+	width: 630px;
+	height: 38px;
+	padding-top: 10px;
+	padding-left: 10px;
+	color: #fbfe4c;
+	font-size: 1.5em;
+	font-weight: bold;
 }
 
 p {

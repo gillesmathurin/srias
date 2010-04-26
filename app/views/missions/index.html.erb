@@ -1,4 +1,18 @@
 <div class="span-16">
+	<div id="bandeau">
+	<% if !@evenements.blank? %>
+		<marquee behavior="slide" direction="left" height="30" loop="10" scrollamount="4" width="610">
+		  <% for evenement in @evenements %>
+		    <%= evenement.date_debut.strftime("%d/%m/%Y") %> : <%= evenement.nom %> <%= lieu(evenement) %>
+		  <% end %>		
+		</marquee>
+	<% else %>
+		<marquee behavior="slide" direction="left" height="30" loop="10" scrollamount="4" width="610">
+		"Revenez régulièrement pour consulter les dernières informations."
+		</marquee>
+	<% end %>
+	</div>
+	
 	<h1>Bienvenue</h1>
 	
 	<p>
