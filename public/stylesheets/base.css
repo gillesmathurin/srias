@@ -161,3 +161,10 @@ a:hover {
 	color: #5c06b7;
 	font-size: 1.1em;
 }
+
+span.nom-manif {
+	color: #0a001e;
+	font-weight: bold;
+	font-variant: small-caps;
+	font-size: 1.5em;
+}

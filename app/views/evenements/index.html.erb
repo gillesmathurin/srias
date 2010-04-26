@@ -5,7 +5,7 @@
 
 		<% @evenements.each do |evt| %>
 			<p>
-				<b><%=h evt.nom %></b> à <%=h evt.lieu %> du <%=h evt.format_datetime(date_debut) %> au <%=h evt.format_datetime(date_fin) %><br/> <%=h evt.description %> <br/>
+				<b><%=h evt.nom %></b> à <%=h evt.lieu %> du <%=h format_datetime(evt.date_debut) %> au <%=h format_datetime(evt.date_fin) %><br/> <%=h evt.description %> <br/>
 			<% if current_user %>	
 				<%= link_to 'Modifier', edit_evenement_path(evt) %> |
 				<%= link_to 'Supprimer', evenement_path(evt), :confirm => 'En êtes vous sur ?', :method => :delete %>
