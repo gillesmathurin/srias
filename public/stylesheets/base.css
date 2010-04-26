@@ -52,7 +52,7 @@ div#colibri {
 	position: absolute;
 	z-index: -2;
 	background-color: transparent;
-	bottom: -5px;
+	bottom: -4px;
 	display: inline-block;
 	left: 0;
 }
@@ -142,7 +142,7 @@ div#bandeau {
 }
 
 div.pubs h5 {
-	color: #156f36;
+	color: #5c06b7;
 	margin-bottom: 0;
 	font-size: 1.1em;
 }
