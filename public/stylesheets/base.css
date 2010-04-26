@@ -3,14 +3,15 @@ div.footer {
 	position: relative;
 	bottom: 0;
 	height: 100px;
-	z-index: -2;
+	z-index: -1;
 	width: 100%;
 	color: white;
 	text-align: center;
 }
 
-div.footer div.texte {
+div.footer div#texte {
 	margin-top: 15px;
+	display: block;
 }
 
 div#header {
