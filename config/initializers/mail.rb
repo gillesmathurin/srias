@@ -6,7 +6,7 @@ ActionMailer::Base.smtp_settings = {
   :authentication => :plain,
   :enable_starttls_auto => true, 
   :user_name => "gillesmath@gmwebagency.com", 
-  # :password => "mettre le bon mot de passe"
+  :password => "mettre le bon mot de passe"
 }
 ActionMailer::Base.perform_deliveries = true
 ActionMailer::Base.raise_delivery_errors = true
