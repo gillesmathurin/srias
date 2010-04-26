@@ -9,7 +9,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :liens
 
-  map.resources :manifestations
+  map.resources :manifestations, :has_many => [:photos]
 
   map.resources :missions
 

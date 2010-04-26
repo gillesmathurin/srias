@@ -1,8 +1,9 @@
+<% content_for :head do %>
+	<%= javascript_include_tag 'builder', 'lightbox' %>
+	<%= stylesheet_link_tag 'lightbox' %>
+<% end %>
 <div class="span-16">
-	<p>
-	  <b>Nom:</b>
-	  <%=h @manifestation.nom %>
-	</p>
+	<h4><%=h @manifestation.nom %></h4>
 
 	<p>
 	  <b>Lieu:</b>
@@ -11,12 +12,12 @@
 
 	<p>
 	  <b>Date debut:</b>
-	  <%=h @manifestation.format_datetime(date_debut) %>
+	  <%=h format_datetime(@manifestation.date_debut) %>
 	</p>
 
 	<p>
 	  <b>Date fin:</b>
-	  <%=h @manifestation.format_datetime(date_fin) %>
+	  <%=h format_datetime(@manifestation.date_fin) %>
 	</p>
 
 	<p>
@@ -27,6 +28,22 @@
 
 	<%= link_to 'Modifier', edit_manifestation_path(@manifestation) %> |
 	<%= link_to 'Retour', manifestations_path %>
+	
+	<h5>Gallerie de photos</h5>
+	<% unless @manifestation.photos.empty? %>
+		<table>
+			<tr>
+				<% @manifestation.photos.each do |photo| %>
+				<td>
+					<%= link_to image_tag(photo.photo.url(:thumb)), photo.photo.url(:large), {:rel => "lightbox"} %><br/>
+					<% if current_user %>
+						<%= link_to "Supprimer", manifestation_photo_path(@manifestation, photo), :method => :delete, :confirm => "Certain ?" %>
+					<% end %>
+				</td>
+				<% end %>
+			</tr>
+		</table>
+	<% end %>
 </div>
 <!-- Right Sidebar -->
 <div class="span-4 last">
