@@ -1,4 +1,5 @@
 class PartenairesController < ApplicationController
+  before_filter :require_user, :only => [:new, :create, :edit, :update]
   # GET /partenaires
   # GET /partenaires.xml
   def index
