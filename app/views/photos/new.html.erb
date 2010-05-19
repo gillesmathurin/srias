@@ -1,0 +1,18 @@
+<div class="span-16">
+	<h1>Enregistrer une photo</h1>
+	
+	<% form_for [@manifestation, @photo], :html => {:multipart => true} do |f| -%>
+	  	<%= f.error_messages %>
+		<p>
+			<%= f.file_field :photo %>
+		</p>
+		<p>
+			<%= f.submit "Enregistrer" %>
+		</p>
+	<% end -%>
+	
+	<p><%= link_to "Retour à la manifestation", manifestation_path(@manifestation) %></p>	
+</div>
+<div class="span-4 last">
+	<%= render :partial => "shared/right_col" %>
+</div>

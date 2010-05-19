@@ -3,6 +3,7 @@
 	<%= stylesheet_link_tag 'lightbox' %>
 <% end %>
 <div class="span-16">
+	<%= render :partial => "shared/flash_messages" %>
 	<h1><%=h @manifestation.nom %></h1>
 
 	<p>
@@ -25,8 +26,9 @@
 	  <%=h @manifestation.description %>
 	</p>
 
-
+<% if current_user %>
 	<%= link_to 'Modifier', edit_manifestation_path(@manifestation) %> |
+<% end %>
 	<%= link_to 'Retour', manifestations_path %>
 	
 	<h5>Gallerie de photos</h5>
@@ -43,7 +45,12 @@
 				<% end %>
 			</tr>
 		</table>
+	<% else %>
+		<p>
+			Pas de photos de cette manifestation
+		</p>
 	<% end %>
+	<%= link_to "Ajouter une photo", new_manifestation_photo_path(@manifestation) %>
 </div>
 <!-- Right Sidebar -->
 <div class="span-4 last">
