@@ -3,8 +3,16 @@ class ManifestationsController < ApplicationController
   # GET /manifestations
   # GET /manifestations.xml
   def index
-    @manifestations = Manifestation.paginate(:page => params[:page], :per_page => 10)
+    @manifestations = Manifestation.past.paginate(:page => params[:page], :per_page => 10)
 
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @manifestations }
+    end
+  end
+  
+  def actions
+    @manifestations = Manifestation.to_come.paginate(:page => params[:page], :per_page => 10)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @manifestations }
