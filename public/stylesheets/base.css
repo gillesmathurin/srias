@@ -52,7 +52,7 @@ div#colibri {
 	position: absolute;
 	z-index: -2;
 	background-color: transparent;
-	bottom: -4px;
+	bottom: -5px;
 	display: inline-block;
 	left: 0;
 }
@@ -167,4 +167,10 @@ span.nom-manif {
 	font-weight: bold;
 	font-variant: small-caps;
 	font-size: 1.5em;
+}
+
+p.mini-diapo img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
