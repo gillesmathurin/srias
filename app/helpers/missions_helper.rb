@@ -1,7 +1,7 @@
 module MissionsHelper
-  def lieu(evenement)
-    if evenement.lieu != ""
-      @content = "à" + "#{evenement.lieu}"
+  def lieu(action)
+    if action.lieu != ""
+      @content = "à" + "#{action.lieu}"
     else
       @content = ""
     end

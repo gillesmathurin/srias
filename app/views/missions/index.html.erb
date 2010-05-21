@@ -3,10 +3,10 @@
 	<%= render :partial => "shared/flash_messages" %>
 		
 	<div id="bandeau">
-	<% if !@evenements.blank? %>
+	<% if !@actions.blank? %>
 		<marquee behavior="slide" direction="left" height="30" loop="10" scrollamount="4" width="610">
-		  <% for evenement in @evenements %>
-		    <%= evenement.date_debut.strftime("%d/%m/%Y") %> : <%= evenement.nom %> <%= lieu(evenement) %>
+		  <% for action in @actions %>
+		    <%= action.date_debut.strftime("%d/%m/%Y") %> : <%= action.nom %> <%= lieu(action) %>
 		  <% end %>		
 		</marquee>
 	<% else %>

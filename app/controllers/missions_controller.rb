@@ -4,7 +4,7 @@ class MissionsController < ApplicationController
   # GET /missions.xml
   def index
     @missions = Mission.all
-
+    @actions  = Manifestation.to_come(:limit => 5)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @missions }
