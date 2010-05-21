@@ -4,14 +4,9 @@
 	<h1>Nos partenaires</h1>
 
 	<table>
-	  <tr>
-		<th>Logo</th>
-	    <th>Nom</th>
-	  </tr>
-
 	<% @partenaires.each do |partenaire| %>
 	  <tr>
-		<td><%= image_tag(partenaire.logo.url(:thumb)) %></td>
+		<td><%= image_tag(partenaire.logo.url(:thumb)) if image_present?(partenaire) %></td>
 	    <td><%=h partenaire.nom %></td>
 	    <td><%=h partenaire.description %></td>
 	    <td><%= link_to 'Voir', partenaire %></td>

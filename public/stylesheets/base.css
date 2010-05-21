@@ -41,10 +41,10 @@ div#header {
 
 div#header div#user_nav {
 	top: 70px;
-	width: 100px;
+	width: 200px;
 	display: block;
 	position: relative;
-	margin-left: 850px;
+	margin-left: 725px;
 	text-align: right;
 }
 
