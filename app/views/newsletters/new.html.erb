@@ -1,7 +1,7 @@
 <div class="span-16">
 	<h1>Rédaction Newsletter</h1>
 
-	<% form_for(@newsletter) do |f| %>
+	<% form_for(@newsletter, :html => {:multipart => true}) do |f| %>
 	  <%= f.error_messages %>
 
 		<%= render :partial => 'form', :locals => {:f => f} %>

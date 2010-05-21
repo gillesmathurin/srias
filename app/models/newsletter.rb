@@ -1,4 +1,5 @@
 class Newsletter < ActiveRecord::Base
+  has_attached_file :file
   
   # Deliver newsletter to subscriber
   def deliver
