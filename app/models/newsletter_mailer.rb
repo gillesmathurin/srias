@@ -1,4 +1,4 @@
-class NewsletterMailer < ActionMailer::Base  
+class NewsletterMailer < ActionMailer::Base
 
   def newsletter(abonne, newsletter)
     subject         "Newsletter du Srias de Guadeloupe #{newsletter.id}"
@@ -8,7 +8,9 @@ class NewsletterMailer < ActionMailer::Base
     body            :newsletter => newsletter
     content_type    "text/html"
     
-    # attachment :content_type => "application/pdf", :body => File.read("srias_mag.pdf")
+    attachment "application/pdf" do |a|
+      a.body = File.read("public/#{newsletter.file.url(nil, false)}")
+    end
   end
 
 end
