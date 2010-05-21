@@ -18,6 +18,11 @@ class ManifestationsController < ApplicationController
       format.xml  { render :xml => @manifestations }
     end
   end
+  
+  def pending
+    @manifestations = Manifestation.pending.paginate(:page => params[:page], :per_page => 10)
+    render :partial => "manifs_list",:layout => false
+  end
 
   # GET /manifestations/1
   # GET /manifestations/1.xml
@@ -78,6 +83,26 @@ class ManifestationsController < ApplicationController
         format.html { render :action => "edit" }
         format.xml  { render :xml => @manifestation.errors, :status => :unprocessable_entity }
       end
+    end
+  end
+  
+  def validate
+    @manifestation = Manifestation.find(params[:id])
+    @manifestation.update_attribute(:validate, true)
+    unauthorized! if cannot? :modify, @manifestation
+    
+    respond_to do |format|
+      format.html { redirect_to(pending_manifestations_url) }    
+    end
+  end
+  
+  def unvalidate
+    @manifestation = Manifestation.find(params[:id])
+    @manifestation.update_attribute(:validate, false)
+    unauthorized! if cannot? :modify, @manifestation
+    
+    respond_to do |format|
+      format.html { redirect_to(pending_manifestations_url) }    
     end
   end
 

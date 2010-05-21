@@ -8,6 +8,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
   config.gem 'authlogic'
+  config.gem 'cancan'
   config.gem 'will_paginate', :lib => 'will_paginate', :version => '>= 2.3.12'
   # config.gem 'webrat', :lib => false
   # config.gem 'cucumber', :lib => false

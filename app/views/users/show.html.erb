@@ -32,7 +32,10 @@
 	</p>
 
 
-	<%= link_to 'Modifier', edit_account_path %> | <%= link_to "Créer nouveau compte", new_user_path() %>
+	<%= link_to 'Modifier', edit_account_path %>
+	<% if can? :manage, @user %>
+	 | <%= link_to "Créer nouveau compte", new_user_path() %>
+	<% end %>
 </div>
 <!-- Right Sidebar -->
 <div class="span-4 last">

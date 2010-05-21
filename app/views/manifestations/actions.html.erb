@@ -1,20 +1,16 @@
 <div class="span-16">
 	<%= render :partial => "shared/flash_messages" %>
 	<h1>Actions à venir</h1>
-
-	<% @manifestations.each do |manifestation| %>
-		<p>
-			<span class="nom-manif"><%=h manifestation.nom %></span> à <%=h manifestation.lieu %> du <%=h format_datetime(manifestation.date_debut) %> au <%=h format_datetime(manifestation.date_fin) %><br/> <%=h manifestation.description %> | <%= link_to "Voir", manifestation_path(manifestation) %><br/>
-		<% if current_user %>	
-			<%= link_to 'Modifier', edit_manifestation_path(manifestation) %> |
-			<%= link_to 'Supprimer', manifestation, :confirm => 'En êtes vous sur ?', :method => :delete %>
-		<% end %>
-		</p>
-	<% end %>
+	<div id="manifs">
+		<%= render :partial => 'manifs_list', :collection => @manifestations %>
+	</div>
 
 	<br />
-	<% if current_user %>
+	<% if can? :create, Manifestation %>
 		<%= link_to 'Ajouter une action', new_manifestation_path() %>
+	<% end %>
+	<% if can? :modify, Manifestation %>
+		| <%= link_to_remote "Actions et Manifestations à Valider", :url => pending_manifestations_path(), :update => "manifs" %> : <%= Manifestation.pending.count %> 
 	<% end %>
 </div>
 <!-- Right Sidebar -->

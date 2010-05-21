@@ -11,7 +11,9 @@ class Manifestation < ActiveRecord::Base
   
   default_scope :order => "date_debut desc"
   
-  named_scope :to_come, :conditions => ['date_debut >= ?', Time.now]
-  named_scope :past, :conditions => ['date_debut <= ?', Time.now]  
+  named_scope :to_come, :conditions => ['date_debut >= ? AND validate = ?', Time.now, true]
+  named_scope :past, :conditions => ['date_debut <= ? AND validate = ?', Time.now, true]
+  named_scope :pending, :conditions => ['validate = ?', false]
+    
   
 end

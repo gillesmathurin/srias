@@ -1,0 +1,16 @@
+		<% @manifestations.each do |manifestation| %>
+			<p>
+				<span class="nom-manif"><%=h manifestation.nom %></span> à <%=h manifestation.lieu %> du <%=h format_datetime(manifestation.date_debut) %> au <%=h format_datetime(manifestation.date_fin) %><br/> <%=h manifestation.description %> | <%= link_to "Voir", manifestation_path(manifestation) %><br/>
+			<% if can? :update, manifestation %>	
+				<%= link_to 'Modifier', edit_manifestation_path(manifestation) %> |
+				<%= link_to 'Supprimer', manifestation, :confirm => 'En êtes vous sur ?', :method => :delete %>
+			<% end %>
+			<% if can? :modify, manifestation %>
+				<% if manifestation.validate? %>
+				| <%= link_to "Retirer", unvalidate_manifestation_path(manifestation), :method => :put %>
+				<% else %>
+				| <%= link_to "Publier", validate_manifestation_path(manifestation), :method => :put %>
+				<% end %>
+			<% end %>
+			</p>
+		<% end %>

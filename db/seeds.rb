@@ -1,6 +1,6 @@
 # Creation des 2 premiers administrateurs
 if User.count == 0
-  User.create(:login => "gillesmath", :email => "gillesmath@me.com", :password => "30carmen30", :password_confirmation => "30carmen30", :category => "admin")
+  User.create(:login => "gillesmath", :email => "gillesmath@me.com", :password => "30carmen30", :password_confirmation => "30carmen30", :role => "admin")
 # TODO : creer le second administrateur à la fin de conception du site
 end
 

@@ -1,3 +1,7 @@
+<% if current_user.role?(:admin) %>
+	<%= form.label :role %><br/>
+	<%= form.select :role, User::ROLES, {:prompt => "Role de l'utilisateur"} %><br/>
+<% end %>
 <%= form.label :login %><br />
 <%= form.text_field :login %><br />
 <br />
