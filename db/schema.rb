@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100519211030) do
+ActiveRecord::Schema.define(:version => 20100521012446) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
@@ -37,6 +37,11 @@ ActiveRecord::Schema.define(:version => 20100519211030) do
     t.string   "adresse"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
+    t.integer  "logo_file_size"
+    t.string   "logo_file_name"
+    t.string   "logo_file_content_type"
+    t.datetime "logo_updated_at"
   end
 
   create_table "manifestations", :force => true do |t|
@@ -78,6 +83,10 @@ ActiveRecord::Schema.define(:version => 20100519211030) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "photos", :force => true do |t|
