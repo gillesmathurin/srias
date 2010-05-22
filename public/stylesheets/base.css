@@ -107,10 +107,37 @@ div#newsletter-form {
 	height: 133px;
 }
 
+div.addon-menus ul li {
+	list-style-type: none;
+	border-bottom: 2px solid #39485e;
+	margin-bottom: 10px;
+	margin-left: -20px;
+	width: 100px;
+
+}
+
+div.addon-menus ul li:hover {
+	border-bottom: 4px solid #faf21d;	
+}
+
+div.addon-menus ul li>a {
+	font-weight: bold;
+	text-decoration: none;
+	color: #0a001e;
+	width: 120px;
+	display: block;
+}
+
+div.addon-menus ul li>a:hover {
+	color: #5c06b7;
+	font-size: 1.3em;	
+}
+
 h1 {
 	text-align: center;
 	color: #39485e;
 	text-shadow: #aeb0b0 -1px -1px 0;
+	margin-top: 15px;
 }
 
 h3 {
@@ -173,4 +200,12 @@ p.mini-diapo img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+p.nom-mission {
+	font-size: 1.4em;
+	font-weight: bold;
+	border-bottom: 3px solid #26394c;
+	width: 35%;
+	color: #0a001e;
 }

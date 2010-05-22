@@ -1,22 +1,8 @@
 <div class="span-16">
 	
 	<%= render :partial => "shared/flash_messages" %>
-		
-	<div id="bandeau">
-	<% if !@actions.blank? %>
-		<marquee behavior="slide" direction="left" height="30" loop="10" scrollamount="4" width="610">
-		  <% for action in @actions %>
-		    <%= action.date_debut.strftime("%d/%m/%Y") %> : <%= action.nom %> <%= lieu(action) %>
-		  <% end %>		
-		</marquee>
-	<% else %>
-		<marquee behavior="slide" direction="left" height="30" loop="10" scrollamount="4" width="610">
-		"Revenez régulièrement pour consulter les dernières informations."
-		</marquee>
-	<% end %>
-	</div>
-	
-	<h1>Bienvenue</h1>
+			
+	<h1>Nos Missions</h1>
 	
 	<p>
 		La S.R.I.A.S  assure et coordonne l’action sociale, culturelle et de loisirs dans la fonction publique de l’Etat.  La SRIAS est une instance transversale (inter administration) dont les actions concernent tous les agents de l’Etat en complément de ce que leur offre déjà leur propre administration.
@@ -27,7 +13,7 @@ Les missions de la SRIAS sont définies par l’instance nationale (CIAS) et mis
 	</p>
 	<ul>
 		<% @missions.each do |mission| %>
-			<li><%= mission.nom %> : <%=h mission.description %></li>
+			<li><%= mission.nom %> : <%= mission.description %> <%= link_to "Voir les actions", actions_mission_manifestations_path(mission) %></li>
 		<% end %>
 	</ul>
 	

@@ -10,7 +10,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :manifestations, :has_many => [:photos],
    :collection => {:actions => :get, :pending => :put}, :member => {:validate => :put, :unvalidate => :put}
 
-  map.resources :missions
+  map.resources :missions do |missions|
+    missions.resources :manifestations, :collection => {:actions => :get, :pending => :put}, :member => {:validate => :put, :unvalidate => :put}
+  end
 
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"

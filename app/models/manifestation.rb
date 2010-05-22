@@ -1,6 +1,6 @@
 class Manifestation < ActiveRecord::Base
   # validations
-  validates_presence_of :nom, :lieu, :date_debut, :on => :create, :message => "doit être renseigné."
+  validates_presence_of :nom, :lieu, :date_debut, :mission_id, :on => :create, :message => "doit être renseigné."
   
   # relations
   has_many :photos, :dependent => :destroy

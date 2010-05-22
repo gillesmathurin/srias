@@ -1,5 +1,6 @@
 class ManifestationsController < ApplicationController
   before_filter :require_user, :only => [:new, :edit, :create, :update, :destroy]
+  before_filter :find_mission
   # GET /manifestations
   # GET /manifestations.xml
   def index
@@ -12,7 +13,13 @@ class ManifestationsController < ApplicationController
   end
   
   def actions
-    @manifestations = Manifestation.to_come.paginate(:page => params[:page], :per_page => 10)
+    if @mission
+      @manifestations = @mission.manifestations.to_come.paginate(:page => params[:page], :per_page => 10)
+    else
+      @manifestations = Manifestation.to_come.paginate(:page => params[:page],
+       :per_page => 10)
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @manifestations }
@@ -92,7 +99,7 @@ class ManifestationsController < ApplicationController
     unauthorized! if cannot? :modify, @manifestation
     
     respond_to do |format|
-      format.html { redirect_to(pending_manifestations_url) }    
+      format.html { redirect_to(actions_manifestations_url) }    
     end
   end
   
@@ -102,7 +109,7 @@ class ManifestationsController < ApplicationController
     unauthorized! if cannot? :modify, @manifestation
     
     respond_to do |format|
-      format.html { redirect_to(pending_manifestations_url) }    
+      format.html { redirect_to(actions_manifestations_url) }    
     end
   end
 
@@ -116,5 +123,11 @@ class ManifestationsController < ApplicationController
       format.html { redirect_to(manifestations_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  private
+  
+  def find_mission
+    @mission = Mission.find(params[:mission_id]) if params[:mission_id]
   end
 end

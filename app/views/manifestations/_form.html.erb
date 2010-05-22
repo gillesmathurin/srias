@@ -1,4 +1,8 @@
   <p>
+  	<%= f.label :mission_id, "Indiquez dans quelle mission s'inscrit cette action/manifestation" %><br/>
+	<%= f.select :mission_id, Mission.all.collect{|m| [m.nom, m.id]}, {:include_blank => true} %>
+  </p>
+  <p>
     <%= f.label :nom %><br />
     <%= f.text_field :nom %>
   </p>

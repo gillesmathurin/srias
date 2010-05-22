@@ -1,5 +1,20 @@
 <div class="span-16">
 	<%= render :partial => "shared/flash_messages" %>
+	
+	<div id="bandeau">
+	<% if !@actions.blank? %>
+		<marquee behavior="slide" direction="left" height="30" loop="10" scrollamount="4" width="610">
+		  <% for action in @actions %>
+		    <%= action.date_debut.strftime("%d/%m/%Y") %> : <%= action.nom %> <%= lieu(action) %>
+		  <% end %>		
+		</marquee>
+	<% else %>
+		<marquee behavior="slide" direction="left" height="30" loop="10" scrollamount="4" width="610">
+		"Revenez régulièrement pour consulter les dernières informations."
+		</marquee>
+	<% end %>
+	</div>
+	
 	<h1>Archipel Guadeloupe</h1>
 	<p>
 		La Guadeloupe (l’archipel Guadeloupe) se trouve dans la Caraïbe, à l’est de l’Amérique centrale par 16° de latitude nord et 60° de longitude ouest. Elle se situe à 7000 km de la Métropole, et appartient à l’Arc antillais.
