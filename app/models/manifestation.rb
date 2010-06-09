@@ -6,6 +6,7 @@ class Manifestation < ActiveRecord::Base
   has_many :photos, :dependent => :destroy
   belongs_to :mission
   has_attached_file :illustration, :style => { :thumb => "150x150>" }
+  has_attached_file :fiche, :content_type => "application/pdf", :message => " type de fichier incorrect"
   
   accepts_nested_attributes_for :photos, :allow_destroy => true
   
