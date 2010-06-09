@@ -25,6 +25,10 @@
 	  <b>Description:</b>
 	  <%=simple_format @manifestation.description %>
 	</p>
+	
+	<% if fiche_presente?(@manifestation) && @manifestation.date_debut >= Time.now %>
+		<p><%= link_to "Téléchargez fiche jointe (clic droit souris)", @manifestation.fiche.url(nil, false) %></p>
+	<% end %>
 
 <% if current_user %>
 	<%= link_to 'Modifier', edit_manifestation_path(@manifestation) %> |
