@@ -1,0 +1,25 @@
+<div class="span-16">
+	<h1>Enregistrer un texte d'accueil</h1>
+
+	<% form_for(@texte_accueil) do |f| %>
+	  <%= f.error_messages %>
+
+	  <p>
+	  	<%= f.label :titre, "Titre" %> : <%= f.text_field :titre %>
+	  </p>
+
+	  <p>
+	    <%= f.label :content %><br />
+	    <%= f.text_area :content %>
+	  </p>
+	  <p>
+	    <%= f.submit 'Enregistrer' %>
+	  </p>
+	<% end %>
+
+	<%= link_to 'Retour', root_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	<%= render :partial => "shared/right_col" %>
+</div>

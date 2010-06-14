@@ -1,6 +1,6 @@
 class Newsletter < ActiveRecord::Base
   has_attached_file :file
-  validates_attachment_content_type :file, :content_type => "application/pdf", :message => " type de fichier incorrect"
+  validates_attachment_content_type :file#, :content_type => "application/pdf", :message => " type de fichier incorrect"
   
   
   # Deliver newsletter to subscriber

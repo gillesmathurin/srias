@@ -12,18 +12,15 @@
   </p>
   <p>
     <%= f.label :date_debut %><br />
-    <%= f.datetime_select :date_debut, :order => [:day, :month, :year], :minute_step => 15  %>
+    <%= f.datetime_select :date_debut, :order => [:day, :month, :year], :discard_hour => true, :discard_minute => true %>
   </p>
   <p>
     <%= f.label :date_fin %><br />
-    <%= f.datetime_select :date_fin, :order => [:day, :month, :year], :minute_step => 15  %>
+    <%= f.datetime_select :date_fin, :order => [:day, :month, :year], :discard_hour => true, :discard_minute => true  %>
   </p>
   <p>
     <%= f.label :description %><br />
     <%= f.text_area :description %>
-  </p>
-  <p>
-  	<%= f.label :fiche, "Fiche Inscription ou autre fichier :" %> <%= f.file_field :fiche %>
   </p>
 
 	<% f.fields_for :photos do |photo_form| %>

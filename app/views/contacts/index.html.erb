@@ -1,0 +1,29 @@
+<div class="span-16">
+	<h1>Contacts</h1>
+	
+	<p>
+		
+	</p>
+	
+	<% @contacts.each do |contact| %>
+		<p>
+			<b><%= contact.role %> : <%= contact.nom %></b> - Tel : <b><%= contact.tel %></b>
+			<% unless contact.fax == "" || contact.fax.nil? %>
+				- Fax : <b><%= contact.fax %></b>
+			<% end %>
+		</p>
+		<% if can? :manage, Contact %>
+		<p>
+			<%= link_to "modifier", edit_contact_path(contact) %> | <%= link_to "supprimer", contact_path(contact), :method => :delete %>
+		</p>
+		<% end %>
+	<% end %>
+
+	<% if can? :manage, Contact %>
+		<p><%= link_to "Ajouter un contact", new_contact_path() %></p>
+	<% end %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	<%= render :partial => "shared/right_col" %>
+</div>

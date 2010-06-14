@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :contacts
+
+  map.resources :texte_accueils
+
   map.resources :newsletters, :member => {:deliver => :get}
 
   map.resources :abonnes, :collection => {:delete_all => :get}
@@ -7,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :liens
 
-  map.resources :manifestations, :has_many => [:photos],
+  map.resources :manifestations, :has_many => [:photos, :fichiers],
    :collection => {:actions => :get, :pending => :put}, :member => {:validate => :put, :unvalidate => :put}
 
   map.resources :missions do |missions|
@@ -16,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
-  map.contact "contacts", :controller => "missions", :action => "contact"
+  # map.contact "contacts", :controller => "missions", :action => "contact"
   map.resource :user_session
   map.resource :account, :controller => "users"
   map.resources :users

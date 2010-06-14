@@ -5,7 +5,7 @@
 	<% if !@actions.blank? %>
 		<marquee behavior="slide" direction="left" height="30" loop="10" scrollamount="4" width="610">
 		  <% for action in @actions %>
-		    <%= action.date_debut.strftime("%d/%m/%Y") %> : <%= action.nom %> <%= lieu(action) %>
+		    <%= action.date_debut.strftime("%d/%m/%Y") %> : <%= action.nom %> <%= lieu(action) %> || 
 		  <% end %>		
 		</marquee>
 	<% else %>
@@ -15,20 +15,15 @@
 	<% end %>
 	</div>
 	
-	<h1>Archipel Guadeloupe</h1>
-	<p>
-		La Guadeloupe (l’archipel Guadeloupe) se trouve dans la Caraïbe, à l’est de l’Amérique centrale par 16° de latitude nord et 60° de longitude ouest. Elle se situe à 7000 km de la Métropole, et appartient à l’Arc antillais.
-	</p>
-	<p>
-Cet archipel a une population totale de 440 000 habitants (INSEE janv.2003) et regroupe sept îles habitées pour une superficie de 1780 km² :
-	</p>
-	<ul>
-		<li>deux îles principales (Grande-Terre et la Basse-Terre) formant la Guadeloupe proprement dite. Elles sont reliées par deux ponts, le pont de la Gabarre et le pont de l’Alliance qui permettent la traversée d’un étroit bras de mer appelé la Rivière Salée</li>
-		<li>cinq autres îles appelées dépendances (les Saintes, la Désirade, Marie-Galante, Saint Martin et Saint Barthélemy)</li>
-	</ul>		 	
-	<p>
-		La Guadeloupe est découpée administrativement en trois arrondissements (Basse-Terre, Pointe-à-Pitre et Saint Martin), 43 cantons et 34 communes.
-	</p>
+	<h1><%= @texte.titre if @texte %></h1>
+	
+	<p><%= simple_format(@texte.content) if @texte %></p>
+	
+	<% if can? :manage, TexteAccueil %>
+		<%= link_to "modifier le texte d'accueil", edit_texte_accueil_path(@texte) if @texte%> |
+		<%= link_to "ajouter un texte d'acceuil", new_texte_accueil_path() if @texte.nil? %>
+	<% end %>
+		
 	<p>&nbsp;</p>
 	<p class="mini-diapo">
 		<img src="/images/mini-diapo.png">

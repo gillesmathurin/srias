@@ -1,0 +1,2 @@
+module TexteAccueilsHelper
+end

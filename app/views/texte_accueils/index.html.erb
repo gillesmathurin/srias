@@ -1,0 +1,22 @@
+<div class="span-16">
+	<h1>Listing texte_accueils</h1>
+
+	<table>
+	  <tr>
+	    <th>Content</th>
+	  </tr>
+
+	<% @texte_accueils.each do |texte_accueil| %>
+	  <tr>
+	    <td><%=h texte_accueil.content %></td>
+	    <td><%= link_to 'Show', texte_accueil %></td>
+	    <td><%= link_to 'Edit', edit_texte_accueil_path(texte_accueil) %></td>
+	    <td><%= link_to 'Destroy', texte_accueil, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+
+	<br />
+
+	<%= link_to 'New texte_accueil', new_texte_accueil_path %>
+</div>
