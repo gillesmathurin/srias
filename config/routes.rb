@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :contacts
+
   map.resources :texte_accueils
 
   map.resources :newsletters, :member => {:deliver => :get}
@@ -18,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
-  map.contact "contacts", :controller => "missions", :action => "contact"
+  # map.contact "contacts", :controller => "missions", :action => "contact"
   map.resource :user_session
   map.resource :account, :controller => "users"
   map.resources :users

@@ -47,7 +47,7 @@ class TexteAccueilsController < ApplicationController
     respond_to do |format|
       if @texte_accueil.save
         flash[:notice] = 'TexteAccueil was successfully created.'
-        format.html { redirect_to(@texte_accueil) }
+        format.html { redirect_to(root_path) }
         format.xml  { render :xml => @texte_accueil, :status => :created, :location => @texte_accueil }
       else
         format.html { render :action => "new" }
@@ -64,7 +64,7 @@ class TexteAccueilsController < ApplicationController
     respond_to do |format|
       if @texte_accueil.update_attributes(params[:texte_accueil])
         flash[:notice] = 'TexteAccueil was successfully updated.'
-        format.html { redirect_to(@texte_accueil) }
+        format.html { redirect_to(root_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

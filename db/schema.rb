@@ -9,12 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100614164228) do
+ActiveRecord::Schema.define(:version => 20100614173829) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "contacts", :force => true do |t|
+    t.string   "nom"
+    t.string   "tel"
+    t.string   "mail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "role"
+    t.string   "fax"
   end
 
   create_table "delayed_jobs", :force => true do |t|
