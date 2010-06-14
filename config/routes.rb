@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :texte_accueils
+
   map.resources :newsletters, :member => {:deliver => :get}
 
   map.resources :abonnes, :collection => {:delete_all => :get}

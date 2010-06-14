@@ -57,12 +57,14 @@
 		<p>Pas de photos de cette manifestation</p>
 	<% end %>
 	
+	<% if can? :modify, @manifestation %>
 	<p><%= link_to "Ajouter une photo", new_manifestation_photo_path(@manifestation) %></p>	
 	
 	<p>
 		<%= link_to "Ajoutez un fichier joint", new_manifestation_fichier_path(@manifestation) %> |
 		<%= link_to "Modifiez un fichier joint", manifestation_fichiers_path(@manifestation) %>
 	</p>
+ 	<% end %>
 </div>
 <!-- Right Sidebar -->
 <div class="span-4 last">
