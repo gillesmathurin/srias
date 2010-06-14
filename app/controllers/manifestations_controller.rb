@@ -16,8 +16,7 @@ class ManifestationsController < ApplicationController
     if @mission
       @manifestations = @mission.manifestations.to_come.paginate(:page => params[:page], :per_page => 10)
     else
-      @manifestations = Manifestation.to_come.paginate(:page => params[:page],
-       :per_page => 10)
+      @manifestations = Manifestation.to_come.paginate(:page => params[:page], :per_page => 10)
     end
     
     respond_to do |format|

@@ -4,30 +4,34 @@
 <% end %>
 <div class="span-16">
 	<%= render :partial => "shared/flash_messages" %>
+	
 	<h1><%=h @manifestation.nom %></h1>
 
-	<p>
-	  <b>Lieu:</b>
-	  <%=h @manifestation.lieu %>
+	<p align="center">
+		<% if can? :modify, @manifestation %>
+			<% if @manifestation.validate? %>
+			<%= link_to "Retirer de la publication", unvalidate_manifestation_path(@manifestation), :method => :put %>
+			<% else %>
+			| <%= link_to "Publier", validate_manifestation_path(@manifestation), :method => :put %>
+			<% end %>
+		<% end %>
 	</p>
-
+	
 	<p>
-	  <b>Date debut:</b>
-	  <%=h format_datetime(@manifestation.date_debut) %>
+		<% unless @manifestation.lieu.blank? || @manifestation.lieu.nil? %>
+		  <b>Lieu:</b> <%=h @manifestation.lieu %> 
+		<% end %>
+		<b>Du:</b> <%=h format_datetime(@manifestation.date_debut) %>
+		 <b>Au</b> : <%=h format_datetime(@manifestation.date_fin) %>
 	</p>
-
-	<p>
-	  <b>Date fin:</b>
-	  <%=h format_datetime(@manifestation.date_fin) %>
-	</p>
-
+	
 	<p>
 	  <b>Description:</b>
 	  <%=simple_format @manifestation.description %>
 	</p>
 	
-	<% if fiche_presente?(@manifestation) && @manifestation.date_debut >= Time.now %>
-		<p><%= link_to "Téléchargez fiche jointe (clic droit souris)", @manifestation.fiche.url(nil, false) %></p>
+	<% @manifestation.fichiers.each do |fichier| %>
+		<p><%= display_link_or_image(fichier) %></p>
 	<% end %>
 
 <% if current_user %>
@@ -35,7 +39,7 @@
 <% end %>
 	<%= link_to 'Retour', manifestations_path %>
 	
-	<h5>Gallerie de photos</h5>
+	<h5>Galerie de photos</h5>
 	<% unless @manifestation.photos.empty? %>
 		<table>
 			<tr>
@@ -50,11 +54,15 @@
 			</tr>
 		</table>
 	<% else %>
-		<p>
-			Pas de photos de cette manifestation
-		</p>
+		<p>Pas de photos de cette manifestation</p>
 	<% end %>
-	<%= link_to "Ajouter une photo", new_manifestation_photo_path(@manifestation) %>
+	
+	<p><%= link_to "Ajouter une photo", new_manifestation_photo_path(@manifestation) %></p>	
+	
+	<p>
+		<%= link_to "Ajoutez un fichier joint", new_manifestation_fichier_path(@manifestation) %> |
+		<%= link_to "Modifiez un fichier joint", manifestation_fichiers_path(@manifestation) %>
+	</p>
 </div>
 <!-- Right Sidebar -->
 <div class="span-4 last">

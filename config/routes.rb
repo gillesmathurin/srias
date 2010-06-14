@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :liens
 
-  map.resources :manifestations, :has_many => [:photos],
+  map.resources :manifestations, :has_many => [:photos, :fichiers],
    :collection => {:actions => :get, :pending => :put}, :member => {:validate => :put, :unvalidate => :put}
 
   map.resources :missions do |missions|
