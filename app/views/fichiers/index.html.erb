@@ -1,0 +1,17 @@
+<div class="span-16">
+	<h1>Fichiers de l'action : <%= @manifestation.nom %></h1>
+	
+	<% @fichiers.each do |fichier| %>
+		<p>&nbsp;</p>
+		<p>
+			<%= fichier.fichier.original_filename %> |
+			 <%= link_to "modifier", edit_manifestation_fichier_path(@manifestation, fichier) %>
+			| <%= link_to "supprimer", manifestation_fichier_path(@manifestation, fichier), :method => :delete, :confirm => "En êtes vous sur ?" %>
+		</p>
+	<% end %>
+	
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	<%= render :partial => "shared/right_col" %>
+</div>

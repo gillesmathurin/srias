@@ -5,7 +5,7 @@
 	<% if !@actions.blank? %>
 		<marquee behavior="slide" direction="left" height="30" loop="10" scrollamount="4" width="610">
 		  <% for action in @actions %>
-		    <%= action.date_debut.strftime("%d/%m/%Y") %> : <%= action.nom %> <%= lieu(action) %>
+		    <%= action.date_debut.strftime("%d/%m/%Y") %> : <%= action.nom %> <%= lieu(action) %> || 
 		  <% end %>		
 		</marquee>
 	<% else %>
@@ -15,7 +15,16 @@
 	<% end %>
 	</div>
 	
-	<h1>Archipel Guadeloupe</h1>
+	<h1><%= @texte.titre if @texte %></h1>
+	
+	<p><%= simple_format(@texte.content) if @texte %></p>
+	
+	<% if can? :manage, TexteAccueil %>
+		<%= link_to "modifier le texte d'accueil", edit_texte_accueil_path(@texte) if @texte%> |
+		<%= link_to "ajouter un texte d'acceuil", new_texte_accueil_path() if @texte.nil? %>
+	<% end %>
+		
+	<!-- <h1>Archipel Guadeloupe</h1>
 	<p>
 		La Guadeloupe (l’archipel Guadeloupe) se trouve dans la Caraïbe, à l’est de l’Amérique centrale par 16° de latitude nord et 60° de longitude ouest. Elle se situe à 7000 km de la Métropole, et appartient à l’Arc antillais.
 	</p>

@@ -1,0 +1,14 @@
+<div class='span-16'>
+	<p>
+	  <b>Content:</b>
+	  <%=h @texte_accueil.content %>
+	</p>
+
+
+	<%= link_to 'Edit', edit_texte_accueil_path(@texte_accueil) %> |
+	<%= link_to 'Back', texte_accueils_path %>
+</div>
+<!-- Right Sidebar -->
+<div class="span-4 last">
+	<%= render :partial => "shared/right_col" %>
+</div>

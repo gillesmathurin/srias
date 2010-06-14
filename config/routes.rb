@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :texte_accueils
+
   map.resources :newsletters, :member => {:deliver => :get}
 
   map.resources :abonnes, :collection => {:delete_all => :get}
@@ -7,7 +9,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :liens
 
-  map.resources :manifestations, :has_many => [:photos],
+  map.resources :manifestations, :has_many => [:photos, :fichiers],
    :collection => {:actions => :get, :pending => :put}, :member => {:validate => :put, :unvalidate => :put}
 
   map.resources :missions do |missions|
