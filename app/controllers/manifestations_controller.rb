@@ -65,7 +65,7 @@ class ManifestationsController < ApplicationController
 
     respond_to do |format|
       if @manifestation.save
-        flash[:notice] = 'Manifestation was successfully created.'
+        flash[:notice] = 'Manifestation enregistrée avec succès.'
         format.html { redirect_to(@manifestation) }
         format.xml  { render :xml => @manifestation, :status => :created, :location => @manifestation }
       else
@@ -82,7 +82,7 @@ class ManifestationsController < ApplicationController
 
     respond_to do |format|
       if @manifestation.update_attributes(params[:manifestation])
-        flash[:notice] = 'Manifestation was successfully updated.'
+        flash[:notice] = 'Manifestation modifiée avec succès.'
         format.html { redirect_to(@manifestation) }
         format.xml  { head :ok }
       else
