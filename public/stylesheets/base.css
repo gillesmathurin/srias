@@ -54,7 +54,7 @@ div#colibri {
 	background-color: transparent;
 	bottom: -5px;
 	display: inline-block;
-	left: 0;
+	left: 475px;
 }
 
 ul.menubar {
@@ -92,11 +92,11 @@ ul.menubar li>a:hover {
 
 div.pubs {
 	height: 424px;
-	width: 150px;
-	background: url(../images/bckg-rightcol_05.jpg) no-repeat 0 top;
+	background: transparent url(../images/bckg-rightcol_05.png) no-repeat 0 top;
 	text-align: center;
 	padding-top: 20px;
 	margin-top: 20px;
+	width: 150px;
 }
 
 div#newsletter-form {
