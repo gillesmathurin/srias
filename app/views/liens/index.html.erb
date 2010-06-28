@@ -10,7 +10,7 @@
 	<% @liens.each do |lien| %>
 	  <tr>
 	    <td><%=h lien.nom %></td>
-	    <td><%=h lien.adresse %></td>
+	    <td><%= link_to lien.adresse, lien.adresse %></td>
 	    <td><%= link_to 'Voir', lien %></td>
 		<% if current_user %>
 	    <td><%= link_to 'Modifier', edit_lien_path(lien) %></td>
