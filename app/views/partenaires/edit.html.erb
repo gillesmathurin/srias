@@ -1,7 +1,7 @@
 <div class="span-16">
 	<h1>Modifier Info Partenaire</h1>
 
-	<% form_for(@partenaire) do |f| %>
+	<% form_for(@partenaire, :html => {:multipart => true}) do |f| %>
 	  <%= f.error_messages %>
 
 		<%= render :partial => 'form', :locals => {:f => f} %>
