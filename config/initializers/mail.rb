@@ -1,3 +1,14 @@
+### Local Configuration
+# ActionMailer::Base.delivery_method = :sendmail
+# ActionMailer::Base.sendmail_settings = {
+#   :location => '/usr/sbin/sendmail',
+#   :arguments => '-i -t'
+# }
+# ActionMailer::Base.perform_deliveries = true
+# ActionMailer::Base.raise_delivery_errors = true
+# ActionMailer::Base.default_charset = "utf8"
+
+### Online configuration
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = { 
   :address => "smtp.gmail.com", 
@@ -6,8 +17,8 @@ ActionMailer::Base.smtp_settings = {
   :authentication => :plain,
   :enable_starttls_auto => true, 
   :user_name => "gillesmath@gmwebagency.com", 
-  :password => "mettre le bon mot de passe"
+  :password => "good password to remove before committing"
 }
 ActionMailer::Base.perform_deliveries = true
 ActionMailer::Base.raise_delivery_errors = true
-ActionMailer::Base.default_charset = "iso-8859-1"
+ActionMailer::Base.default_charset = "utf8"
