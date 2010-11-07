@@ -2,6 +2,7 @@
 log/development.log
 log/test.log
 log/*
+log/*.log
 config/deploy.rb
 tmp/*
 db/*.sqlite3
