@@ -1,4 +1,6 @@
 class NewslettersController < ApplicationController
+  layout 'without_foufou'
+  
   before_filter :require_user
   # GET /newsletter/1/deliver
   def deliver

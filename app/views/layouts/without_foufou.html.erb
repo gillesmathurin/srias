@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title><%= h(yield(:title) || "SRIAS GUADELOUPE") %></title>
+	<%= stylesheet_link_tag 'blueprint/screen.css', 'blueprint/plugins/fancy-type/screen.css', 'base.css', :media => "screen", :cache => true %>	
+	<%= stylesheet_link_tag 'blueprint/print.css', :media => "print", :cache => true %>
+
+	<!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+
+	<%# stylesheet_link_tag 'base' %>
+	<%= javascript_include_tag 'prototype', 'effects' %>
+	<%= yield(:head) %>
+</head>
+
+<body>
+	<div class="container">
+		<div id="header" class="span-24">
+			<div id="user_nav">
+				<% if current_user %>
+					<%= current_user.login %> : <%= link_to "Logout", logout_path() %> 
+				<% else %>
+					<%= link_to "Login", login_path() %>
+				<% end %>
+			</div>
+		</div>
+		<!-- Left Sidebar -->
+		<div class="span-4">
+			<ul class="menubar">
+				<li><%= link_to "Accueil", root_path() %></li>
+				<li><%= link_to "Missions", missions_path() %></li>
+				<li><%= link_to "Actions", actions_manifestations_path() %></li>
+				<li><%= link_to "Manifestations", manifestations_path() %></li>
+				<li><%= link_to "Partenaires", partenaires_path() %></li>
+				<li><%= link_to "Liens", liens_path() %></li>
+				<li><%= link_to "Contacts", contacts_path() %></li>
+			</ul>
+			
+			<% if can? :manage, :all %>
+			<div class="addon-menus">
+				<ul>
+					<li><%= link_to "Newsletter", newsletters_path() %></li>
+					<li><%= link_to "Abonnés", abonnes_path() %></li>
+				</ul>
+			</div>
+			<% end %>
+			
+			<div id="newsletter-form">
+				<h4>Newsletter</h4>
+				<% remote_form_for @abonne, :url => abonnes_path, :success => "$('result').show()" do |f| %>
+					<%= f.error_messages %>
+					<p>
+						<%= f.label :email, "Email" %><br/>
+						<%= f.text_field :email, :size => 15 %>
+					</p>
+					<p><%= submit_tag "S'abonner" %></p>
+				<% end %>
+				<div id="result" style="display: none;" >
+					Vous êtes abonné(e)s !
+				</div>
+			</div>
+		</div>
+		<%= yield %>
+		<div class="footer span-24">
+			<!-- <div id="colibri">
+				<img src="/images/colibri_02.jpg">		
+			</div> -->
+		</div>
+		<div class="texte-footer">
+			<p>Contacts : Mr Guillou Georges (Président)<br/>0690 39 12 58</p>
+			<p><pre>Conception : <%= link_to "GMWebAgency", "http://www/gmwebagency.com"%> G.MATHURIN</pre></p>
+		</div>
+	</div>
+
+</body>
+</html>
