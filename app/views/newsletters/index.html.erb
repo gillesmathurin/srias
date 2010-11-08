@@ -13,7 +13,7 @@
 	<% @newsletters.each do |newsletter| %>
 	  <tr>
 	    <td><%=h newsletter.titre %></td>
-	    <td><%=h newsletter.sommaire %></td>
+	    <!-- <td><%#h newsletter.sommaire %></td> -->
 		<td><%= h newsletter.delivered_at %></td>
 	    <td><%= link_to 'Voir', newsletter %></td>
 		<td><%= link_to "Envoyer", deliver_newsletter_path(newsletter) %></td>
