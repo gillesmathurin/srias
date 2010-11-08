@@ -1,6 +1,7 @@
 .DS_Store
 log/development.log
 log/test.log
+log/delayed_job.log
 log/*
 log/*.log
 config/deploy.rb
