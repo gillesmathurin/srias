@@ -1,21 +1,23 @@
 # Be sure to restart your server when you modify this file
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
+  # config.gem 'rspec', :lib => false, :version => '1.3.1'
+  config.gem 'rspec-rails', :lib => false, :version => '1.3.3'
+  # config.gem 'rack', :version => '1.0.1'
   config.gem 'authlogic'
   config.gem 'cancan'
   config.gem 'will_paginate', :lib => 'will_paginate', :version => '>= 2.3.12'
-  # config.gem 'webrat', :lib => false
+  config.gem 'webrat', :lib => false, :version => '0.7.1'
+  config.gem 'cucumber-rails', :lib => false, :version => '0.3.2'
   # config.gem 'cucumber', :lib => false
-  # config.gem 'rspec-rails', :lib => false
-  # config.gem 'rspec', :lib => false
   config.gem 'paperclip'
-  config.gem 'delayed_job'#, :version => '2.0.3'
+  config.gem 'delayed_job', :version => '2.0.3'
   # config.gem 'delayed_paperclip'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
