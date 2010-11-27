@@ -195,6 +195,14 @@ p#counter {
 	width: 80%;
 }
 
+p.group-by-year {
+	font-weight: bold;
+	color: #5c06b7;
+	font-size: 1.6em;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+}
+
 a {
 	font-weight: bold;
 	text-decoration: underline;
@@ -221,9 +229,9 @@ p.mini-diapo img {
 }
 
 p.nom-mission {
-	font-size: 1.4em;
 	font-weight: bold;
 	border-bottom: 3px solid #26394c;
 	width: 35%;
 	color: #0a001e;
+	font-size: 1.3em;
 }
