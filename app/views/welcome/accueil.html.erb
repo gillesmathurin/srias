@@ -20,7 +20,7 @@
 	<p><%= simple_format(@texte.content) if @texte %></p>
 	
 	<% if can? :manage, TexteAccueil %>
-		<%= link_to "modifier le texte d'accueil", edit_texte_accueil_path(@texte) if @texte%> |
+		<%= link_to "modifier le texte d'accueil", edit_texte_accueil_path(@texte) if @texte %> |
 		<%= link_to "ajouter un texte d'acceuil", new_texte_accueil_path() if @texte.nil? %>
 	<% end %>
 		
@@ -28,7 +28,12 @@
 	<p class="mini-diapo">
 		<img src="/images/mini-diapo.png">
 	</p>
+	
 </div>
 <div class="span-4 last">
 	<%= render :partial => "shared/right_col" %>
+	<p id="counter">
+		 Nombre de visiteurs <br/>
+		<%= @visitors_count %>
+	</p>
 </div>

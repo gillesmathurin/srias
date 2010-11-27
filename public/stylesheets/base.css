@@ -181,6 +181,20 @@ div.pubs p.contacts {
 p {
 }
 
+p#counter {
+	font-weight: bold;
+	text-align: center;
+	color: yellow;
+	margin-top: 25px;
+	font-size: 1em;
+	background-color: #145e25;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #f4f548;
+	padding: 5px;
+	width: 80%;
+}
+
 a {
 	font-weight: bold;
 	text-decoration: underline;
