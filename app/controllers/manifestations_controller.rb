@@ -14,9 +14,9 @@ class ManifestationsController < ApplicationController
   
   def actions
     if @mission
-      @manifestations = @mission.manifestations.to_come.paginate(:page => params[:page], :per_page => 10)
+      @manifestations = @mission.manifestations.to_come.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}.paginate(:page => params[:page], :per_page => 10)
     else
-      @manifestations = Manifestation.to_come.paginate(:page => params[:page], :per_page => 10)
+      @manifestations = Manifestation.to_come.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}.paginate(:page => params[:page], :per_page => 10)
     end
     
     respond_to do |format|
