@@ -26,6 +26,7 @@
 	<% f.fields_for :photos do |photo_form| %>
 		<p><%= photo_form.label "Photo" %> : <%= photo_form.file_field :photo %></p>
 		<% unless photo_form.object.new_record? %>
+		  <%= image_tag(photo_form.object.photo.url(:thumb)) %>
 			<%= photo_form.check_box '_destroy' %>
 			<%= photo_form.label '_destroy', 'Supprimer' %>
 		<% end %>
