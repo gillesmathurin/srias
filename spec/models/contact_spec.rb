@@ -15,8 +15,8 @@ describe Contact do
   
   describe ".to_display" do
     before(:each) do
-      @contact = Contact.create!(:nom => "nom", :tel => "0590000000", :email => "mail@example.com", :selected => true)
-      @contact2 = Contact.create!(:nom => "nom2", :tel => "0690000000", :email => "mail2@example.com", :selected => false)
+      @contact = Contact.create!(:nom => "nom", :tel => "0590000000", :mail => "mail@example.com", :selected => true)
+      @contact2 = Contact.create!(:nom => "nom2", :tel => "0690000000", :mail => "mail2@example.com", :selected => false)
     end
     
     it "fetches all the selected contacts" do
@@ -25,4 +25,5 @@ describe Contact do
       results.should include(@contact)
     end
   end
+  
 end
