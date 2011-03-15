@@ -7,6 +7,7 @@ class CreateAnnonces < ActiveRecord::Migration
       t.string :image_file_name
       t.string :image_content_type
       t.datetime :image_updated_at
+      t.integer :image_file_size
 
       t.timestamps
     end

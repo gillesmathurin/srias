@@ -40,6 +40,7 @@
 		</div>
 		<!-- Left Sidebar -->
 		<div class="span-4">
+		  	
 			<ul class="menubar">
 				<li><%= link_to "Accueil", root_path() %></li>
 				<li><%= link_to "Missions", missions_path() %></li>
@@ -53,6 +54,7 @@
 			<% if can? :manage, :all %>
 			<div class="addon-menus">
 				<ul>
+				  <li><%= link_to "Annonces", annonces_path() %></li>
 					<li><%= link_to "Newsletter", newsletters_path() %></li>
 					<li><%= link_to "Abonnés", abonnes_path() %></li>
 				</ul>
@@ -74,7 +76,9 @@
 				</div>
 			</div>
 		</div>
+		
 		<%= yield %>
+		
 		<div class="footer span-24">
 			<div id="colibri">
 				<img src="/images/colibri_02.jpg">		
@@ -85,6 +89,10 @@
 			<p><pre>Conception : <%= link_to "G.MATHURIN", "http://www/gmwebagency.com"%></pre></p>
 		</div>
 	</div>
-
+  
+  <script type="text/javascript" charset="utf-8">
+    Effect.BlindDown('annonces', {direction:1.0});
+    // return false;
+  </script>
 </body>
 </html>

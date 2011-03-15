@@ -1,30 +1,28 @@
-<h1>Listing annonces</h1>
+<div class="span-16">
+  <h1>Listing des annonces</h1>
 
-<table>
-  <tr>
-    <th>Message</th>
-    <th>Starts at</th>
-    <th>Ends at</th>
-    <th>Image file name</th>
-    <th>Image content type</th>
-    <th>Image updated at</th>
-  </tr>
+  <table>
+    <tr>
+      <th>Message</th>
+      <th>Du</th>
+      <th>Au</th>
+      <th>Image</th>
+    </tr>
 
-<% @annonces.each do |annonce| %>
-  <tr>
-    <td><%=h annonce.message %></td>
-    <td><%=h annonce.starts_at %></td>
-    <td><%=h annonce.ends_at %></td>
-    <td><%=h annonce.image_file_name %></td>
-    <td><%=h annonce.image_content_type %></td>
-    <td><%=h annonce.image_updated_at %></td>
-    <td><%= link_to 'Show', annonce %></td>
-    <td><%= link_to 'Edit', edit_annonce_path(annonce) %></td>
-    <td><%= link_to 'Destroy', annonce, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <% @annonces.each do |annonce| %>
+    <tr>
+      <td><%=h annonce.message %></td>
+      <td><%=h annonce.starts_at %></td>
+      <td><%=h annonce.ends_at %></td>
+      <td><%= image_tag(annonce.image.url(:thumb)) %></td>
+      <td><%= link_to 'Voir', annonce %></td>
+      <td><%= link_to 'Modifier', edit_annonce_path(annonce) %></td>
+      <td><%= link_to 'Supprimer', annonce, :confirm => 'En êtes vous sur?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
 
-<br />
+  <br />
 
-<%= link_to 'New annonce', new_annonce_path %>
+  <%= link_to 'Nouvelle Annonce', new_annonce_path %>
+</div>

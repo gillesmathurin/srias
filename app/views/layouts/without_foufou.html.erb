@@ -40,6 +40,15 @@
 		</div>
 		<!-- Left Sidebar -->
 		<div class="span-4">
+		  <% unless annonces_courantes.empty? %>
+			<div id="annonces" style="display:none">
+				<% for annonce in annonces_courantes %>
+				  <p><%= annonce.message %></p>
+				<% end %>
+				<p><%= link_to_remote "Masquer", :url => masquerannonce_url() %></p>				
+			</div>
+			<% end %>
+			
 			<ul class="menubar">
 				<li><%= link_to "Accueil", root_path() %></li>
 				<li><%= link_to "Missions", missions_path() %></li>

@@ -1,36 +1,7 @@
-<h1>Editing annonce</h1>
+<div class="span-16">
+  <h1>Nouvelle Annonce</h1>
 
-<% form_for(@annonce) do |f| %>
-  <%= f.error_messages %>
+  <%= render :partial => 'form', :object => @annonce %>
 
-  <p>
-    <%= f.label :message %><br />
-    <%= f.text_area :message %>
-  </p>
-  <p>
-    <%= f.label :starts_at %><br />
-    <%= f.datetime_select :starts_at %>
-  </p>
-  <p>
-    <%= f.label :ends_at %><br />
-    <%= f.datetime_select :ends_at %>
-  </p>
-  <p>
-    <%= f.label :image_file_name %><br />
-    <%= f.text_field :image_file_name %>
-  </p>
-  <p>
-    <%= f.label :image_content_type %><br />
-    <%= f.text_field :image_content_type %>
-  </p>
-  <p>
-    <%= f.label :image_updated_at %><br />
-    <%= f.datetime_select :image_updated_at %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @annonce %> |
-<%= link_to 'Back', annonces_path %>
+  <%= link_to 'Retour', annonces_path %>
+</div>

@@ -44,7 +44,8 @@ class AnnoncesController < ApplicationController
 
     respond_to do |format|
       if @annonce.save
-        format.html { redirect_to(@annonce, :notice => 'Annonce was successfully created.') }
+        flash[:notice] = "Annonce enregistrée avec succès."
+        format.html { redirect_to(@annonce) }
         format.xml  { render :xml => @annonce, :status => :created, :location => @annonce }
       else
         format.html { render :action => "new" }
@@ -60,7 +61,8 @@ class AnnoncesController < ApplicationController
 
     respond_to do |format|
       if @annonce.update_attributes(params[:annonce])
-        format.html { redirect_to(@annonce, :notice => 'Annonce was successfully updated.') }
+        flash[:notice] = "Annonce modifiée avec succès."
+        format.html { redirect_to(@annonce) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
