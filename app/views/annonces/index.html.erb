@@ -1,26 +1,18 @@
 <div class="span-16">
   <h1>Listing des annonces</h1>
 
-  <table>
-    <tr>
-      <th>Message</th>
-      <th>Du</th>
-      <th>Au</th>
-      <th>Image</th>
-    </tr>
-
+  
   <% @annonces.each do |annonce| %>
-    <tr>
-      <td><%=h annonce.message %></td>
-      <td><%=h annonce.starts_at %></td>
-      <td><%=h annonce.ends_at %></td>
-      <td><%= image_tag(annonce.image.url(:thumb)) %></td>
-      <td><%= link_to 'Voir', annonce %></td>
-      <td><%= link_to 'Modifier', edit_annonce_path(annonce) %></td>
-      <td><%= link_to 'Supprimer', annonce, :confirm => 'En êtes vous sur?', :method => :delete %></td>
-    </tr>
+    <div class="annonce_item">
+      <p><%=h annonce.message %></p>
+      <p>Du : <%=h annonce.starts_at %></p>
+      <p>Au : <%=h annonce.ends_at %></p>
+      <p><%= image_tag(annonce.image.url(:thumb)) %></p>
+      <p>
+        <%= link_to 'Voir', annonce %> | <%= link_to 'Modifier', edit_annonce_path(annonce) %> | <%= link_to 'Supprimer', annonce, :confirm => 'En êtes vous sur?', :method => :delete %>
+      </p>
+    </div>
   <% end %>
-  </table>
 
   <br />
 
