@@ -201,6 +201,16 @@ p.group-by-year {
 	font-size: 1.6em;
 	border-bottom-style: solid;
 	border-bottom-width: 2px;
+	border-color: #145e25;
+}
+
+p.group-by-year>a.hide_show {
+	font-size: 0.7em;
+	color: #5c06b7;
+}
+
+p.group-by-year>a.hide_show:hover {
+	color: red;
 }
 
 a {
