@@ -18,10 +18,12 @@ div.texte-footer {
 	display: inline-block;
 	bottom: 85px;
 	color: white;
+	line-height: 1.5em;
 }
 
 div.texte-footer a {
 	color: yellow;
+	text-decoration: none;
 }
 
 div.texte-footer a:hover {
