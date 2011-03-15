@@ -6,10 +6,20 @@
 		<b> 0690 39 12 58</b><br/>
 		<%= mail_to("srias.guadeloupe@orange.fr", "Email") %>
 		<br/><br/>	
-		<b>Corr. administratif<br/>M. Legrave Jean-Denis</b><br/>
+		<b>Corr. administratif<br/></b><br/>
  	   <b>Tel : 0590 99 38 81</b><br/>
  	   <b>Fax : 0590 99 38 29</b>
 	</p>
+	 <% @contacts_to_display = Contact.to_display %>
+	 <% @contacts_to_display.each do |c| %>
+	  <p class="contacts">
+	    <%= c.role %> : <%= c.nom %><br/>
+	    <%= c.telephone %>
+	    <% unless contact.fax == "" || contact.fax.nil? %>
+				- Fax : <b><%= contact.fax %></b>
+			<% end %>
+	  </p>
+	 <% end %>
 	
 	<p>
 

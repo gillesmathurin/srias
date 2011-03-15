@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101127020701) do
+ActiveRecord::Schema.define(:version => 20110315133427) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20101127020701) do
     t.datetime "updated_at"
     t.string   "role"
     t.string   "fax"
+    t.boolean  "selected",   :default => false
   end
 
   create_table "delayed_jobs", :force => true do |t|
