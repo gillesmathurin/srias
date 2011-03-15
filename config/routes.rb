@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :annonces
+
   map.resources :contacts
 
   map.resources :texte_accueils
