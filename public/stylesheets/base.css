@@ -18,10 +18,12 @@ div.texte-footer {
 	display: inline-block;
 	bottom: 85px;
 	color: white;
+	line-height: 1.5em;
 }
 
 div.texte-footer a {
 	color: yellow;
+	text-decoration: none;
 }
 
 div.texte-footer a:hover {
@@ -176,6 +178,9 @@ div.pubs h5 {
 
 div.pubs p.contacts {
 	font-size: 0.95em;
+	margin-bottom: 30px;
+	text-align: center;
+	text-indent: 0;
 }
 
 p {
@@ -244,4 +249,47 @@ p.nom-mission {
 	width: 35%;
 	color: #0a001e;
 	font-size: 1.3em;
+}
+
+p>em.decalage {
+	margin-left: 30px;
+}
+
+/* ****** Annonces ******** */
+
+div#annonces {
+	padding: 15px;
+	background-color: #ececec;
+	border: 4px solid #9cbd1b;
+	display: inline-block;
+	width: 95%;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+div.annonce {
+	display: block;
+}
+
+div#annonces div.annonce p.annonce_texte {
+	margin-top: 15px;
+	font-size: 1.2em;
+}
+
+div#annonces div.annonce p.annonce_image {
+	float: left;
+}
+
+div#annonces div.masquer_annonce {
+	display: inline-block;
+	text-align: center;
+	width: 95%;
+}
+
+div#annonces div.masquer_annonce a {
+	color: black;
+}
+
+p.annonce_image img {
+	border: 3px solid yellow;
 }

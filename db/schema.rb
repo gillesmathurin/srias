@@ -9,10 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101127020701) do
+ActiveRecord::Schema.define(:version => 20110315144843) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "annonces", :force => true do |t|
+    t.text     "message"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.datetime "image_updated_at"
+    t.integer  "image_file_size"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -25,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20101127020701) do
     t.datetime "updated_at"
     t.string   "role"
     t.string   "fax"
+    t.boolean  "selected",   :default => false
   end
 
   create_table "delayed_jobs", :force => true do |t|

@@ -1,0 +1,20 @@
+<div class="span-16">
+  <h1>Listing des annonces</h1>
+
+  
+  <% @annonces.each do |annonce| %>
+    <div class="annonce_item">
+      <p><%=h annonce.message %></p>
+      <p>Du : <%=h annonce.starts_at %></p>
+      <p>Au : <%=h annonce.ends_at %></p>
+      <p><%= image_tag(annonce.image.url(:thumb)) %></p>
+      <p>
+        <%= link_to 'Voir', annonce %> | <%= link_to 'Modifier', edit_annonce_path(annonce) %> | <%= link_to 'Supprimer', annonce, :confirm => 'En êtes vous sur?', :method => :delete %>
+      </p>
+    </div>
+  <% end %>
+
+  <br />
+
+  <%= link_to 'Nouvelle Annonce', new_annonce_path %>
+</div>

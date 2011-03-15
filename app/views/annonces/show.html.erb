@@ -1,0 +1,28 @@
+<div class="span-16">
+  <h1>Annonce-<%= @annonce.id %></h1>
+  
+  <p>
+    <b>Message:</b>
+    <%=h @annonce.message %>
+  </p>
+
+  <p>
+    <b>Date début:</b>
+    <%=h @annonce.starts_at %>
+  </p>
+
+  <p>
+    <b>Date de Fin:</b>
+    <%=h @annonce.ends_at %>
+  </p>
+
+  <p>
+    <b>Image associée</b>
+    <%= image_tag(@annonce.image.url(:thumb)) %>
+  </p>
+
+
+  <%= link_to 'Modifier', edit_annonce_path(@annonce) %> |
+  <%= link_to 'Retour', annonces_path %>
+</div>
+

@@ -7,15 +7,9 @@ RAILS_GEM_VERSION = '2.3.8' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-  # config.gem 'rspec', :lib => false, :version => '1.3.1'
-  config.gem 'rspec-rails', :lib => false, :version => '1.3.3'
-  # config.gem 'rack', :version => '1.0.1'
   config.gem 'authlogic'
   config.gem 'cancan'
-  config.gem 'will_paginate', :lib => 'will_paginate', :version => '>= 2.3.12'
-  config.gem 'webrat', :lib => false, :version => '0.7.1'
-  config.gem 'cucumber-rails', :lib => false, :version => '0.3.2'
-  # config.gem 'cucumber', :lib => false
+  config.gem 'will_paginate', :lib => 'will_paginate', :version => '>= 2.3.14'
   config.gem 'paperclip'
   config.gem 'delayed_job', :version => '2.0.3'
   # config.gem 'delayed_paperclip'
