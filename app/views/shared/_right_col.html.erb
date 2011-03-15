@@ -1,23 +1,17 @@
 <div class="pubs">
 	<h5>Contacts :</h5>
 	<br/>
-	<p class="contacts">
-		<b>Président <br/>M. Guillou Georges</b><br/>
-		<b> 0690 39 12 58</b><br/>
-		<%= mail_to("srias.guadeloupe@orange.fr", "Email") %>
-		<br/><br/>	
-		<b>Corr. administratif<br/></b><br/>
- 	   <b>Tel : 0590 99 38 81</b><br/>
- 	   <b>Fax : 0590 99 38 29</b>
-	</p>
+  <!-- New way of display Contact -->
 	 <% @contacts_to_display = Contact.to_display %>
 	 <% @contacts_to_display.each do |c| %>
 	  <p class="contacts">
-	    <%= c.role %> : <%= c.nom %><br/>
-	    <%= c.telephone %>
-	    <% unless contact.fax == "" || contact.fax.nil? %>
-				- Fax : <b><%= contact.fax %></b>
+	    <b><%= c.role %></b><br/>
+	    <b><%= c.nom %></b><br/>
+	    <b><%= c.tel %></b><br/>
+	    <% unless c.fax == "" || c.fax.nil? %>
+				<b><%= c.fax %></b><br/>
 			<% end %>
+			<%= mail_to(c.mail, "Email") %>
 	  </p>
 	 <% end %>
 	

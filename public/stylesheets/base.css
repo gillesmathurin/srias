@@ -178,6 +178,9 @@ div.pubs h5 {
 
 div.pubs p.contacts {
 	font-size: 0.95em;
+	margin-bottom: 30px;
+	text-align: center;
+	text-indent: 0;
 }
 
 p {
@@ -246,4 +249,8 @@ p.nom-mission {
 	width: 35%;
 	color: #0a001e;
 	font-size: 1.3em;
+}
+
+p>em.decalage {
+	margin-left: 30px;
 }

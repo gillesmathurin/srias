@@ -11,6 +11,7 @@
 			<% unless contact.fax == "" || contact.fax.nil? %>
 				- Fax : <b><%= contact.fax %></b>
 			<% end %>
+			- Email : <b><%= contact.mail %></b>
 		</p>
 		<% if can? :manage, Contact %>
 		<p>
