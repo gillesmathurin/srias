@@ -1,0 +1,20 @@
+<% unless annonces_courantes.empty? %>
+  <div id="annonces" style="display:none">
+  
+  	<% for annonce in annonces_courantes %>
+  	  <div class="annonce">	    
+  	    
+  	    <% unless missing_annonce_image(annonce) %>
+    	    <p class="annonce_image">
+    	      <%= image_tag(annonce.image.url(:thumb)) %>
+    	    </p>
+  	    <% end %>
+  	    
+  	    <p class="annonce_texte"><%= annonce.message %></p>
+  	  </div>
+  	<% end %>
+	
+  	<div class="masquer_annonce"><%= link_to_remote "Masquer", :url => masquerannonce_url() %></div>
+		
+  </div>
+<% end %>
