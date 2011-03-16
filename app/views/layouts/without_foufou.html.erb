@@ -62,6 +62,7 @@
 			<% if can? :manage, :all %>
 			<div class="addon-menus">
 				<ul>
+				  <li><%= link_to "Annonces", annonces_path() %></li>
 					<li><%= link_to "Newsletter", newsletters_path() %></li>
 					<li><%= link_to "Abonnés", abonnes_path() %></li>
 				</ul>
@@ -89,10 +90,13 @@
 				<img src="/images/colibri_02.jpg">		
 			</div> -->
 		</div>
-		<div class="texte-footer">
-			<p>Contacts<br/><%= mail_to "srias.guadeloupe@orange.fr", "srias.guadeloupe@orange.fr" %><br/>0690 39 12 58 - 0590 99 38 81</p>
-			<p><pre>Conception : <%= link_to "G.MATHURIN", "http://www/gmwebagency.com"%></pre></p>
-		</div>
+	  <div class="texte-footer">
+   	  <p>
+   	    Contacts<br/>
+   	    Préfecture de la Guadeloupe Cellule d'action sociale "SRIAS" Rue Lardenoy 97100 Basse-Terre<br/>
+   	    <%= mail_to "srias.guadeloupe@orange.fr", "srias.guadeloupe@orange.fr" %><br/>0690 39 12 58 - 0590 99 38 81<br/><br/></p>
+   	  <p><pre>Conception : <%= link_to "G.MATHURIN", "http://www/gmwebagency.com"%></pre></p>
+    </div>
 	</div>
 
 </body>
