@@ -3,20 +3,55 @@
 	
 	<h1>Nos partenaires</h1>
 
-	<table>
-	<% @partenaires.each do |partenaire| %>
-	  <tr>
-		<td><%= image_tag(partenaire.logo.url(:thumb)) if image_present?(partenaire) %></td>
-	    <td><%=h partenaire.nom %></td>
-	    <td><%=h partenaire.description %></td>
-	    <td><%= link_to 'Voir', partenaire %></td>
-	<% if current_user %>
-	    <td><%= link_to 'Modifier', edit_partenaire_path(partenaire) %></td>
-	    <td><%= link_to 'Supprimer', partenaire, :confirm => 'En êtes vous sur?', :method => :delete %></td>
-	<% end %>
-	  </tr>
-	<% end %>
-	</table>
+<!-- TODO : Faire le CSS styling de cette partie -->
+  <% @partenaires.each do |partenaire| %>
+    <div class="partenaire">
+      <p class="partenaire_logo">
+        <%= image_tag(partenaire.logo.url(:thumb)) if image_present?(partenaire) %>
+      </p>
+      <p class="partenaire_description">
+        <span class="partenaire_nom"><%=h partenaire.nom %></span><br/>
+        <%=h partenaire.description %>
+      </p>
+      <p class="partenaire_link">
+        <%= link_to(partenaire.link, partenaire.link) unless partenaire.link.blank? %>
+      </p>
+      <% if current_user %>
+        <p>
+          <%= link_to 'Modifier', edit_partenaire_path(partenaire) %> |
+          <%= link_to 'Supprimer', partenaire, :confirm => 'En êtes vous sur?', :method => :delete %>
+        </p>
+      <% end %>
+      
+      <div class="part_offres">
+        <p>Bénéficiez des <%= partenaire.offres.count %> offres privilégiées de ce partenaire.</p>
+        
+        <% partenaire.offres.each do |offre| %>
+          <div class="offre">
+            <p>
+              <%= link_to offre.nom, offre_path(offre), :class => "offre_link" %> - Du <%= offre.date_debut  %> Au <%= offre.date_fin %><br/>
+              <%= truncate(offre.description, :length => 80) %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <!-- <table>
+  <%# @partenaires.each do |partenaire| %>
+    <tr>
+    <td><%# image_tag(partenaire.logo.url(:thumb)) if image_present?(partenaire) %></td>
+      <td><%#h partenaire.nom %></td>
+      <td><%#h partenaire.description %></td>
+      <td><%# link_to 'Voir', partenaire %></td>
+  <%# if current_user %>
+      <td><%# link_to 'Modifier', edit_partenaire_path(partenaire) %></td>
+      <td><%# link_to 'Supprimer', partenaire, :confirm => 'En êtes vous sur?', :method => :delete %></td>
+  <%# end %>
+    </tr>
+  <%# end %>
+  </table> -->
 
 	<br />
 <% if current_user %>
