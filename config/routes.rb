@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :categories
+
   map.resources :annonces
   
   map.masquerannonce '/masquer_annonce', :controller => 'javascripts', :action => 'masquer_annonce'
