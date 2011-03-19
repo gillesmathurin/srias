@@ -3,7 +3,7 @@ class PartenairesController < ApplicationController
   # GET /partenaires
   # GET /partenaires.xml
   def index
-    @partenaires = Partenaire.all
+    @partenaires = Partenaire.all.group_by(&:category_id)
 
     respond_to do |format|
       format.html # index.html.erb

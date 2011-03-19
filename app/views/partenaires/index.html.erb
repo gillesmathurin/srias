@@ -4,38 +4,46 @@
 	<h1>Nos partenaires</h1>
 
 <!-- TODO : Faire le CSS styling de cette partie -->
-  <% @partenaires.each do |partenaire| %>
-    <div class="partenaire">
-      <p class="partenaire_logo">
-        <%= image_tag(partenaire.logo.url(:thumb)) if image_present?(partenaire) %>
-      </p>
-      <p class="partenaire_description">
-        <span class="partenaire_nom"><%=h partenaire.nom %></span><br/>
-        <%=h partenaire.description %>
-      </p>
-      <p class="partenaire_link">
-        <%= link_to(partenaire.link, partenaire.link) unless partenaire.link.blank? %>
-      </p>
-      <% if current_user %>
-        <p>
-          <%= link_to 'Modifier', edit_partenaire_path(partenaire) %> |
-          <%= link_to 'Supprimer', partenaire, :confirm => 'En êtes vous sur?', :method => :delete %>
+  <% @partenaires.each do |group_by_category| %>
+    
+    <p class="category_name"><%= Category.find(group_by_category[0]).nom %></p>
+    
+    <% group_by_category[1].each do |partenaire| %>
+      <div class="partenaire">
+        <p class="partenaire_logo">
+          <%= image_tag(partenaire.logo.url(:thumb)) if image_present?(partenaire) %>
         </p>
-      <% end %>
-      
-      <div class="part_offres">
-        <p>Bénéficiez des <%= partenaire.offres.count %> offres privilégiées de ce partenaire.</p>
-        
-        <% partenaire.offres.each do |offre| %>
-          <div class="offre">
-            <p>
-              <%= link_to offre.nom, offre_path(offre), :class => "offre_link" %> - Du <%= offre.date_debut  %> Au <%= offre.date_fin %><br/>
-              <%= truncate(offre.description, :length => 80) %>
-            </p>
-          </div>
+        <p class="partenaire_description">
+          <span class="partenaire_nom"><%=h partenaire.nom %></span><br/>
+          <%=h partenaire.description %>
+        </p>
+        <p class="partenaire_link">
+          <%= link_to(partenaire.link, partenaire.link) unless partenaire.link.blank? %>
+        </p>
+        <% if current_user %>
+          <p>
+            <%= link_to 'Modifier', edit_partenaire_path(partenaire) %> |
+            <%= link_to 'Supprimer', partenaire, :confirm => 'En êtes vous sur?', :method => :delete %>
+          </p>
         <% end %>
+      
+        <div class="part_offres">
+          <p>Bénéficiez des <%= partenaire.offres.count %> offres privilégiées de ce partenaire.</p>
+        
+          <% partenaire.offres.each do |offre| %>
+            <div class="offre">
+              <p>
+                <%= link_to offre.nom, offre_path(offre), :class => "offre_link" %> - Du <%= offre.date_debut  %> Au <%= offre.date_fin %><br/>
+                <%= truncate(offre.description, :length => 80) %>
+              </p>
+            </div>
+          <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
+    
+    <hr/>
+    
   <% end %>
 
   <!-- <table>
