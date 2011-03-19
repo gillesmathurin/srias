@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nom: MyString
+  partenaire_id: 1
+  date_debut: 2011-03-19
+  date_fin: 2011-03-19
+  description: MyText
+  document_file_name: MyString
+  document_content_type: MyString
+  document_file_size: 1
+  document_updated_at: 2011-03-19 09:59:56
+
+two:
+  nom: MyString
+  partenaire_id: 1
+  date_debut: 2011-03-19
+  date_fin: 2011-03-19
+  description: MyText
+  document_file_name: MyString
+  document_content_type: MyString
+  document_file_size: 1
+  document_updated_at: 2011-03-19 09:59:56
