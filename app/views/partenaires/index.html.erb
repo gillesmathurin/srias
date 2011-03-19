@@ -11,7 +11,11 @@
     <% group_by_category[1].each do |partenaire| %>
       <div class="partenaire">
         <p class="partenaire_logo">
-          <%= image_tag(partenaire.logo.url(:thumb)) if image_present?(partenaire) %>
+          <% if image_present?(partenaire) %>
+            <%= link_to(image_tag(partenaire.logo.url(:thumb)), partenaire.link)  %>
+          <% else %>
+            <%= link_to(partenaire.link, partenaire.link) unless partenaire.link.blank? %>
+          <% end %>
         </p>
         <p class="partenaire_description">
           <span class="partenaire_nom"><%=h partenaire.nom %></span><br/>
