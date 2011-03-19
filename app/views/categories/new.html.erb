@@ -1,15 +1,12 @@
-<h1>New category</h1>
+<div class="span-16">
+  <h1>Ajouter une categorie</h1>
 
-<% form_for(@category) do |f| %>
-  <%= f.error_messages %>
+  <%= render :partial => 'form', :object => @category %>
 
-  <p>
-    <%= f.label :nom %><br />
-    <%= f.text_field :nom %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
 
-<%= link_to 'Back', categories_path %>
+  <%= link_to 'Retour', categories_path %>
+</div>
+
+<div class="span-4 last">
+	<%= render :partial => "shared/right_col" %>
+</div>
