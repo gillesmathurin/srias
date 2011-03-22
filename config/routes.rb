@@ -15,7 +15,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :abonnes, :collection => {:delete_all => :get}
 
-  map.resources :partenaires
+  map.resources :partenaires, :has_many => :offres
 
   map.resources :liens
 

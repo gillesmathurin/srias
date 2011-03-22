@@ -1,4 +1,6 @@
 class OffresController < ApplicationController
+  before_filter :find_partenaire
+  
   # GET /offres
   # GET /offres.xml
   def index
@@ -25,7 +27,8 @@ class OffresController < ApplicationController
   # GET /offres/new.xml
   def new
     @offre = Offre.new
-
+    @offre.partenaire_id = @partenaire.id
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @offre }
@@ -79,5 +82,11 @@ class OffresController < ApplicationController
       format.html { redirect_to(offres_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  private
+  
+  def find_partenaire
+    @partenaire = Partenaire.find(params[:partenaire_id]) if params[:partenaire_id]
   end
 end

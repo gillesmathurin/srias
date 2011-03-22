@@ -1,48 +1,28 @@
-<p>
-  <b>Nom:</b>
-  <%=h @offre.nom %>
-</p>
+<div class="span-16">
+  <h2>
+    Cette offre :
+    <b><%=h @offre.nom %></b>
+  </h2>
 
-<p>
-  <b>Partenaire:</b>
-  <%=h @offre.partenaire_id %>
-</p>
+  <p>
+    <b>Vous est proposée par :</b>
+    <%=h @offre.partenaire.nom %>
+  </p>
 
-<p>
-  <b>Date debut:</b>
-  <%=h @offre.date_debut %>
-</p>
+  <p>
+    <b>Valable du :</b>
+    <%=h @offre.date_debut %> <b>Au :</b> <%=h @offre.date_fin %>
+  </p>
 
-<p>
-  <b>Date fin:</b>
-  <%=h @offre.date_fin %>
-</p>
+  <p>
+    <b>Description:</b>
+    <%=h @offre.description %>
+  </p>
+  
+  <!-- TODO : ajouter la possibilité de télécharger le document de l'offre -->
 
-<p>
-  <b>Description:</b>
-  <%=h @offre.description %>
-</p>
-
-<p>
-  <b>Document file name:</b>
-  <%=h @offre.document_file_name %>
-</p>
-
-<p>
-  <b>Document content type:</b>
-  <%=h @offre.document_content_type %>
-</p>
-
-<p>
-  <b>Document file size:</b>
-  <%=h @offre.document_file_size %>
-</p>
-
-<p>
-  <b>Document updated at:</b>
-  <%=h @offre.document_updated_at %>
-</p>
-
-
-<%= link_to 'Edit', edit_offre_path(@offre) %> |
-<%= link_to 'Back', offres_path %>
+<% if current_user %>
+  <%= link_to 'Modifier', edit_offre_path(@offre) %> |
+  <%= link_to 'Retour', offres_path %>
+<% end %>
+</div>

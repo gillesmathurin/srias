@@ -293,3 +293,69 @@ div#annonces div.masquer_annonce a {
 p.annonce_image img {
 	border: 3px solid yellow;
 }
+
+/* ******** Partenaires************* */
+
+p.category_name {
+	color: #b92231;
+	font-weight: bold;
+	font-size: 2em;
+	text-shadow: gray 0 0 0;
+	margin-bottom: 30px;
+}
+
+div.partenaire {
+	
+}
+
+div.partenaire p.partenaire_logo {
+	float: left;
+	margin-right: 15px;
+}
+
+div.partenaire p.partenaire_logo img {
+	border: 1px solid yellow;
+	padding: 5px;
+	background-color: white;
+}
+
+div.partenaire p.partenaire_description {
+	background-color: rgba(250,250,250,0.8);
+	padding: 10px;
+	width: 445px;
+	margin-left: 170px;
+}
+
+div.partenaire p.partenaire_description span.partenaire_nom {
+	font: bold 1.5em "Lucida Grande", Lucida, Verdana, sans-serif;
+	text-transform: capitalize;
+	margin-left: -25px;
+}
+
+div.partenaire p.partenaire_link {
+	letter-spacing: 1px;
+	color: yellow;
+}
+
+div.partenaire div.part_offres {
+	background-color: #088e41;
+	padding: 10px;
+	color: white;
+	border: 1px solid white;
+	width: 445px;
+	margin-left: 170px;
+	font-weight: bold;
+	font-style: italic;
+	letter-spacing: 1px;
+	margin-bottom: 15px;
+}
+
+div.partenaire div.part_offres div.offre {
+	
+}
+
+div.partenaire div.part_offres div.offre a.offre_link {
+	color: yellow;
+	font-size: 1.5em;
+	font-variant: small-caps;
+}

@@ -6,7 +6,7 @@
 <!-- TODO : Faire le CSS styling de cette partie -->
   <% @partenaires.each do |group_by_category| %>
     
-    <p class="category_name"><%= Category.find(group_by_category[0]).nom %></p>
+    <p class="category_name">Partenaire <%= Category.find(group_by_category[0]).nom %></p>
     
     <% group_by_category[1].each do |partenaire| %>
       <div class="partenaire">
@@ -27,12 +27,12 @@
         <% if current_user %>
           <p>
             <%= link_to 'Modifier', edit_partenaire_path(partenaire) %> |
-            <%= link_to 'Supprimer', partenaire, :confirm => 'En êtes vous sur?', :method => :delete %>
+            <%= link_to 'Supprimer', partenaire, :confirm => 'En êtes vous sur?', :method => :delete %> | <%= link_to "Enregistrer une offre", new_partenaire_offre_path(partenaire) %>
           </p>
         <% end %>
       
         <div class="part_offres">
-          <p>Bénéficiez des <%= partenaire.offres.count %> offres privilégiées de ce partenaire.</p>
+          <p>Bénéficiez des offres privilégiées de ce partenaire !</p>
         
           <% partenaire.offres.each do |offre| %>
             <div class="offre">
