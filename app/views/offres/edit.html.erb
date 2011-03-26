@@ -1,48 +1,6 @@
-<h1>Editing offre</h1>
+<h1>Modifier une offre</h1>
 
-<% form_for(@offre) do |f| %>
-  <%= f.error_messages %>
+  <%= render :partial => 'form', :object => @offre %>
 
-  <p>
-    <%= f.label :nom %><br />
-    <%= f.text_field :nom %>
-  </p>
-  <p>
-    <%= f.label :partenaire_id %><br />
-    <%= f.text_field :partenaire_id %>
-  </p>
-  <p>
-    <%= f.label :date_debut %><br />
-    <%= f.date_select :date_debut %>
-  </p>
-  <p>
-    <%= f.label :date_fin %><br />
-    <%= f.date_select :date_fin %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :document_file_name %><br />
-    <%= f.text_field :document_file_name %>
-  </p>
-  <p>
-    <%= f.label :document_content_type %><br />
-    <%= f.text_field :document_content_type %>
-  </p>
-  <p>
-    <%= f.label :document_file_size %><br />
-    <%= f.text_field :document_file_size %>
-  </p>
-  <p>
-    <%= f.label :document_updated_at %><br />
-    <%= f.datetime_select :document_updated_at %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @offre %> |
-<%= link_to 'Back', offres_path %>
+<%= link_to 'Voir', @offre %> |
+<%= link_to 'Retour', offres_path %>

@@ -314,13 +314,10 @@ div.partenaire p.partenaire_logo {
 }
 
 div.partenaire p.partenaire_logo img {
-	border: 1px solid yellow;
 	padding: 5px;
-	background-color: white;
 }
 
 div.partenaire p.partenaire_description {
-	background-color: rgba(250,250,250,0.8);
 	padding: 10px;
 	width: 445px;
 	margin-left: 170px;
