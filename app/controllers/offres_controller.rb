@@ -63,7 +63,7 @@ class OffresController < ApplicationController
 
     respond_to do |format|
       if @offre.update_attributes(params[:offre])
-        format.html { redirect_to(@offre, :notice => 'Offre modifiée avec succès.') }
+        format.html { redirect_to(partenaire_offre_url(@partenaire, @offre), :notice => 'Offre modifiée avec succès.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

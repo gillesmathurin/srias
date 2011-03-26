@@ -24,13 +24,14 @@
 		<p><%= display_link_or_image(fichier) %></p>
 	<% end %>
 
-<% if current_user %>
-  <%= link_to 'Modifier', edit_partenaire_offre_path(@partenaire, @offre) %> |
-  <%= link_to 'Retour', partenaires_path() %>
-  
-  <p>
-		<%= link_to "Ajoutez un fichier joint", new_offre_fichier_path(@offre) %> |
-		<%= link_to "Modifiez un fichier joint", offre_fichiers_path(@offre) %>
-	</p>
-<% end %>
+  <% if current_user %>  
+    <p>
+  		<%= link_to "Ajoutez un fichier joint", new_offre_fichier_path(@offre) %> |
+  		<%= link_to "Modifiez un fichier joint", offre_fichiers_path(@offre) %>
+  	</p>
+  	<p>
+  	  <%= link_to 'Modifier', edit_partenaire_offre_path(@partenaire, @offre) %> |
+      <%= link_to 'Retour', partenaires_path() %>
+  	</p>
+  <% end %>
 </div>
