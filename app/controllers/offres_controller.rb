@@ -43,11 +43,11 @@ class OffresController < ApplicationController
   # POST /offres
   # POST /offres.xml
   def create
-    @offre = Offre.new(params[:offre])
-
+    @offre = @partenaire.offres.build(params[:offre])
+    
     respond_to do |format|
       if @offre.save
-        format.html { redirect_to(@offre, :notice => 'Offre was successfully created.') }
+        format.html { redirect_to(@offre, :notice => 'Offre enregistrée avec succès.') }
         format.xml  { render :xml => @offre, :status => :created, :location => @offre }
       else
         format.html { render :action => "new" }
@@ -63,7 +63,7 @@ class OffresController < ApplicationController
 
     respond_to do |format|
       if @offre.update_attributes(params[:offre])
-        format.html { redirect_to(@offre, :notice => 'Offre was successfully updated.') }
+        format.html { redirect_to(@offre, :notice => 'Offre modifiée avec succès.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
