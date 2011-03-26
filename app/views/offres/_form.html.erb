@@ -21,10 +21,14 @@
       <%= f.label :description %><br />
       <%= f.text_area :description %>
     </p>
-    <p>
-      <%= f.label :document, "Document téléchargeable" %><br/>
-      <%= f.file_field :document %>
-    </p>
+    <% f.fields_for :fichiers do |fichier_form| %>
+  		<p><%= fichier_form.label "Fichier joint" %> : <%= fichier_form.file_field :fichier %></p>
+  		<% unless fichier_form.object.new_record? %>
+  		  <%= link_to(fichier_form.object.fichier.url) %>
+  			<%= fichier_form.check_box '_destroy' %>
+  			<%= fichier_form.label '_destroy', 'Supprimer' %>
+  		<% end %>
+  	<% end %>
     <p>
       <%= f.submit 'Enregistrer' %>
     </p>

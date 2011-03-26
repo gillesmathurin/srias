@@ -20,10 +20,17 @@
   </p>
   
   <!-- TODO : ajouter la possibilité de télécharger le document de l'offre -->
-  
+  <% @offre.fichiers.each do |fichier| %>
+		<p><%= display_link_or_image(fichier) %></p>
+	<% end %>
 
 <% if current_user %>
-  <%= link_to 'Modifier', edit_offre_path(@offre) %> |
-  <%= link_to 'Retour', offres_path %>
+  <%= link_to 'Modifier', edit_partenaire_offre_path(@partenaire, @offre) %> |
+  <%= link_to 'Retour', partenaires_path() %>
+  
+  <p>
+		<%= link_to "Ajoutez un fichier joint", new_offre_fichier_path(@offre) %> |
+		<%= link_to "Modifiez un fichier joint", offre_fichiers_path(@offre) %>
+	</p>
 <% end %>
 </div>

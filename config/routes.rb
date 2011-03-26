@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :offres
+  map.resources :offres, :has_many => :fichiers
 
   map.resources :categories
 

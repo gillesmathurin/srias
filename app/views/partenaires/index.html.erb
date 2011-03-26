@@ -37,7 +37,7 @@
           <% partenaire.offres.each do |offre| %>
             <div class="offre">
               <p>
-                <%= link_to offre.nom, offre_path(offre), :class => "offre_link" %> - Du <%= offre.date_debut  %> Au <%= offre.date_fin %><br/>
+                <%= link_to offre.nom, partenaire_offre_path(partenaire.id, offre), :class => "offre_link" %> - Du <%= offre.date_debut  %> Au <%= offre.date_fin %><br/>
                 <%= truncate(offre.description, :length => 80) %>
               </p>
             </div>

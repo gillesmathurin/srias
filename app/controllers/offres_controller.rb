@@ -26,8 +26,8 @@ class OffresController < ApplicationController
   # GET /offres/new
   # GET /offres/new.xml
   def new
-    @offre = Offre.new
-    @offre.partenaire_id = @partenaire.id
+    @offre = @partenaire.offres.build()
+    2.times { @offre.fichiers.build }
     
     respond_to do |format|
       format.html # new.html.erb
@@ -47,7 +47,7 @@ class OffresController < ApplicationController
     
     respond_to do |format|
       if @offre.save
-        format.html { redirect_to(@offre, :notice => 'Offre enregistrée avec succès.') }
+        format.html { redirect_to(partenaire_offre_url(@partenaire, @offre), :notice => 'Offre enregistrée avec succès.') }
         format.xml  { render :xml => @offre, :status => :created, :location => @offre }
       else
         format.html { render :action => "new" }
