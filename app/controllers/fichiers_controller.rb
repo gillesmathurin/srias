@@ -79,7 +79,7 @@ class FichiersController < ApplicationController
     
     respond_to do |format|
       format.html { redirect_to(@manifestation) } if @manifestation
-      format.html { redirect_to(@manifestation) } if @offre
+      format.html { redirect_to(@offre) } if @offre
     end
   end
   
