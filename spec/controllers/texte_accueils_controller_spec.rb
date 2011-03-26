@@ -1,12 +1,26 @@
 require 'spec_helper'
 
 describe TexteAccueilsController do
+  fixtures :users
+  
+  def mock_user
+    @user ||= users(:ben)
+  end
+  
+  def user_logged_in
+    activate_authlogic
+    UserSession.create(mock_user)
+  end
 
   def mock_texte_accueil(stubs={})
     @mock_texte_accueil ||= mock_model(TexteAccueil, stubs)
   end
-
+  
   describe "GET index" do
+    before(:each) do
+      user_logged_in
+    end    
+    
     it "assigns all texte_accueils as @texte_accueils" do
       TexteAccueil.stub(:find).with(:all).and_return([mock_texte_accueil])
       get :index
@@ -14,7 +28,11 @@ describe TexteAccueilsController do
     end
   end
 
-  describe "GET show" do
+  describe "GET show" do   
+    before(:each) do
+      user_logged_in
+    end
+     
     it "assigns the requested texte_accueil as @texte_accueil" do
       TexteAccueil.stub(:find).with("37").and_return(mock_texte_accueil)
       get :show, :id => "37"
@@ -22,7 +40,11 @@ describe TexteAccueilsController do
     end
   end
 
-  describe "GET new" do
+  describe "GET new" do 
+    before(:each) do
+      user_logged_in
+    end
+       
     it "assigns a new texte_accueil as @texte_accueil" do
       TexteAccueil.stub(:new).and_return(mock_texte_accueil)
       get :new
@@ -30,7 +52,11 @@ describe TexteAccueilsController do
     end
   end
 
-  describe "GET edit" do
+  describe "GET edit" do    
+    before(:each) do
+      user_logged_in
+    end
+    
     it "assigns the requested texte_accueil as @texte_accueil" do
       TexteAccueil.stub(:find).with("37").and_return(mock_texte_accueil)
       get :edit, :id => "37"
@@ -39,6 +65,9 @@ describe TexteAccueilsController do
   end
 
   describe "POST create" do
+    before(:each) do
+      user_logged_in
+    end
 
     describe "with valid params" do
       it "assigns a newly created texte_accueil as @texte_accueil" do
@@ -47,10 +76,10 @@ describe TexteAccueilsController do
         assigns[:texte_accueil].should equal(mock_texte_accueil)
       end
 
-      it "redirects to the created texte_accueil" do
+      it "redirects to the created home page" do
         TexteAccueil.stub(:new).and_return(mock_texte_accueil(:save => true))
         post :create, :texte_accueil => {}
-        response.should redirect_to(texte_accueil_url(mock_texte_accueil))
+        response.should redirect_to(root_url)
       end
     end
 
@@ -71,7 +100,10 @@ describe TexteAccueilsController do
   end
 
   describe "PUT update" do
-
+    before(:each) do
+      user_logged_in
+    end
+    
     describe "with valid params" do
       it "updates the requested texte_accueil" do
         TexteAccueil.should_receive(:find).with("37").and_return(mock_texte_accueil)
@@ -85,10 +117,10 @@ describe TexteAccueilsController do
         assigns[:texte_accueil].should equal(mock_texte_accueil)
       end
 
-      it "redirects to the texte_accueil" do
+      it "redirects to the home page" do
         TexteAccueil.stub(:find).and_return(mock_texte_accueil(:update_attributes => true))
         put :update, :id => "1"
-        response.should redirect_to(texte_accueil_url(mock_texte_accueil))
+        response.should redirect_to(root_url)
       end
     end
 
@@ -115,6 +147,10 @@ describe TexteAccueilsController do
   end
 
   describe "DELETE destroy" do
+    before(:each) do
+      user_logged_in
+    end
+    
     it "destroys the requested texte_accueil" do
       TexteAccueil.should_receive(:find).with("37").and_return(mock_texte_accueil)
       mock_texte_accueil.should_receive(:destroy)

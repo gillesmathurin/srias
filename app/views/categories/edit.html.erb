@@ -1,0 +1,12 @@
+<div class="span-16">
+  <h1>Modifier une Categorie</h1>
+
+  <%= render :partial => 'form', :object => @category %>
+
+  <%= link_to 'Voir', @category %> |
+  <%= link_to 'Retour', categories_path %>
+</div>
+
+<div class="span-4 last">
+	<%= render :partial => "shared/right_col" %>  
+</div>

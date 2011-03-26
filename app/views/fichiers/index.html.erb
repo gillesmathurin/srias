@@ -1,14 +1,32 @@
 <div class="span-16">
-	<h1>Fichiers de l'action : <%= @manifestation.nom %></h1>
+  <% if @manifestation %>
+  	<h1>Fichiers de l'action : <%= @manifestation.nom %></h1>
+  	
+  	<% @fichiers.each do |fichier| %>
+  		<p>&nbsp;</p>
+  		<p>
+  			<%= fichier.fichier.original_filename %> |
+  			 <%= link_to "modifier", edit_manifestation_fichier_path(@manifestation, fichier) %>
+  			| <%= link_to "supprimer", manifestation_fichier_path(@manifestation, fichier), :method => :delete, :confirm => "En êtes vous sur ?" %>
+  		</p>
+  	<% end %>
+  <% end %>
+  
+  <% if @offre %>
+    <h1>Fichiers de l'offre : <%= @offre.nom %></h1>
+    
+    <% @fichiers.each do |fichier| %>
+  		<p>&nbsp;</p>
+  		<p>
+  			<%= fichier.fichier.original_filename %> |
+  			 <%= link_to "modifier", edit_offre_fichier_path(@offre, fichier) %>
+  			| <%= link_to "supprimer", offre_fichier_path(@offre, fichier), :method => :delete, :confirm => "En êtes vous sur ?" %>
+  		</p>
+  	<% end %>
+  <% end %>
+    
 	
-	<% @fichiers.each do |fichier| %>
-		<p>&nbsp;</p>
-		<p>
-			<%= fichier.fichier.original_filename %> |
-			 <%= link_to "modifier", edit_manifestation_fichier_path(@manifestation, fichier) %>
-			| <%= link_to "supprimer", manifestation_fichier_path(@manifestation, fichier), :method => :delete, :confirm => "En êtes vous sur ?" %>
-		</p>
-	<% end %>
+
 	
 </div>
 <!-- Right Sidebar -->

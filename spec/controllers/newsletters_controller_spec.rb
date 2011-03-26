@@ -1,12 +1,26 @@
 require 'spec_helper'
 
 describe NewslettersController do
+  fixtures :users
+  
+  def mock_user
+    @user ||= users(:ben)
+  end
+  
+  def user_logged_in
+    activate_authlogic
+    UserSession.create(mock_user)
+  end
 
   def mock_newsletter(stubs={})
     @mock_newsletter ||= mock_model(Newsletter, stubs)
   end
 
   describe "GET index" do
+    before(:each) do
+      user_logged_in
+    end
+    
     it "assigns all newsletters as @newsletters" do
       Newsletter.stub(:find).with(:all).and_return([mock_newsletter])
       get :index
@@ -15,6 +29,10 @@ describe NewslettersController do
   end
 
   describe "GET show" do
+    before(:each) do
+      user_logged_in
+    end
+    
     it "assigns the requested newsletter as @newsletter" do
       Newsletter.stub(:find).with("37").and_return(mock_newsletter)
       get :show, :id => "37"
@@ -23,6 +41,10 @@ describe NewslettersController do
   end
 
   describe "GET new" do
+    before(:each) do
+      user_logged_in
+    end
+    
     it "assigns a new newsletter as @newsletter" do
       Newsletter.stub(:new).and_return(mock_newsletter)
       get :new
@@ -31,6 +53,10 @@ describe NewslettersController do
   end
 
   describe "GET edit" do
+    before(:each) do
+      user_logged_in
+    end
+    
     it "assigns the requested newsletter as @newsletter" do
       Newsletter.stub(:find).with("37").and_return(mock_newsletter)
       get :edit, :id => "37"
@@ -39,7 +65,10 @@ describe NewslettersController do
   end
 
   describe "POST create" do
-
+    before(:each) do
+      user_logged_in
+    end
+    
     describe "with valid params" do
       it "assigns a newly created newsletter as @newsletter" do
         Newsletter.stub(:new).with({'these' => 'params'}).and_return(mock_newsletter(:save => true))
@@ -71,7 +100,10 @@ describe NewslettersController do
   end
 
   describe "PUT update" do
-
+    before(:each) do
+      user_logged_in
+    end
+    
     describe "with valid params" do
       it "updates the requested newsletter" do
         Newsletter.should_receive(:find).with("37").and_return(mock_newsletter)
@@ -115,6 +147,10 @@ describe NewslettersController do
   end
 
   describe "DELETE destroy" do
+    before(:each) do
+      user_logged_in
+    end
+    
     it "destroys the requested newsletter" do
       Newsletter.should_receive(:find).with("37").and_return(mock_newsletter)
       mock_newsletter.should_receive(:destroy)

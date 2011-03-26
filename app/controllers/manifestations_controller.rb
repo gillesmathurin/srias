@@ -4,7 +4,7 @@ class ManifestationsController < ApplicationController
   # GET /manifestations
   # GET /manifestations.xml
   def index
-    @manifestations = Manifestation.past.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}.paginate(:page => params[:page], :per_page => 10)
+    @manifestations = Manifestation.group_by_year(params[:page])#past.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb

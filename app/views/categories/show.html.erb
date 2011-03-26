@@ -1,0 +1,13 @@
+<div class="span-16">
+  <p>
+    <b>Nom:</b>
+    <%=h @category.nom %>
+  </p>
+
+  <%= link_to 'Modifier', edit_category_path(@category) %> |
+  <%= link_to 'Retour', categories_path %>
+</div>
+
+<div class="span-4 last">
+	<%= render :partial => "shared/right_col" %>  
+</div>

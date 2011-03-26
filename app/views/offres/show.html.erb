@@ -1,0 +1,37 @@
+<div class="span-16">
+  <h2>
+    Cette offre :
+    <b><%=h @offre.nom %></b>
+  </h2>
+
+  <p>
+    <b>Vous est proposée par :</b>
+    <%=h @offre.partenaire.nom %>
+  </p>
+
+  <p>
+    <b>Valable du :</b>
+    <%=h @offre.date_debut %> <b>Au :</b> <%=h @offre.date_fin %>
+  </p>
+
+  <p>
+    <b>Description:</b>
+    <%=h @offre.description %>
+  </p>
+  
+  <!-- TODO : ajouter la possibilité de télécharger le document de l'offre -->
+  <% @offre.fichiers.each do |fichier| %>
+		<p><%= display_link_or_image(fichier) %></p>
+	<% end %>
+
+  <% if current_user %>  
+    <p>
+  		<%= link_to "Ajoutez un fichier joint", new_offre_fichier_path(@offre) %> |
+  		<%= link_to "Modifiez un fichier joint", offre_fichiers_path(@offre) %>
+  	</p>
+  	<p>
+  	  <%= link_to 'Modifier', edit_partenaire_offre_path(@partenaire, @offre) %> |
+      <%= link_to 'Retour', partenaires_path() %>
+  	</p>
+  <% end %>
+</div>

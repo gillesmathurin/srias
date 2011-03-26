@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110315144843) do
+ActiveRecord::Schema.define(:version => 20110326133855) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(:version => 20110315144843) do
     t.string   "image_content_type"
     t.datetime "image_updated_at"
     t.integer  "image_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "nom"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -63,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20110315144843) do
     t.integer  "manifestation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "offre_id"
   end
 
   create_table "liens", :force => true do |t|
@@ -120,6 +127,20 @@ ActiveRecord::Schema.define(:version => 20110315144843) do
     t.datetime "file_updated_at"
   end
 
+  create_table "offres", :force => true do |t|
+    t.string   "nom"
+    t.integer  "partenaire_id"
+    t.date     "date_debut"
+    t.date     "date_fin"
+    t.text     "description"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "partenaires", :force => true do |t|
     t.string   "nom"
     t.text     "description"
@@ -129,6 +150,8 @@ ActiveRecord::Schema.define(:version => 20110315144843) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.integer  "category_id"
+    t.string   "link"
   end
 
   create_table "photos", :force => true do |t|

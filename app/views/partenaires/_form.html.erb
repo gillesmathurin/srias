@@ -1,4 +1,8 @@
   <p>
+    <%= f.label :category, "Categorie" %><br/>
+    <%= f.collection_select :category_id, Category.all, :id, :nom, :prompt => "Selectionnez une categorie, svp." %>
+  </p>
+  <p>
   	<%= f.label :logo, "Logo" %><br/>
 	<%= f.file_field :logo %>
   </p>
@@ -9,4 +13,8 @@
   <p>
     <%= f.label :description %><br />
     <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :link, "Lien externe" %><br/>
+    <%= f.text_field :link, :size => 50, :value => "http://lienverspartenaire" %>
   </p>

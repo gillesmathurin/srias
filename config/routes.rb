@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :offres, :has_many => :fichiers
+
+  map.resources :categories
+
   map.resources :annonces
   
   map.masquerannonce '/masquer_annonce', :controller => 'javascripts', :action => 'masquer_annonce'
@@ -11,7 +15,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :abonnes, :collection => {:delete_all => :get}
 
-  map.resources :partenaires
+  map.resources :partenaires, :has_many => :offres
 
   map.resources :liens
 
