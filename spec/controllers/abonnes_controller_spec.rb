@@ -39,9 +39,11 @@ describe AbonnesController do
   end
 
   describe "POST create" do
-
-    describe "with valid params" do
-      it "assigns a newly created abonne as @abonne" do
+    before(:each) do
+      Abonne.stub(:new)
+    end
+    describe "with valid params" do      
+      it "assigns a newly created abonne as @abonne" do      
         Abonne.stub(:new).with({'these' => 'params'}).and_return(mock_abonne(:save => true))
         post :create, :abonne => {:these => 'params'}
         assigns[:abonne].should equal(mock_abonne)

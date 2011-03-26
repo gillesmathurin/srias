@@ -18,7 +18,7 @@ describe ManifestationsController do
 
   describe "GET index" do
     it "assigns all manifestations as @manifestations" do
-      Manifestation.stub(:find).with(:all).and_return([mock_manifestation])
+      Manifestation.should_receive(:group_by_year).and_return([mock_manifestation])
       get :index
       assigns[:manifestations].should == [mock_manifestation]
     end
@@ -40,6 +40,7 @@ describe ManifestationsController do
       
       it "assigns a new manifestation as @manifestation" do
         Manifestation.stub(:new).and_return(mock_manifestation)
+        mock_manifestation.stub_chain(:photos,:build).exactly(6)
         get :new
         assigns[:manifestation].should equal(mock_manifestation)
       end

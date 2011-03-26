@@ -47,10 +47,10 @@ describe ContactsController do
         assigns[:contact].should equal(mock_contact)
       end
 
-      it "redirects to the created contact" do
+      it "redirects to the contact list page" do
         Contact.stub(:new).and_return(mock_contact(:save => true))
         post :create, :contact => {}
-        response.should redirect_to(contact_url(mock_contact))
+        response.should redirect_to(contacts_url())
       end
     end
 
@@ -85,10 +85,10 @@ describe ContactsController do
         assigns[:contact].should equal(mock_contact)
       end
 
-      it "redirects to the contact" do
+      it "redirects to the contact list" do
         Contact.stub(:find).and_return(mock_contact(:update_attributes => true))
         put :update, :id => "1"
-        response.should redirect_to(contact_url(mock_contact))
+        response.should redirect_to(contacts_url)
       end
     end
 
