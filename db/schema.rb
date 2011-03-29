@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110326133855) do
+ActiveRecord::Schema.define(:version => 20110329130950) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
@@ -152,6 +152,7 @@ ActiveRecord::Schema.define(:version => 20110326133855) do
     t.datetime "logo_updated_at"
     t.integer  "category_id"
     t.string   "link"
+    t.string   "logo_link"
   end
 
   create_table "photos", :force => true do |t|

@@ -7,6 +7,10 @@
 	<%= f.file_field :logo %>
   </p>
   <p>
+    <%= f.label :logo_link, "Lien lié au Logo" %><br/>
+    <%= f.text_field :logo_link %>
+  </p>
+  <p>
     <%= f.label :nom %><br />
     <%= f.text_field :nom %>
   </p>
@@ -16,5 +20,5 @@
   </p>
   <p>
     <%= f.label :link, "Lien externe" %><br/>
-    <%= f.text_field :link, :size => 50, :value => "http://lienverspartenaire" %>
+    <%= f.text_field :link, :size => 50 %> <i>ex : http://www.partenaire.com</i>
   </p>
