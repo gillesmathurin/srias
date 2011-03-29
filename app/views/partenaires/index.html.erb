@@ -3,7 +3,6 @@
 	
 	<h1>Nos partenaires</h1>
 
-<!-- TODO : Faire le CSS styling de cette partie -->
   <% @partenaires.each do |group_by_category| %>
     
     <p class="category_name">Partenaire <%= Category.find(group_by_category[0]).nom %></p>
@@ -38,7 +37,7 @@
             <div class="offre">
               <p>
                 <%= link_to offre.nom, partenaire_offre_path(partenaire.id, offre), :class => "offre_link" %> - Du <%= offre.date_debut  %> Au <%= offre.date_fin %><br/>
-                <%= truncate(offre.description, :length => 80) %>
+                <%= offre.description %>
               </p>
             </div>
           <% end %>
@@ -49,21 +48,6 @@
     <hr/>
     
   <% end %>
-
-  <!-- <table>
-  <%# @partenaires.each do |partenaire| %>
-    <tr>
-    <td><%# image_tag(partenaire.logo.url(:thumb)) if image_present?(partenaire) %></td>
-      <td><%#h partenaire.nom %></td>
-      <td><%#h partenaire.description %></td>
-      <td><%# link_to 'Voir', partenaire %></td>
-  <%# if current_user %>
-      <td><%# link_to 'Modifier', edit_partenaire_path(partenaire) %></td>
-      <td><%# link_to 'Supprimer', partenaire, :confirm => 'En êtes vous sur?', :method => :delete %></td>
-  <%# end %>
-    </tr>
-  <%# end %>
-  </table> -->
 
 	<br />
 <% if current_user %>
