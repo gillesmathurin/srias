@@ -11,9 +11,9 @@
       <div class="partenaire">
         <p class="partenaire_logo">
           <% if image_present?(partenaire) %>
-            <%= link_to(image_tag(partenaire.logo.url(:thumb)), partenaire.link)  %>
+            <%= link_to(image_tag(partenaire.logo.url(:thumb)), partenaire.logo_link)  %>
           <% else %>
-            <%= link_to(partenaire.link, partenaire.link) unless partenaire.link.blank? %>
+            <%= link_to(partenaire.link, partenaire.logo_link) unless partenaire.logo_link.blank? %>
           <% end %>
         </p>
         <p class="partenaire_description">
