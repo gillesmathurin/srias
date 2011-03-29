@@ -27,4 +27,15 @@ describe "Manifestations" do
   it "requires a date_debut" do
     @manifestation.should have(1).error_on(:date_debut)
   end
+  
+  describe ".to_come" do
+    before(:each) do
+      2.times { Manifestation.create!(:nom => "nom", :lieu => "lieu", :date_debut => Time.now, :date_fin => Time.now.tomorrow, :description => "value for description", :mission_id => 1, :validate => true) }
+    end
+    
+    it "fetches all the to come manifestations" do
+      results = Manifestation.to_come
+      results.should have(2).records
+    end
+  end
 end

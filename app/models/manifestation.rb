@@ -12,8 +12,8 @@ class Manifestation < ActiveRecord::Base
   
   default_scope :order => "date_debut desc"
   
-  named_scope :to_come, :conditions => ['date_debut >= ? AND validate = ?', Time.now, true]
-  named_scope :past, :conditions => ['date_debut <= ? AND validate = ?', Time.now, true]
+  named_scope :to_come, :conditions => ['date_debut >= ? OR date_fin >= ? AND validate = ?',Time.now, Time.now, true]
+  named_scope :past, :conditions => ['date_fin <= ? AND validate = ?', Time.now, true]
   named_scope :pending, :conditions => ['validate = ?', false]
   
   def self.group_by_year(params_page)
