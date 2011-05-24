@@ -269,11 +269,13 @@ div#annonces {
 
 div.annonce {
 	display: block;
+	width: 600px;
 }
 
 div#annonces div.annonce p.annonce_texte {
 	margin-top: 15px;
 	font-size: 1.2em;
+	height: 200px;
 }
 
 div#annonces div.annonce p.annonce_image {
