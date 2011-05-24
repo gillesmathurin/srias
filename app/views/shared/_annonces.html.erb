@@ -1,3 +1,8 @@
+<% content_for :head do %>
+	<%= javascript_include_tag 'builder', 'lightbox' %>
+	<%= stylesheet_link_tag 'lightbox' %>
+<% end %>
+
 <% unless annonces_courantes.empty? %>
   <div id="annonces" style="display:none">
   
@@ -6,7 +11,8 @@
   	    
   	    <% unless missing_annonce_image(annonce) %>
     	    <p class="annonce_image">
-    	      <%= image_tag(annonce.image.url(:thumb)) %>
+    	      <%= link_to image_tag(annonce.image.url(:thumb)), annonce.image.url(:medium), {:rel => "lightbox"} %>
+    	      <%# image_tag(annonce.image.url(:thumb)) %>
     	    </p>
   	    <% end %>
   	    
