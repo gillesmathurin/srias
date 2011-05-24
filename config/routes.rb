@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :texte_accueils
 
-  map.resources :newsletters, :member => {:deliver => :get}
+  map.resources :newsletters, :member => {:deliver => :get, :deliver_test => :get}
 
   map.resources :abonnes, :collection => {:delete_all => :get}
 

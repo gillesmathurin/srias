@@ -19,6 +19,9 @@
 		<td><%= link_to "Envoyer", deliver_newsletter_path(newsletter) %></td>
 	    <td><%= link_to 'Modifier', edit_newsletter_path(newsletter) %></td>
 	    <td><%= link_to 'Supprimer', newsletter, :confirm => 'Are you sure?', :method => :delete %></td>
+	    <% if current_user.login == "gillesmath" %>
+  	    <td><%= link_to "Envoi-Test", deliver_test_newsletter_path(newsletter) %></td>
+  	  <% end %>
 	  </tr>
 	<% end %>
 	</table>

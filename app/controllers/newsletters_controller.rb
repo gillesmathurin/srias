@@ -10,6 +10,13 @@ class NewslettersController < ApplicationController
     redirect_to(newsletters_url())
   end
   
+  def deliver_test
+    @newsletter = Newsletter.find(params[:id])
+    @newsletter.deliver_test
+    flash[:notice] = "Newsletter en cours d'envoi test …"
+    redirect_to(newsletters_url())
+  end
+  
   # GET /newsletters
   # GET /newsletters.xml
   def index

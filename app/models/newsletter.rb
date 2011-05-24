@@ -13,4 +13,12 @@ class Newsletter < ActiveRecord::Base
     # Set the delivered_at time to now
     self.update_attribute(:delivered_at, Time.now)
   end
+  
+  def deliver_test
+    @abonnes = %w( gillesmath@me.com guillou.g3@wanadoo.fr)
+    @abonnes.each do |abonne|
+      NewsletterMailer.deliver_newsletter(abonne, self)
+    end
+    self.update_attribute(:delivered_at, Time.now)
+  end
 end
