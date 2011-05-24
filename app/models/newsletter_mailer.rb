@@ -7,7 +7,7 @@ class NewsletterMailer < ActionMailer::Base
     sent_on         Time.now    
     body            :newsletter => newsletter
     content_type    "text/html"
-    charset         "utf8"
+    charset         "UTF-8"
     
     if newsletter.file.url != "/files/original/missing.png"
       # part 'multipart/mixed' do |p|
