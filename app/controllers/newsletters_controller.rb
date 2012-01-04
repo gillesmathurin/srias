@@ -5,7 +5,8 @@ class NewslettersController < ApplicationController
   # GET /newsletter/1/deliver
   def deliver
     @newsletter = Newsletter.find(params[:id])
-    @newsletter.send_later(:deliver)
+    # @newsletter.send_later(:deliver)
+    @newsletter.delay.deliver
     flash[:notice] = "Newsletter en cours d'envoi …"
     redirect_to(newsletters_url())
   end
