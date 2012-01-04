@@ -11,7 +11,7 @@ Rails::Initializer.run do |config|
   config.gem 'cancan'
   config.gem 'will_paginate', :lib => 'will_paginate', :version => '>= 2.3.14'
   config.gem 'paperclip'
-  config.gem 'delayed_job', :version => '2.0.3'
+  config.gem 'delayed_job', :version => '~>2.0.4'
   # config.gem 'delayed_paperclip'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
