@@ -4,7 +4,7 @@ class ManifestationsController < ApplicationController
   # GET /manifestations
   # GET /manifestations.xml
   def index
-    @manifestations = Manifestation.group_by_year(params[:page])#past.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}.paginate(:page => params[:page], :per_page => 10)
+    @manifestations = Manifestation.group_by_year(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,9 +14,9 @@ class ManifestationsController < ApplicationController
   
   def actions
     if @mission
-      @manifestations = @mission.manifestations.to_come.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}.paginate(:page => params[:page], :per_page => 10)
+      @manifestations = @mission.manifestations.to_come_group_by_year(params[:page])
     else
-      @manifestations = Manifestation.to_come.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}.paginate(:page => params[:page], :per_page => 10)
+      @manifestations = Manifestation.to_come_group_by_year(params[:page])
     end
     
     respond_to do |format|
