@@ -26,7 +26,7 @@ class ManifestationsController < ApplicationController
   end
   
   def pending
-    @manifestations = Manifestation.pending.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}.paginate(:page => params[:page], :per_page => 10)
+    @manifestations = Manifestation.pending_group_by_year(params[:page])
     render :partial => "manifs_list",:layout => false
   end
 
