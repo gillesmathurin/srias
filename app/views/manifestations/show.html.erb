@@ -10,7 +10,8 @@
 	<p align="center">
 		<% if can? :modify, @manifestation %>
 			<% if @manifestation.validate? %>
-			<%= link_to "Retirer de la publication", unvalidate_manifestation_path(@manifestation), :method => :put %>
+			<%= link_to "Retirer de la publication", unvalidate_manifestation_path(@manifestation),
+			 :method => :put %>
 			<% else %>
 			| <%= link_to "Publier", validate_manifestation_path(@manifestation), :method => :put %>
 			<% end %>
@@ -37,9 +38,8 @@
 <% if current_user %>
 	<%= link_to 'Modifier', edit_manifestation_path(@manifestation) %> |
 <% end %>
-	<%= link_to 'Retour', manifestations_path %>
-	
-	<h5>Galerie de photos</h5>
+
+<!-- Galerie de photos  -->
 	<% unless @manifestation.photos.empty? %>
 		<table>
 			<tr>
@@ -53,8 +53,6 @@
 				<% end %>
 			</tr>
 		</table>
-	<% else %>
-		<p>Pas de photos de cette manifestation</p>
 	<% end %>
 	
 	<% if can? :modify, @manifestation %>
@@ -65,6 +63,9 @@
 		<%= link_to "Modifiez un fichier joint", manifestation_fichiers_path(@manifestation) %>
 	</p>
  	<% end %>
+ 	
+ 	<p><%= link_to 'Retour', manifestations_path %></p>
+ 	
 </div>
 <!-- Right Sidebar -->
 <div class="span-4 last">
