@@ -14,6 +14,7 @@
 	<%# stylesheet_link_tag 'base' %>
 	<%= javascript_include_tag 'prototype', 'effects' %>
 	<%= yield(:head) %>
+    <%= include_tiny_mce_if_needed %>
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-20205376-2']);
