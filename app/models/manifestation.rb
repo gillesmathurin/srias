@@ -16,6 +16,10 @@ class Manifestation < ActiveRecord::Base
   named_scope :past, :conditions => ['date_fin <= ? AND validate = ?', Time.now, true]
   named_scope :pending, :conditions => ['validate = ?', false]
   
+  def to_param
+    "#{id}-" + nom.parameterize
+  end
+  
   def self.group_by_year(params_page)
     self.past.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}.paginate(:page => params_page, :per_page => 10)
   end
