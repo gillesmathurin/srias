@@ -22,6 +22,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :manifestations, :has_many => [:photos, :fichiers],
    :collection => {:actions => :get, :pending => :put}, :member => {:validate => :put, :unvalidate => :put}
   map.actions "actions", :controller => "manifestations", :action => "actions"
+  map.uneaction "une-action/:id", :controller => "manifestations", :action => "show"
 
   map.resources :missions do |missions|
     missions.resources :manifestations, :collection => {:actions => :get, :pending => :put}, :member => {:validate => :put, :unvalidate => :put}

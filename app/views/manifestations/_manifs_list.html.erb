@@ -1,7 +1,5 @@
 <% @manifestations.each do |group_by_year| %>
 
-	
-
 	<p class="group-by-year">
 		<%= group_by_year[0] %>
 		<%= link_to_function "+/-", "$('#{group_by_year[0]}').toggle();", :class =>"hide_show", :alt => "masquer/montrer" %>
@@ -13,11 +11,13 @@
 			</p>
 			<% manifestations.each do |manifestation| %>
 				<p>
-					<span class="nom-manif"><%=h manifestation.nom %></span> - <%=h manifestation.lieu %> du <%=h format_datetime(manifestation.date_debut) %> au <%=h format_datetime(manifestation.date_fin) %><br/> <%= manifestation.description %> | <%= link_to "Voir", manifestation_path(manifestation) %><br/>
+					<span class="nom-manif"><%=h manifestation.nom %></span> - <%=h manifestation.lieu %> du <%=h format_datetime(manifestation.date_debut) %> au <%=h format_datetime(manifestation.date_fin) %><br/> <%= manifestation.description %> | <%#= link_to "Voir", manifestation_path(manifestation) %> <%= manif_or_action_show_link(manifestation, @actions_links) %><br/>
+					
 				<% if can? :update, manifestation %>	
 					<%= link_to 'Modifier', edit_manifestation_path(manifestation) %> |
 					<%= link_to 'Supprimer', manifestation, :confirm => 'En êtes vous sur ?', :method => :delete %>
 				<% end %>
+				
 				<% if can? :modify, manifestation %>
 					<% if manifestation.validate? %>
 					| <%= link_to "Retirer", unvalidate_manifestation_path(manifestation), :method => :put %>

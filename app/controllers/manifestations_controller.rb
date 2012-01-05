@@ -19,6 +19,7 @@ class ManifestationsController < ApplicationController
     else
       @manifestations = Manifestation.to_come_group_by_year(params[:page])
     end
+    @actions_links = true
     
     respond_to do |format|
       format.html # index.html.erb
