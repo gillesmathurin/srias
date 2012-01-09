@@ -12,7 +12,7 @@
 	<!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 
 	<%# stylesheet_link_tag 'base' %>
-	<%= javascript_include_tag 'prototype', 'effects' %>
+	<%= javascript_include_tag 'jquery.js', 'jquery-ui.min.js', 'jquery_ujs.js','jquery-1.4.1.min.js', 'builder', 'jquery.lightbox-0.5.min.js', 'application.js' %>
 	<%= yield(:head) %>
     <%= include_tiny_mce_if_needed %>
 	<script type="text/javascript">
@@ -21,7 +21,7 @@
 		_gaq.push(['_trackPageview']);
 		
 		(function() {
-			var ga = documebt.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
@@ -95,9 +95,5 @@
 		</div>
 	</div>
   
-  <script type="text/javascript" charset="utf-8">
-    Effect.BlindDown('annonces', {direction:1.0});
-    // return false;
-  </script>
 </body>
 </html>

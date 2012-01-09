@@ -1,7 +1,4 @@
-<% content_for :head do %>
-	<%= javascript_include_tag 'builder', 'lightbox' %>
-	<%= stylesheet_link_tag 'lightbox' %>
-<% end %>
+
 
 <% unless annonces_courantes.empty? %>
   <div id="annonces" style="display:none">
@@ -23,4 +20,5 @@
   	<div class="masquer_annonce"><%= link_to_remote "Masquer", :url => masquerannonce_url() %></div>
 		
   </div>
+	
 <% end %>

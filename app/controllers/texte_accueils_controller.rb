@@ -1,4 +1,6 @@
 class TexteAccueilsController < ApplicationController
+  uses_tiny_mce
+  
   before_filter :require_user
   
   # GET /texte_accueils

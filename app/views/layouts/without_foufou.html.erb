@@ -12,7 +12,7 @@
 	<!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 
 	<%# stylesheet_link_tag 'base' %>
-	<%= javascript_include_tag 'prototype', 'effects' %>
+	<%= javascript_include_tag 'jquery.js', 'jquery-ui.min.js', 'jquery_ujs.js', 'jquery.lightbox-0.5.min.js', 'application.js' %>
 	<%= yield(:head) %>
   <%= include_tiny_mce_if_needed %>
 	<script type="text/javascript">

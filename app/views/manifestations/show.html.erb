@@ -1,6 +1,6 @@
 <% content_for :head do %>
-	<%= javascript_include_tag 'builder', 'lightbox' %>
-	<%= stylesheet_link_tag 'lightbox' %>
+	<%# javascript_include_tag 'builder' %>
+	<%= stylesheet_link_tag 'jquery.lightbox-0.5.css' %>
 <% end %>
 <div class="span-16">
 	<%= render :partial => "shared/flash_messages" %>
@@ -45,7 +45,7 @@
 			<tr>
 				<% @manifestation.photos.each do |photo| %>
 				<td>
-					<%= link_to image_tag(photo.photo.url(:thumb)), photo.photo.url(:large), {:rel => "lightbox"} %><br/>
+					<%= link_to image_tag(photo.photo.url(:thumb)), photo.photo.url(:large), :class => "lightbox" %><br/>
 					<% if current_user %>
 						<%= link_to "Supprimer", manifestation_photo_path(@manifestation, photo), :method => :delete, :confirm => "Certain ?" %>
 					<% end %>
@@ -54,6 +54,11 @@
 			</tr>
 		</table>
 	<% end %>
+	
+	<!-- TODO : make ujs -->
+  <script type="text/javascript" charset="utf-8">
+		$(function() { $('a.lightbox').lightBox(); })
+	</script>
 	
 	<% if can? :modify, @manifestation %>
 	<p><%= link_to "Ajouter une photo", new_manifestation_photo_path(@manifestation) %></p>	
