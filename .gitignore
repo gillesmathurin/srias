@@ -1,5 +1,6 @@
 .DS_Store
 .idea/
+public/system/
 log/development.log
 log/test.log
 log/delayed_job.log
