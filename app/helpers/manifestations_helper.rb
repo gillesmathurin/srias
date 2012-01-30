@@ -9,5 +9,13 @@ module ManifestationsHelper
     else
       link_to "Voir", manifestation_path(manifestation)
     end
+  end
+  
+  def manif_or_action_index_link(actions_link)
+    if actions_link
+      link_to "Retour", actions_path
+    else
+      link_to "Retour", manifestations_path
+    end
   end  
 end

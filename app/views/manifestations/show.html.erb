@@ -2,7 +2,7 @@
 	<%# javascript_include_tag 'builder' %>
 	<%= stylesheet_link_tag 'jquery.lightbox-0.5.css' %>
 <% end %>
-<div class="span-16">
+<div class="span-16 manif-details">
 	<%= render :partial => "shared/flash_messages" %>
 	
 	<h1><%=h @manifestation.nom %></h1>
@@ -28,7 +28,7 @@
 	
 	<p>
 	  <b>Description:</b>
-	  <%=simple_format @manifestation.description %>
+	  <%= @manifestation.description %>
 	</p>
 	
 	<% @manifestation.fichiers.each do |fichier| %>
@@ -69,7 +69,7 @@
 	</p>
  	<% end %>
  	
- 	<p><%= link_to 'Retour', manifestations_path %></p>
+ 	<p><%= manif_or_action_index_link(@actions_link = true) %> <%# link_to 'Retour', manifestations_path %></p>
  	
 </div>
 <!-- Right Sidebar -->

@@ -358,3 +358,26 @@ div.partenaire div.part_offres div.offre a.offre_link {
 	font-size: 1.5em;
 	font-variant: small-caps;
 }
+
+/* Actions et Manifestations */
+
+div.manif-resume>p.titre-manif {
+  margin-bottom:12px;
+}
+
+div.manif-resume div.link-box {
+  margin-bottom:24px;
+}
+
+div.manifestation-desc {
+  padding:0px;
+  background:transparent;
+}
+
+div.manifestation-desc>p {
+  margin:0px;
+}
+
+div.manif-details p {
+  margin:10px;
+}
