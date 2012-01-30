@@ -1,5 +1,5 @@
 class ManifestationsController < ApplicationController
-  uses_tiny_mce
+  uses_tiny_mce :theme => :advanced
   before_filter :require_user, :only => [:new, :edit, :create, :update, :destroy]
   before_filter :find_mission
   # GET /manifestations
