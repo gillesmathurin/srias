@@ -11,8 +11,8 @@ module ManifestationsHelper
     end
   end
   
-  def manif_or_action_index_link(actions_link)
-    if actions_link
+  def manif_or_action_index_link(manifestation)
+    if manifestation.date_debut > Time.now
       link_to "Retour", actions_path
     else
       link_to "Retour", manifestations_path
