@@ -1,24 +1,23 @@
-
-
-<% unless annonces_courantes.empty? %>
-  <div id="annonces" style="display:none">
-  
-  	<% for annonce in annonces_courantes %>
-  	  <div class="annonce">	    
-  	    
-  	    <% unless missing_annonce_image(annonce) %>
-    	    <p class="annonce_image">
-    	      <%= link_to image_tag(annonce.image.url(:thumb)), annonce.image.url(:medium), {:rel => "lightbox"} %>
-    	      <%# image_tag(annonce.image.url(:thumb)) %>
-    	    </p>
-  	    <% end %>
-  	    
-  	    <p class="annonce_texte"><%= annonce.message %></p>
-  	  </div>
-  	<% end %>
-	
-  	<div class="masquer_annonce"><%= link_to_remote "Masquer", :url => masquerannonce_url() %></div>
-		
-  </div>
-	
+<% content_for :head do %>
+  <script type="text/javascript" src="javascripts/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.coda-slider-2.0.js"></script>
+	 <script type="text/javascript">
+		$().ready(function() {
+			$('#coda-slider-1').codaSlider();
+		});
+	 </script>
 <% end %>
+
+<div class="coda-slider-wrapper">
+  <div class="coda-slider preload" id="coda-slider-1">
+    <%- unless @actions.empty? -%>
+      <% for action in @actions %>
+        <div class="panel">
+          <div class="panel-wrapper">
+            <%= action.date_debut.strftime("%d/%m/%Y") %> : <%= action.nom %> <%= lieu(action) %>
+          </div>
+        </div>
+      <%- end -%>
+    <%- end -%>
+  </div>
+</div>

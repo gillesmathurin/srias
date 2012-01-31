@@ -1,15 +1,13 @@
 <% content_for :head do %>
-	<%# javascript_include_tag 'builder', 'lightbox' %>
-	<%# stylesheet_link_tag 'lightbox' %>
-	<%= stylesheet_link_tag 'facebox.css' %>
-	<%= javascript_include_tag 'facebox.js' %>
-	<%- unless annonces_courantes.empty? -%>
-    <script type="text/javascript" charset="utf-8">
+	<%# stylesheet_link_tag 'facebox.css' %>
+	<%# javascript_include_tag 'facebox.js' %>
+	<%# unless annonces_courantes.empty? %>
+    <!-- <script type="text/javascript" charset="utf-8">
       $(document).ready(function($) {
         $.facebox({div: '#annonces'});
       })
-    </script>
-  <%- end -%>
+    </script> -->
+  <%# end %>
 <% end %>
 
 <div class="span-16">
