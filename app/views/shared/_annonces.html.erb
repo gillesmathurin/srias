@@ -3,7 +3,12 @@
 	<script type="text/javascript" src="javascripts/jquery.coda-slider-2.0.js"></script>
 	 <script type="text/javascript">
 		$().ready(function() {
-			$('#coda-slider-1').codaSlider();
+			$('#coda-slider-1').codaSlider({
+			  autoSlide: true,
+			  autoSlideInterval: 5000,
+			  autoSlideStopWhenClicked: true,
+			  dynamicArrows:false
+			});
 		});
 	 </script>
 <% end %>
@@ -14,7 +19,14 @@
       <% for action in @actions %>
         <div class="panel">
           <div class="panel-wrapper">
-            <%= action.date_debut.strftime("%d/%m/%Y") %> : <%= action.nom %> <%= lieu(action) %>
+            <% unless action.photos.empty? %>
+              <p class="annonce-image">
+                <%= image_tag action.photos.first.photo.url(:thumb)  %>              
+              </p>
+            <% end %>
+            <p class="annonce-texte">
+              <span class="date"><%= action.date_debut.strftime("%d/%m/%Y") %></span> : <span class="nom"><%= link_to action.nom, uneaction_path(action.id) %></span> <span class="lieu"><%= lieu(action) %></span>
+            </p>            
           </div>
         </div>
       <%- end -%>

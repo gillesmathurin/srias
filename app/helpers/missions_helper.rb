@@ -1,6 +1,6 @@
 module MissionsHelper
   def lieu(action)
-    if action.lieu != "" || !action.lieu.nil?
+    if !action.lieu.blank? || !action.lieu.nil?
       @content = " Lieu : " + "#{action.lieu}"
     else
       @content = ""

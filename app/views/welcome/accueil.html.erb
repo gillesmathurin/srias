@@ -15,19 +15,19 @@
 	
   <%= render :partial => "shared/annonces" %>
 	
-	<div id="bandeau">
-	<% if !@actions.blank? %>
-		<marquee behavior="slide" direction="left" height="30" loop="10" scrollamount="4" width="610">
-		  <% for action in @actions %>
-		    <%= action.date_debut.strftime("%d/%m/%Y") %> : <%= action.nom %> <%= lieu(action) %> || 
-		  <% end %>		
-		</marquee>
-	<% else %>
-		<marquee behavior="slide" direction="left" height="30" loop="10" scrollamount="4" width="610">
-		"Revenez régulièrement pour consulter les dernières informations."
-		</marquee>
-	<% end %>
-	</div>
+  <!-- <div id="bandeau">
+  <%# if !@actions.blank? %>
+    <marquee behavior="slide" direction="left" height="30" loop="10" scrollamount="4" width="610">
+      <%# for action in @actions %>
+        <%# action.date_debut.strftime("%d/%m/%Y") %> : <%# action.nom %> <%# lieu(action) %> || 
+      <%# end %>   
+    </marquee>
+  <%# else %>
+    <marquee behavior="slide" direction="left" height="30" loop="10" scrollamount="4" width="610">
+    "Revenez régulièrement pour consulter les dernières informations."
+    </marquee>
+  <%# end %>
+  </div> -->
 	
 	<h1><%= @texte.titre if @texte %></h1>
 	
