@@ -385,7 +385,7 @@ div.manif-details p {
 /* Panneau défilant */
 
 div.panel-wrapper {
-  height:250px;
+  height:200px;
   border:yellow 1px solid;
   background:white;
 }
@@ -407,4 +407,5 @@ div.panel-wrapper span.lieu {
 
 div.panel-wrapper p.annonce-image img {
   float: left;
+  padding-right:10px;
 }
