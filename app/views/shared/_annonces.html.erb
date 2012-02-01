@@ -15,17 +15,17 @@
 
 <div class="coda-slider-wrapper">
   <div class="coda-slider preload" id="coda-slider-1">
-    <%- unless @actions.empty? -%>
-      <% for action in @actions %>
+    <%- unless annonces_courantes.empty? -%>
+      <% for annonce in annonces_courantes %>
         <div class="panel">
           <div class="panel-wrapper">
-            <% unless action.photos.empty? %>
+            <% unless annonce.image.nil? %>
               <p class="annonce-image">
-                <%= image_tag action.photos.first.photo.url(:thumb)  %>              
+                <%= image_tag annonce.image.url(:thumb)  %>              
               </p>
             <% end %>
             <p class="annonce-texte">
-              <span class="date"><%= action.date_debut.strftime("%d/%m/%Y") %></span> : <span class="nom"><%= link_to action.nom, uneaction_path(action.id) %></span> <span class="lieu"><%= lieu(action) %></span>
+              <span class="date"><%= annonce.starts_at.strftime("%d/%m/%Y") %></span> : <span class="nom"><%= link_to annonce.message %></span>
             </p>            
           </div>
         </div>
