@@ -25,7 +25,7 @@
               </p>
             <% end %>
             <p class="annonce-texte">
-              <span class="date"><%= annonce.starts_at.strftime("%d/%m/%Y") %></span> : <span class="nom"><%= link_to annonce.message %></span>
+              <span class="date"><%= annonce.starts_at.strftime("%d/%m/%Y") %></span> : <span class="nom"><%= raw annonce.message %></span>
             </p>            
           </div>
         </div>
