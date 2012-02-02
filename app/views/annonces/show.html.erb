@@ -1,10 +1,8 @@
 <div class="span-16">
   <h1>Annonce-<%= @annonce.id %></h1>
   
-  <p>
-    <b>Message:</b>
-    <%=raw @annonce.message %>
-  </p>
+  <b>Message:</b>
+  <%=raw @annonce.message %>
   
   <% unless current_user %>
     <p>
