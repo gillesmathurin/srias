@@ -5,16 +5,18 @@
     <b>Message:</b>
     <%=raw @annonce.message %>
   </p>
+  
+  <% unless current_user %>
+    <p>
+      <b>Date début:</b>
+      <%=h @annonce.starts_at %>
+    </p>
 
-  <p>
-    <b>Date début:</b>
-    <%=h @annonce.starts_at %>
-  </p>
-
-  <p>
-    <b>Date de Fin:</b>
-    <%=h @annonce.ends_at %>
-  </p>
+    <p>
+      <b>Date de Fin:</b>
+      <%=h @annonce.ends_at %>
+    </p>
+  <% end %>
 
   <p>
     <b>Image associée</b>

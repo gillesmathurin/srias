@@ -16,7 +16,6 @@ class Ability
         can :update, Manifestation
       end
     end
-  end
-  
+  end  
   
 end

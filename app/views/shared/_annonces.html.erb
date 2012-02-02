@@ -21,11 +21,11 @@
           <div class="panel-wrapper">
             <% unless annonce.image.nil? %>
               <p class="annonce-image">
-                <%= image_tag annonce.image.url(:thumb)  %>              
+                <%= image_tag annonce.image.url(:thumb) unless missing_annonce_image(annonce)  %>              
               </p>
             <% end %>
             <p class="annonce-texte">
-              <span class="date"><%= annonce.starts_at.strftime("%d/%m/%Y") %></span> : <span class="nom"><%= raw annonce.message %></span>
+              <span class="nom"><%= raw annonce.message %></span> <br/> <%= link_to "voir ...", annonce_path(annonce) %>
             </p>            
           </div>
         </div>
