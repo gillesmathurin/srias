@@ -3,7 +3,7 @@
   
   <p>
     <b>Message:</b>
-    <%=h @annonce.message %>
+    <%=raw @annonce.message %>
   </p>
 
   <p>
@@ -21,8 +21,6 @@
     <%= image_tag(@annonce.image.url(:thumb)) %>
   </p>
 
-
-  <%= link_to 'Modifier', edit_annonce_path(@annonce) %> |
-  <%= link_to 'Retour', annonces_path %>
+  <% if current_user %> <%= link_to 'Modifier', edit_annonce_path(@annonce) %> |<% end %> <%= link_to 'Retour', annonces_path %>
 </div>
 

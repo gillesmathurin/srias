@@ -4,12 +4,12 @@
   
   <% @annonces.each do |annonce| %>
     <div class="annonce_item">
-      <p><%=h annonce.message %></p>
+      <p><%=raw annonce.message %></p>
       <p>Du : <%=h annonce.starts_at %></p>
       <p>Au : <%=h annonce.ends_at %></p>
       <p><%= image_tag(annonce.image.url(:thumb)) %></p>
       <p>
-        <%= link_to 'Voir', annonce %> | <%= link_to 'Modifier', edit_annonce_path(annonce) %> | <%= link_to 'Supprimer', annonce, :confirm => 'En êtes vous sur?', :method => :delete %>
+        <%= link_to 'Voir', annonce %> <% if current_user %>| <%= link_to 'Modifier', edit_annonce_path(annonce) %> | <%= link_to 'Supprimer', annonce, :confirm => 'En êtes vous sur?', :method => :delete %><% end %>
       </p>
     </div>
   <% end %>
