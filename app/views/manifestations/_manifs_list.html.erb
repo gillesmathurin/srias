@@ -12,6 +12,7 @@
 			</p>
 			
 			<% manifestations.each do |manifestation| %>
+			  <hr/>
 				<p class="titre-manif">
 					<span class="nom-manif"><%= manifestation.nom %></span> - <%= manifestation.lieu %> du <%=h format_datetime(manifestation.date_debut) %> au <%=h format_datetime(manifestation.date_fin) %>
 				</p>	
