@@ -22,6 +22,9 @@
     <%= f.label :description %><br />
     <%= f.text_area :description, :class => "mceEditor" %>
   </p>
+  <p>
+    <%= f.check_box :as_annonce %> : <%= f.label :as_annonce, "Spécifier comme annonce" %>
+  </p>
 
 	<% f.fields_for :photos do |photo_form| %>
 		<p><%= photo_form.label "Photo" %> : <%= photo_form.file_field :photo %></p>

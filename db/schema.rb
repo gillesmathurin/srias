@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110329130950) do
+ActiveRecord::Schema.define(:version => 20120228023101) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(:version => 20110329130950) do
     t.integer  "fiche_file_size"
     t.string   "fiche_content_type"
     t.datetime "fiche_updated_at"
+    t.boolean  "as_annonce",                :default => false
   end
 
   create_table "missions", :force => true do |t|

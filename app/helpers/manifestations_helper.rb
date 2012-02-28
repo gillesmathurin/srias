@@ -17,5 +17,6 @@ module ManifestationsHelper
     else
       link_to "Retour", manifestations_path
     end
-  end  
+  end
+  
 end

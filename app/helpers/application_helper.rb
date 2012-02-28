@@ -12,6 +12,10 @@ module ApplicationHelper
     annonce.image.url == "/images/thumb/missing.png"
   end
   
+  def missing_action_illustration(manifestation)
+    manifestation.illustration.url == "/illustrations/thumb/missing.png"
+  end
+  
   def display_link_or_image(fichier)
     if fichier.fichier.url != "/fichiers/missing.png"
       if fichier.fichier.content_type =~ /image/

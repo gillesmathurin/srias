@@ -15,6 +15,24 @@
 
 <div class="coda-slider-wrapper">
   <div class="coda-slider preload" id="coda-slider-1">
+    <!-- Actions as annonce -->
+    <%- unless @action_as_annonces.empty? -%>
+      <% for action in @action_as_annonces %>
+        <div class="panel">
+          <div class="panel-wrapper">
+            <% unless action.illustration.nil? %>
+              <p class="annonce-image">
+                <%= image_tag action.illustration.url(:thumb) unless missing_action_illustration(action) %>
+              </p>
+            <% end %>
+            <p class="annonce-texte">
+              <span class="nom"><%= link_to(raw(action.nom), uneaction_path(action.id)) %></span>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    <%- end -%>
+    <!-- Annonces -->
     <%- unless annonces_courantes.empty? -%>
       <% for annonce in annonces_courantes %>
         <div class="panel">
@@ -31,5 +49,6 @@
         </div>
       <%- end -%>
     <%- end -%>
+    
   </div>
 </div>
