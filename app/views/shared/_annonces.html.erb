@@ -26,7 +26,7 @@
               </p>
             <% end %>
             <p class="annonce-texte">
-              <span class="nom"><%= link_to(raw(action.nom), uneaction_path(action.id)) %></span>
+              <span class="nom"><%= link_to(raw(action.nom), uneaction_path(action.id)) %></span><br/> <%= action.lieu %> du <%=h format_datetime(action.date_debut) %> au <%=h format_datetime(action.date_fin) %>
             </p>
           </div>
         </div>

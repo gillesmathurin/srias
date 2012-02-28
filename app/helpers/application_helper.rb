@@ -13,7 +13,7 @@ module ApplicationHelper
   end
   
   def missing_action_illustration(manifestation)
-    manifestation.illustration.url == "/illustrations/thumb/missing.png"
+    manifestation.illustration.url == "/illustrations/original/missing.png"      
   end
   
   def display_link_or_image(fichier)

@@ -29,7 +29,7 @@ class ManifestationsController < ApplicationController
   
   def pending
     @manifestations = Manifestation.pending_group_by_year(params[:page])
-    render :partial => "manifs_list",:layout => false
+    render :partial => "manifs_list", :layout => false
   end
 
   # GET /manifestations/1
