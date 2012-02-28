@@ -19,6 +19,10 @@
     <%= f.datetime_select :date_fin, :order => [:day, :month, :year], :discard_hour => true, :discard_minute => true  %>
   </p>
   <p>
+    <%= f.label :illustration, "Illustration de la Manifestation - Action" %><br/>
+    <%= f.file_field :illustration %>
+  </p>
+  <p>
     <%= f.label :description %><br />
     <%= f.text_area :description, :class => "mceEditor" %>
   </p>

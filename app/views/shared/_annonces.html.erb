@@ -22,7 +22,7 @@
           <div class="panel-wrapper">
             <% unless action.illustration.nil? %>
               <p class="annonce-image">
-                <%= image_tag action.illustration.url(:thumb) unless missing_action_illustration(action) %>
+                <%= image_tag action.illustration.url(:thumb) %>
               </p>
             <% end %>
             <p class="annonce-texte">
