@@ -11,7 +11,7 @@ module Assets
   #
   class Filename
     def self.normalize(name)
-      self.new(name).normalize
+      self.new(name).normalize unless name.nil?
     end
 
     def initialize(name)
@@ -25,7 +25,7 @@ module Assets
     private
 
     def file_name
-      File.basename(@name, File.extname(@name)).parameterize
+      File.basename(@name, File.extname(@name)).parameterize unless @name.nil?
     end
 
     def ext_name
