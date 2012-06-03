@@ -11,3 +11,5 @@ tmp/*
 db/*.sqlite3
 config/database.yml
 config/initializers/mail.rb
+srias.sublime-project
+srias.sublime-workspace
