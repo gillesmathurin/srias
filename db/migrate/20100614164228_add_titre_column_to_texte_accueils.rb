@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddTitreColumnToTexteAccueils < ActiveRecord::Migration
   def self.up
     add_column :texte_accueils, :titre, :string

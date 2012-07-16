@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddSelectedColumnToContacts < ActiveRecord::Migration
   def self.up
     add_column :contacts, :selected, :boolean, :default => false

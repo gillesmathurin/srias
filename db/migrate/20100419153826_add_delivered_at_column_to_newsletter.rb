@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddDeliveredAtColumnToNewsletter < ActiveRecord::Migration
   def self.up
     add_column :newsletters, :delivered_at, :datetime

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddMissionIdColumnToManifestations < ActiveRecord::Migration
   def self.up
     add_column :manifestations, :mission_id, :integer

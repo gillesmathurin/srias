@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddManifestationIdColumnToPhotos < ActiveRecord::Migration
   def self.up
     add_column :photos, :manifestation_id, :integer

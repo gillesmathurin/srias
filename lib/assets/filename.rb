@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module Assets
   # This class does normalization of any string passed into `normalize`.
   # With help of `ActiveSupport#parameterize` all special characters that

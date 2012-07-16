@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ManifestationsController < ApplicationController
   uses_tiny_mce :theme => :advanced
   before_filter :require_user, :only => [:new, :edit, :create, :update, :destroy]

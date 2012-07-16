@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 require 'cancan'
@@ -7,7 +8,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   helper_method :current_user_session, :current_user
   # Scrub sensitive parameters from your log
-  filter_parameter_logging :password, :password_confirmation
+  # filter_parameter_logging :password, :password_confirmation
   
   before_filter :create_abonne
   

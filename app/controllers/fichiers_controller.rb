@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class FichiersController < ApplicationController
   before_filter :find_manifestation, :find_offre
   

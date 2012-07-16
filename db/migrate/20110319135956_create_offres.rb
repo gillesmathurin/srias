@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateOffres < ActiveRecord::Migration
   def self.up
     create_table :offres do |t|

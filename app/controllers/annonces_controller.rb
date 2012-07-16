@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AnnoncesController < ApplicationController
   uses_tiny_mce :theme => :simple
   # GET /annonces

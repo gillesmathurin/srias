@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddFicheColumnsToManifestations < ActiveRecord::Migration
   def self.up
     add_column :manifestations, :fiche_file_name, :string

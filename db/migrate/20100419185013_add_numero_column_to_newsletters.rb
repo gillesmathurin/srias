@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddNumeroColumnToNewsletters < ActiveRecord::Migration
   def self.up
     add_column :newsletters, :numero, :string

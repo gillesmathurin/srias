@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Manifestation < ActiveRecord::Base
   include Assets::Normalizer
   # validations

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddLinkColumnToPartenaires < ActiveRecord::Migration
   def self.up
     add_column :partenaires, :link, :string

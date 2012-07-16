@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Annonce < ActiveRecord::Base
   has_attached_file :image , :styles => { :thumb => "250x250>", :medium => "600x600>" }
   

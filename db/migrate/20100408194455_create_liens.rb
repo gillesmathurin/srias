@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateLiens < ActiveRecord::Migration
   def self.up
     create_table :liens do |t|

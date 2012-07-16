@@ -5,7 +5,12 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'mysql2'
+gem 'authlogic'
+gem 'cancan'
+gem 'will_paginate'
+gem 'paperclip'
+gem 'delayed_job'
 
 
 # Gems used only for assets and not required
@@ -20,6 +25,26 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development, :test do
+	gem 'rspec-rails'
+	gem 'capybara'
+	gem 'factory_girl_rails', '~> 3.0'
+  gem 'email_spec'
+  gem 'fakeweb'
+  gem 'autotest-rails'
+end
+
+group :test do
+	gem 'cucumber-rails', require: false
+end
+
+
+group :production do
+  # gem 'execjs'
+  # gem 'therubyracer'  
+end
+
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
@@ -32,7 +57,7 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'

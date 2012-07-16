@@ -1,12 +1,13 @@
+# -*- encoding : utf-8 -*-
 ### Local Configuration
-ActionMailer::Base.delivery_method = :sendmail
-ActionMailer::Base.sendmail_settings = {
-  :location => '/usr/sbin/sendmail',
-  :arguments => '-i -t'
-}
-ActionMailer::Base.perform_deliveries = true
-ActionMailer::Base.raise_delivery_errors = true
-ActionMailer::Base.default_charset = "utf8"
+# ActionMailer::Base.delivery_method = :sendmail
+# ActionMailer::Base.sendmail_settings = {
+#   :location => '/usr/sbin/sendmail',
+#   :arguments => '-i -t'
+# }
+# ActionMailer::Base.perform_deliveries = true
+# ActionMailer::Base.raise_delivery_errors = true
+# ActionMailer::Base.default_charset = "utf8"
 
 ### Online configuration
 # ActionMailer::Base.delivery_method = :smtp

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Fichier < ActiveRecord::Base
   belongs_to :manifestation
   belongs_to :offre

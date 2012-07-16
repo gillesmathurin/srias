@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Creation des 2 premiers administrateurs
 # User.delete_all
 # if User.count == 0

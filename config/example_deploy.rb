@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 set :application, "srias"
 set :user, "user"
 set :domain, 'IP address or domain'

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddRoleColumnToContacts < ActiveRecord::Migration
   def self.up
     add_column :contacts, :role, :string

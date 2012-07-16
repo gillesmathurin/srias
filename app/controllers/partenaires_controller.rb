@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PartenairesController < ApplicationController
   before_filter :require_user, :only => [:new, :create, :edit, :update]
   # GET /partenaires

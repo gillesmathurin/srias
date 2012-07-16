@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateMissions < ActiveRecord::Migration
   def self.up
     create_table :missions do |t|

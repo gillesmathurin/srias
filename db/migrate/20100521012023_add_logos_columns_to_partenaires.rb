@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddLogosColumnsToPartenaires < ActiveRecord::Migration
   def self.up
     add_column :partenaires, :logo_file_name, :string

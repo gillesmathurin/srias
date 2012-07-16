@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PhotosController < ApplicationController
   before_filter :require_user, :only => [:new, :edit, :create, :update, :destroy]
   before_filter :find_manifestation

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddFileColumnsToNewsletters < ActiveRecord::Migration
   def self.up
     add_column :newsletters, :file_file_name, :string

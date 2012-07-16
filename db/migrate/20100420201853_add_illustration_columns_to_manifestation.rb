@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddIllustrationColumnsToManifestation < ActiveRecord::Migration
   def self.up
     add_column :manifestations, :illustration_content_type, :string

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AbonnesController < ApplicationController
   # GET /abonnes
   # GET /abonnes.xml

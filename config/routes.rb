@@ -1,4 +1,5 @@
-Srias2::Application.routes.draw do
+# -*- encoding : utf-8 -*-
+Srias::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

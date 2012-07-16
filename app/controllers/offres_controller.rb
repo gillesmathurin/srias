@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class OffresController < ApplicationController
   before_filter :find_partenaire
   

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreatePartenaires < ActiveRecord::Migration
   def self.up
     create_table :partenaires do |t|

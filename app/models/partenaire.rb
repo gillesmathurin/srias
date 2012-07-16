@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Partenaire < ActiveRecord::Base
   belongs_to :category
   has_many :offres, :dependent =>:destroy

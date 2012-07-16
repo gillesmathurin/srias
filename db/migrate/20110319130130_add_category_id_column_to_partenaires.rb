@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AddCategoryIdColumnToPartenaires < ActiveRecord::Migration
   def self.up
     add_column :partenaires, :category_id, :integer

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class NewslettersController < ApplicationController
   layout 'without_foufou'
   uses_tiny_mce
