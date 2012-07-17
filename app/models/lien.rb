@@ -1,4 +1,4 @@
 # -*- encoding : utf-8 -*-
 class Lien < ActiveRecord::Base
-  validates_presence_of :nom, :adresse, :on => :create, :message => "Doit être renseigné."
+	validates :nom, :adresse, :presence => { :on => :create, :message => "Doit être renseigné." }
 end
