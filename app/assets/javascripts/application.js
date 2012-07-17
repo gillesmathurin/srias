@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require tinymce-jquery
 //= require_tree .
+
+$().ready(function() {
+  $('#coda-slider-2').codaSlider({
+    autoSlide: true,
+    autoSlideInterval: 4000,
+    autoSlideStopWhenClicked: true
+  });
+});
