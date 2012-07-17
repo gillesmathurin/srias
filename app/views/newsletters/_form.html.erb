@@ -8,11 +8,13 @@
   </p>
   <p>
     <%= f.label :sommaire %><br />
-    <%= f.text_area :sommaire, :class =>"mceEditor" %>
+    <%= f.text_area :sommaire, :class =>"tinymce" %>
+    <%= tinymce :theme => "advanced", :language => "fr" %>
   </p>
   <p>
     <%= f.label :content %><br />
-    <%= f.text_area :content, :class =>"mceEditor" %>
+    <%= f.text_area :content, :class =>"tinymce" %>
+    <%= tinymce :theme => "advanced", :language => "fr" %>
   </p>
   <p>
   	<%= f.label :file, "Fichier" %><br/>
