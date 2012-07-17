@@ -1,10 +1,13 @@
 # -*- encoding : utf-8 -*-
 class Manifestation < ActiveRecord::Base
   include Assets::Normalizer
-  # validations
-  validates_presence_of :nom, :lieu, :date_debut, :mission_id, :on => :create, :message => "doit être renseigné."
+
+  attr_accessible :nom, :lieu, :date_debut, :date_fin, :description, :mission_id
+  # Validations
+  validates_presence_of :nom, :lieu, :date_debut, :mission_id,
+   :on => :create, :message => "doit être renseigné."
   
-  # relations
+  # Relations
   has_many :photos, :dependent => :destroy
   has_many :fichiers, :dependent => :destroy
   belongs_to :mission
@@ -12,19 +15,19 @@ class Manifestation < ActiveRecord::Base
   
   accepts_nested_attributes_for :photos, :allow_destroy => true
   
-  default_scope :order => "date_debut desc"
-  
-  scope :to_come, :conditions => ['date_debut >= ? OR date_fin >= ? AND validate = ?',Time.now, Time.now, true], :order => 'date_debut asc'
-  scope :past, :conditions => ['date_fin <= ? AND validate = ?', Time.now, true]
-  scope :pending, :conditions => ['validate = ?', false]
-  scope :as_valid_annonces, :conditions => ['as_annonce IS TRUE']
+  # Scope
+  default_scope :order => "date_debut desc"  
+  scope :to_come, where('date_debut >= ? OR date_fin >= ? AND validate = ?',Time.now, Time.now, true).order('date_debut asc')
+  scope :past, where('date_fin <= ? AND validate = ?', Time.now, true)
+  scope :pending, where(:validate => false)
+  scope :as_valid_annonces, where('as_annonce IS TRUE')
     
   def to_param
     "#{id}-" + nom.parameterize
   end
   
   def self.group_by_year(params_page)
-    self.past.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}.paginate(:page => params_page, :per_page => 10)
+    self.past.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}#.paginate(:page => params_page, :per_page => 10)
   end
 
   def self.to_come_group_by_year(params_page)
