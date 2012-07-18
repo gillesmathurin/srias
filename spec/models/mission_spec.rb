@@ -18,8 +18,15 @@ describe Mission do
     @mission.should have(1).error_on(:nom)
   end
   
-  it "requires a description" do
+  it "doesn't require a description" do
     @mission = Mission.new
-    @mission.should have(1).error_on(:description)
+    @mission.should_not have(1).error_on(:description)
+  end
+
+  describe "to_param" do
+    it "returns a human readable id" do
+      mission = FactoryGirl.create(:mission, :nom => "ma mission")
+      mission.to_param.should eql("#{mission.id}-ma-mission")
+    end    
   end
 end

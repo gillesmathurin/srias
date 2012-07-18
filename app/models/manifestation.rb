@@ -11,8 +11,9 @@ class Manifestation < ActiveRecord::Base
   has_many :photos, :dependent => :destroy
   has_many :fichiers, :dependent => :destroy
   belongs_to :mission
-  has_attached_file :illustration, :styles => { :thumb => "150x150>" }
-  
+
+  # Attachement
+  has_attached_file :illustration, :styles => { :thumb => "150x150>" }  
   accepts_nested_attributes_for :photos, :allow_destroy => true
   
   # Scope
