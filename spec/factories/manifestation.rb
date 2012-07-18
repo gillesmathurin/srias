@@ -25,5 +25,9 @@ FactoryGirl.define do
 			date_debut	Date.today - 1.day
 			date_fin	Date.today + 2.days
 		end
+
+		factory :not_validated do
+			validate false
+		end
 	end
 end

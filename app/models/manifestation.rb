@@ -4,8 +4,8 @@ class Manifestation < ActiveRecord::Base
 
   attr_accessible :nom, :lieu, :date_debut, :date_fin, :description, :mission_id
   # Validations
-  validates_presence_of :nom, :lieu, :date_debut, :mission_id,
-   :on => :create, :message => "doit être renseigné."
+  validates :nom, :lieu, :date_debut, :date_fin, :mission_id,
+   :presence => { :on => :create, :message => "doit être renseigné." }
   
   # Relations
   has_many :photos, :dependent => :destroy
@@ -27,15 +27,15 @@ class Manifestation < ActiveRecord::Base
   end
   
   def self.group_by_year(params_page)
-    self.past.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}#.paginate(:page => params_page, :per_page => 10)
+    self.past.paginate(:page => params_page, :per_page => 10).group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}
   end
 
   def self.to_come_group_by_year(params_page)
-    self.to_come.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}.paginate(:page => params_page, :per_page => 10)
+    self.to_come.paginate(:page => params_page, :per_page => 10).group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}
   end
 
   def self.pending_group_by_year(params_page)
-    self.pending.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}.paginate(:page => params_page, :per_page => 10)
+    self.pending.paginate(:page => params_page, :per_page => 10).group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}
   end
   
 end

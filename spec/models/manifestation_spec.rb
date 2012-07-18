@@ -11,10 +11,20 @@ describe Manifestation do
       :description => "value for description",
       :mission_id => 1
     }
+
+    @invalid_coz_missing_attributes = {
+      :nom => "value for nom",
+      :lieu => "value for lieu",
+      :date_debut => Time.now
+    }
   end
 
   it "should create a new instance given valid attributes" do
     Manifestation.create!(@valid_attributes)
+  end
+
+  it "should be invalid when attributes are missing" do
+    Manifestation.new(@invalid_coz_missing_attributes).should_not be_valid
   end
 
   describe "to_come()" do
@@ -79,12 +89,49 @@ describe Manifestation do
     before(:each) do
       @yearago_manifs = FactoryGirl.create_list(:manifestation, 5, :date_debut => 1.year.ago,
        :date_fin => 1.year.ago + 5.days)
-      @this_year_manifs = FactoryGirl.create_list(:manifestation,5)
     end
 
-    it "groups the manifestations by year" do
+    it "groups the past manifestations by year" do
       result = Manifestation.group_by_year("1")
-      puts result.inspect
+      result.should be_a_kind_of(Array)
+      result.should have(1).records
+      result[0].should be_a_kind_of(Array)
+      result[0][0].should eql(2011)
+      result[0][1].should have(5).records                                          
+    end
+  end
+
+  describe "self.to_come_group_by_year(params_page)" do
+    before(:each) do
+      @future_manifs = FactoryGirl.create_list(:future_manif, 5)
+      @yearago_manifs = FactoryGirl.create_list(:manifestation, 5, :date_debut => 1.year.ago,
+       :date_fin => 1.year.ago + 5.days)
+    end
+
+    it "groups the future manifestation by year" do
+      result = Manifestation.to_come_group_by_year("1")
+      result.should be_a_kind_of(Array)
+      result.should have(1).records
+      result[0].should be_a_kind_of(Array)
+      result[0][0].should eql(2012)
+      result[0][1].should have(5).records          
+    end
+  end
+
+  describe "self.pending_group_by_year(params_page)" do
+    before(:each) do
+      @not_validated_manifs = FactoryGirl.create_list(:not_validated, 5)
+      @manifs = FactoryGirl.create_list(:manifestation, 5)
+    end
+
+    it "groups the pending manifestation by year" do
+      result = Manifestation.pending_group_by_year("1")
+      result.should be_a_kind_of(Array)
+      result.should have(1).records
+      result[0].should be_a_kind_of(Array)
+      result[0][0].should eql(2012)
+      result[0][1].should have(5).records
+      result[0][1][1].should_not be_validate
     end
   end
 end
