@@ -2,6 +2,7 @@
 require 'spec_helper'
 
 describe NewslettersController do
+  include Authlogic::TestCase
   fixtures :users
   
   def mock_user
@@ -17,13 +18,37 @@ describe NewslettersController do
     @mock_newsletter ||= mock_model(Newsletter, stubs)
   end
 
+  describe "GET deliver" do
+    before(:each) do
+      user_logged_in
+    end
+
+    it "delivers the requested newsletter asynchronously" do
+      Newsletter.should_receive(:find).with("37").and_return(mock_newsletter)
+      mock_newsletter.stub_chain(:delay, :deliver)
+      get :deliver, :id => "37"
+    end
+  end
+
+  describe "GET deliver_test" do
+    before(:each) do
+      user_logged_in
+    end
+    
+    it "delivers the requested newsletter asynchronously" do
+      Newsletter.should_receive(:find).with("37").and_return(mock_newsletter)
+      mock_newsletter.stub_chain(:delay, :deliver_test)
+      get :deliver_test, :id => "37"
+    end
+  end
+
   describe "GET index" do
     before(:each) do
       user_logged_in
     end
     
     it "assigns all newsletters as @newsletters" do
-      Newsletter.stub(:find).with(:all).and_return([mock_newsletter])
+      Newsletter.stub(:all).and_return([mock_newsletter])
       get :index
       assigns[:newsletters].should == [mock_newsletter]
     end

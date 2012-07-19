@@ -9,7 +9,7 @@ describe ContactsController do
 
   describe "GET index" do
     it "assigns all contacts as @contacts" do
-      Contact.stub(:find).with(:all).and_return([mock_contact])
+      Contact.stub(:all).with({:order => 'created_at asc'}).and_return([mock_contact])
       get :index
       assigns[:contacts].should == [mock_contact]
     end
