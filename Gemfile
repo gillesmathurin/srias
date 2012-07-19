@@ -35,6 +35,7 @@ group :development, :test do
   gem 'rb-fsevent'
   gem 'growl'
   gem 'spork'
+  gem 'passenger'
   # gem 'autotest-rails'
   # gem 'autotest-growl'
   # gem 'autotest-fsevent'

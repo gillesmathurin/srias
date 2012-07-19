@@ -4,16 +4,11 @@
 <head>
 	<title><%= h(yield(:title) || "SRIAS GUADELOUPE") %></title>
 	<%= stylesheet_link_tag    "application", :media => "all" %>
-	<%= stylesheet_link_tag 'blueprint/print.css', :media => "print", :cache => true %>
   	<%= javascript_include_tag "application" %>
-	<%#= stylesheet_link_tag 'blueprint/screen.css', 'blueprint/plugins/fancy-type/screen.css', 'base.css', 'coda-slider-2.0.css', :media => "screen", :cache => true %>	
 
 	<!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
 
-	<%# stylesheet_link_tag 'base' %>
-	<%= javascript_include_tag 'jquery.js', 'jquery-ui.min.js', 'jquery_ujs.js','jquery-1.4.1.min.js', 'builder', 'jquery.lightbox-0.5.min.js', 'application.js' %>
 	<%= yield(:head) %>
-    <%= include_tiny_mce_if_needed %>
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-20205376-2']);
@@ -65,8 +60,8 @@
 			
 			<div id="newsletter-form">
 				<h4>Newsletter</h4>
-				<% remote_form_for @abonne, :url => abonnes_path, :success => "$('result').show()" do |f| %>
-					<%= f.error_messages %>
+				<%= form_for @abonne, :url => abonnes_path, :remote => true, :success => "$('result').show()" do |f| %>
+					<%#= f.error_messages %>
 					<p>
 						<%= f.label :email, "Email" %><br/>
 						<%= f.text_field :email, :size => 15 %>
