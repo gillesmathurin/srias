@@ -30,13 +30,18 @@ group :development, :test do
 	gem 'factory_girl_rails', '~> 3.0'
   gem 'email_spec'
   gem 'fakeweb'
-  gem 'autotest-rails'
-  gem 'autotest-growl'
-  gem 'autotest-fsevent'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'rb-fsevent'
+  gem 'growl'
+  gem 'spork'
+  # gem 'autotest-rails'
+  # gem 'autotest-growl'
+  # gem 'autotest-fsevent'
 end
 
 group :test do
-	gem 'cucumber-rails', require: false
+	gem 'cucumber-rails', :require => false
 end
 
 group :production do
