@@ -2,6 +2,7 @@
 require 'spec_helper'
 
 describe TexteAccueilsController do
+  include Authlogic::TestCase
   fixtures :users
   
   def mock_user
@@ -23,7 +24,7 @@ describe TexteAccueilsController do
     end    
     
     it "assigns all texte_accueils as @texte_accueils" do
-      TexteAccueil.stub(:find).with(:all).and_return([mock_texte_accueil])
+      TexteAccueil.stub(:all).and_return([mock_texte_accueil])
       get :index
       assigns[:texte_accueils].should == [mock_texte_accueil]
     end

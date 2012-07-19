@@ -16,4 +16,15 @@ describe User do
   it "should create a new instance given valid attributes" do
     User.create!(@valid_attributes)
   end
+
+  describe "role?(role)" do
+    before(:each) do
+      @user = FactoryGirl.create(:user, :role => "admin")
+    end
+
+    it "should return true if user has got given role false otherwise" do
+      @user.role?("admin").should be_true
+      @user.role?("redacteur").should be_false
+    end
+  end
 end

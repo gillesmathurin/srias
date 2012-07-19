@@ -12,4 +12,9 @@ describe Partenaire do
   it "should create a new instance given valid attributes" do
     Partenaire.create!(@valid_attributes)
   end
+
+  it "should require a valid link if present" do
+    Partenaire.new(:link => "bad link").should_not be_valid  
+    Partenaire.new(:link => "").should be_valid      
+  end
 end

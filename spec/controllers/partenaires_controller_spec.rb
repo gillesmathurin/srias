@@ -2,6 +2,7 @@
 require 'spec_helper'
 
 describe PartenairesController do
+  include Authlogic::TestCase
   fixtures :users
   
   def mock_user
@@ -19,10 +20,10 @@ describe PartenairesController do
 
   describe "GET index" do    
     it "assigns all partenaires as @partenaires" do
-      Partenaire.stub(:find).with(:all).and_return([mock_partenaire])
+      Partenaire.stub_chain(:all, :group_by).and_return({"37" => [mock_partenaire]})
       mock_partenaire.stub(:category_id)
       get :index
-      # assigns[:partenaires].should == [mock_partenaire] # TODO : find how to simulate an OrderedHash
+      assigns[:partenaires].should == {"37" => [mock_partenaire]} # TODO : find how to simulate an OrderedHash
     end
   end
 

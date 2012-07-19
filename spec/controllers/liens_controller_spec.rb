@@ -2,6 +2,7 @@
 require 'spec_helper'
 
 describe LiensController do
+  include Authlogic::TestCase
   fixtures :users
 
   def mock_lien(stubs={})
@@ -19,7 +20,7 @@ describe LiensController do
   
   describe "GET index" do
     it "assigns all liens as @liens" do
-      Lien.stub(:find).with(:all).and_return([mock_lien])
+      Lien.stub(:all).and_return([mock_lien])
       get :index
       assigns[:liens].should == [mock_lien]
     end

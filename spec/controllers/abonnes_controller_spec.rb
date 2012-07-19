@@ -9,7 +9,7 @@ describe AbonnesController do
 
   describe "GET index" do
     it "assigns all abonnes as @abonnes" do
-      Abonne.stub(:find).with(:all).and_return([mock_abonne])
+      Abonne.stub_chain(:all, :paginate).and_return([mock_abonne])
       get :index
       assigns[:abonnes].should == [mock_abonne]
     end

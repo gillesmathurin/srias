@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class ManifestationsController < ApplicationController
-  before_filter :require_user, :only => [:new, :edit, :create, :update, :destroy]
+  before_filter :require_user, :only => [:new, :edit, :create, :update, :destroy, :validate]
   before_filter :find_mission
   # GET /manifestations
   # GET /manifestations.xml
@@ -97,7 +97,7 @@ class ManifestationsController < ApplicationController
   def validate
     @manifestation = Manifestation.find(params[:id])
     @manifestation.update_attribute(:validate, true)
-    unauthorized! if cannot? :modify, @manifestation
+    authorize! if can? :modify, @manifestation
     
     respond_to do |format|
       format.html { redirect_to(actions_manifestations_url) }    
@@ -107,7 +107,7 @@ class ManifestationsController < ApplicationController
   def unvalidate
     @manifestation = Manifestation.find(params[:id])
     @manifestation.update_attribute(:validate, false)
-    unauthorized! if cannot? :modify, @manifestation
+    authorize! if can? :modify, @manifestation
     
     respond_to do |format|
       format.html { redirect_to(actions_manifestations_url) }    
