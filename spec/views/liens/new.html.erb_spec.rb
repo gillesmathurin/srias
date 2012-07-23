@@ -5,7 +5,7 @@ describe "/liens/new.html.erb" do
   include LiensHelper
 
   before(:each) do
-    assigns[:lien] = stub_model(Lien,
+    assigns[:lien] = @lien = stub_model(Lien,
       :new_record? => true,
       :nom => "value for nom",
       :adresse => "value for adresse"
@@ -15,9 +15,15 @@ describe "/liens/new.html.erb" do
   it "renders new lien form" do
     render
 
-    response.should have_tag("form[action=?][method=post]", liens_path) do
-      with_tag("input#lien_nom[name=?]", "lien[nom]")
-      with_tag("input#lien_adresse[name=?]", "lien[adresse]")
+    rendered.should have_selector("form", :method => "post", :action => liens_path) do |form|
+      form.should have_selector("input",
+        :type => "text",
+        :name => "lien[nom]",
+        :value => "value for nom")
+      form.should have_selector("input",
+        :type => "text",
+        :name => "lien[adresse]",
+        :value => "value for adresse")
     end
   end
 end

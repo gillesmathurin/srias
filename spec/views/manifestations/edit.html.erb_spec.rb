@@ -16,10 +16,16 @@ describe "/manifestations/edit.html.erb" do
   it "renders the edit manifestation form" do
     render
 
-    response.should have_tag("form[action=#{manifestation_path(@manifestation)}][method=post]") do
-      with_tag('input#manifestation_nom[name=?]', "manifestation[nom]")
-      with_tag('input#manifestation_lieu[name=?]', "manifestation[lieu]")
-      with_tag('textarea#manifestation_description[name=?]', "manifestation[description]")
+    rendered.should have_selector("form", :method => "post", :action => manifestation_path(@manifestation)) do |form|
+      form.should have_selector("input",
+        :type => "text",
+        :name => "manifestation[nom]")
+      form.should have_selector("input",
+        :type => "text",
+        :name => "manifestation[lieu]")
+      form.should have_selector("input",
+        :type => "textarea",
+        :name => "manifestation[description]")
     end
   end
 end

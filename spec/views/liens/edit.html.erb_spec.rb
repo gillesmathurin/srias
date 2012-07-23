@@ -14,10 +14,11 @@ describe "/liens/edit.html.erb" do
 
   it "renders the edit lien form" do
     render
-
-    response.should have_tag("form[action=#{lien_path(@lien)}][method=post]") do
-      with_tag('input#lien_nom[name=?]', "lien[nom]")
-      with_tag('input#lien_adresse[name=?]', "lien[adresse]")
+    
+    rendered.should have_selector("form", :method => "post", :action => lien_path(@lien)) do |form|
+      form.should have_selector("input",
+       :type => "text",
+       :name => "lien[nom]")
     end
   end
 end

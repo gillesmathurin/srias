@@ -5,7 +5,7 @@ describe "/manifestations/new.html.erb" do
   include ManifestationsHelper
 
   before(:each) do
-    assigns[:manifestation] = stub_model(Manifestation,
+    assigns[:manifestation] = @manifestation = stub_model(Manifestation,
       :new_record? => true,
       :nom => "value for nom",
       :lieu => "value for lieu",
@@ -16,10 +16,16 @@ describe "/manifestations/new.html.erb" do
   it "renders new manifestation form" do
     render
 
-    response.should have_tag("form[action=?][method=post]", manifestations_path) do
-      with_tag("input#manifestation_nom[name=?]", "manifestation[nom]")
-      with_tag("input#manifestation_lieu[name=?]", "manifestation[lieu]")
-      with_tag("textarea#manifestation_description[name=?]", "manifestation[description]")
+    rendered.should have_selector("form", :method => "post", :action => manifestation_path(@manifestation)) do |form|
+      form.should have_selector("input",
+        :type => "text",
+        :name => "manifestation[nom]")
+      form.should have_selector("input",
+        :type => "text",
+        :name => "manifestation[lieu]")
+      form.should have_selector("input",
+        :type => "textarea",
+        :name => "manifestation[description]")
     end
   end
 end
