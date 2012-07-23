@@ -3,6 +3,10 @@ FactoryGirl.define do
 		message "Some text for annonce message"
 		starts_at { Time.now - 1.day }
 		ends_at { Time.now + 1.day }
-		# TODO : add the fixtures for the attachment
+		image { File.new(File.join(Rails.root, '/spec/fixtures/Moi.jpg')) }
+
+		factory :annonce_without_image do
+			image nil
+		end
 	end
 end

@@ -22,8 +22,8 @@
 		<% unless @manifestation.lieu.blank? || @manifestation.lieu.nil? %>
 		  <b>Lieu:</b> <%=h @manifestation.lieu %> 
 		<% end %>
-		<b>Du:</b> <%=h format_datetime(@manifestation.date_debut) %>
-		 <b>Au</b> : <%=h format_datetime(@manifestation.date_fin) %>
+		<b>Du:</b> <%=l @manifestation.date_debut, :format => :default %>
+		 <b>Au</b> : <%=l @manifestation.date_fin, :format => :default %>
 	</p>
 	
 	<p>

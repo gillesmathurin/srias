@@ -9,7 +9,6 @@ FactoryGirl.define do
 		mission		
 		as_annonce	false
 		validate	true
-		# TODO add attachments attributes
 
 		factory :future_manif do
 			date_fin Date.today + 2.days
@@ -28,6 +27,14 @@ FactoryGirl.define do
 
 		factory :not_validated do
 			validate false
+		end
+
+		factory :manifestation_with_illustration do
+			illustration { File.new(File.join(Rails.root, '/spec/fixtures/Moi.jpg')) }
+		end
+
+		factory :manifestation_without_illustration do
+			illustration nil
 		end
 	end
 end
