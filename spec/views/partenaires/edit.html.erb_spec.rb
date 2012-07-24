@@ -15,9 +15,9 @@ describe "/partenaires/edit.html.erb" do
   it "renders the edit partenaire form" do
     render
 
-    response.should have_tag("form[action=#{partenaire_path(@partenaire)}][method=post]") do
-      with_tag('input#partenaire_nom[name=?]', "partenaire[nom]")
-      with_tag('textarea#partenaire_description[name=?]', "partenaire[description]")
+    rendered.should have_selector("form", :action => partenaire_path(@partenaire), :method => "post") do |form|
+      form.should have_selector("input", :name => "partenaire[nom]")
+      form.should have_selector("input", :description => "partenaire[description]")
     end
   end
 end

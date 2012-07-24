@@ -1,13 +1,12 @@
 <div class="span-16">
 	<h1>Modifier Info Partenaire</h1>
 
-	<% form_for(@partenaire, :html => {:multipart => true}) do |f| %>
-	  <%= f.error_messages %>
+	<%= form_for(@partenaire, :html => {:multipart => true}) do |f| %>
+	  	<%= render :partial => 'shared/form_errors', :locals => {:object => @partenaire} %>
 
 		<%= render :partial => 'form', :locals => {:f => f} %>
-	  <p>
-	    <%= f.submit 'Modifier' %>
-	  </p>
+	  	
+	  	<p><%= f.submit 'Modifier' %></p>
 	<% end %>
 
 	<%= link_to 'Voir', @partenaire %> |

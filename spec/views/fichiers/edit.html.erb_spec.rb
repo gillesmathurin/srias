@@ -10,7 +10,7 @@ describe "/fichiers/edit" do
     	assign(:manifestation, manifestation)
     	assign(:fichier, mock_model("Fichier",
     		:manifestation_id => manifestation.id))
-  	  end
+  	end
 
 		it "renders edit fichier form" do
 			render

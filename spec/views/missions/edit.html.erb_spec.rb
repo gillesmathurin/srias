@@ -15,9 +15,9 @@ describe "/missions/edit.html.erb" do
   it "renders the edit mission form" do
     render
 
-    response.should have_tag("form[action=#{mission_path(@mission)}][method=post]") do
-      with_tag('input#mission_nom[name=?]', "mission[nom]")
-      with_tag('textarea#mission_description[name=?]', "mission[description]")
+    rendered.should have_selector("form", :action => missions_path, :method => "post") do |form|
+      form.should have_selector("input", :type => "text", :name => "mission[nom]")
+      form.should have_selector("input", :type => "textarea", :name => "mission[description]")
     end
   end
 end
