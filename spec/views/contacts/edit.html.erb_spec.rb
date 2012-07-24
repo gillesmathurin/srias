@@ -16,7 +16,8 @@ describe "/contacts/edit.html.erb" do
   it "renders the edit contact form" do
     render
 
-    rendered.should have_selector("form", :method => "post", :action => contact_path(@contact)) do |form|
+    rendered.should have_selector("form", :method => "post",
+     :action => contact_path(@contact)) do |form|
       form.should have_selector("input",
         :type => "text",
         :value => "value for nom",
