@@ -5,7 +5,7 @@ describe "/partenaires/index.html.erb" do
   include PartenairesHelper
 
   before(:each) do
-    assigns[:partenaires] = [
+    assigns[:partenaires] = @partenaires = [
       stub_model(Partenaire,
         :nom => "value for nom",
         :description => "value for description"

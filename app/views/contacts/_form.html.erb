@@ -1,5 +1,5 @@
-	<% form_for(@contact) do |f| %>
-	  <%= f.error_messages %>
+	<%= form_for(@contact) do |f| %>
+	  <%= render :partial => 'shared/form_errors', :locals => {:object => @contact} %>
 	
 	  <p>
 	  	<%= f.label :role, "Role" %><br/>

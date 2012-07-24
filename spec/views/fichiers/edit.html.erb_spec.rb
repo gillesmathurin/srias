@@ -2,12 +2,42 @@
 require 'spec_helper'
 
 describe "/fichiers/edit" do
-  before(:each) do
-    render 'fichiers/edit'
-  end
+	let(:manifestation) { mock_model("Manifestation") }
+	let(:offre) { mock_model("Offre") }
 
-  #Delete this example and add some real ones or delete this file
-  it "should tell you where to find the file" do
-    response.should have_tag('p', %r[Find me in app/views/fichiers/edit])
-  end
+	context "a manifestation's fichier" do
+	  before(:each) do
+    	assign(:manifestation, manifestation)
+    	assign(:fichier, mock_model("Fichier",
+    		:manifestation_id => manifestation.id))
+  	end
+
+		it "renders edit fichier form" do
+			render
+	    rendered.should have_selector("form",
+	    	:method => "post",
+	     	:action => manifestation_fichiers_path(manifestation, @fichier)) do |form|
+	    		form.should have_selector("input",
+	     			:type => "file",
+	     			:name => "manifestation_fichier[fichier]")
+	    end
+		end
+	end
+
+	context "an offre's fichier" do
+	  before(:each) do
+	    assign(:offre, offre)
+	    assign(:fichier, mock_model("Fichier", :offre_id => offre.id))
+	  end
+
+	  it "renders edit fichier form" do
+	    render
+	    rendered.should have_selector("form",
+	    	:method => "post",
+	    	:action => offre_fichiers_path(offre, @fichier)) do |form|
+	    		form.should have_selector("input", :type => "file", :name => "offre_fichier[fichier]")
+	    	end
+	  end
+	end
+
 end

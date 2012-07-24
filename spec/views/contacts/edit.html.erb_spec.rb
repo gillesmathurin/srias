@@ -16,10 +16,19 @@ describe "/contacts/edit.html.erb" do
   it "renders the edit contact form" do
     render
 
-    response.should have_tag("form[action=#{contact_path(@contact)}][method=post]") do
-      with_tag('input#contact_nom[name=?]', "contact[nom]")
-      with_tag('input#contact_tel[name=?]', "contact[tel]")
-      with_tag('input#contact_mail[name=?]', "contact[mail]")
+    rendered.should have_selector("form", :method => "post", :action => contact_path(@contact)) do |form|
+      form.should have_selector("input",
+        :type => "text",
+        :value => "value for nom",
+        :name => "contact[nom]")
+      form.should have_selector("input",
+        :type => "text",
+        :name => "contact[tel]",
+        :value => "value for tel")
+      form.should have_selector("input",
+        :type => "text",
+        :name => "contact[mail]",
+        :value => "value for mail")
     end
   end
 end

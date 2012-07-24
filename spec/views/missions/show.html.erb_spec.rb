@@ -12,7 +12,7 @@ describe "/missions/show.html.erb" do
 
   it "renders attributes in <p>" do
     render
-    response.should have_text(/value\ for\ nom/)
-    response.should have_text(/value\ for\ description/)
+    rendered.should have_content("value for nom")
+    rendered.should have_content("value for description")
   end
 end

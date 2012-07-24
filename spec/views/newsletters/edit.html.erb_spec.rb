@@ -6,17 +6,26 @@ describe "/newsletters/edit.html.erb" do
   include NewslettersHelper
 
   before(:each) do
-    assigns[:newsletter] = mock_model(Newsletter, :titre => "value for titre", :sommaire => "value for sommaire", :content => "value for content")
+    assigns[:newsletter] = @newsletter = mock_model(Newsletter, 
+      :titre => "value for titre", 
+      :sommaire => "value for sommaire", 
+      :content => "value for content")
   end
 
   it "renders the edit newsletter form" do
     render
-    # response.should have_tag("form[action=][method=post]" do
-    #   with_tag('input#newsletter_titre[name=?]', "newsletter[titre]")
-    #   with_tag('textarea#newsletter_sommaire[name=?]', "newsletter[sommaire]")
-    #   with_tag('textarea#newsletter_content[name=?]', "newsletter[content]")
-    #   with_tag('input#newsletter_preview[name=?]', "newsletter[preview]")
-    # end
+
+    rendered.should have_selector("form", :method => "post", :action => newsletter_path(@newsletter)) do |form|
+      form.should have_selector("input",
+        :type => "text",
+        :value => "value for titre")
+      form.should have_selector("input",
+        :type => "textarea",
+        :value => "value for sommaire")
+      form.should have_selector("input",
+        :type => "textarea",
+        :value => "value for content")
+    end
   end
   
 end

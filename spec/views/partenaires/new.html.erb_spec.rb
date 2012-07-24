@@ -26,4 +26,5 @@ describe "/partenaires/new.html.erb" do
         :value => "value for description")
     end
   end
+
 end
