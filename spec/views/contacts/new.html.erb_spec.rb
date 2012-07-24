@@ -5,7 +5,7 @@ describe "/contacts/new.html.erb" do
   include ContactsHelper
 
   before(:each) do
-    assigns[:contact] = stub_model(Contact,
+    assigns[:contact] = @contact = stub_model(Contact,
       :new_record? => true,
       :nom => "value for nom",
       :tel => "value for tel",
@@ -16,10 +16,10 @@ describe "/contacts/new.html.erb" do
   it "renders new contact form" do
     render
 
-    response.should have_tag("form[action=?][method=post]", contacts_path) do
-      with_tag("input#contact_nom[name=?]", "contact[nom]")
-      with_tag("input#contact_tel[name=?]", "contact[tel]")
-      with_tag("input#contact_mail[name=?]", "contact[mail]")
+    rendered.should have_selector("form", :method => "post", :action => contacts_path) do |form|
+      form.should have_selector("input", :type => "text", :name => "contact[nom]")
+      form.should have_selector("input", :type => "text", :name => "contact[tel]")
+      form.should have_selector("input", :type => "text", :name => "contact[mail]")
     end
   end
 end
