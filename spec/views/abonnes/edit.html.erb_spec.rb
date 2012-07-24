@@ -14,8 +14,8 @@ describe "/abonnes/edit.html.erb" do
   it "renders the edit abonne form" do
     render
 
-    response.should have_tag("form[action=#{abonne_path(@abonne)}][method=post]") do
-      with_tag('input#abonne_email[name=?]', "abonne[email]")
+    rendered.should have_selector("form", :action => abonnes_path, :method => "post") do |form|
+      form.should have_selector("input", :type => "text", :name => "abonne[email]", :value => "value for email")      
     end
   end
 end
