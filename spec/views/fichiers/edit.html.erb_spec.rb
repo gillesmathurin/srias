@@ -10,7 +10,7 @@ describe "/fichiers/edit" do
     	assign(:manifestation, manifestation)
     	assign(:fichier, mock_model("Fichier",
     		:manifestation_id => manifestation.id))
-  	end
+  	  end
 
 		it "renders edit fichier form" do
 			render
@@ -36,7 +36,7 @@ describe "/fichiers/edit" do
 	    	:method => "post",
 	    	:action => offre_fichiers_path(offre, @fichier)) do |form|
 	    		form.should have_selector("input", :type => "file", :name => "offre_fichier[fichier]")
-	    	end
+	    end
 	  end
 	end
 

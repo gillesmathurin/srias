@@ -1,8 +1,8 @@
 <div class="span-16">
 	<h1>Enregistrez un fichier</h1>
 <% if @manifestation %>
-	<% form_for([@manifestation,@fichier], :html => {:multipart => true}) do |f| -%>
-	  	<%= f.error_messages %>
+	<%= form_for([@manifestation,@fichier], :html => {:multipart => true}) do |f| -%>
+	  	<%= render :partial => 'shared/form_errors', :locals => {:object => @fichier} %>
 	
 		<p><%= f.label :fichier, "Choisissez le fichier" %> : <%= f.file_field :fichier %></p>
 		
@@ -13,8 +13,8 @@
 <% end %>
 
 <% if @offre %>
-  <% form_for([@offre,@fichier], :html => {:multipart => true}) do |f| -%>
-    	<%= f.error_messages %>
+  <%= form_for([@offre,@fichier], :html => {:multipart => true}) do |f| -%>
+    	<%= render :partial => 'shared/form_errors', :locals => {:object => @fichier} %>
 	
 		<p><%= f.label :fichier, "Choisissez le fichier" %> : <%= f.file_field :fichier %></p>
 		
