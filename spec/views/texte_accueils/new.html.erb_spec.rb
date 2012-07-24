@@ -5,7 +5,7 @@ describe "/texte_accueils/new.html.erb" do
   include TexteAccueilsHelper
 
   before(:each) do
-    assigns[:texte_accueil] = stub_model(TexteAccueil,
+    assigns[:texte_accueil] = @texte_accueil = stub_model(TexteAccueil,
       :new_record? => true,
       :content => "value for content"
     )
@@ -14,8 +14,8 @@ describe "/texte_accueils/new.html.erb" do
   it "renders new texte_accueil form" do
     render
 
-    response.should have_tag("form[action=?][method=post]", texte_accueils_path) do
-      with_tag("textarea#texte_accueil_content[name=?]", "texte_accueil[content]")
+    rendered.should have_selector("form", :method => "post", :action => texte_accueils_path) do |form|
+      form.should have_selector("input", :type => "textarea", :name => "texte_acceuil[content]")
     end
   end
 end

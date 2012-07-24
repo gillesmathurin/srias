@@ -1,8 +1,8 @@
 <div class="span-16">
 	<h1>Enregistrer un texte d'accueil</h1>
 
-	<% form_for(@texte_accueil) do |f| %>
-	  <%= f.error_messages %>
+	<%= form_for(@texte_accueil) do |f| %>
+	  <%= render :partial => 'shared/form_errors', :locals => {:object => @texte_accueil} %>
 
 	  <p>
 	  	<%= f.label :titre, "Titre" %> : <%= f.text_field :titre %>
