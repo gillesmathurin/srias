@@ -6,19 +6,18 @@
 	<table>
 	  <tr>
 	    <th>Titre</th>
-	    <!-- <th>Sommaire</th> -->
 		<th>Envoyé le </th>
 	  </tr>
 
 	<% @newsletters.each do |newsletter| %>
 	  <tr>
-	    <td><%=h newsletter.titre %></td>
-	    <!-- <td><%#h newsletter.sommaire %></td> -->
-		<td><%= h newsletter.delivered_at %></td>
+	    <td><%= newsletter.titre %></td>
+		<td><%= newsletter.delivered_at %></td>
 	    <td><%= link_to 'Voir', newsletter %></td>
 		<td><%= link_to "Envoyer", deliver_newsletter_path(newsletter) %></td>
 	    <td><%= link_to 'Modifier', edit_newsletter_path(newsletter) %></td>
-	    <td><%= link_to 'Supprimer', newsletter, :confirm => 'Are you sure?', :method => :delete %></td>
+	    <td><%= link_to 'Supprimer', newsletter, :confirm => 'Are you sure?',
+	     :method => :delete %></td>
 	    <% if current_user.login == "gillesmath" %>
   	    <td><%= link_to "Envoi-Test", deliver_test_newsletter_path(newsletter) %></td>
   	  <% end %>

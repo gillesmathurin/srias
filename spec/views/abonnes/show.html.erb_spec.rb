@@ -11,6 +11,6 @@ describe "/abonnes/show.html.erb" do
 
   it "renders attributes in <p>" do
     render
-    response.should have_text(/value\ for\ email/)
+    rendered.should have_content("value for email")
   end
 end

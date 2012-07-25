@@ -27,6 +27,7 @@ end
 group :development, :test do
 	gem 'rspec-rails'
 	gem 'capybara'
+  # gem 'webrat'
 	gem 'factory_girl_rails', '~> 3.0'
   gem 'email_spec'
   gem 'fakeweb'

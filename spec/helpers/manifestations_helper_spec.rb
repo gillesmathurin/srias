@@ -3,10 +3,12 @@ require 'spec_helper'
 
 describe ManifestationsHelper do
 
-  #Delete this example and add some real ones or delete this file
-  it "is included in the helper object" do
-    included_modules = (class << helper; self; end).send :included_modules
-    included_modules.should include(ManifestationsHelper)
-  end
+	describe "manif_or_action_show_link(manifestation, actions_link)" do
+	  
+	end
+
+	describe "manif_or_action_index_link(manifestation)" do
+	  
+	end
 
 end

@@ -8,7 +8,7 @@
 
 	<% @abonnes.each do |abonne| %>
 	  <tr>
-	    <td><%=h abonne.email %></td>
+	    <td><%= abonne.email %></td>
 	    <td><%= link_to 'Modifier', edit_abonne_path(abonne) %></td>
 	    <td><%= link_to 'Supprimer', abonne, :confirm => 'En êtes vous sur?', :method => :delete %></td>
 	  </tr>

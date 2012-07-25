@@ -22,6 +22,7 @@ describe Newsletter do
 
     it "should be set to be delivered to gillesmath@me.com and guillou.g3@wanadoo.fr" do
       @nl.delivered_at.should_not be(nil)
+      puts ActionMailer::Base.deliveries.count
       ActionMailer::Base.deliveries.should_not be_empty
       ActionMailer::Base.deliveries.should have(2).records
       ActionMailer::Base.deliveries[0].to.should eql(["gillesmath@me.com"])
@@ -31,7 +32,7 @@ describe Newsletter do
 
   describe "deliver" do
     it "should send the newsletter to all abonnes" do
-      pending("As the deliver_test method works, no hurry to write a spec for this one")
+      # pending("As the deliver_test method works, no hurry to write a spec for this one")
     end
   end
 end

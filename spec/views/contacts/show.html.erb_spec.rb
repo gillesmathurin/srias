@@ -13,8 +13,8 @@ describe "/contacts/show.html.erb" do
 
   it "renders attributes in <p>" do
     render
-    response.should have_text(/value\ for\ nom/)
-    response.should have_text(/value\ for\ tel/)
-    response.should have_text(/value\ for\ mail/)
+    rendered.should have_content("value for nom")
+    rendered.should have_content("value for tel")
+    rendered.should have_content("value for mail")
   end
 end

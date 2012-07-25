@@ -6,8 +6,11 @@ describe "/fichiers/index" do
     render 'fichiers/index'
   end
 
-  #Delete this example and add some real ones or delete this file
-  it "should tell you where to find the file" do
-    response.should have_tag('p', %r[Find me in app/views/fichiers/index])
+  context "of manifestation's fichier" do
+    it "renders a list of fichiers"
+  end
+
+  context "of offre's fichier" do
+    it "renders a list of fichiers"
   end
 end

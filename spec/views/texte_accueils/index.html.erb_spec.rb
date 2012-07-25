@@ -5,7 +5,7 @@ describe "/texte_accueils/index.html.erb" do
   include TexteAccueilsHelper
 
   before(:each) do
-    assigns[:texte_accueils] = [
+    assigns[:texte_accueils] = @texte_accueils = [
       stub_model(TexteAccueil,
         :content => "value for content"
       ),
@@ -17,6 +17,6 @@ describe "/texte_accueils/index.html.erb" do
 
   it "renders a list of texte_accueils" do
     render
-    response.should have_tag("tr>td", "value for content".to_s, 2)
+    rendered.should have_content("value for content")
   end
 end

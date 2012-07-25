@@ -11,6 +11,6 @@ describe "/texte_accueils/show.html.erb" do
 
   it "renders attributes in <p>" do
     render
-    response.should have_text(/value\ for\ content/)
+    rendered.should have_content("value for content")
   end
 end

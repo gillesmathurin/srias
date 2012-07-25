@@ -5,7 +5,7 @@ describe "/abonnes/index.html.erb" do
   include AbonnesHelper
 
   before(:each) do
-    assigns[:abonnes] = [
+    assigns[:abonnes] = @abonnes = [
       stub_model(Abonne,
         :email => "value for email"
       ),
@@ -16,7 +16,8 @@ describe "/abonnes/index.html.erb" do
   end
 
   it "renders a list of abonnes" do
+    pending()
     render
-    response.should have_tag("tr>td", "value for email".to_s, 2)
+    rendered.should have_content("value for email")
   end
 end
