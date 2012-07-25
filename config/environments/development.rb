@@ -41,4 +41,18 @@ Srias::Application.configure do
 
   # Configure the default encoding used in templates for Ruby 1.9.
   config.encoding = "utf-8"
+
+  # action mailer configuration
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com", 
+    :port => 587, 
+    # :domain => "gmwebagency.com",
+    :authentication => :plain,
+    :enable_starttls_auto => true, 
+    :user_name => "gillesmath@gmwebagency.com", 
+    :password => "good password to remove before committing"
+  }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
 end

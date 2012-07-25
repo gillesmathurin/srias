@@ -3,10 +3,12 @@ require 'spec_helper'
 
 describe PartenairesHelper do
 
-  #Delete this example and add some real ones or delete this file
-  it "is included in the helper object" do
-    included_modules = (class << helper; self; end).send :included_modules
-    included_modules.should include(PartenairesHelper)
-  end
-
+	describe "image_present?(partenaire)" do
+	  it "returns true if partenaire has got a logo in thumb style, false otherwise" do
+	    @with_logo_partenaire = FactoryGirl.create(:partenaire_with_logo_attachment)
+	    @without_logo_partenaire = FactoryGirl.create(:partenaire)
+	    helper.image_present?(@with_logo_partenaire).should eql(true) 
+	    helper.image_present?(@without_logo_partenaire).should eql(false)	    
+	  end
+	end
 end

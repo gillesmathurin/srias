@@ -3,10 +3,18 @@ require 'spec_helper'
 
 describe MissionsHelper do
 
-  #Delete this example and add some real ones or delete this file
-  it "is included in the helper object" do
-    included_modules = (class << helper; self; end).send :included_modules
-    included_modules.should include(MissionsHelper)
-  end
+	describe "lieu(action)" do
+	  it "returns a blank string as lieu if the action lieu is blank or nil" do
+	  	pending("waiting to see wether the lieu is the required manifestation's attribute")
+	    @manif_lieu_blank = FactoryGirl.create(:manifestation, :lieu => "")
+	    @manif_lieu_nil = FactoryGirl.create(:manifestation, :lieu => nil)
+	    helper.lieu(@manif_lieu_blank).should eql("") 
+	    helper.lieu(@manif_lieu_nil).should eql("")	    
+	  end
+
+	  it "returns an expressive String with the action's lieu" do
+	    helper.lieu(FactoryGirl.create(:manifestation)).should eql(" Lieu : qqpart") 	    
+	  end
+	end
 
 end
