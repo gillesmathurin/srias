@@ -4,6 +4,7 @@ class NewsletterMailer < ActionMailer::Base
   def newsletter(abonne, newsletter)
     @newsletter = newsletter
     mail(:to => abonne,
+         :from => "guillou.g3@wanadoo.fr",
          :subject => "Newsletter du Srias de Guadeloupe",
          :charset => "UTF-8",
          :content_type => "text/html",
