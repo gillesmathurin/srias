@@ -20,8 +20,10 @@ $myGreen:#111c07;
 	width:204px;
 	height:36px;
 	display:block;
-	// background:url(<%= asset_path 'bg_h3.jpg' %>) no-repeat;
-	background:image-url("bg_h3.jpg") no-repeat;
+	background:image-url("bg_h3.png") no-repeat;
+	padding-left:10px;
+	padding-top:5px;
+	margin:0px;
 }
 
 .container {

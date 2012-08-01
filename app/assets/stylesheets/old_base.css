@@ -1,4 +1,4 @@
-div.footer {
+/*div.footer {
 	background: url(../images/bckg-footer.gif) repeat-x;
 	position: relative;
 	bottom: 0;
@@ -253,11 +253,11 @@ p.nom-mission {
 
 p>em.decalage {
 	margin-left: 30px;
-}
+}*/
 
 /* ****** Annonces ******** */
 
-div#annonces {
+/*div#annonces {
 	padding: 15px;
 	background-color: #ececec;
 	border: 4px solid #9cbd1b;
@@ -294,11 +294,11 @@ div#annonces div.masquer_annonce a {
 
 p.annonce_image img {
 	border: 3px solid yellow;
-}
+}*/
 
 /* ******** Partenaires************* */
 
-p.category_name {
+/*p.category_name {
 	color: #b92231;
 	font-weight: bold;
 	font-size: 2em;
@@ -408,6 +408,6 @@ div.panel-wrapper span.lieu {
 div.panel-wrapper p.annonce-image img {
   float: left;
   padding-right:10px;
-}
+}*/
 
 /*  */

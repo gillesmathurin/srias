@@ -24,44 +24,50 @@
 </head>
 
 <body>
-	<div class="container">
-		<div id="header" class="span-24">
-			<div id="user_nav">
+	<section id="header">
+		<header class="container">
+			<div id="logo"><%= image_tag("Logov2.png") %></div>
+			<div id="vignettes_hd"><%= image_tag("vignettes_hd.jpg") %></div>
+		</header>
+	</section>
+
+	<section id="content" class="container">
+		<article id="left_sidebar">
+			<div id="login_box">
 				<% if current_user %>
 					<%= current_user.login %> : <%= link_to "Logout", logout_path() %> 
 				<% else %>
 					<%= link_to "Login", login_path() %>
 				<% end %>
 			</div>
-		</div>
-		<!-- Left Sidebar -->
-		<div class="span-4">
-		  	
-			<ul class="menubar">
-				<li><%= link_to "Accueil", root_path() %></li>
-				<li><%= link_to "Missions", missions_path() %></li>
-				<li><%= link_to "Actions", actions_path() %></li>
-				<li><%= link_to "Manifestations", manifestations_path() %></li>
-				<li><%= link_to "Partenaires", partenaires_path() %></li>
-				<li><%= link_to "Liens", liens_path() %></li>
-				<li><%= link_to "Contacts", contacts_path() %></li>
-			</ul>
-			
-			<% if can? :manage, :all %>
-			<div class="addon-menus">
+
+			<div class="menus_box">
+				<h3 class="h3_hd">Menus</h3>
 				<ul>
-				  <li><%= link_to "Annonces", annonces_path() %></li>
-					<li><%= link_to "Newsletter", newsletters_path() %></li>
-					<li><%= link_to "Abonnés", abonnes_path() %></li>
-					<li><%= link_to "Catégories Partenaire", categories_path() %></li>
+					<li><%= link_to "Missions", missions_path() %></li>
+					<li><%= link_to "Actions", actions_path() %></li>
+					<li><%= link_to "Manifestations", manifestations_path() %></li>
+					<li><%= link_to "Partenaires", partenaires_path() %></li>
+					<li><%= link_to "Liens", liens_path() %></li>
+					<li><%= link_to "Contacts", contacts_path() %></li>
 				</ul>
 			</div>
+
+			<% if can? :manage, :all %>
+				<div class="menus_box">
+					<h3 class="h3_hd">Administration</h3>
+					<ul>
+					  <li><%= link_to "Annonces", annonces_path() %></li>
+						<li><%= link_to "Newsletter", newsletters_path() %></li>
+						<li><%= link_to "Abonnés", abonnes_path() %></li>
+						<li><%= link_to "Catégories Partenaire", categories_path() %></li>
+					</ul>
+				</div>
 			<% end %>
-			
-			<div id="newsletter-form">
-				<h4>Newsletter</h4>
-				<%= form_for @abonne, :url => abonnes_path, :remote => true, :success => "$('result').show()" do |f| %>
-					<%#= f.error_messages %>
+
+			<div class="menus_box">
+				<h3 class="h3_hd">Newsletter</h3>
+				<%= form_for @abonne, :url => abonnes_path, :remote => true, :success => "$('result').show()" do |f| %>					
 					<p>
 						<%= f.label :email, "Email" %><br/>
 						<%= f.text_field :email, :size => 15 %>
@@ -72,23 +78,24 @@
 					Vous êtes abonné(e)s !
 				</div>
 			</div>
-		</div>
-		
-		<%= yield %>
-		
-		<div class="footer span-24">
-			<div id="colibri">
-				<img src="/images/colibri_02.jpg">		
-			</div>
-		</div>
-		<div class="texte-footer">
+		</article>
+
+		<article id="main_content">
+			<%= yield %>
+		</article>
+	</section>
+
+	<div id="colibri"><%= image_tag("colibri.png") %></div>
+
+	<section id="footer">
+		<div id="credits" class="container">
 			<p>
 			  Contacts<br/>
 			  Préfecture de la Guadeloupe Cellule d'action sociale "SRIAS" Rue Lardenoy 97100 Basse-Terre<br/>
 			  <%= mail_to "srias.guadeloupe@orange.fr", "srias.guadeloupe@orange.fr" %><br/>0690 39 12 58 - 0590 99 38 81<br/><br/></p>
-			<p><pre>Conception : <%= link_to "G.MATHURIN", "http://www/gmwebagency.com"%></pre></p>
+			<p><pre>Conception : <%= link_to "G.MATHURIN", "http://www.gmwebagency.com"%></pre></p>
 		</div>
-	</div>
+	</section>
   
 </body>
 </html>
