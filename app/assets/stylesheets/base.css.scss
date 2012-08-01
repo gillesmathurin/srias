@@ -19,8 +19,19 @@ html {
 			margin-top:0px;
 			#logo {
 				margin-left:10px;
-				width:205px;
+				display:inline-block;
+				width:100%;
+				p {
+					@include custom-font('fonts/Ayuthaya.ttf', "Ayuthaya", normal, 16px);
+					color:white;
+					margin-top:10px;
+				}
+				img{
+					float:left;
+					margin-right:20px;
+				}
 			}
+
 			#vignettes_hd {
 				display:block;
 				position:relative;
@@ -88,20 +99,26 @@ html {
 			}
 		}
 
-		#colibri {
-			width:194px;
-			height:154px;				
-		}
-
 		#footer {
 			width:100%;
 			background:$myGray;
 			min-height:128px;
 			display:block;
+			margin-bottom:-10px;
 			#credits {
 				text-align:center;
 				font-size:10px;
 				padding-top:5px;
+			}
+			#colibri {
+				display:block;
+				float:right;
+				width:194px;
+				height:154px;
+				// position:relative;
+				// margin-left:830px;
+				margin-top:-30px;
+				margin-right:10px;	
 			}
 		}
 	}
