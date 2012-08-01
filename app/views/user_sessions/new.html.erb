@@ -1,7 +1,6 @@
 <div class="span-16">
 	<h1>Identifiez-vous</h1>
-	<% form_for @user_session, :url => user_session_path do |f| %>
-	  <%= f.error_messages %>
+	<%= form_for @user_session, :url => user_session_path do |f| %>
 	  <%= f.label :login %><br />
 	  <%= f.text_field :login %><br />
 	  <br />
