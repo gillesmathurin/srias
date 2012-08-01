@@ -1,0 +1,32 @@
+$myGray:#eef1f1;
+$myYellow:#fdd001;
+$myGreen:#111c07;
+
+@mixin custom-font($src, $family, $weight:bold, $size:1.8em, $style:normal) {
+  font:{
+    family: $family;
+    weight:$weight;
+    size:$size;
+    src:$src;
+    style:$style;
+  };
+}
+
+@mixin greenGradient() {}
+
+@mixin greenGradient2() {}
+
+@mixin menu-h3 {
+	width:204px;
+	height:36px;
+	display:block;
+	// background:url(<%= asset_path 'bg_h3.jpg' %>) no-repeat;
+	background:image-url("bg_h3.jpg") no-repeat;
+}
+
+.container {
+	width:960px;
+	margin-right:auto;
+	margin-left:auto;
+	display:block;
+}
