@@ -137,6 +137,10 @@ html {
 			    	color: white;
 				}
 
+				a.small, x:-moz-any-link, x:default {
+					width:80px;
+				}
+
 				a.medium {
 					width:300px;
 				}

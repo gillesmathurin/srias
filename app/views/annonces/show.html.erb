@@ -7,12 +7,12 @@
   <% unless current_user %>
     <p>
       <b>Date début:</b>
-      <%=h @annonce.starts_at %>
+      <%= @annonce.starts_at %>
     </p>
 
     <p>
       <b>Date de Fin:</b>
-      <%=h @annonce.ends_at %>
+      <%= @annonce.ends_at %>
     </p>
   <% end %>
 
@@ -21,6 +21,6 @@
     <%= image_tag(@annonce.image.url(:thumb)) %>
   </p>
 
-  <% if current_user %> <%= link_to 'Modifier', edit_annonce_path(@annonce) %> |<% end %> <%= link_to 'Retour', annonces_path %>
+  <% if current_user %> <%= link_to 'Modifier', edit_annonce_path(@annonce), :class => "button small" %><% end %> <%= link_to 'Retour', annonces_path, :class => "button small" %>
 </div>
 

@@ -1,11 +1,11 @@
 # -*- encoding : utf-8 -*-
 class AbonnesController < ApplicationController
   respond_to :html, :xml, :js
-  
+
   # GET /abonnes
   # GET /abonnes.xml
   def index
-    @abonnes = Abonne.all.paginate(:page => params[:page], :per_page => 20)
+    @abonnes = Abonne.paginate(:page => params[:page], :per_page => 20)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,12 +1,12 @@
 <div class="span-16">
 	<p>
 	  <b>Email:</b>
-	  <%=h @abonne.email %>
+	  <%= @abonne.email %>
 	</p>
 
 
-	<%= link_to 'Edit', edit_abonne_path(@abonne) %> |
-	<%= link_to 'Back', abonnes_path %>
+	<%= link_to 'Edit', edit_abonne_path(@abonne), :class => "button small" %> |
+	<%= link_to 'Back', abonnes_path, :class => "button small" %>
 </div>
 <!-- Right Sidebar -->
 <div class="span-4 last">

@@ -6,12 +6,12 @@
     <div class="annonce_item">
       <p><%=raw annonce.message %></p>
       <% unless current_user %>
-        <p>Du : <%=h annonce.starts_at %></p>
-        <p>Au : <%=h annonce.ends_at %></p>
+        <p>Du : <%= annonce.starts_at %></p>
+        <p>Au : <%= annonce.ends_at %></p>
       <% end %>
       <p><%= image_tag(annonce.image.url(:thumb)) unless missing_annonce_image(annonce) %></p>
       <p>
-        <%= link_to 'Voir', annonce %> <% if current_user %>| <%= link_to 'Modifier', edit_annonce_path(annonce) %> | <%= link_to 'Supprimer', annonce, :confirm => 'En êtes vous sur?', :method => :delete %><% end %>
+        <%= link_to 'Voir', annonce, :class => "button small" %> <% if current_user %> <%= link_to 'Modifier', edit_annonce_path(annonce), :class => "button small" %> <%= link_to 'Supprimer', annonce, :confirm => 'En êtes vous sur?', :method => :delete, :class => "button small" %><% end %>
       </p>
     </div>
   <% end %>
@@ -19,6 +19,6 @@
   <br />
   
   <%- if current_user -%>
-    <%= link_to 'Nouvelle Annonce', new_annonce_path %>
+    <%= link_to 'Nouvelle Annonce', new_annonce_path, :class => "button small midmedium" %>
   <%- end -%>
 </div>
