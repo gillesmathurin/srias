@@ -123,7 +123,7 @@ html {
 					display:block;
 					width:300px;
 					padding:5px;
-					color:#3cb738;
+					color:darken($myGray,50%);
 					border-radius:5px;
 					border:solid 1px darken($myGray,10%);
 				  	margin:0px;
@@ -187,7 +187,8 @@ html {
 						@include custom-font('Geneva', "Geneva", bold, 20px);
 						color:lighten(red,10%);
 					}
-					@include custom-font('fonts/Ayuthaya.ttf', "Ayuthaya", normal, 14px)
+					@include custom-font('fonts/Ayuthaya.ttf', "Ayuthaya", normal, 14px);
+					color:$myGreen2;
 				}
 				div.link-box {
 					margin-top:10px;
