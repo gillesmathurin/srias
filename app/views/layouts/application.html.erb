@@ -5,9 +5,6 @@
 	<title><%= h(yield(:title) || "SRIAS GUADELOUPE") %></title>
 	<%= stylesheet_link_tag    "application", :media => "all" %>
   	<%= javascript_include_tag "application" %>
-
-	<!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
-
 	<%= yield(:head) %>
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
@@ -27,7 +24,7 @@
 	<section id="header">
 		<header class="container">
 			<div id="logo">
-				<%= image_tag("Logov2.png") %>
+				<%= link_to(image_tag("Logov2.png"), root_path) %>
 				<p>Section Régionale Interministérielle d'Action Sociale</p>
 			</div>
 			<div id="vignettes_hd"><%= image_tag("vignettes_hd.jpg") %></div>
@@ -38,9 +35,9 @@
 		<article id="left_sidebar">
 			<div id="login_box">
 				<% if current_user %>
-					<%= current_user.login %> : <%= link_to "Logout", logout_path() %> 
+					<%= link_to "#{current_user.login} :Logout", logout_path(), :class => "button" %> 
 				<% else %>
-					<%= link_to "Login", login_path() %>
+					<%= link_to "Login", login_path(), :class => "button" %>
 				<% end %>
 			</div>
 

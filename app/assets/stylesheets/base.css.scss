@@ -56,7 +56,7 @@ html {
 				#login_box {
 					margin-top:10px;
 					margin-bottom:10px;
-					padding:10px;
+					@include buttons-style;
 				}
 
 				.menus_box {
@@ -96,6 +96,10 @@ html {
 			#main_content {
 				width:716px;
 				margin-left:224px;
+			}
+
+			.login_button {
+				border-radius:4px;
 			}
 		}
 

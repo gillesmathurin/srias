@@ -26,9 +26,57 @@ $myGreen:#111c07;
 	margin:0px;
 }
 
+@mixin buttons-style {
+  a.button {
+  	border-radius: 5px;
+  	border: 1px solid lighten($myGray, 40%);
+  	padding: 10px;
+  	text-decoration: none;
+  	display: block;
+  	text-align: center;
+  	background: -webkit-gradient(
+  		linear,
+  		left top,
+  		left bottom,
+  		from(#44cd18),
+  		to(#04713e)
+  	);
+  	background: -moz-linear-gradient(
+  		center bottom,
+  		#04713e,
+  		#44cd18 60%
+  	);
+  	color: $myGray;
+  	font-weight: bold;
+    font-size:12px;
+
+  	&:hover {
+  	  background: -webkit-gradient(
+    		linear,
+    		left top,
+    		left bottom,
+    		from(#44cd18),
+    		to(#37a715)
+    	);
+    	background: -moz-linear-gradient(
+    		center bottom,
+    		#37a715,
+    		#44cd18 60%
+    	);	
+    	color: white;
+  	}
+
+  	&:active {
+  	  -webkit-box-shadow: inset gray 0px 1px 1px;
+    	-moz-box-shadow: inset gray 0px 1px 1px;
+  	}
+  }
+}
+
 .container {
 	width:960px;
 	margin-right:auto;
 	margin-left:auto;
 	display:block;
 }
+
