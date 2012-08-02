@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 class AbonnesController < ApplicationController
+  respond_to :html, :xml, :js
+  
   # GET /abonnes
   # GET /abonnes.xml
   def index
@@ -48,6 +50,7 @@ class AbonnesController < ApplicationController
         flash[:notice] = 'Abonne was successfully created.'
         format.html { redirect_to(@abonne) }
         format.xml  { render :xml => @abonne, :status => :created, :location => @abonne }
+        format.js { }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @abonne.errors, :status => :unprocessable_entity }

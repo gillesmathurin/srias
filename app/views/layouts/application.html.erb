@@ -67,10 +67,10 @@
 
 			<div class="menus_box">
 				<h3 class="h3_hd">Newsletter</h3>
-				<%= form_for @abonne, :url => abonnes_path, :remote => true, :success => "$('result').show()" do |f| %>					
+				<%= form_for @abonne, :url => abonnes_path, :remote => true do |f| %>					
 					<p>
 						<%= f.label :email, "Email" %><br/>
-						<%= f.text_field :email, :size => 15 %>
+						<%= f.text_field :email, :size => 25, :placeholder => "email@address.com" %>
 					</p>
 					<p><%= submit_tag "S'abonner" %></p>
 				<% end %>
