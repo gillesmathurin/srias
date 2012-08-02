@@ -1,19 +1,10 @@
 <% content_for :head do %>
-	<%# stylesheet_link_tag 'facebox.css' %>
-	<%# javascript_include_tag 'facebox.js' %>
-	<%# unless annonces_courantes.empty? %>
-    <!-- <script type="text/javascript" charset="utf-8">
-      $(document).ready(function($) {
-        $.facebox({div: '#annonces'});
-      })
-    </script> -->
-  <%# end %>
 <% end %>
 
 <div class="span-16">
 	<%= render :partial => "shared/flash_messages" %>
 	
-  <%= render :partial => "shared/annonces" %>
+  	<%= render :partial => "shared/annonces" %>
 		
 	<h1><%= @texte.titre if @texte %></h1>
 	
@@ -33,15 +24,7 @@
 <div class="span-4 last">
 	<%= render :partial => "shared/right_col" %>
 	<p id="counter">
-		 Nombre de visiteurs <br/>
+		Nombre de visiteurs<br/>
 		<%= @visitors_count %>
 	</p>
 </div>
-  
-<% unless annonces_courantes.empty? %>
-  // <script type="text/javascript" charset="utf-8">
-  //   $(document).ready(function($) {
-  //     $.facebox({div: '#annonces'});
-  //   })
-  // </script>
-<% end %>

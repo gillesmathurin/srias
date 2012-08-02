@@ -18,15 +18,15 @@
         </p>
         <p class="partenaire_description">
           <span class="partenaire_nom"><%=h partenaire.nom %></span><br/>
-          <%=h partenaire.description %>
+          <%= partenaire.description %>
         </p>
         <p class="partenaire_link">
           <%= link_to(partenaire.link, partenaire.link) unless partenaire.link.blank? %>
         </p>
         <% if current_user %>
           <p>
-            <%= link_to 'Modifier', edit_partenaire_path(partenaire) %> |
-            <%= link_to 'Supprimer', partenaire, :confirm => 'En êtes vous sur?', :method => :delete %> | <%= link_to "Enregistrer une offre", new_partenaire_offre_path(partenaire) %>
+            <%= link_to 'Modifier', edit_partenaire_path(partenaire), :class => "button small" %>
+            <%= link_to 'Supprimer', partenaire, :confirm => 'En êtes vous sur?', :method => :delete, :class => "button small" %> <%= link_to "Enregistrer une offre", new_partenaire_offre_path(partenaire), :class => "button small midmedium" %>
           </p>
         <% end %>
       
@@ -51,7 +51,7 @@
 
 	<br />
 <% if current_user %>
-	<%= link_to 'Ajouter partenaire', new_partenaire_path %>
+	<%= link_to 'Ajouter partenaire', new_partenaire_path, :class => "button small midmedium" %>
 <% end %>
 </div>
 <!-- Right Sidebar -->

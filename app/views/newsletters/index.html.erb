@@ -13,13 +13,13 @@
 	  <tr>
 	    <td><%= newsletter.titre %></td>
 		<td><%= newsletter.delivered_at %></td>
-	    <td><%= link_to 'Voir', newsletter %></td>
-		<td><%= link_to "Envoyer", deliver_newsletter_path(newsletter) %></td>
-	    <td><%= link_to 'Modifier', edit_newsletter_path(newsletter) %></td>
+	    <td><%= link_to 'Voir', newsletter, :class => "button small" %></td>
+		<td><%= link_to "Envoyer", deliver_newsletter_path(newsletter), :class => "button small" %></td>
+	    <td><%= link_to 'Modifier', edit_newsletter_path(newsletter), :class => "button small" %></td>
 	    <td><%= link_to 'Supprimer', newsletter, :confirm => 'Are you sure?',
-	     :method => :delete %></td>
+	     :method => :delete, :class => "button small" %></td>
 	    <% if current_user.login == "gillesmath" %>
-  	    <td><%= link_to "Envoi-Test", deliver_test_newsletter_path(newsletter) %></td>
+  	    <td><%= link_to "Envoi-Test", deliver_test_newsletter_path(newsletter), :class => "button small" %></td>
   	  <% end %>
 	  </tr>
 	<% end %>
@@ -27,7 +27,7 @@
 
 	<br />
 
-	<%= link_to 'Créer newsletter', new_newsletter_path %>
+	<%= link_to 'Créer newsletter', new_newsletter_path, :class => "button small midmedium" %>
 </div>
 <div class="span-4 last">
 	<%= render :partial => "shared/right_col" %>

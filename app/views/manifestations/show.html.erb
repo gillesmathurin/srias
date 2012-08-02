@@ -11,9 +11,9 @@
 		<% if can? :modify, @manifestation %>
 			<% if @manifestation.validate? %>
 			<%= link_to "Retirer de la publication", unvalidate_manifestation_path(@manifestation),
-			 :method => :put %>
+			 :method => :put, :class => "button small midmedium" %>
 			<% else %>
-			| <%= link_to "Publier", validate_manifestation_path(@manifestation), :method => :put %>
+			| <%= link_to "Publier", validate_manifestation_path(@manifestation), :method => :put, :class => "button small" %>
 			<% end %>
 		<% end %>
 	</p>
@@ -47,7 +47,7 @@
 				<td>
 					<%= link_to image_tag(photo.photo.url(:thumb)), photo.photo.url(:large), :class => "lightbox" %><br/>
 					<% if current_user %>
-						<%= link_to "Supprimer", manifestation_photo_path(@manifestation, photo), :method => :delete, :confirm => "Certain ?" %>
+						<%= link_to "Supprimer", manifestation_photo_path(@manifestation, photo), :method => :delete, :confirm => "Certain ?", :class => "button small" %>
 					<% end %>
 				</td>
 				<% end %>
@@ -61,11 +61,11 @@
 	</script>
 	
 	<% if can? :modify, @manifestation %>
-	<p><%= link_to "Ajouter une photo", new_manifestation_photo_path(@manifestation) %></p>	
+	<p><%= link_to "Ajouter une photo", new_manifestation_photo_path(@manifestation), :class => "button small midmedium" %></p>	
 	
 	<p>
-		<%= link_to "Ajoutez un fichier joint", new_manifestation_fichier_path(@manifestation) %> |
-		<%= link_to "Modifiez un fichier joint", manifestation_fichiers_path(@manifestation) %>
+		<%= link_to "Ajoutez un fichier joint", new_manifestation_fichier_path(@manifestation), :class => "button small midmedium" %>
+		<%= link_to "Modifiez un fichier joint", manifestation_fichiers_path(@manifestation), :class => "button small midmedium" %>
 	</p>
  	<% end %>
  	

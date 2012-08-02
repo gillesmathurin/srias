@@ -1,6 +1,5 @@
 # -*- encoding : utf-8 -*-
 class NewslettersController < ApplicationController
-  layout 'without_foufou'
   
   before_filter :require_user
   # GET /newsletter/1/deliver

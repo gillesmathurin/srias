@@ -29,7 +29,9 @@ class ManifestationsController < ApplicationController
   
   def pending
     @manifestations = Manifestation.pending_group_by_year(params[:page])
-    render :partial => "manifs_list", :layout => false
+    respond_to do |format|
+      format.js {  } # render :partial => "manifs_list", :layout => false
+    end    
   end
 
   # GET /manifestations/1
@@ -94,23 +96,41 @@ class ManifestationsController < ApplicationController
     end
   end
   
-  def validate
-    @manifestation = Manifestation.find(params[:id])
-    @manifestation.update_attribute(:validate, true)
-    authorize! if can? :modify, @manifestation
+  # def validate
+  #   @manifestation = Manifestation.find(params[:id])
+  #   @manifestation.update_attribute(:validate, true)
+  #   authorize! if can? :modify, @manifestation
     
-    respond_to do |format|
-      format.html { redirect_to(actions_manifestations_url) }    
-    end
-  end
+  #   respond_to do |format|
+  #     format.html { redirect_to(actions_manifestations_url) }    
+  #   end
+  # end
   
-  def unvalidate
-    @manifestation = Manifestation.find(params[:id])
-    @manifestation.update_attribute(:validate, false)
-    authorize! if can? :modify, @manifestation
+  # def unvalidate
+  #   @manifestation = Manifestation.find(params[:id])
+  #   @manifestation.update_attribute(:validate, false)
+  #   authorize! if can? :modify, @manifestation
     
+  #   respond_to do |format|
+  #     format.js {}
+  #     format.html { redirect_to(actions_manifestations_url) }    
+  #   end
+  # end
+
+  def un_validate
+    @manifestation = Manifestation.find(params[:id])
+    @manifestation.validate? ? @manifestation.update_attribute(:validate, false) : @manifestation.update_attribute(:validate, true)
+    authorize! :modify, @manifestation
+    if @mission
+      @manifestations = @mission.manifestations.to_come_group_by_year(params[:page])
+    else
+      @manifestations = Manifestation.to_come_group_by_year(params[:page])
+    end
+    @actions_links = true
+
     respond_to do |format|
-      format.html { redirect_to(actions_manifestations_url) }    
+      # format.js {}
+      format.html { redirect_to(actions_manifestations_url) }
     end
   end
 

@@ -8,10 +8,10 @@
 
 	<br />
 <% if current_user %>
-	<%= link_to 'Ajouter manifestation', new_manifestation_path %>
+	<%= link_to 'Ajouter une manifestation', new_manifestation_path, :class => "button small medium" %>
 <% end %>
 <% if can? :modify, Manifestation %>
-	| <%= link_to_remote "Actions et Manifestations à Valider", :url => pending_manifestations_path(), :update => "manifs" %> : <%= Manifestation.pending.count %> 
+	<%= link_to "Actions et Manifestations à Valider : #{Manifestation.pending.count}", pending_manifestations_path(), :remote => true, :method => :put, :class => "button small medium" %>
 <% end %>
 </div>
 <!-- Right Sidebar -->

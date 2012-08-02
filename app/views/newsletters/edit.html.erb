@@ -10,8 +10,8 @@
 	  </p>
 	<% end %>
 
-	<%= link_to 'Voir', @newsletter %> |
-	<%= link_to 'Retour', newsletters_path %>
+	<%= link_to 'Voir', @newsletter, :class => "button small" %>
+	<%= link_to 'Retour', newsletters_path, :class => "button small" %>
 </div>
 <div class="span-4 last">
 	<%= render :partial => "shared/right_col" %>

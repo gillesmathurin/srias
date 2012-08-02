@@ -50,8 +50,8 @@ html {
 				width:204px;
 				height:100%;
 				margin-right:10px;
-				margin-top:50px;
-				margin-left:20px;
+				margin-top:35px;
+				margin-left:10px;
 
 				#login_box {
 					margin-top:10px;
@@ -95,11 +95,36 @@ html {
 
 			#main_content {
 				width:716px;
-				margin-left:224px;
-			}
+				margin-left:230px;
+				margin-top:25px;
+				@include buttons-style;
 
-			.login_button {
-				border-radius:4px;
+				a.small {
+					width:70px;
+					padding:5px;
+					display:inline-block;
+					font-size:11px;
+					background: -webkit-gradient(
+			    		linear,
+			    		left top,
+			    		left bottom,
+			    		from(#44cd18),
+			    		to(#37a715)
+			    	);
+			    	background: -moz-linear-gradient(
+			    		center bottom,
+			    		#37a715,
+			    		#44cd18 60%
+			    	);	
+			    	color: white;
+				}
+
+				a.medium {
+					width:300px;
+				}
+				a.midmedium {
+					width:200px;
+				}
 			}
 		}
 

@@ -18,22 +18,22 @@
 				</p>	
 				
 				<div class="manifestation-desc">
-				  <%= manifestation.description %>
+				  <%=raw manifestation.description %>
 				</div>
 				
 				<div class="link-box">
-				  <%= manif_or_action_show_link(manifestation, @actions_links) %><br/>
+				  <%= manif_or_action_show_link(manifestation, @actions_links) %>
 
   				<% if can? :update, manifestation %>	
-  					<%= link_to 'Modifier', edit_manifestation_path(manifestation) %> |
-  					<%= link_to 'Supprimer', manifestation, :confirm => 'En êtes vous sur ?', :method => :delete %>
+  					<%= link_to 'Modifier', edit_manifestation_path(manifestation), :class => "button small" %> 
+  					<%= link_to 'Supprimer', manifestation, :confirm => 'En êtes vous sur ?', :method => :delete, :class => "button small" %>
   				<% end %>
 
   				<% if can? :modify, manifestation %>
   					<% if manifestation.validate? %>
-  					| <%= link_to "Retirer", unvalidate_manifestation_path(manifestation), :method => :put %>
+  					<%= link_to "Retirer", un_validate_manifestation_path(manifestation), :method => :put, :class => "button small" %>
   					<% else %>
-  					| <%= link_to "Publier", validate_manifestation_path(manifestation), :method => :put %>
+  					<%= link_to "Publier", un_validate_manifestation_path(manifestation), :method => :put, :class => "button small" %>
   					<% end %>
   				<% end %>  				
 				</div>					

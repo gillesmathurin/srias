@@ -10,9 +10,9 @@
 	</p>
 
 <% if current_user %>
-	<%= link_to 'Modifier', edit_lien_path(@lien) %> |
+	<%= link_to 'Modifier', edit_lien_path(@lien), :class => "button small" %> |
 <% end %>
-	<%= link_to 'Retour', liens_path %>
+	<%= link_to 'Retour', liens_path, :class => "button small" %>
 </div>
 <!-- Right Sidebar -->
 <div class="span-4 last">

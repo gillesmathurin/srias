@@ -29,8 +29,9 @@ Srias::Application.routes.draw do
       put 'pending'
     end
     member do
-      put 'validate'
-      put 'unvalidate'
+      # put 'validate'
+      # put 'unvalidate'
+      put 'un_validate'
     end
   end
   resources :missions do
@@ -40,8 +41,9 @@ Srias::Application.routes.draw do
         put 'pending'
       end
       member do
-        put 'validate'
-        put 'unvalidate'
+        # put 'validate'
+        # put 'unvalidate'
+        put 'un_validate'
       end
     end
   end
