@@ -27,16 +27,16 @@ class Manifestation < ActiveRecord::Base
     "#{id}-" + nom.parameterize
   end
   
-  def self.group_by_year(params_page)
-    self.past.paginate(:page => params_page, :per_page => 10).group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}
+  def self.group_by_year()
+    self.past.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}
   end
 
-  def self.to_come_group_by_year(params_page)
-    self.to_come.paginate(:page => params_page, :per_page => 10).group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}
+  def self.to_come_group_by_year()
+    self.to_come.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}
   end
 
-  def self.pending_group_by_year(params_page)
-    self.pending.paginate(:page => params_page, :per_page => 10).group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}
+  def self.pending_group_by_year()
+    self.pending.group_by {|e| e.date_debut.year}.sort {|a,b| b<=>a}
   end
   
 end

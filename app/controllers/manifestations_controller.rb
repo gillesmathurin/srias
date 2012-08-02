@@ -5,7 +5,7 @@ class ManifestationsController < ApplicationController
   # GET /manifestations
   # GET /manifestations.xml
   def index
-    @manifestations = Manifestation.group_by_year(params[:page])
+    @manifestations = Manifestation.group_by_year()
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,9 +15,9 @@ class ManifestationsController < ApplicationController
   
   def actions
     if @mission
-      @manifestations = @mission.manifestations.to_come_group_by_year(params[:page])
+      @manifestations = @mission.manifestations.to_come_group_by_year()
     else
-      @manifestations = Manifestation.to_come_group_by_year(params[:page])
+      @manifestations = Manifestation.to_come_group_by_year()
     end
     @actions_links = true
     
@@ -28,7 +28,7 @@ class ManifestationsController < ApplicationController
   end
   
   def pending
-    @manifestations = Manifestation.pending_group_by_year(params[:page])
+    @manifestations = Manifestation.pending_group_by_year()
     respond_to do |format|
       format.js {  } # render :partial => "manifs_list", :layout => false
     end    
@@ -122,9 +122,9 @@ class ManifestationsController < ApplicationController
     @manifestation.validate? ? @manifestation.update_attribute(:validate, false) : @manifestation.update_attribute(:validate, true)
     authorize! :modify, @manifestation
     if @mission
-      @manifestations = @mission.manifestations.to_come_group_by_year(params[:page])
+      @manifestations = @mission.manifestations.to_come_group_by_year()
     else
-      @manifestations = Manifestation.to_come_group_by_year(params[:page])
+      @manifestations = Manifestation.to_come_group_by_year()
     end
     @actions_links = true
 

@@ -5,7 +5,7 @@
 <div class="span-16 manif-details">
 	<%= render :partial => "shared/flash_messages" %>
 	
-	<h1><%=h @manifestation.nom %></h1>
+	<h1><%= @manifestation.nom %></h1>
 
 	<p align="center">
 		<% if can? :modify, @manifestation %>
@@ -28,7 +28,7 @@
 	
 	<p>
 	  <b>Description:</b>
-	  <%= @manifestation.description %>
+	  <%=raw @manifestation.description %>
 	</p>
 	
 	<% @manifestation.fichiers.each do |fichier| %>
@@ -36,7 +36,7 @@
 	<% end %>
 
 <% if current_user %>
-	<%= link_to 'Modifier', edit_manifestation_path(@manifestation) %> |
+	<%= link_to 'Modifier', edit_manifestation_path(@manifestation), :class => "button small" %>
 <% end %>
 
 <!-- Galerie de photos  -->
@@ -56,17 +56,16 @@
 	<% end %>
 	
 	<!-- TODO : make ujs -->
-  <script type="text/javascript" charset="utf-8">
+  	<script type="text/javascript" charset="utf-8">
 		$(function() { $('a.lightbox').lightBox(); })
 	</script>
 	
-	<% if can? :modify, @manifestation %>
-	<p><%= link_to "Ajouter une photo", new_manifestation_photo_path(@manifestation), :class => "button small midmedium" %></p>	
-	
-	<p>
-		<%= link_to "Ajoutez un fichier joint", new_manifestation_fichier_path(@manifestation), :class => "button small midmedium" %>
-		<%= link_to "Modifiez un fichier joint", manifestation_fichiers_path(@manifestation), :class => "button small midmedium" %>
-	</p>
+	<% if can? :modify, @manifestation %>	
+		<p>
+			<%= link_to "Ajouter une photo", new_manifestation_photo_path(@manifestation), :class => "button small midmedium" %>
+			<%= link_to "Ajoutez un fichier joint", new_manifestation_fichier_path(@manifestation), :class => "button small midmedium" %>
+			<%= link_to "Modifiez un fichier joint", manifestation_fichiers_path(@manifestation), :class => "button small midmedium" %>
+		</p>
  	<% end %>
  	
  	<p><%= manif_or_action_index_link(@manifestation) %></p>

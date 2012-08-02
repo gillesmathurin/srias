@@ -10,5 +10,9 @@ module ManifestationsHelper
     manifestation.date_debut > Time.now ? link_to("Retour", actions_path, :class => "button small") :
      link_to("Retour", manifestations_path, :class => "button small")
   end
+
+  def nom_mission(mission_id)
+  	Mission.find(mission_id).nom
+  end
   
 end

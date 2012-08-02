@@ -181,56 +181,56 @@ describe ManifestationsController do
     end
   end
 
-  describe "PUT validate" do
-    before(:each) do
-      @authorized_user = FactoryGirl.create(:user, :role => :redacteur)
-      @unauthorized_user = FactoryGirl.create(:user, :role => :moderateur)
-    end
+  # describe "PUT validate" do
+  #   before(:each) do
+  #     @authorized_user = FactoryGirl.create(:user, :role => :redacteur)
+  #     @unauthorized_user = FactoryGirl.create(:user, :role => :moderateur)
+  #   end
 
-    context "with authorized user" do
-      before(:each) do
-        user_logged_in(@authorized_user)
-      end
+  #   context "with authorized user" do
+  #     before(:each) do
+  #       user_logged_in(@authorized_user)
+  #     end
 
-      it "validates the pending manifestation" do
-        Manifestation.should_receive(:find).with("37").and_return(mock_manifestation)
-        mock_manifestation.should_receive(:update_attribute).and_return(mock_manifestation(:validate => true))
-        put :validate, :id => "37"
-      end
-    end
+  #     it "validates the pending manifestation" do
+  #       Manifestation.should_receive(:find).with("37").and_return(mock_manifestation)
+  #       mock_manifestation.should_receive(:update_attribute).and_return(mock_manifestation(:validate => true))
+  #       put :validate, :id => "37"
+  #     end
+  #   end
 
-    context "with unauthorized user" do
-      before(:each) do
-        user_logged_in(@unauthorized_user)
-      end
+  #   context "with unauthorized user" do
+  #     before(:each) do
+  #       user_logged_in(@unauthorized_user)
+  #     end
 
-      it "doesn't validate the pending manifestation" do
-        pending("find out how to test bad abilities in controller")
-        Manifestation.should_receive(:find).with("37").and_return(mock_manifestation)
-        expect { mock_manifestation.should_receive(:update_attribute) }.to raise_error
-        put :validate, :id => "37"
-      end
-    end
-  end
+  #     it "doesn't validate the pending manifestation" do
+  #       pending("find out how to test bad abilities in controller")
+  #       Manifestation.should_receive(:find).with("37").and_return(mock_manifestation)
+  #       expect { mock_manifestation.should_receive(:update_attribute) }.to raise_error
+  #       put :validate, :id => "37"
+  #     end
+  #   end
+  # end
 
-  describe "PUT unvalidate" do
-    before(:each) do
-      @authorized_user = FactoryGirl.create(:user, :role => :redacteur)
-      @unauthorized_user = FactoryGirl.create(:user, :role => :moderateur)
-    end
+  # describe "PUT unvalidate" do
+  #   before(:each) do
+  #     @authorized_user = FactoryGirl.create(:user, :role => :redacteur)
+  #     @unauthorized_user = FactoryGirl.create(:user, :role => :moderateur)
+  #   end
 
-    context "with the authorized user" do
-      before(:each) do
-        user_logged_in(@authorized_user)
-      end
+  #   context "with the authorized user" do
+  #     before(:each) do
+  #       user_logged_in(@authorized_user)
+  #     end
 
-      it "unvalidates the validated manifestation" do
-        Manifestation.should_receive(:find).with("37").and_return(mock_manifestation)
-        mock_manifestation.should_receive(:update_attribute).and_return(mock_manifestation(:validate => false))
-        put :unvalidate, :id => "37"
-      end
-    end
-  end
+  #     it "unvalidates the validated manifestation" do
+  #       Manifestation.should_receive(:find).with("37").and_return(mock_manifestation)
+  #       mock_manifestation.should_receive(:update_attribute).and_return(mock_manifestation(:validate => false))
+  #       put :unvalidate, :id => "37"
+  #     end
+  #   end
+  # end
 
   describe "DELETE destroy" do
     before(:each) do
