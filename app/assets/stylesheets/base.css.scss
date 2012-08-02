@@ -124,23 +124,12 @@ html {
 					width:300px;
 					padding:5px;
 					color:darken($myGray,50%);
-					border-radius:5px;
+					border-radius:2px;
 					border:solid 1px darken($myGray,10%);
 				  	margin:0px;
 				  	margin-left:auto;
 				  	margin-right:auto;
-				  	background: -webkit-gradient(
-				  		linear,
-				  		left top,
-				  		left bottom,
-				  		from(#bebebe),
-				  		to(white)
-				  	);
-				  	background: -moz-linear-gradient(
-				  		center bottom,
-				  		white,
-				  		#bebebe 60%
-				  	);
+				  	background:$myGray;
 				}
 
 				a.small {
