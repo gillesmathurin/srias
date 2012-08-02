@@ -1,6 +1,6 @@
-<% form_for(@category) do |f| %>
-  <%= f.error_messages %>
-
+<%= form_for(@category) do |f| %>
+  <%= render :partial => 'shared/form_errors', :locals => {:object => @category} %>
+  
   <p>
     <%= f.label :nom %><br />
     <%= f.text_field :nom %>

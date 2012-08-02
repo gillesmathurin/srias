@@ -1,11 +1,11 @@
 <div class="span-16">
   <p>
     <b>Nom:</b>
-    <%=h @category.nom %>
+    <%= @category.nom %>
   </p>
 
-  <%= link_to 'Modifier', edit_category_path(@category) %> |
-  <%= link_to 'Retour', categories_path %>
+  <%= link_to 'Modifier', edit_category_path(@category), :class => "button small" %>
+  <%= link_to 'Retour', categories_path, :class => "button small" %>
 </div>
 
 <div class="span-4 last">
