@@ -12,6 +12,7 @@ gem 'will_paginate'
 gem 'paperclip'
 gem 'delayed_job'
 gem 'tinymce-rails'
+gem 'tinymce-rails-langs'
 
 
 # Gems used only for assets and not required
