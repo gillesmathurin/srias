@@ -219,7 +219,7 @@ html {
 				p.titre-manif {
 					span.nom-manif {
 						@include custom-font('Geneva', "Geneva", bold, 20px);
-						color:lighten(red,10%);
+						color:darken($myOrange,10%);
 					}
 					@include custom-font('fonts/Ayuthaya.ttf', "Ayuthaya", normal, 14px);
 					color:$myGreen2;
@@ -242,6 +242,7 @@ html {
 
 						table tr td {
 							border:1px solid $myOrange;
+							text-align:center;
 						}
 					}
 				}
