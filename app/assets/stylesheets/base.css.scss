@@ -64,12 +64,12 @@ html {
 				  p.annonce-texte {
 				  	a.nom, span.nom {
 				  		@include custom-font("fonts/Ayuthaya", 'Ayuthaya');
-				  		color:darken($myYellow,3%);
+				  		color:darken($myOrange,10%);
 				  		text-decoration:none;
 				  	}
 
-				  	span.date, span.lieu {
-				  		font-size: 1.2em;
+				  	span.lieu-date {
+				  		font-size: 1.3em;
 				  		font-weight:bold;
 				  	}
 				  }

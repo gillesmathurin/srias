@@ -2,6 +2,7 @@ $myGray:#eef1f1;
 $myYellow:#fdd001;
 $myGreen:#111c07;
 $myGreen2:#3a5f19;
+$myOrange:#eca95d;
 
 @mixin custom-font($src, $family, $weight:bold, $size:1.8em, $style:normal) {
   font:{
