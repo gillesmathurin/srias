@@ -10,10 +10,11 @@ gem 'authlogic'
 gem 'cancan'
 gem 'will_paginate'
 gem 'paperclip'
-gem 'delayed_job'
+# gem 'delayed_job'
 gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
-
+gem 'delayed_job_active_record'
+gem 'daemons'
 
 # Gems used only for assets and not required
 # in production environments by default.
