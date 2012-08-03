@@ -44,17 +44,55 @@ html {
 			min-height:668px;
 			display:block;
 
+			.coda-slider-wrapper { 
+				clear:none;
+				background: lighten($myGray,2%);
+				border-radius:5px;
+				border:1px solid darken($myGray, 10%);
+				margin-bottom:10px;
+
+				/* Change the width of the entire slider (without dynamic arrows) */
+				.coda-slider, .coda-slider .panel { 
+					width: 700px;
+					// margin-left:15px;
+					background:transparent;
+				} 
+
+				div.panel-wrapper {
+				  min-height:130px;
+
+				  p.annonce-texte {
+				  	a.nom, span.nom {
+				  		@include custom-font("fonts/Ayuthaya", 'Ayuthaya');
+				  		color:darken($myYellow,3%);
+				  		text-decoration:none;
+				  	}
+
+				  	span.date, span.lieu {
+				  		font-size: 1.2em;
+				  		font-weight:bold;
+				  	}
+				  }
+				  p.annonce-image {
+				  	img {
+				  		float: left;
+				  		padding-right:10px;
+				  	}
+				  }
+				}
+			 }
+
 			#left_sidebar {
 				float:left;
 				display:block;
 				width:204px;
 				height:100%;
 				margin-right:10px;
-				margin-top:35px;
+				margin-top:25px;
 				margin-left:10px;
 
 				#login_box {
-					margin-top:10px;
+					margin-top:0px;
 					margin-bottom:10px;
 					@include buttons-style;
 				}

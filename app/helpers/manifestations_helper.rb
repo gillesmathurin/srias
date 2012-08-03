@@ -14,5 +14,9 @@ module ManifestationsHelper
   def nom_mission(mission_id)
   	Mission.find(mission_id).nom
   end
+
+  def missing_manif_illustration(manifestation)
+    manifestation.illustration.url(:thumb) == "/illustrations/thumb/missing.png"
+  end
   
 end

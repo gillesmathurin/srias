@@ -13,7 +13,10 @@ class Manifestation < ActiveRecord::Base
   belongs_to :mission
 
   # Attachement
-  has_attached_file :illustration, :styles => { :thumb => "150x150>" }  
+  has_attached_file :illustration, :styles => { :thumb => "150x150>" },
+    :path => "/system/:attachment/:id/:style/:filename",
+    :url => "/system/:attachment/:id/:style/:filename"
+
   accepts_nested_attributes_for :photos, :allow_destroy => true
   
   # Scope

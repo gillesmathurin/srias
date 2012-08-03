@@ -45,4 +45,13 @@ describe ManifestationsHelper do
 	  end
 	end
 
+	describe "missing_manif_illustration(manifestation)" do
+	  it "returns true if the manifestation hasn't got an illustration" do
+	    manifestation = FactoryGirl.create(:manifestation, :illustration => nil)
+	    helper.missing_manif_illustration(manifestation).should be(true)
+	    manifestation2 = FactoryGirl.create(:manifestation_with_illustration)
+	    helper.missing_manif_illustration(manifestation2).should be(false)	    
+	  end
+	end
+
 end

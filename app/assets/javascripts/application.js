@@ -16,9 +16,10 @@
 //= require_tree .
 
 $().ready(function() {
-  $('#coda-slider-2').codaSlider({
+  $('#coda-slider-1').codaSlider({
     autoSlide: true,
-    autoSlideInterval: 4000,
-    autoSlideStopWhenClicked: true
+    autoSlideInterval: 6000,
+    autoSlideStopWhenClicked: true,
+	dynamicArrows:false
   });
 });

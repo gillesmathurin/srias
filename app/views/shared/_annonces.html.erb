@@ -1,18 +1,3 @@
-<% content_for :head do %>
-  <script type="text/javascript" src="javascripts/jquery.easing.1.3.js"></script>
-	<script type="text/javascript" src="javascripts/jquery.coda-slider-2.0.js"></script>
-	 <script type="text/javascript">
-		$().ready(function() {
-			$('#coda-slider-1').codaSlider({
-			  autoSlide: true,
-			  autoSlideInterval: 5000,
-			  autoSlideStopWhenClicked: true,
-			  dynamicArrows:false
-			});
-		});
-	 </script>
-<% end %>
-
 <div class="coda-slider-wrapper">
   <div class="coda-slider preload" id="coda-slider-1">
     <!-- Actions as annonce -->
@@ -22,11 +7,13 @@
           <div class="panel-wrapper">
             <% unless action.illustration.nil? %>
               <p class="annonce-image">
-                <%= image_tag action.illustration.url(:thumb) %>
+                <%= image_tag action.illustration.url(:thumb) unless missing_manif_illustration(action) %>
               </p>
             <% end %>
             <p class="annonce-texte">
-              <span class="nom"><%= link_to(raw(action.nom), uneaction_path(action.id)) %></span><br/> <%= action.lieu %> du <%=l action.date_debut, :format => :default %> au <%=l action.date_fin, :format => :default %>
+              <%= link_to(raw(action.nom), uneaction_path(action.id), :class => "nom") %><br/>
+              <%= action.lieu %> du <%=l action.date_debut, :format => :default %> au <%=l action.date_fin, :format => :default %>              
+              <p><%= link_to "voir ...", uneaction_path(action.id), :class => "button small" %></p>
             </p>
           </div>
         </div>
@@ -39,11 +26,11 @@
           <div class="panel-wrapper">
             <% unless annonce.image.nil? %>
               <p class="annonce-image">
-                <%= image_tag annonce.image.url(:thumb) unless missing_annonce_image(annonce)  %>              
+                <%= image_tag annonce.image.url(:thumb) unless missing_annonce_image(annonce)  %>      
               </p>
             <% end %>
             <p class="annonce-texte">
-              <span class="nom"><%= raw annonce.message %></span> <br/> <%= link_to "voir ...", annonce_path(annonce) %>
+              <span class="nom"><%= raw annonce.message %></span> <br/> <%= link_to "voir ...", annonce_path(annonce), :class => "button small" %>
             </p>            
           </div>
         </div>

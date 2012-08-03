@@ -10,10 +10,10 @@
 	<p align="center">
 		<% if can? :modify, @manifestation %>
 			<% if @manifestation.validate? %>
-			<%= link_to "Retirer de la publication", unvalidate_manifestation_path(@manifestation),
+			<%= link_to "Retirer de la publication", un_validate_manifestation_path(@manifestation),
 			 :method => :put, :class => "button small midmedium" %>
 			<% else %>
-			| <%= link_to "Publier", validate_manifestation_path(@manifestation), :method => :put, :class => "button small" %>
+			| <%= link_to "Publier", un_validate_manifestation_path(@manifestation), :method => :put, :class => "button small" %>
 			<% end %>
 		<% end %>
 	</p>
