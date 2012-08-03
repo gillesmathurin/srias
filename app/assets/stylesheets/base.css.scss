@@ -76,7 +76,8 @@ html {
 				  p.annonce-image {
 				  	img {
 				  		float: left;
-				  		padding-right:10px;
+				  		margin-right:10px;
+						border-radius:4px;
 				  	}
 				  }
 				}
@@ -155,11 +156,16 @@ html {
 				margin-top:25px;
 				@include buttons-style;
 
+				p.lieu-date {
+					font-size:1.5em;
+					text-align:center;
+				}
+
 				h1.section-title {
 					text-align:center;
 					font-size:22px;
 					display:block;
-					width:300px;
+					width:400px;
 					padding:5px;
 					color:darken($myGray,50%);
 					border-radius:2px;
@@ -209,6 +215,7 @@ html {
 					text-align:center;
 					border:1px solid $myGray;
 				}
+				p.mini-diapo {text-align:center;}
 				p.titre-manif {
 					span.nom-manif {
 						@include custom-font('Geneva', "Geneva", bold, 20px);
@@ -221,6 +228,23 @@ html {
 					margin-top:10px;
 					margin-bottom:30px;
 				}
+
+				div.manif-details {
+					p.link_or_image {
+						text-align:center;
+					}
+
+					div#photos_gallery {
+						background:$myGray;
+						padding:10px;
+						border-radius:4px;
+						border:1px solid darken($myGray,20%);
+
+						table tr td {
+							border:1px solid $myOrange;
+						}
+					}
+				}
 			}
 		}
 
@@ -231,9 +255,55 @@ html {
 			display:block;
 			margin-bottom:-10px;
 			#credits {
-				text-align:center;
-				font-size:10px;
-				padding-top:5px;
+				// text-align:center;
+				font-size:11px;
+				margin-right:10px;
+				padding-top:10px;
+				div	{
+					padding-top:10px;
+					padding-left:10px;
+					paddin-bottom:10px;
+					border-left:1px solid darken($myGray,20%);
+					float:left;
+					width:30%;
+					min-height:152px;
+					text-align:center;
+					vertical-align:center;
+
+					p#counter {
+						width:70%;
+						border-radius: 5px;
+					  	border: 1px solid lighten($myGray, 40%);
+					  	padding: 10px;
+					  	margin-right:auto;
+					  	margin-left:auto;
+					  	display: block;
+					  	text-align: center;
+					  	background: -webkit-gradient(
+					  		linear,
+					  		left top,
+					  		left bottom,
+					  		from(#44cd18),
+					  		to(#04713e)
+					  	);
+					  	background: -moz-linear-gradient(
+					  		center bottom,
+					  		#04713e,
+					  		#44cd18 60%
+					  	);
+					  	color: $myYellow;
+					  	font-weight: bold;
+					    font-size:12px;
+					}
+				}
+				div.last {
+					border-right:1px solid darken($myGray,20%);
+				}
+				p.footer {
+					text-align:center;
+					padding-top:15px;
+					padding-bottom:10px;
+				}
 			}
 			#colibri {
 				display:block;

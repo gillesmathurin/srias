@@ -7,7 +7,7 @@ module ManifestationsHelper
   end
   
   def manif_or_action_index_link(manifestation)
-    manifestation.date_debut > Time.now ? link_to("Retour", actions_path, :class => "button small") :
+    (manifestation.date_debut > Time.now || manifestation.date_fin > Time.now) ? link_to("Retour", actions_path, :class => "button small") :
      link_to("Retour", manifestations_path, :class => "button small")
   end
 

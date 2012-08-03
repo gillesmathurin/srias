@@ -86,13 +86,37 @@
 	</section>
 
 	<section id="footer">
-		<div id="colibri"><%= image_tag("colibri.png") %></div>
 		<div id="credits" class="container">
-			<p>
-			  Contacts<br/>
-			  Préfecture de la Guadeloupe Cellule d'action sociale "SRIAS" Rue Lardenoy 97100 Basse-Terre<br/>
-			  <%= mail_to "srias.guadeloupe@orange.fr", "srias.guadeloupe@orange.fr" %><br/>0690 39 12 58 - 0590 99 38 81<br/><br/></p>
-			<p><pre>Conception : <%= link_to "G.MATHURIN", "http://www.gmwebagency.com"%></pre></p>
+			<div>
+				Contacts<br/>
+				Préfecture de la Guadeloupe<br/> Cellule d'action sociale "SRIAS"<br/>
+				Rue Lardenoy 97100 Basse-Terre<br/>
+				<%= mail_to "srias.guadeloupe@orange.fr", "srias.guadeloupe@orange.fr" %><br/>0690 39 12 58 - 0590 99 38 81<br/>
+
+				<% if @visitors_count %>
+				<p id="counter" class="button"><%= "Nombre de visiteurs : #{@visitors_count}" %></p>
+				<% end -%>
+			</div>
+			<div>
+				<% @contacts_to_display = Contact.to_display %>
+				<% @contacts_to_display.each do |c| %>
+				 <p class="contacts">
+				   <%= c.role %><br/>
+				   <%= c.nom %><br/>
+				   <%= c.tel %><br/>
+				   <% unless c.fax == "" || c.fax.nil? %>
+							<%= c.fax %><br/>
+						<% end %>
+						<%= mail_to(c.mail, "Email") %>
+				 </p>
+				<% end %>
+			</div>
+			<div class="last">
+				<%= image_tag("colibri.png") %>
+			</div>
+			<p class="footer">
+				Conception : <%= link_to "G.MATHURIN", "http://www.gmwebagency.com"%>
+			</p>
 		</div>
 	</section>
   

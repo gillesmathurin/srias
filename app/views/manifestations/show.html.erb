@@ -1,11 +1,11 @@
 <% content_for :head do %>
 	<%# javascript_include_tag 'builder' %>
-	<%= stylesheet_link_tag 'jquery.lightbox-0.5.css' %>
+	<%#= stylesheet_link_tag 'jquery.lightbox-0.5.css' %>
 <% end %>
-<div class="span-16 manif-details">
+<div class="manif-details">
 	<%= render :partial => "shared/flash_messages" %>
 	
-	<h1><%= @manifestation.nom %></h1>
+	<h1 class="section-title"><%= @manifestation.nom %></h1>
 
 	<p align="center">
 		<% if can? :modify, @manifestation %>
@@ -18,21 +18,18 @@
 		<% end %>
 	</p>
 	
-	<p>
+	<p class="lieu-date">
 		<% unless @manifestation.lieu.blank? || @manifestation.lieu.nil? %>
-		  <b>Lieu:</b> <%=h @manifestation.lieu %> 
+		  <b>Lieu:</b> <%= @manifestation.lieu %> 
 		<% end %>
-		<b>Du:</b> <%=l @manifestation.date_debut, :format => :default %>
-		 <b>Au</b> : <%=l @manifestation.date_fin, :format => :default %>
+		- <b>Du:</b> <%=l @manifestation.date_debut, :format => :only_date %>
+		<b>Au</b> : <%=l @manifestation.date_fin, :format => :only_date %>
 	</p>
 	
-	<p>
-	  <b>Description:</b>
-	  <%=raw @manifestation.description %>
-	</p>
+	<p><%=raw @manifestation.description %></p>
 	
 	<% @manifestation.fichiers.each do |fichier| %>
-		<p><%= display_link_or_image(fichier) %></p>
+		<p class="link_or_image"><%= display_link_or_image(fichier) %></p>
 	<% end %>
 
 <% if current_user %>
@@ -41,6 +38,7 @@
 
 <!-- Galerie de photos  -->
 	<% unless @manifestation.photos.empty? %>
+	<div id="photos_gallery">
 		<table>
 			<tr>
 				<% @manifestation.photos.each do |photo| %>
@@ -53,6 +51,8 @@
 				<% end %>
 			</tr>
 		</table>
+	</div>
+		
 	<% end %>
 	
 	<!-- TODO : make ujs -->
