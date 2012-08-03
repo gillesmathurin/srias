@@ -258,18 +258,20 @@ html {
 			#credits {
 				// text-align:center;
 				font-size:11px;
-				margin-right:10px;
+				margin-left:10px;
 				padding-top:10px;
+				width:100%;
 				div	{
 					padding-top:10px;
 					padding-left:10px;
 					paddin-bottom:10px;
 					border-left:1px solid darken($myGray,20%);
 					float:left;
-					width:30%;
+					width:31%;
 					min-height:152px;
 					text-align:center;
 					vertical-align:center;
+					display:inline-block;
 
 					p#counter {
 						width:70%;
@@ -305,16 +307,6 @@ html {
 					padding-top:15px;
 					padding-bottom:10px;
 				}
-			}
-			#colibri {
-				display:block;
-				float:right;
-				width:194px;
-				height:154px;
-				// position:relative;
-				// margin-left:830px;
-				margin-top:-30px;
-				margin-right:10px;	
 			}
 		}
 	}
