@@ -13,11 +13,11 @@
 	<h1><%= @newsletter.titre %></h1>
 	
 	<p>
-		<%= @newsletter.sommaire %>
+		<%=raw @newsletter.sommaire %>
 	</p>
 	
 	<p>
-		<%= @newsletter.content %>
+		<%=raw @newsletter.content %>
 	</p>
 </body>
 </html>
