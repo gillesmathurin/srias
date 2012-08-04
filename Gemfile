@@ -42,6 +42,7 @@ group :development, :test do
   # gem 'autotest-rails'
   # gem 'autotest-growl'
   # gem 'autotest-fsevent'
+  # gem 'debugger'
 end
 
 group :test do
@@ -67,6 +68,3 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 gem 'capistrano'
 gem 'rvm-capistrano'
-
-# To use debugger
-gem 'debugger'
