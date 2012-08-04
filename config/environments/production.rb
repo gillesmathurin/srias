@@ -75,7 +75,7 @@ Srias::Application.configure do
     :authentication => :plain,
     :enable_starttls_auto => true, 
     :user_name => "gillesmath@gmwebagency.com", 
-    :password => "good password to remove before committing"
+    :password => "razed79}jerk"
   }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
