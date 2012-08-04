@@ -6,6 +6,8 @@ gem 'rails', '3.2.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'rake', '0.9.2.2'
+
 gem 'authlogic'
 gem 'cancan'
 gem 'will_paginate'
