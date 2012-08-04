@@ -9,7 +9,7 @@ gem 'mysql2'
 gem 'authlogic'
 gem 'cancan'
 gem 'will_paginate'
-gem 'paperclip'
+gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 # gem 'delayed_job'
 gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
@@ -66,6 +66,7 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 gem 'capistrano'
+gem 'rvm-capistrano'
 
 # To use debugger
 gem 'debugger'
