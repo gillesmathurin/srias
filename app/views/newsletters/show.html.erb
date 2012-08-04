@@ -2,24 +2,20 @@
 	<h3><%= @newsletter.titre %> - numéro : <%= @newsletter.numero %></h3>
 	<p>
 	  <b>Sommaire:</b>
-	  <%= @newsletter.sommaire %>
+	  <%=raw @newsletter.sommaire %>
 	</p>
 
 	<p>
 	  <b>Content:</b>
-	  <%= @newsletter.content %>
+	  <%=raw @newsletter.content %>
 	</p>
 
 	<p>
 	  <b>Preview:</b>
-	  <%= @newsletter.preview %>
+	  <%=raw @newsletter.preview %>
 	</p>
 
 
 	<%= link_to 'Modifier', edit_newsletter_path(@newsletter), :class => "button small" %> |
 	<%= link_to 'Retour', newsletters_path, :class => "button small" %>
-</div>
-<!-- Right Sidebar -->
-<div class="span-4 last">
-	<%= render :partial => "shared/right_col" %>
 </div>
