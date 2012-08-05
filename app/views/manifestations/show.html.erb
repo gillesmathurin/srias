@@ -27,9 +27,10 @@
 	</p>
 	
 	<p><%=raw @manifestation.description %></p>
-	
-	<% @manifestation.fichiers.each do |fichier| %>
-		<p class="link_or_image"><%= display_link_or_image(fichier) %></p>
+	<% unless @manifestation.fichiers.empty? %>
+		<% @manifestation.fichiers.each do |fichier| %>
+			<p class="link_or_image"><%= display_link_or_image(fichier) %></p>
+		<% end %>
 	<% end %>
 
 <% if current_user %>
