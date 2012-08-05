@@ -45,7 +45,7 @@ group :development, :test do
   # gem 'autotest-rails'
   # gem 'autotest-growl'
   # gem 'autotest-fsevent'
-  # gem 'debugger'
+  gem 'debugger'
 end
 
 group :test do
