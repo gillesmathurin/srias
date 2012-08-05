@@ -24,8 +24,8 @@
   </p>
   <p>
     <%= f.label :description %><br />
-    <%= f.text_area :description, :class => "tinymce" %>
-    <%= tinymce :theme => "advanced", :language => "fr" %>
+    <%= f.text_area :description, :class => "tinymce", :cols => "90" %>
+    
   </p>
   <p>
     <%= f.check_box :as_annonce %> : <%= f.label :as_annonce, "Spécifier comme annonce" %>

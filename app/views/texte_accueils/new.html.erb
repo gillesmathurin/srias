@@ -1,3 +1,4 @@
+<%= render :partial => 'shared/tinymce_init' %>
 <div class="span-16">
 	<h1>Enregistrer un texte d'accueil</h1>
 
@@ -10,8 +11,8 @@
 
 	  <p>
 	    <%= f.label :content %><br />
-	    <%= f.text_area :content, :class => "tinymce" %>
-	    <%= tinymce :theme => "advanced", :language => "fr" %>
+	    <%= f.text_area :content, :class => "tinymce", :cols => "90" %>
+	    
 	  </p>
 	  <p>
 	    <%= f.submit 'Enregistrer' %>
@@ -19,8 +20,4 @@
 	<% end %>
 
 	<%= link_to 'Retour', root_path %>
-</div>
-<!-- Right Sidebar -->
-<div class="span-4 last">
-	<%= render :partial => "shared/right_col" %>
 </div>

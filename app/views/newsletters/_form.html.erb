@@ -4,17 +4,15 @@
   </p>
   <p>
   	<%= f.label :numero, "Numero" %><br/>
-	<%= f.text_field :numero %>
+	 <%= f.text_field :numero %>
   </p>
   <p>
     <%= f.label :sommaire %><br />
-    <%= f.text_area :sommaire, :class =>"tinymce" %>
-    <%= tinymce :theme => "advanced", :language => "fr" %>
+    <%= f.text_area :sommaire, :class =>"tinymce", :cols => "90" %>
   </p>
   <p>
     <%= f.label :content %><br />
-    <%= f.text_area :content, :class =>"tinymce" %>
-    <%= tinymce :theme => "advanced", :language => "fr" %>
+    <%= f.text_area :content, :class =>"tinymce", :cols => "90" %>
   </p>
   <p>
   	<%= f.label :file, "Fichier" %><br/>

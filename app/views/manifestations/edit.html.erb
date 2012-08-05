@@ -1,3 +1,4 @@
+<% render :partial => "shared/tinymce_init" %>
 <div class="span-16">
 	<h1>Modifier Infos Manifestation</h1>
 
@@ -22,8 +23,4 @@
 
 	<%= link_to 'Voir', @manifestation, :class => "button small" %>
 	<%= link_to 'Retour', manifestations_path, :class => "button small" %>
-</div>
-<!-- Right Sidebar -->
-<div class="span-4 last">
-	<%= render :partial => "shared/right_col" %>
 </div>
