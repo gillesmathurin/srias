@@ -74,8 +74,8 @@ Srias::Application.configure do
     # :domain => "gmwebagency.com",
     :authentication => :plain,
     :enable_starttls_auto => true, 
-    :user_name => "gillesmath@gmwebagency.com", 
-    :password => "razed79}jerk"
+    :user_name => "guillougeorges@gmail.com", 
+    :password => "passsitesrias"
   }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
