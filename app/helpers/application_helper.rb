@@ -22,7 +22,7 @@ module ApplicationHelper
         link_to("Téléchargez : #{fichier.fichier.original_filename}", fichier.fichier.url(nil, false), :class => "button small medium")
       end
     else
-      return ""
+      return " "
     end
   end
   
