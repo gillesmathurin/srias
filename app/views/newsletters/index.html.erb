@@ -16,7 +16,7 @@
 	    <td><%= link_to 'Voir', newsletter, :class => "button small" %></td>
 		<td><%= link_to "Envoyer", deliver_newsletter_path(newsletter), :class => "button small" %></td>
 	    <td><%= link_to 'Modifier', edit_newsletter_path(newsletter), :class => "button small" %></td>
-	    <td><%= link_to 'Supprimer', newsletter, :confirm => 'Are you sure?',
+	    <td><%= link_to 'Supprimer', newsletter, :data => {:confirm => 'Are you sure?'},
 	     :method => :delete, :class => "button small" %></td>
 	    <% if current_user.login == "gillesmath" %>
   	    <td><%= link_to "Envoi-Test", deliver_test_newsletter_path(newsletter), :class => "button small" %></td>

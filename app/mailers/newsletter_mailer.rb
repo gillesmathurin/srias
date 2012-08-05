@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class NewsletterMailer < ActionMailer::Base
-  default :from => 'guillou.g3@wanadoo.fr'
+  default :from => "srias.guadeloupe@orange.fr"
 
   def newsletter(abonne, newsletter)
     @newsletter = newsletter
