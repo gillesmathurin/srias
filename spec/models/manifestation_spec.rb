@@ -85,14 +85,14 @@ describe Manifestation do
     end
   end
 
-  describe "self.group_by_year(params_page)" do
+  describe "self.group_by_year" do
     before(:each) do
       @yearago_manifs = FactoryGirl.create_list(:manifestation, 5, :date_debut => 1.year.ago,
        :date_fin => 1.year.ago + 5.days)
     end
 
     it "groups the past manifestations by year" do
-      result = Manifestation.group_by_year("1")
+      result = Manifestation.group_by_year
       result.should be_a_kind_of(Array)
       result.should have(1).records
       result[0].should be_a_kind_of(Array)
@@ -101,7 +101,7 @@ describe Manifestation do
     end
   end
 
-  describe "self.to_come_group_by_year(params_page)" do
+  describe "self.to_come_group_by_year" do
     before(:each) do
       @future_manifs = FactoryGirl.create_list(:future_manif, 5)
       @yearago_manifs = FactoryGirl.create_list(:manifestation, 5, :date_debut => 1.year.ago,
@@ -109,7 +109,7 @@ describe Manifestation do
     end
 
     it "groups the future manifestation by year" do
-      result = Manifestation.to_come_group_by_year("1")
+      result = Manifestation.to_come_group_by_year
       result.should be_a_kind_of(Array)
       result.should have(1).records
       result[0].should be_a_kind_of(Array)
@@ -118,14 +118,14 @@ describe Manifestation do
     end
   end
 
-  describe "self.pending_group_by_year(params_page)" do
+  describe "self.pending_group_by_year" do
     before(:each) do
       @not_validated_manifs = FactoryGirl.create_list(:not_validated, 5)
       @manifs = FactoryGirl.create_list(:manifestation, 5)
     end
 
     it "groups the pending manifestation by year" do
-      result = Manifestation.pending_group_by_year("1")
+      result = Manifestation.pending_group_by_year
       result.should be_a_kind_of(Array)
       result.should have(1).records
       result[0].should be_a_kind_of(Array)

@@ -69,5 +69,15 @@ describe ApplicationHelper do
       end
     end
 
+    context "fichier is nil" do
+      before(:each) do
+        @fichier = nil
+      end
+
+      it "returns nil" do
+        helper.display_link_or_image(@fichier).should eql(nil)
+      end
+    end
+
   end
 end

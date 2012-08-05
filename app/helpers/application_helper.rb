@@ -15,7 +15,7 @@ module ApplicationHelper
   end
   
   def display_link_or_image(fichier)
-    if fichier && fichier.fichier.url != "/fichiers/original/missing.png"
+    if fichier && fichier.fichier.present?
       if fichier.fichier.content_type =~ /image/
         image_tag(fichier.fichier.url(nil, false), :width => "585")
       else
