@@ -22,8 +22,6 @@ module ApplicationHelper
         text = "Téléchargez" + fichier.fichier.original_filename
         link_to(text, fichier.fichier.url(nil, false), :class => "button small medium")
       end
-    else
-      return nil
     end
   end
   
