@@ -29,13 +29,7 @@
 	<p><%=raw @manifestation.description %></p>
 
 	<% @manifestation.fichiers.each do |fichier| %>
-		<p class="link_or_image">
-			<%#= display_link_or_image(fichier) %>
-			<% if fichier && fichier.fichier.present? %>
-				<%= image_tag(fichier.fichier.url(nil, false), :width => "585") if fichier.fichier.content_type =~ /image/ %>
-				<%= link_to("Téléchargez #{fichier.fichier.original_filename}", fichier.fichier.url(nil, false), :class => "button small medium") if((fichier.fichier.content_type =~ /image/) == nil) %>
-			<% end %>
-		</p>
+		<p class="link_or_image"><%= display_link_or_image(fichier) %></p>
 	<% end %>
 
 <% if current_user %>

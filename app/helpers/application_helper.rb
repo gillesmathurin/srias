@@ -17,12 +17,11 @@ module ApplicationHelper
   def display_link_or_image(fichier)
     if fichier && fichier.fichier.present?
       if fichier.fichier.content_type =~ /image/
-        image_tag(fichier.fichier.url(nil, false), :width => "585")
+        image_tag(fichier.fichier.url(nil,false), :width => "585")
       else
         text = "Téléchargez" + fichier.fichier.original_filename
         link_to(text, fichier.fichier.url(nil, false), :class => "button small medium")
       end
     end
-  end
-  
+  end  
 end
