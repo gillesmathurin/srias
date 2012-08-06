@@ -44,7 +44,7 @@ describe ApplicationHelper do
       end
 
       it "returns an image link" do
-        pending("good but not passing because of paperclip numeric tagging")
+        # pending("good but not passing because of paperclip numeric tagging")
         helper.display_link_or_image(@fichier_with_imagefile).should eql(image_tag(@fichier_with_imagefile.fichier.url(nil, false), :width => "585"))
       end
     end
@@ -64,20 +64,9 @@ describe ApplicationHelper do
         @fichier_without_attachment = FactoryGirl.create(:fichier)
       end
 
-      it "returns a blank string" do
-        helper.display_link_or_image(@fichier_without_attachment).should eql("")
-      end
-    end
-
-    context "fichier is nil" do
-      before(:each) do
-        @fichier = nil
-      end
-
       it "returns nil" do
-        helper.display_link_or_image(@fichier).should eql(nil)
+        helper.display_link_or_image(@fichier_without_attachment).should be_nil
       end
     end
-
   end
 end
