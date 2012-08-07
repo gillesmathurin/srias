@@ -14,8 +14,8 @@ class Manifestation < ActiveRecord::Base
 
   # Attachement
   has_attached_file :illustration, :styles => { :thumb => "150x150>" },
-    :path => "public/system/:attachment/:id/:style/:filename",
-    :url => "public/system/:attachment/:id/:style/:filename"
+    :path => "/system/:attachment/:id/:style/:filename",
+    :url => "/system/:attachment/:id/:style/:filename"
 
   accepts_nested_attributes_for :photos, :allow_destroy => true
   
