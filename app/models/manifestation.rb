@@ -2,7 +2,7 @@
 class Manifestation < ActiveRecord::Base
   include Assets::Normalizer
 
-  attr_accessible :nom, :lieu, :date_debut, :date_fin, :description, :mission_id, :validate, :as_annonce
+  attr_accessible :nom, :lieu, :date_debut, :date_fin, :description, :mission_id, :validate, :as_annonce, :illustration
   # Validations
   validates :nom, :lieu, :date_debut, :date_fin, :mission_id,
    :presence => { :on => :create, :message => "doit être renseigné." }
@@ -14,8 +14,8 @@ class Manifestation < ActiveRecord::Base
 
   # Attachement
   has_attached_file :illustration, :styles => { :thumb => "150x150>" },
-    :path => "/system/:attachment/:id/:style/:filename",
-    :url => "/system/:attachment/:id/:style/:filename"
+    :path => "public/system/:attachment/:id/:style/:filename",
+    :url => "public/system/:attachment/:id/:style/:filename"
 
   accepts_nested_attributes_for :photos, :allow_destroy => true
   
