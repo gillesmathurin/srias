@@ -1,5 +1,5 @@
 <div class="span-16">
-	<h1>Contacts</h1>
+	<h1 class="section-title">Contacts</h1>
 	
 	<p>
 		<b>Email :</b> <%= mail_to("srias.guadeloupe@orange.fr", "srias.guadeloupe@orange.fr") %>		
@@ -15,12 +15,12 @@
 		</p>
 		<% if can? :manage, Contact %>
 		<p>
-			<%= link_to "modifier", edit_contact_path(contact) %> | <%= link_to "supprimer", contact_path(contact), :method => :delete %>
+			<%= link_to "modifier", edit_contact_path(contact), :class => "button small" %> <%= link_to "supprimer", contact_path(contact), :method => :delete, :class => "button small" %>
 		</p>
 		<% end %>
 	<% end %>
 
 	<% if can? :manage, Contact %>
-		<p><%= link_to "Ajouter un contact", new_contact_path() %></p>
+		<p><%= link_to "Ajouter un contact", new_contact_path(), :class => "button small midmedium" %></p>
 	<% end %>
 </div>

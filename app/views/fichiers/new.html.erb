@@ -1,5 +1,5 @@
 <div class="span-16">
-	<h1>Enregistrez un fichier</h1>
+	<h1 class="section-title">Enregistrez un fichier</h1>
 <% if @manifestation %>
 	<%= form_for([@manifestation,@fichier], :html => {:multipart => true}) do |f| -%>
 	  	<%= render :partial => 'shared/form_errors', :locals => {:object => @fichier} %>

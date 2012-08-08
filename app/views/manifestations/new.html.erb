@@ -1,6 +1,6 @@
 <% render :partial => "shared/tinymce_init" %>
 <div class="span-16">
-	<h1>Enregistrez une manifestation</h1>
+	<h1 class="section-title">Enregistrez une manifestation</h1>
 
 	<%= form_for(@manifestation, :html => {:multipart => true}) do |f| %>
 	  	<% if @manifestation.errors.any? %>

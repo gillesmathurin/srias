@@ -1,6 +1,6 @@
 <% render :partial => "shared/tinymce_init" %>
 <div class="span-16">
-	<h1>Rédaction Newsletter</h1>
+	<h1 class="section-title">Rédaction Newsletter</h1>
 
 	<%= form_for(@newsletter, :html => {:multipart => true}) do |f| %>
     	<%= render :partial => 'shared/form_errors', :locals => {:object => @newsletter} %>

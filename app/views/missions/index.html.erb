@@ -2,7 +2,7 @@
 	
 	<%= render :partial => "shared/flash_messages" %>
 			
-	<h1>Nos Missions</h1>
+	<h1 class="section-title">Nos Missions</h1>
 	
 	<p>
 		La S.R.I.A.S  assure et coordonne l’action sociale, culturelle et de loisirs dans la fonction publique de l’Etat.  La SRIAS est une instance transversale (inter administration) dont les actions concernent tous les agents de l’Etat en complément de ce que leur offre déjà leur propre administration.
@@ -13,7 +13,7 @@ Les missions de la SRIAS sont définies par l’instance nationale (CIAS) et mis
 	</p>
 	<ul>
 		<% @missions.each do |mission| %>
-			<li><%= mission.nom %> : <%= mission.description %> <%= link_to "Voir les actions", actions_mission_manifestations_path(mission) %></li>
+			<li><%= mission.nom %> : <%= mission.description %> <%= link_to "Voir les actions", actions_mission_manifestations_path(mission), :class => "button small midmedium" %></li>
 		<% end %>
 	</ul>
 	
@@ -34,6 +34,6 @@ Les missions de la SRIAS sont définies par l’instance nationale (CIAS) et mis
 	</ul>
 	
 <% if current_user %>
-	<p><%= link_to 'Nouvelle mission', new_mission_path %></p>
+	<p><%= link_to 'Nouvelle mission', new_mission_path, :class => "button small midmedium" %></p>
 <% end %>	
 </div>

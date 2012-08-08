@@ -1,6 +1,6 @@
 <div class="span-16">
   <% if @manifestation %>
-  	<h1>Fichiers de l'action : <%= @manifestation.nom %></h1>
+  	<h1 class="section-title">Fichiers de l'action : <%= @manifestation.nom %></h1>
   	
   	<% @fichiers.each do |fichier| %>
   		<p>&nbsp;</p>
@@ -13,7 +13,7 @@
   <% end %>
   
   <% if @offre %>
-    <h1>Fichiers de l'offre : <%= @offre.nom %></h1>
+    <h1 class="section-title">Fichiers de l'offre : <%= @offre.nom %></h1>
     
     <% @fichiers.each do |fichier| %>
   		<p>&nbsp;</p>

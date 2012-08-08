@@ -1,5 +1,5 @@
 <div class="span-16">
-	<h1>Enregistrer une photo</h1>
+	<h1 class="section-title">Enregistrer une photo</h1>
 	
 	<%= form_for [@manifestation, @photo], :html => {:multipart => true} do |f| -%>
 	  	<%= render :partial => 'shared/form_errors',:locals => {:object => @photo} %>
