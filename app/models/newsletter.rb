@@ -3,7 +3,7 @@ class Newsletter < ActiveRecord::Base
   attr_accessible :titre, :content, :sommaire, :numero, :preview, :file
 
   has_attached_file :file,
-    :path => "/system/:attachment/:id/:style/:filename",
+    :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
     :url => "/system/:attachment/:id/:style/:filename"  
   # validates_attachment_content_type :file, :content_type => "application/pdf", :message => " type de fichier incorrect"
   

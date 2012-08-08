@@ -3,7 +3,7 @@ class Annonce < ActiveRecord::Base
   attr_accessible :image
 
   has_attached_file :image , :styles => { :thumb => "250x250>", :medium => "600x600>" },
-  	:path => "/system/:attachment/:id/:style/:filename",
+  	:path => ":rails_root/public/system/:attachment/:id/:style/:filename",
     :url => "/system/:attachment/:id/:style/:filename"
   
   # validates_attachment_content_type :image, :content_type => [ 'image/jpeg', 'image/pjpeg', 'image/jpg', 'image/png']

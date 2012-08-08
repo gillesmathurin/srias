@@ -19,8 +19,7 @@ module ApplicationHelper
       if fichier.fichier.content_type =~ /image/
         image_tag(fichier.fichier.url(nil,false), :width => "585")
       else
-        text = "Téléchargez" + fichier.fichier.original_filename
-        link_to(text, fichier.fichier.url(nil, false), :class => "button small medium")
+        link_to("Téléchargez #{fichier.fichier.original_filename}", fichier.fichier.url(nil, false), :class => "button small medium")
       end
     end
   end  
