@@ -23,3 +23,21 @@ $().ready(function() {
 	dynamicArrows:false
   });
 });
+
+// handle displaying of flash alert and notice messages
+$(function() {
+  // $('div.alert').css({'zIndex': '0'});
+  $('div.alert').slideDown(600, 'linear', function() {
+    $(this).delay(4000).slideUp("normal");
+  });
+  // $('div.notice').css({'zIndex': '0'});
+  $('div.notice').slideDown(600, 'linear', function() {
+    $(this).delay(4000).slideUp("normal");
+  });
+  
+  $('.close-it').click(function(){
+    $(this).parent().slideUp('fast');
+    return false;
+  });
+  return false;
+});

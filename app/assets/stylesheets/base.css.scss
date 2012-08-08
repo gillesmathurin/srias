@@ -157,6 +157,29 @@ html {
 				margin-bottom:25px;
 				@include buttons-style;
 
+				#flash_messages {
+					text-align:center;
+					color:white;
+					margin-bottom:5px;
+					.alert {
+						display:block;
+						background:red;
+						width:70%;
+						margin-left:auto;
+						margin-right:auto;
+						border-radius:5px;
+					}
+					.notice {
+						display:block;
+						padding:10px;
+						background:#44cd18;
+						width:70%;
+						margin-left:auto;
+						margin-right:auto;
+						border-radius:5px;
+					}
+				}
+
 				p.lieu-date {
 					font-size:1.5em;
 					text-align:center;

@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class Annonce < ActiveRecord::Base
-  attr_accessible :image
+  attr_accessible :image, :message, :starts_at, :ends_at
 
   has_attached_file :image , :styles => { :thumb => "250x250>", :medium => "600x600>" },
   	:path => ":rails_root/public/system/:attachment/:id/:style/:filename",
