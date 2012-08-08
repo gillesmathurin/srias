@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nom:</b>
+  <%= @prestataire.nom %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%= @prestataire.website %>
+</p>
+
+<p>
+  <b>Tel:</b>
+  <%= @prestataire.tel %>
+</p>
+
+<p>
+  <b>Mob:</b>
+  <%= @prestataire.mob %>
+</p>
+
+<p>
+  <b>Fax:</b>
+  <%= @prestataire.fax %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @prestataire.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_prestataire_path(@prestataire) %> |
+<%= link_to 'Back', prestataires_path %>

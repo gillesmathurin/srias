@@ -1,0 +1,41 @@
+<%= form_for(@prestataire) do |f| %>
+  <% if @prestataire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prestataire.errors.count, "error") %> prohibited this prestataire from being saved:</h2>
+
+      <ul>
+      <% @prestataire.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nom %><br />
+    <%= f.text_field :nom %>
+  </div>
+  <div class="field">
+    <%= f.label :website %><br />
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :tel %><br />
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label :mob %><br />
+    <%= f.text_field :mob %>
+  </div>
+  <div class="field">
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

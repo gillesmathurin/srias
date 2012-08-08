@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 Srias::Application.routes.draw do
+  resources :prestataires
+
   resources :offres do
     resources :fichiers
   end
