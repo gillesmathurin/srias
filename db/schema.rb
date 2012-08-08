@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120803194630) do
+ActiveRecord::Schema.define(:version => 20120808154003) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
@@ -109,6 +109,11 @@ ActiveRecord::Schema.define(:version => 20120803194630) do
     t.boolean  "as_annonce",                :default => false
   end
 
+  create_table "manifestations_prestataires", :id => false, :force => true do |t|
+    t.integer "manifestation_id"
+    t.integer "prestataire_id"
+  end
+
   create_table "missions", :force => true do |t|
     t.string   "nom"
     t.text     "description"
@@ -167,6 +172,17 @@ ActiveRecord::Schema.define(:version => 20120803194630) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "manifestation_id"
+  end
+
+  create_table "prestataires", :force => true do |t|
+    t.string   "nom"
+    t.string   "website"
+    t.string   "tel"
+    t.string   "mob"
+    t.string   "fax"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "texte_accueils", :force => true do |t|

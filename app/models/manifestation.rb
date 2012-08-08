@@ -11,6 +11,7 @@ class Manifestation < ActiveRecord::Base
   has_many :photos, :dependent => :destroy
   has_many :fichiers, :dependent => :destroy
   belongs_to :mission
+  has_and_belongs_to_many :prestataires
 
   # Attachement
   has_attached_file :illustration, :styles => { :thumb => "150x150>" },
