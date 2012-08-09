@@ -157,6 +157,16 @@ html {
 				margin-bottom:25px;
 				@include buttons-style;
 
+				div.form_contact {
+					border:2px solid $myGreen2;
+					background:$myGray;
+					border-radius: 5px;
+					padding:20px;
+					form {
+						label {font-weight:bold;}
+					}
+				}
+
 				table.missions_list {
 					td {width:33%;}
 				}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120809140526) do
+ActiveRecord::Schema.define(:version => 20120809155756) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
@@ -125,6 +125,18 @@ ActiveRecord::Schema.define(:version => 20120809140526) do
   create_table "manifestations_prestataires", :id => false, :force => true do |t|
     t.integer "manifestation_id"
     t.integer "prestataire_id"
+  end
+
+  create_table "messages", :force => true do |t|
+    t.string   "nom"
+    t.string   "prenom"
+    t.string   "telephone"
+    t.string   "administration"
+    t.string   "portable"
+    t.string   "email"
+    t.text     "demande"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "missions", :force => true do |t|

@@ -44,6 +44,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
+        NewsletterMailer.contact_message(@message).deliver # Envoyer le message par mail
         format.html { redirect_to @message, notice: 'Message was successfully created.' }
         format.json { render json: @message, status: :created, location: @message }
       else

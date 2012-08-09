@@ -29,7 +29,7 @@
 		<%= form_for @message do |f| -%>
 		  <div class="field">
 		  	<%= f.label :nom, "Nom" %><br/>
-		  	<%= f.text_field :Nom %>
+		  	<%= f.text_field :nom %>
 		  </div>
 		  <div class="field">
 		  	<%= f.label :prenom, "Prenom" %><br/>
@@ -53,7 +53,7 @@
 		  </div>
 		  <div class="field">
 		  	<%= f.label :demande, "Demande" %><br/>
-		  	<%= f.text_area :demande %>
+		  	<%= f.text_area :demande, :rows => "10", :cols =>"80" %>
 		  </div>
 		  <p>
 		  	<%= f.submit "Envoyer", :disable_with => "En cours d'envoi…" %>

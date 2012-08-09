@@ -14,4 +14,12 @@ class NewsletterMailer < ActionMailer::Base
     end
   end
 
+  def contact_message(message)
+    @message = message
+    mail( :to => "srias.guadeloupe@orange.fr",
+          :subject => "Demande d'informations provenant du site",
+          :charset => "UTF-8",
+          :content_type => "text/html")
+  end
+
 end
