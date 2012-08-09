@@ -73,8 +73,8 @@ Srias::Application.configure do
     :port => 587, 
     :authentication => :plain,
     :enable_starttls_auto => true, 
-    :user_name => "guillougeorges@gmail.com", 
-    :password => "passsitesrias"
+    :user_name => "gillesmath@gmwebagency.com", 
+    :password => "razed79}jerk"
   }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
