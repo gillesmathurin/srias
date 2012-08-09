@@ -157,6 +157,11 @@ html {
 				margin-bottom:25px;
 				@include buttons-style;
 
+				div.partenaire {
+					margin-bottom :30px;
+					border-bottom:1px solid $myGray;
+				}
+
 				div.prestataire {
 					display:block;
 					border-radius:4px;

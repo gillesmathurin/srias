@@ -1,3 +1,5 @@
+<h1 class="section-title">Partenaire : <%= @partenaire.nom %></h1>
+
 <div class="span-16">
 	<p>
 	  <b>Nom:</b>
@@ -9,6 +11,6 @@
 	  <%= @partenaire.description %>
 	</p>
 
-	<%= link_to 'Modifier', edit_partenaire_path(@partenaire) %> |
-	<%= link_to 'Retour', partenaires_path %>
+	<%= link_to 'Modifier', edit_partenaire_path(@partenaire), :class => "button small" %>
+	<%= link_to 'Retour', partenaires_path, :class => "button small" %>
 </div>
