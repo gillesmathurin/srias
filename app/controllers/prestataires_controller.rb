@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PrestatairesController < ApplicationController
   # GET /prestataires
   # GET /prestataires.json
