@@ -35,22 +35,23 @@
 		<article id="left_sidebar">
 			<div id="login_box">
 				<% if current_user %>
-					<%= link_to "#{current_user.login} : Logout", logout_path(), :class => "button" %> 
+					<%= link_to "#{current_user.login} : Logout", main_app.logout_path(), :class => "button" %> 
 				<% else %>
-					<%= link_to "Login", login_path(), :class => "button" %>
+					<%= link_to "Login", main_app.login_path(), :class => "button" %>
 				<% end %>
 			</div>
 
 			<div class="menus_box">
 				<h3 class="h3_hd">Menus</h3>
 				<ul>
-					<li><%= link_to "Missions", missions_path() %></li>
-					<li><%= link_to "Actions", actions_path() %></li>
-					<li><%= link_to "Manifestations", manifestations_path() %></li>
-					<li><%= link_to "Informations", informations_path() %></li>
-					<li><%= link_to "Partenaires", partenaires_path() %></li>
-					<li><%= link_to "Liens", liens_path() %></li>
-					<li><%= link_to "Contacts", contacts_path() %></li>
+					<li><%= link_to "Missions", main_app.missions_path() %></li>
+					<li><%= link_to "Actions", main_app.actions_path() %></li>
+					<li><%= link_to "Manifestations", main_app.manifestations_path() %></li>
+					<li><%= link_to "Informations", main_app.informations_path() %></li>
+					<li><%= link_to "Partenaires", main_app.partenaires_path() %></li>
+					<li><%= link_to "Liens", main_app.liens_path() %></li>
+					<li><%= link_to "Forum", "/forums" %></li>
+					<li><%= link_to "Contacts", main_app.contacts_path() %></li>
 				</ul>
 			</div>
 
@@ -58,18 +59,18 @@
 				<div class="menus_box">
 					<h3 class="h3_hd">Administration</h3>
 					<ul>
-					  <li><%= link_to "Annonces", annonces_path() %></li>
-						<li><%= link_to "Newsletter", newsletters_path() %></li>
-						<li><%= link_to "Abonnés", abonnes_path() %></li>
-						<li><%= link_to "Catégories Partenaire", categories_path() %></li>
-						<li><%= link_to "Prestataires", prestataires_path() %></li>
+					  <li><%= link_to "Annonces", main_app.annonces_path() %></li>
+						<li><%= link_to "Newsletter", main_app.newsletters_path() %></li>
+						<li><%= link_to "Abonnés", main_app.abonnes_path() %></li>
+						<li><%= link_to "Catégories Partenaire", main_app.categories_path() %></li>
+						<li><%= link_to "Prestataires", main_app.prestataires_path() %></li>
 					</ul>
 				</div>
 			<% end %>
 
 			<div class="menus_box">
 				<h3 class="h3_hd">Newsletter</h3>
-				<%= form_for @abonne, :url => abonnes_path, :remote => true do |f| %>					
+				<%= form_for @abonne, :url => main_app.abonnes_path, :remote => true do |f| %>					
 					<p>
 						<%= f.label :email, "Email" %><br/>
 						<%= f.text_field :email, :size => 18, :placeholder => "email@address.com" %>

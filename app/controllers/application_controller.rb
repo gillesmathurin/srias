@@ -4,6 +4,13 @@
 require 'cancan'
 
 class ApplicationController < ActionController::Base
+
+  def forem_user
+    current_user
+  end
+  
+  helper_method :forem_user
+
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   helper_method :current_user_session, :current_user

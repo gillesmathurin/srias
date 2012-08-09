@@ -2,7 +2,7 @@
 class User < ActiveRecord::Base
   acts_as_authentic
 
-  attr_accessible :login, :email, :password, :password_confirmation, :password_salt, :persistence_token
+  attr_accessible :login, :email, :password, :password_confirmation, :password_salt, :persistence_token, :forem_admin
   
   ROLES = %w{ admin redacteur moderateur}
   

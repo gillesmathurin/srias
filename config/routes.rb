@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 Srias::Application.routes.draw do
+
   resources :messages
 
   resources :informations
@@ -65,6 +66,8 @@ Srias::Application.routes.draw do
   # Singular routes
   resource :user_session
   resource :account, :controller => 'users'
+
+  mount Forem::Engine, :at => "/forums"
 
   root :to => 'welcome#accueil'
 
