@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120808154003) do
+ActiveRecord::Schema.define(:version => 20120808235248) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
@@ -181,8 +181,12 @@ ActiveRecord::Schema.define(:version => 20120808154003) do
     t.string   "mob"
     t.string   "fax"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "logopic_file_name"
+    t.string   "logopic_content_type"
+    t.integer  "logopic_file_size"
+    t.datetime "logopic_updated_at"
   end
 
   create_table "texte_accueils", :force => true do |t|

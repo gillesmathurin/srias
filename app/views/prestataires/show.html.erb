@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<%= render :partial => "shared/flash_messages" %>
+
+<p>
+  <%= image_tag(@prestataire.logopic.url(:thumb)) if @prestataire.logopic.present? %>
+</p>
 
 <p>
   <b>Nom:</b>
@@ -31,5 +35,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_prestataire_path(@prestataire) %> |
-<%= link_to 'Back', prestataires_path %>
+<%= link_to 'Modifier', edit_prestataire_path(@prestataire), :class => "button small" %>
+<%= link_to 'Retour', prestataires_path, :class => "button small"  %>

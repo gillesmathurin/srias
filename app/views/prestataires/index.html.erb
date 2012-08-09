@@ -1,4 +1,4 @@
-<h1>Listing prestataires</h1>
+<h1 class="section-title">Listing prestataires</h1>
 
 <table>
   <tr>
@@ -21,13 +21,13 @@
     <td><%= prestataire.mob %></td>
     <td><%= prestataire.fax %></td>
     <td><%= prestataire.description %></td>
-    <td><%= link_to 'Show', prestataire %></td>
-    <td><%= link_to 'Edit', edit_prestataire_path(prestataire) %></td>
-    <td><%= link_to 'Destroy', prestataire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Voir', prestataire, :class => "button small" %></td>
+    <td><%= link_to 'Modifier', edit_prestataire_path(prestataire), :class => "button small" %></td>
+    <td><%= link_to 'Supprimer', prestataire, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button small" %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Prestataire', new_prestataire_path %>
+<%= link_to 'Ajouter un prestataire', new_prestataire_path, :class => "button small midmedium" %>

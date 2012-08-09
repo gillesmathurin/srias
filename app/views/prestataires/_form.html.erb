@@ -20,22 +20,26 @@
     <%= f.text_field :website %>
   </div>
   <div class="field">
-    <%= f.label :tel %><br />
+    <%= f.label "Telephone" %><br />
     <%= f.text_field :tel %>
   </div>
   <div class="field">
-    <%= f.label :mob %><br />
+    <%= f.label "Mobile" %><br />
     <%= f.text_field :mob %>
   </div>
   <div class="field">
-    <%= f.label :fax %><br />
+    <%= f.label "Fax" %><br />
     <%= f.text_field :fax %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
+  <div class="field">
+    <%= f.label :logopic, "Logo Prestataire" %>
+    <%= f.file_field :logopic %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <p><%= f.submit "Enregistrer" %></p>
   </div>
 <% end %>

@@ -11,6 +11,10 @@
     <%= f.text_field :lieu %>
   </p>
   <p>
+    <%= f.label :prestataire_id, "Prestataire" %>
+    <%= f.collection_select :prestataire_ids, Prestataire.all, :id, :nom, {:prompt => "Sélectionner un/des partenaire(s)"}, :multiple => true %>
+  </p>
+  <p>
     <%= f.label :date_debut %><br />
     <%= f.datetime_select :date_debut, :order => [:day, :month, :year], :discard_hour => true, :discard_minute => true %>
   </p>
@@ -24,8 +28,7 @@
   </p>
   <p>
     <%= f.label :description %><br />
-    <%= f.text_area :description, :class => "tinymce", :cols => "90" %>
-    
+    <%= f.text_area :description, :class => "tinymce", :cols => "90" %>    
   </p>
   <p>
     <%= f.check_box :as_annonce %> : <%= f.label :as_annonce, "Spécifier comme annonce" %>
