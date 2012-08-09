@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120808235248) do
+ActiveRecord::Schema.define(:version => 20120809012401) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(:version => 20120808235248) do
     t.string   "fiche_content_type"
     t.datetime "fiche_updated_at"
     t.boolean  "as_annonce",                :default => false
+    t.string   "public_concerne"
   end
 
   create_table "manifestations_prestataires", :id => false, :force => true do |t|

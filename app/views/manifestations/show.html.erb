@@ -22,6 +22,8 @@
 		<b>Au</b> : <%=l @manifestation.date_fin, :format => :only_date %>
 	</p>
 
+	<p class="lieu-date">Public concerné : <%= @manifestation.public_concerne %></p>
+
 	<p><%=raw @manifestation.description %></p>
 
 	<% @manifestation.fichiers.each do |fichier| %>

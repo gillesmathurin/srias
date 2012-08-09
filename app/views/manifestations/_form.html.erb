@@ -11,7 +11,11 @@
     <%= f.text_field :lieu %>
   </p>
   <p>
-    <%= f.label :prestataire_id, "Prestataire" %>
+    <%= f.label :public_concerne, "Public Concerne" %><br/>
+    <%= f.select :public_concerne, Manifestation::PUBLIC_CONCERNE, :prompt => "Sélectionner un public" %>
+  </p>
+  <p>
+    <%= f.label :prestataire_id, "Prestataire" %><br/>
     <%= f.collection_select :prestataire_ids, Prestataire.all, :id, :nom, {:prompt => "Sélectionner un/des partenaire(s)"}, :multiple => true %>
   </p>
   <p>
