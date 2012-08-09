@@ -24,4 +24,18 @@ describe NewsletterMailer do
       it "send the given newsletter to the specified abonne with the file attachment"
     end
   end
+
+  describe "contact_message(message)" do
+    before(:each) do
+      @message = FactoryGirl.create(:message)
+      @email = NewsletterMailer.contact_message(@message).deliver
+    end
+
+    it "sends the given message to srias.guadeloupe@orange.fr" do
+      ActionMailer::Base.deliveries.should_not be_empty
+      @email.to.should eql(["srias.guadeloupe@orange.fr"])
+      @email.subject.should eql("Demande d'informations provenant du site")
+      @email.encoded.should =~ //
+    end
+  end
 end

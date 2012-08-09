@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demande d'information provenant du site</title>
+</head>
+<body>
+	<h2>Cher administrateur</h2>
+	<p>
+		<%= @message.nom %> <%= @message.prenom %> de l'administration : <%= @message.administration %> a exprimé la demande suivante :
+	</p>
+
+	<p><%= @message.demande %></p>
+
+	<p>
+		Vous pouvez contacter cette personnes aux coordonnées suivantes :
+		<ul>
+			<li>Tel. fixe : <%= @message.telephone %></li>
+			<li>Tel. mobile : <%= @message.portable %></li>
+			<li>Email : <%= @message.email %></li>
+			<li>Fax : <%= @message.fax %></li>
+		</ul>
+	</p>
+</body>
+</html>
