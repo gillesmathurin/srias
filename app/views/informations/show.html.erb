@@ -1,0 +1,17 @@
+<%= render :partial => "shared/flash_messages" %>
+
+<h1 class="section-title"><%= @information.title %></h1>
+
+<%=raw @information.content %>
+
+
+<p><%= display_link_or_image_of(@information) %></p>
+
+<% @information.fichiers.each do |fichier| %>
+	<p><%= display_link_or_image(fichier) %></p>
+<% end %>
+
+<% if current_user %>
+	<%= link_to 'Modifier', edit_information_path(@information), :class => "button small" %>
+<% end %>
+<%= link_to 'Retour', informations_path , :class => "button small" %>

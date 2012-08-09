@@ -44,7 +44,7 @@ class PrestatairesController < ApplicationController
 
     respond_to do |format|
       if @prestataire.save
-        format.html { redirect_to @prestataire, notice: 'Prestataire was successfully created.' }
+        format.html { redirect_to @prestataire, notice: 'Prestataire enregistré.' }
         format.json { render json: @prestataire, status: :created, location: @prestataire }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class PrestatairesController < ApplicationController
 
     respond_to do |format|
       if @prestataire.update_attributes(params[:prestataire])
-        format.html { redirect_to @prestataire, notice: 'Prestataire was successfully updated.' }
+        format.html { redirect_to @prestataire, notice: 'Prestataire modifié avec succès.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

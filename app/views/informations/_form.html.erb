@@ -1,0 +1,30 @@
+<% render :partial => "shared/tinymce_init" %>
+<%= form_for(@information, :url => informations_path) do |f| %>
+  <% if @information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@information.errors.count, "erreur") %> empêchèrent cette information d'être enregistrée:</h2>
+
+      <ul>
+      <% @information.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title, "Titre" %><br/>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content, "Contenu" %><br/>
+    <%= f.text_area :content, :class => "tinymce", :cols => "90" %>
+  </div>
+  <div class="field">
+    <%= f.label :information_file, "Fichier joint" %><br/>
+    <%= f.file_field :information_file %>
+  </div>
+  <div class="actions">
+    <p><%= f.submit "Enregistrer" %></p>
+  </div>
+<% end %>

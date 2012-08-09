@@ -10,7 +10,8 @@
 	  <b>Description:</b>
 	  <%= @partenaire.description %>
 	</p>
-
-	<%= link_to 'Modifier', edit_partenaire_path(@partenaire), :class => "button small" %>
+	<% if current_user %>
+		<%= link_to 'Modifier', edit_partenaire_path(@partenaire), :class => "button small" %>
+	<% end %>
 	<%= link_to 'Retour', partenaires_path, :class => "button small" %>
 </div>

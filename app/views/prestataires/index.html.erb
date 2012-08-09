@@ -22,12 +22,15 @@
     <td><%= prestataire.fax %></td>
     <td><%= prestataire.description %></td>
     <td><%= link_to 'Voir', prestataire, :class => "button small" %></td>
+    <% if current_user %>
     <td><%= link_to 'Modifier', edit_prestataire_path(prestataire), :class => "button small" %></td>
     <td><%= link_to 'Supprimer', prestataire, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button small" %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
+<% if current_user %>
 <%= link_to 'Ajouter un prestataire', new_prestataire_path, :class => "button small midmedium" %>
+<% end %>

@@ -1,7 +1,7 @@
 <%= form_for(@prestataire) do |f| %>
   <% if @prestataire.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@prestataire.errors.count, "error") %> prohibited this prestataire from being saved:</h2>
+      <h2><%= pluralize(@prestataire.errors.count, "erreur") %> empêchèrent ce prestataire d'être enregistré:</h2>
 
       <ul>
       <% @prestataire.errors.full_messages.each do |msg| %>
