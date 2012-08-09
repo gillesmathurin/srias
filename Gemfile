@@ -9,7 +9,7 @@ gem 'mysql2'
 gem 'rake', '0.9.2.2'
 
 gem 'authlogic'
-gem 'cancan'
+gem 'cancan', '1.6.7'
 gem 'will_paginate'
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 # gem 'delayed_job'
