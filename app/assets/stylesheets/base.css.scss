@@ -157,6 +157,10 @@ html {
 				margin-bottom:25px;
 				@include buttons-style;
 
+				table.missions_list {
+					td {width:33%;}
+				}
+
 				div.partenaire {
 					margin-bottom :30px;
 					border-top:1px solid darken($myGray,10%);

@@ -11,14 +11,18 @@
 	<p>
 Les missions de la SRIAS sont définies par l’instance nationale (CIAS) et mise en œuvre au niveau régional, ce sont :
 	</p>
-	<ul>
+	<table class="missions_list">
 		<% @missions.each do |mission| %>
-			<li><%= mission.nom %> : <%= mission.description %> <%= link_to "Voir les actions", actions_mission_manifestations_path(mission), :class => "button small midmedium" %></li>
+			<tr>
+				<td><b><%= mission.nom.capitalize %></b></td>
+				<td><%= mission.description %></td>
+				<td><%= link_to "Voir les actions", actions_mission_manifestations_path(mission), :class => "button small midmedium" %></td>
+			</tr>
 		<% end %>
-	</ul>
+	</table>
 	
 	<p>
-		L’évaluation du plan annuel régionale d’action sociale et la mise en œuvre des actions de la SRIAS, sont assurées conjointement par un représentant élu des organisations syndicales pour la présidence et par le secrétariat général pour les affaires régionales
+		L’évaluation du plan annuel régionale d’action sociale et la mise en œuvre des actions de la SRIAS, sont assurées conjointement par un représentant élu des organisations syndicales pour la présidence et par le secrétariat général pour les affaires régionales.
 	</p>
 	
 	<p>

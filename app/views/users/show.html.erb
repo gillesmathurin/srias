@@ -3,37 +3,37 @@
 	
 	<p>
 	  <b>Login:</b>
-	  <%=h @user.login %>
+	  <%= @user.login %>
 	</p>
 
 	<p>
 	  <b>Nombre de connexion:</b>
-	  <%=h @user.login_count %>
+	  <%= @user.login_count %>
 	</p>
 
 	<p>
 	  <b>Dernière connexion:</b>
-	  <%=h @user.last_login_at %>
+	  <%= @user.last_login_at %>
 	</p>
 
 	<p>
 	  <b>Connecté le:</b>
-	  <%=h @user.current_login_at %>
+	  <%= @user.current_login_at %>
 	</p>
 
 	<p>
 	  <b>Dernière IP de connexion:</b>
-	  <%=h @user.last_login_ip %>
+	  <%= @user.last_login_ip %>
 	</p>
 
 	<p>
 	  <b>IP actuel:</b>
-	  <%=h @user.current_login_ip %>
+	  <%= @user.current_login_ip %>
 	</p>
 
 
-	<%= link_to 'Modifier', edit_account_path %>
+	<%= link_to 'Modifier', edit_account_path, :class => "button small" %>
 	<% if can? :manage, @user %>
-	 | <%= link_to "Créer nouveau compte", new_user_path() %>
+	 <%= link_to "Créer nouveau compte", new_user_path(), :class => "button small midmedium" %>
 	<% end %>
 </div>
