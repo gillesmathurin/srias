@@ -3,6 +3,6 @@
 
     <%= render :partial => 'form', :object => @offre %>
 
-  <%= link_to 'Voir', @offre %> |
-  <%= link_to 'Retour', partenaire_offres_path(@partenaire) %>
+  <%= link_to 'Voir', @offre, :class => "button small" %>
+  <%= link_to 'Retour', partenaire_offres_path(@partenaire), :class => "button small" %>
 </div>

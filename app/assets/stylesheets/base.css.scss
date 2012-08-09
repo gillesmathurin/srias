@@ -159,7 +159,19 @@ html {
 
 				div.partenaire {
 					margin-bottom :30px;
-					border-bottom:1px solid $myGray;
+					border-top:1px solid darken($myGray,10%);
+
+					div.part_offres {
+						p.accroche {
+							@include custom-font('Geneva', "Geneva", bold, 12px)
+						}
+						div.offre {
+							background:$myGray;
+							border-radius:4px;
+							padding:5px;
+							margin-bottom:10px;
+						}
+					}
 				}
 
 				div.prestataire {
@@ -168,8 +180,6 @@ html {
 					background:$myGray;
 					margin-bottom:20px;
 					padding:10px;
-					// min-height:60px;
-					// img {float:left;}
 				}
 
 				#flash_messages {

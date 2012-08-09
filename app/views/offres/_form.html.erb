@@ -1,6 +1,6 @@
 <% render :partial => "shared/tinymce_init" %>
-  <% form_for([@partenaire, @offre], :html => {:multipart => true}) do |f| %>
-    <%= f.error_messages %>
+  <%= form_for([@partenaire, @offre], :html => {:multipart => true}) do |f| %>
+    <%= render :partial => 'shared/form_errors', :locals => {:object => @offre} %>
 
     <p>
       <%= f.label :nom %><br />
@@ -20,7 +20,7 @@
     </p>
     <p>
       <%= f.label :description %><br />
-      <%= f.text_area :description %>
+      <%= f.text_area :description, :class => "tinymce" %>
     </p>
     <% f.fields_for :fichiers do |fichier_form| %>
   		<p><%= fichier_form.label "Fichier joint" %> : <%= fichier_form.file_field :fichier %></p>

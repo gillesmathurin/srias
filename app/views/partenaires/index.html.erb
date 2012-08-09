@@ -11,7 +11,7 @@
       <div class="partenaire">
         <p class="partenaire_logo">
           <% if image_present?(partenaire) %>
-            <%= link_to(image_tag(partenaire.logo.url(:thumb)), partenaire.logo_link)  %>
+            <%= link_to(image_tag(partenaire.logo.url(:thumb)), partenaire.logo_link) %>
           <% else %>
             <%= link_to(partenaire.link, partenaire.logo_link) unless partenaire.logo_link.blank? %>
           <% end %>
@@ -31,13 +31,16 @@
         <% end %>
       
         <div class="part_offres">
-          <p>Bénéficiez des offres privilégiées de ce partenaire !</p>
+          <p class="accroche">Bénéficiez des offres privilégiées de ce partenaire !</p>
         
           <% partenaire.offres.each do |offre| %>
             <div class="offre">
               <p>
-                <%= link_to offre.nom, partenaire_offre_path(partenaire.id, offre), :class => "offre_link" %> - Du <%= offre.date_debut  %> Au <%= offre.date_fin %><br/>
+                <%= link_to offre.nom, partenaire_offre_path(partenaire.id, offre), :class => "offre_link" %> - Du <%= l offre.date_debut,:format => :default  %> Au <%= l offre.date_fin, :format => :default %><br/>
                 <%= offre.description %>
+                <% if current_user %>
+                  <br/><%= link_to "Supprimer cette offre", offre_path(offre), :method => :delete, :data => {:confirm => "En êtes vous sur ?" }, :class => "button small midmedium" %>
+                <% end %>
               </p>
             </div>
           <% end %>

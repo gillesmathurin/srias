@@ -80,7 +80,7 @@ class OffresController < ApplicationController
     @offre.destroy
 
     respond_to do |format|
-      format.html { redirect_to(offres_url) }
+      format.html { @partenaire ? redirect_to(partenaires_url) : redirect_to(offres_url) }
       format.xml  { head :ok }
     end
   end

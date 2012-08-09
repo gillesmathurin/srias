@@ -1,22 +1,19 @@
 <div class="span-16">
-  <h2>
-    Cette offre :
-    <b><%=h @offre.nom %></b>
-  </h2>
+  <h1 class="section-title"> Cette offre : <b><%=h @offre.nom %></b></h1>
 
   <p>
     <b>Vous est proposée par :</b>
-    <%=h @offre.partenaire.nom %>
+    <%= @offre.partenaire.nom %>
   </p>
 
   <p>
     <b>Valable du :</b>
-    <%=h @offre.date_debut %> <b>Au :</b> <%=h @offre.date_fin %>
+    <%= l(@offre.date_debut, :format => :default) %> <b>Au :</b> <%= l @offre.date_fin, :format => :default %>
   </p>
 
   <p>
     <b>Description:</b>
-    <%=h @offre.description %>
+    <%= @offre.description %>
   </p>
   
   <!-- TODO : ajouter la possibilité de télécharger le document de l'offre -->
@@ -26,12 +23,12 @@
 
   <% if current_user %>  
     <p>
-  		<%= link_to "Ajoutez un fichier joint", new_offre_fichier_path(@offre) %> |
-  		<%= link_to "Modifiez un fichier joint", offre_fichiers_path(@offre) %>
+  		<%= link_to "Ajoutez un fichier joint", new_offre_fichier_path(@offre), :class => "button small midmedium" %>
+  		<%= link_to "Modifiez un fichier joint", offre_fichiers_path(@offre), :class => "button small midmedium" %>
   	</p>
   	<p>
-  	  <%= link_to 'Modifier', edit_partenaire_offre_path(@partenaire, @offre) %> |
-      <%= link_to 'Retour', partenaires_path() %>
+  	  <%= link_to 'Modifier', edit_partenaire_offre_path(@partenaire, @offre), :class => "button small" %>
+      <%= link_to 'Retour', partenaires_path(), :class => "button small" %>
   	</p>
   <% end %>
 </div>
