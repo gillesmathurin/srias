@@ -1,9 +1,9 @@
 GIT
   remote: git://github.com/gillesmathurin/forem.git
-  revision: 2885241fc33d6a61259f1c95d3826b965b1f3b59
+  revision: 86a18f4e9a33e02fc8d6d54065bdaaf139cb0f5e
   specs:
     forem (1.0.0.beta1)
-      cancan (= 1.6.8)
+      cancan (= 1.6.7)
       forem-redcarpet (= 1.0.0)
       friendly_id (~> 4.0)
       rails (~> 3.1)
@@ -58,7 +58,7 @@ GEM
       activesupport (>= 3.0.0)
     blankslate (2.1.2.4)
     builder (3.0.0)
-    cancan (1.6.8)
+    cancan (1.6.7)
     capistrano (2.12.0)
       highline
       net-scp (>= 1.0.0)
@@ -267,7 +267,7 @@ PLATFORMS
 
 DEPENDENCIES
   authlogic
-  cancan
+  cancan (= 1.6.7)
   capistrano
   capybara
   coffee-rails (~> 3.2.1)
