@@ -11,3 +11,4 @@ Forem.per_page = 20
 # end
 #
 # By default, these lines will use the layout located at app/views/layouts/forem.html.erb in your application.
+Forem.sign_in_path = "login"
