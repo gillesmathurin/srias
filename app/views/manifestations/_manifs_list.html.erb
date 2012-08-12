@@ -11,7 +11,7 @@
 			<% manifestations.each do |manifestation| %>
 			  <hr/>
 				<p class="titre-manif">
-					<span class="nom-manif"><%= manifestation.nom.capitalize %></span><br/><%= manifestation.lieu %> du <%=l manifestation.date_debut, :format => :default %> au <%=l manifestation.date_fin, :format => :default %>
+					<span class="nom-manif"><%= manifestation.nom.capitalize %></span><br/><%= manifestation.lieu %> du <%=l manifestation.date_debut, :format => :only_date %> au <%=l manifestation.date_fin, :format => :only_date %>
 				</p>	
 				
 				<div class="manifestation-desc">

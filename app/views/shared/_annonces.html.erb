@@ -13,7 +13,7 @@
             <p class="annonce-texte">
               <%= link_to(raw(action.nom), uneaction_path(action.id), :class => "nom") %><br/>
               <span class="lieu-date">
-                <%= action.lieu %> du <%=l action.date_debut, :format => :default %> au <%=l action.date_fin, :format => :default %>    
+                <%= action.lieu %> du <%=l action.date_debut, :format => :only_date %> au <%=l action.date_fin, :format => :only_date %>    
               </span>
                         
               <p><%= link_to "voir ...", uneaction_path(action.id), :class => "button small" %></p>
