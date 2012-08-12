@@ -1,30 +1,27 @@
 <h1 class="section-title">Informations Utiles</h1>
 
-<table>
-  <tr>
-    <th>Titre</th>
-    <th>Contenu</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @informations.each do |information| %>
-  <tr>
-    <td><b><%= information.title %></b></td>
-    <td><%=raw truncate(information.content, :length => 50) %></td>
-    <td><%= link_to 'Voir', information, :class => "button small" %></td>
-    <% if current_user %>
-    <td><%= link_to 'Modifier', edit_information_path(information), :class => "button small" %></td>
-    <td><%= link_to 'Supprimer', information, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button small" %></td>
+  <hr/>
+  <p class="titre-manif">
+    <span class="nom-manif"><%= information.title %></span>
+  </p>
+
+  <div class="manifestation-desc">
+    <%=raw truncate(information.content, :length => 50) %>
+  </div>
+
+  <div class="link-box">
+    <%= link_to 'Voir', information, :class => "button small" %>
+    <% if can? :update, information %>
+      <%= link_to 'Modifier', edit_information_path(information), :class => "button small" %>
+      <%= link_to 'Supprimer', information, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button small" %>
     <% end %>
-  </tr>
+  </div>
 <% end %>
-</table>
 
 <%= will_paginate @informations %>
 
 <br />
-<% if current_user %>
+<% if can? :update, Information %>
   <%= link_to 'Ajouter une Information', new_information_path, :class => "button small midmedium" %>
 <% end %>
