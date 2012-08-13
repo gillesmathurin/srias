@@ -18,8 +18,7 @@ fr:
     order: 
       - :day
       - :month
-      - :year
-  
+      - :year  
   time:
     formats:
       default: "%d %B %Y %H:%M"
@@ -31,7 +30,6 @@ fr:
       only_date: "%d %B %Y"
     am: 'am'
     pm: 'pm'
-
   datetime:
     distance_in_words:
       half_a_minute: "une demi-minute"
@@ -73,8 +71,7 @@ fr:
       day:    "Jour"
       hour:   "Heure"
       minute: "Minute"
-      second: "Seconde"
-  
+      second: "Seconde"  
   number:
     format:
       precision: 3
@@ -140,7 +137,7 @@ fr:
         less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
         odd: "doit être impair"
         even: "doit être pair"
-        record_invalid: "La validation a échoué : {{errors}}"
+        record_invalid: "La validation a échoué : %{errors}"
         
   forem:
     general:
