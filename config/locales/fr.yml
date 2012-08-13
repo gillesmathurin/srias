@@ -19,6 +19,7 @@ fr:
       - :day
       - :month
       - :year  
+
   time:
     formats:
       default: "%d %B %Y %H:%M"
@@ -30,7 +31,12 @@ fr:
       only_date: "%d %B %Y"
     am: 'am'
     pm: 'pm'
+    month_names: [~, janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre]
+    day_names: [dimanche, lundi, mardi, mercredi, jeudi, vendredi, samedi]
+
   datetime:
+    month_names: [~, janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre]
+    day_names: [dimanche, lundi, mardi, mercredi, jeudi, vendredi, samedi]
     distance_in_words:
       half_a_minute: "une demi-minute"
       less_than_x_seconds:

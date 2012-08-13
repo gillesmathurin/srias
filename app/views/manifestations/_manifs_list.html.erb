@@ -23,7 +23,7 @@
 
   				<% if can? :update, manifestation %>	
   					<%= link_to 'Modifier', edit_manifestation_path(manifestation), :class => "button small" %> 
-  					<%= link_to 'Supprimer', manifestation, :confirm => 'En êtes vous sur ?', :method => :delete, :class => "button small" %>
+  					<%= link_to 'Supprimer', manifestation, :data => {:confirm => 'En êtes vous sur ?'}, :method => :delete, :class => "button small" %>
   				<% end %>
 
   				<% if can? :modify, manifestation %>
