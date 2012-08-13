@@ -1,5 +1,5 @@
 <% render :partial => "shared/tinymce_init" %>
-<%= form_for(@information, :url => informations_path) do |f| %>
+<%= form_for(@information) do |f| %>
   <% if @information.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@information.errors.count, "erreur") %> empêchèrent cette information d'être enregistrée:</h2>
