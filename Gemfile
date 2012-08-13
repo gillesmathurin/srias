@@ -17,7 +17,7 @@ gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
 gem 'delayed_job_active_record'
 gem 'daemons'
-gem 'forem', :git => "git://github.com/gillesmathurin/forem.git"
+# gem 'forem', :git => "git://github.com/gillesmathurin/forem.git"
 # gem 'forem', :git => "git://github.com/radar/forem.git"
 
 # Gems used only for assets and not required
