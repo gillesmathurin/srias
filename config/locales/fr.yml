@@ -28,7 +28,7 @@ fr:
       long: "%A %d %B %Y %H:%M:%S %Z"
       long_ordinal: "%A %d %B %Y %H:%M:%S %Z"
       only_second: "%S"
-      only_date: "%d %B %Y "
+      only_date: "%d %B %Y"
     am: 'am'
     pm: 'pm'
 
