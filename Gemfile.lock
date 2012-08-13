@@ -94,6 +94,7 @@ GEM
       nokogiri (>= 1.5.0)
     daemon_controller (1.0.0)
     daemons (1.1.8)
+    database_cleaner (0.8.0)
     debugger (1.2.0)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.1.1)
@@ -273,6 +274,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   cucumber-rails
   daemons
+  database_cleaner
   debugger
   delayed_job_active_record
   email_spec

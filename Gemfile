@@ -44,6 +44,7 @@ group :development, :test do
   gem 'growl'
   gem 'spork'
   gem 'passenger'
+  gem 'database_cleaner'
   # gem 'autotest-rails'
   # gem 'autotest-growl'
   # gem 'autotest-fsevent'
