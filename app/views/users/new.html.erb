@@ -1,11 +1,11 @@
 <div class="span-16">
 	<h1 class="section-title">Créer votre compte</h1>
 
-	<% form_for @user, :url => account_path do |f| %>
-	  <%= f.error_messages %>
+	<%= form_for @user, :url => account_path do |f| %>
+	  <%= render :partial => "shared/form_errors", :locals => {:object => @user} %>
 	  <%= render :partial => "form", :object => f %>
 	  <%= f.submit "S'enregistrer" %>
 	<% end %>
 	
-	<br /><%= link_to "Retour", user_path(@current_user) %>
+	<br /><%= link_to "Retour", new_user_path(), :class => "button small" %>
 </div>

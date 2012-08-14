@@ -1,15 +1,17 @@
-<% if current_user.role?(:admin) %>
+<% if current_user && current_user.role?(:admin) %>
 	<%= form.label :role %><br/>
 	<%= form.select :role, User::ROLES, {:prompt => "Role de l'utilisateur"} %><br/>
+<% else %>
+	<%= form.hidden_field :role, :value => "basic" %>
 <% end %>
-<%= form.label :login %><br />
+<%= form.label :login, "Identifiant" %><br />
 <%= form.text_field :login %><br />
 <br />
 <%= form.label :email, "Email" %><br/>
 <%= form.text_field :email %><br/>
 <br/>
-<%= form.label :password, form.object.new_record? ? nil : "Changer le mot de passe" %><br />
+<%= form.label :password, form.object.new_record? ? "Mot de passe" : "Changer le mot de passe" %><br />
 <%= form.password_field :password %><br />
 <br />
-<%= form.label :password_confirmation %><br />
+<%= form.label :password_confirmation, "Confirmation du Mot de Passe" %><br />
 <%= form.password_field :password_confirmation %><br />
