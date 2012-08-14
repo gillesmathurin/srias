@@ -71,7 +71,7 @@ Srias::Application.configure do
   config.action_mailer.smtp_settings = {
     :address => "smtp.gmail.com", 
     :port => 587, 
-    :authentication => :plain,
+    :authentication => "plain",
     :enable_starttls_auto => true, 
     :user_name => "gillesmath@gmwebagency.com", 
     :password => "razed79}jerk"
