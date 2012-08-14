@@ -47,11 +47,11 @@ Srias::Application.configure do
   config.action_mailer.smtp_settings = {
     :address => "smtp.gmail.com", 
     :port => 587, 
-    :user_name => "guillougeorges@gmail.com", 
-    :password => "passsitesrias",
-    :authentication => :plain,
-    :enable_starttls_auto => true
+    :authentication => "plain",
+    :enable_starttls_auto => true, 
+    :user_name => "gillesmath@gmwebagency.com", 
+    :password => "razed79}jerk"
   }
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = false
 end

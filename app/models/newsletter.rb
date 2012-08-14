@@ -14,7 +14,7 @@ class Newsletter < ActiveRecord::Base
     # Sends the newsletter to each one
     @abonnes.each do |abonne|
       NewsletterMailer.newsletter(abonne, self).deliver
-      sleep 5
+      sleep 60
     end
     # Set the delivered_at time to now
     self.update_attribute(:delivered_at, Time.now)
@@ -24,7 +24,7 @@ class Newsletter < ActiveRecord::Base
     @abonnes = %w(gillesmath@me.com guillou.g3@wanadoo.fr)
     @abonnes.each do |abonne|
       NewsletterMailer.newsletter(abonne, self).deliver
-      sleep 5
+      sleep 60
     end
     self.update_attribute(:delivered_at, Time.now)
   end
