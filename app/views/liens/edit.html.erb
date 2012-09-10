@@ -2,17 +2,7 @@
 	<h1 class="section-title">Modifier un Lien</h1>
 
 	<%= form_for(@lien) do |f| %>
-	  	<% if @lien.errors.any? %>
-		    <div id="error_explanation">
-		      <h2><%= pluralize(@lien.errors.count, "error") %> empêchèrent ce formulaire d'être enregistré:</h2>
-
-		      <ul>
-		      <% @lien.errors.full_messages.each do |msg| %>
-		        <li><%= msg %></li>
-		      <% end %>
-		      </ul>
-		    </div>
- 		 <% end %>
+		<%= render :partial => 'shared/form_errors', :locals => {:object => @lien} %>
 
 		<%= render :partial => 'form', :locals => {:f => f} %>
 

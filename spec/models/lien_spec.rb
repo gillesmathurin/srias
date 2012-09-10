@@ -12,5 +12,6 @@ describe Lien do
   
   it "requires a nom" do
     @lien.should have(1).error_on(:nom)
+    @lien.should have(1).error_on(:adresse)
   end
 end
