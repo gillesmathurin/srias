@@ -21,6 +21,15 @@ class PhotosController < ApplicationController
       end
     end
   end
+
+  def destroy
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+
+    respond_to do |wants|
+      wants.html { redirect_to manifestation_path(@manifestation) }
+    end
+  end
   
   private
   

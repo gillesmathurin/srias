@@ -12,6 +12,7 @@ describe Photo do
   end
 
   it "should create a new instance given valid attributes" do
+    pending
     Photo.create!(@valid_attributes)
   end
 end
