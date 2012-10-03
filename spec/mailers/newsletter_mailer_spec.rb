@@ -17,8 +17,7 @@ describe NewsletterMailer do
     end
 
     context "with a file attachment" do
-      before(:each) do
-        
+      before(:each) do        
       end
 
       it "send the given newsletter to the specified abonne with the file attachment"

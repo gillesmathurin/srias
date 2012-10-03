@@ -13,4 +13,5 @@ class Partenaire < ActiveRecord::Base
 
   # Validations
   validates :link, :url => true, :allow_blank => true
+  validates :nom, :presence => true
 end
