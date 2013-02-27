@@ -15,14 +15,20 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   helper_method :current_user_session, :current_user
   
-  before_filter :create_abonne
+  before_filter :create_abonne, :update_visitor_counter
   
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = exception.message
     redirect_to root_url
   end
   
-  private
+  def update_visitor_counter
+    Visitor.find_or_create_by_ip(request.ip)
+    @visitors_count = Visitor.count
+  end
+  
+  protected
+
   
   def create_abonne
     @abonne = Abonne.new
