@@ -5,7 +5,7 @@ html {
 	body {
 		background:white;
 		background-image:image-url("fond-srias.jpg");
-		background-repeat:no-repeat;
+		background-repeat:repeat-y;
 		background-position: center center;
 		margin:0;
 		padding:0;
@@ -46,8 +46,9 @@ html {
 		#content {
 			min-height:620px;
 			display:block;
-			background:rgba(255,255,255,0.9);
+			background:lighten(rgba(111,170,80,0.9), 45%);
 			padding-top:10px;
+			padding-bottom:10px;
 
 			.coda-slider-wrapper { 
 				clear:none;
