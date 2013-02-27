@@ -20,6 +20,7 @@ $().ready(function() {
     autoSlide: true,
     autoSlideInterval: 6000,
     autoSlideStopWhenClicked: true,
+    dynamicTabs: false,
 	dynamicArrows:false
   });
 });
