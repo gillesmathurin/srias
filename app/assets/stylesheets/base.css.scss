@@ -4,6 +4,9 @@ html {
 
 	body {
 		background:white;
+		background-image:image-url("fond-srias.jpg");
+		background-repeat:no-repeat;
+		background-position: center center;
 		margin:0;
 		padding:0;
 		font-family:Helvetica,Verdana;
@@ -43,6 +46,8 @@ html {
 		#content {
 			min-height:620px;
 			display:block;
+			background:rgba(255,255,255,0.9);
+			padding-top:10px;
 
 			.coda-slider-wrapper { 
 				clear:none;
@@ -93,7 +98,7 @@ html {
 				margin-left:10px;
 
 				#login_box {
-					margin-top:0px;
+					margin-top:10px;
 					margin-bottom:10px;
 					@include buttons-style;
 				}
