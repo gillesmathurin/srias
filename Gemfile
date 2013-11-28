@@ -6,12 +6,12 @@ gem 'rails', '3.2.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-gem 'rake', '0.9.2.2'
+gem 'rake', '10.1.0'
 
 gem 'authlogic'
 gem 'cancan', '1.6.7'
 gem 'will_paginate'
-gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'paperclip'#, :git => "git://github.com/thoughtbot/paperclip.git"
 # gem 'delayed_job'
 gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
@@ -27,7 +27,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-  # gem 'execjs'
+  gem 'execjs'
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -39,16 +39,20 @@ group :development, :test do
   gem 'email_spec'
   gem 'fakeweb'
   gem 'guard-rspec'
-  gem 'guard-spork'
+  # gem 'guard-spork'
   gem 'rb-fsevent'
   gem 'growl'
   gem 'spork'
-  gem 'passenger'
+  gem 'passenger', '~>4.0.25'
   gem 'database_cleaner'
   # gem 'autotest-rails'
   # gem 'autotest-growl'
   # gem 'autotest-fsevent'
-  gem 'debugger'
+  # gem 'debugger'
+  gem 'capistrano', '~> 3.0.1'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails', '~> 1.1.0'
+  gem 'capistrano-rvm', '~> 0.1.0'
 end
 
 group :test do
@@ -70,7 +74,3 @@ gem 'jquery-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
-# Deploy with Capistrano
-gem 'capistrano'
-gem 'rvm-capistrano'
