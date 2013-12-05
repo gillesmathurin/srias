@@ -102,7 +102,9 @@
 					<%= mail_to "srias.guadeloupe@orange.fr", "srias.guadeloupe@orange.fr" %><br/>0690 39 12 58 - 0590 99 38 81<br/>
 
 					<% if @visitors_count %>
-						<p id="counter" class="button"><%= "Nombre de visiteurs : #{@visitors_count}" %></p>
+					<h4>
+						<span class="label label-success"><%= "Nombre de visiteurs : #{@visitors_count}" %></span>
+					</h3>
 					<% end -%>
 				</div>
 				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
