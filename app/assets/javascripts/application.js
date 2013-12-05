@@ -17,15 +17,15 @@
 //= require bootstrap
 //= require_tree .
 
-// $().ready(function() {
-//   $('#coda-slider-1').codaSlider({
-//     autoSlide: true,
-//     autoSlideInterval: 6000,
-//     autoSlideStopWhenClicked: true,
-//     dynamicTabs: false,
-// 	dynamicArrows:false
-//   });
-// });
+$().ready(function() {
+  $('#coda-slider-1').codaSlider({
+    autoSlide: true,
+    autoSlideInterval: 6000,
+    autoSlideStopWhenClicked: true,
+    dynamicTabs: false,
+	dynamicArrows:false
+  });
+});
 
 // handle displaying of flash alert and notice messages
 $(function() {

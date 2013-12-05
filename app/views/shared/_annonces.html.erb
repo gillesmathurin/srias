@@ -1,49 +1,43 @@
-  <% annonces = @action_as_annonces + annonces_courantes %>
-  <%#= debug annonces %>
-
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <% annonces.each_with_index do |a, idx| %>
-        <li data-target='#carousel-example-generic' data-slide-to="<%= idx %>"></li>
-      <% end %>
-    </ol>
-    <div class="carousel-inner">
-      <!-- Actions as annonce -->
-      <%- unless annonces.empty? -%>
-        <% for annonce in annonces %>
-          <div class="item">
-            <% if annonce.is_a?(Manifestation) %>
-              <% if !annonce.illustration.nil? %>
-                <%= image_tag annonce.illustration.url(:thumb) unless missing_manif_illustration(annonce) %>
-              <% end %>            
-              <div class="carousel-caption">
-                <h3>
-                  <%= link_to(raw(annonce.nom), uneaction_path(annonce.id), :class => "nom") %>
-                </h3>
-                <p class="annonce-texte">
-                  <span class="lieu-date">
-                    <%= annonce.lieu %> du <%=l annonce.date_debut, :format => :only_date %> au <%=l annonce.date_fin, :format => :only_date %>    
-                  </span>
-                  <%= link_to "voir ...", uneaction_path(annonce.id), :class => "btn btn-success btn-sm" %>
-                </p>
-              </div>
-            <% elsif annonce.is_a?(Annonce) %>
-              <% unless annonce.image.nil? %>
-                <%= image_tag annonce.image.url(:thumb) unless missing_annonce_image(annonce)  %>
-              <% end %>
-              <div class="carousel-caption">
-                <h3><%= raw annonce.message %></h3>
-                <p class="annonce-texte"><%= link_to "voir ...", annonce_path(annonce), :class => "button small" %></p>
-              </div>
+<div class="coda-slider-wrapper">
+  <div class="coda-slider preload" id="coda-slider-1">
+    <!-- Actions as annonce -->
+    <%- unless @action_as_annonces.empty? -%>
+      <% for action in @action_as_annonces %>
+        <div class="panel">
+          <div class="panel-wrapper">
+            <% unless action.illustration.nil? %>
+              <p class="annonce-image">
+                <%= image_tag action.illustration.url(:thumb) unless missing_manif_illustration(action) %>
+              </p>
             <% end %>
+            <p class="annonce-texte">
+              <%= link_to(raw(action.nom), uneaction_path(action.id), :class => "nom") %><br/>
+              <span class="lieu-date">
+                <%= action.lieu %> du <%=l action.date_debut, :format => :only_date %> au <%=l action.date_fin, :format => :only_date %>    
+              </span>
+                         
+              <p><%= link_to "voir ...", uneaction_path(action.id), :class => "button small" %></p>
+            </p>
           </div>
-        <% end %>
+        </div>
+      <% end %>
+    <%- end -%>
+    <!-- Annonces -->
+    <%- unless annonces_courantes.empty? -%>
+      <% for annonce in annonces_courantes %>
+        <div class="panel">
+          <div class="panel-wrapper">
+            <% unless annonce.image.nil? %>
+              <p class="annonce-image">
+                <%= image_tag annonce.image.url(:thumb) unless missing_annonce_image(annonce)  %>      
+              </p>
+            <% end %>
+            <p class="annonce-texte">
+              <span class="nom"><%= raw annonce.message %></span> <br/> <%= link_to "voir ...", annonce_path(annonce), :class => "button small" %>
+            </p>            
+          </div>
+        </div>
       <%- end -%>
-    </div>
-    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
+    <%- end -%>    
   </div>
+</div>
