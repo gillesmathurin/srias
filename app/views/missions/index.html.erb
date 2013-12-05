@@ -16,7 +16,7 @@
 			<tr>
 				<td><b><%= mission.nom.capitalize %></b></td>
 				<td><%= mission.description %></td>
-				<td><%= link_to "Voir les actions", actions_mission_manifestations_path(mission), :class => "button small midmedium" %></td>
+				<td><%= link_to "Voir les actions", actions_mission_manifestations_path(mission), :class => "btn btn-sm btn-success" %></td>
 			</tr>
 		<% end %>
 	</table>
@@ -38,6 +38,6 @@
 	</ul>
 	
 <% if current_user %>
-	<p><%= link_to 'Nouvelle mission', new_mission_path, :class => "button small midmedium" %></p>
+	<p><%= link_to 'Nouvelle mission', new_mission_path, :class => "btn btn-sm btn-success" %></p>
 <% end %>	
 </div>

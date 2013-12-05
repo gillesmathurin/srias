@@ -7,9 +7,9 @@
 		<%= render :partial => 'form', :locals => {:f => f} %>
 
 	  <p>
-	    <%= f.submit 'Enregistrer' %>
+	    <%= f.submit 'Enregistrer', class: 'btn' %>
 	  </p>
 	<% end %>
 
-	<%= link_to 'Retour', liens_path, :class => "button small" %>
+	<%= link_to 'Retour', liens_path, :class => "btn btn-sm" %>
 </div>

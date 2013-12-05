@@ -11,10 +11,10 @@
 	  <tr>
 	    <td><%= lien.nom %></td>
 	    <td><%= link_to lien.adresse, lien.adresse %></td>
-	    <td><%= link_to 'Voir', lien, :class => "button small" %></td>
+	    <td><%= link_to 'Voir', lien, :class => "btn btn-sm btn-success" %></td>
 		<% if current_user %>
-	    <td><%= link_to 'Modifier', edit_lien_path(lien), :class => "button small" %></td>
-	    <td><%= link_to 'Supprimer', lien, :confirm => 'Are you sure?', :method => :delete, :class => "button small" %></td>
+	    <td><%= link_to 'Modifier', edit_lien_path(lien), :class => "btn btn-sm btn-warning" %></td>
+	    <td><%= link_to 'Supprimer', lien, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-sm btn-danger" %></td>
 		<% end %>
 	  </tr>
 	<% end %>
@@ -22,6 +22,6 @@
 
 	<br />
 <% if current_user %>
-	<p><%= link_to 'Ajouter lien', new_lien_path, :class => "button small midmedium" %></p>
+	<p><%= link_to 'Ajouter lien', new_lien_path, :class => "btn btn-sm btn-success" %></p>
 <% end %>
 </div>
