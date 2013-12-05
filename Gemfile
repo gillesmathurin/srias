@@ -18,7 +18,6 @@ gem 'tinymce-rails-langs'
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'forem', :git => "git://github.com/gillesmathurin/forem.git"
-gem 'bootstrap-sass', '~> 3.0.2.0'
 # gem 'forem', :git => "git://github.com/radar/forem.git"
 
 # Gems used only for assets and not required
@@ -26,6 +25,7 @@ gem 'bootstrap-sass', '~> 3.0.2.0'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'bootstrap-sass', '~> 3.0.2.0'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
   gem 'execjs'
