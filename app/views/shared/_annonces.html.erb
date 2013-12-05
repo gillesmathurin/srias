@@ -16,7 +16,7 @@
                 <%= action.lieu %> du <%=l action.date_debut, :format => :only_date %> au <%=l action.date_fin, :format => :only_date %>    
               </span>
                          
-              <p><%= link_to "voir ...", uneaction_path(action.id), :class => "button small" %></p>
+              <p><%= link_to "voir ...", uneaction_path(action.id), :class => "btn btn-success" %></p>
             </p>
           </div>
         </div>
@@ -33,7 +33,7 @@
               </p>
             <% end %>
             <p class="annonce-texte">
-              <span class="nom"><%= raw annonce.message %></span> <br/> <%= link_to "voir ...", annonce_path(annonce), :class => "button small" %>
+              <span class="nom"><%= raw annonce.message %></span> <br/> <%= link_to "voir ...", annonce_path(annonce), :class => "btn btn-success" %>
             </p>            
           </div>
         </div>

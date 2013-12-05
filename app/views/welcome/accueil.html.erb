@@ -11,7 +11,7 @@
 	<% end %>
 	
 	<% if can? :manage, TexteAccueil %>
-		<%= link_to "modifier le texte d'accueil", edit_texte_accueil_path(@texte), :class => "button small midmedium" if @texte %> <%= link_to "ajouter un texte d'acceuil", new_texte_accueil_path(), :class => "button small midmedium" if @texte.nil? %>
+		<%= link_to "modifier le texte d'accueil", edit_texte_accueil_path(@texte), :class => "btn btn-sm btn-warning" if @texte %> <%= link_to "ajouter un texte d'acceuil", new_texte_accueil_path(), :class => "btn btn-sm btn-success" if @texte.nil? %>
 	<% end %>
 		
 	<p class="mini-diapo">

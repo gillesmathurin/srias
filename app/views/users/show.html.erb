@@ -32,8 +32,8 @@
 	</p>
 
 
-	<%= link_to 'Modifier', edit_account_path, :class => "button small" %>
+	<%= link_to 'Modifier', edit_account_path, :class => "btn btn-sm btn-warning" %>
 	<% if can? :manage, @user %>
-	 <%= link_to "Créer nouveau compte", new_user_path(), :class => "button small midmedium" %>
+	 <%= link_to "Créer nouveau compte", new_user_path(), :class => "btn btn-sm btn-success" %>
 	<% end %>
 </div>
