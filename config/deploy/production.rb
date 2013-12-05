@@ -13,6 +13,11 @@ role :db,  %w{root@208.88.125.46}
 # ==========
 set :rvm_ruby_version, '2.0.0-p353@srias'
 
+# RAILS Asset Pipeline
+# ====================
+set :assets_roles, [:web, :app] 
+set :normalize_asset_timestamps, %{public/assets}
+
 # Extended Server Syntax
 # ======================
 # This can be used to drop a more detailed server
