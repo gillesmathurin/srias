@@ -6,9 +6,9 @@
 
 		<%= render :partial => 'form', :locals => {:f => f} %>
 	  	
-	  	<p><%= f.submit 'Modifier' %></p>
+	  	<p><%= f.submit 'Modifier', class: 'btn' %></p>
 	<% end %>
 
-	<%= link_to 'Voir', @partenaire, :class => "button small" %>
-	<%= link_to 'Retour', partenaires_path, :class => "button small" %>
+	<%= link_to 'Voir', @partenaire, :class => "btn btn-sm btn-success" %>
+	<%= link_to 'Retour', partenaires_path, :class => "btn btn-sm" %>
 </div>

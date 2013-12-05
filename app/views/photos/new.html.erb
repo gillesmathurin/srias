@@ -7,9 +7,9 @@
 			<%= f.file_field :photo %>
 		</p>
 		<p>
-			<%= f.submit "Enregistrer" %>
+			<%= f.submit "Enregistrer", class: 'btn' %>
 		</p>
 	<% end -%>
 	
-	<p><%= link_to "Retour à la manifestation", manifestation_path(@manifestation), :class => "button small midmedium" %></p>	
+	<p><%= link_to "Retour à la manifestation", manifestation_path(@manifestation), :class => "btn btn-sm" %></p>	
 </div>

@@ -16,11 +16,11 @@
     <td><%= offre.date_debut %></td>
     <td><%= offre.date_fin %></td>
     <td><%= offre.description %></td>
-    <td><%= link_to 'Voir', offre, :class => "button small" %></td>
-    <td><%= link_to 'Modifier', edit_offre_path(offre), :class => "button small" %></td>
-    <td><%= link_to 'Supprimer', offre, :confirm => {:data => 'Are you sure?'}, :method => :delete, :class => "button small" %></td>
+    <td><%= link_to 'Voir', offre, :class => "btn btn-sm btn-success" %></td>
+    <td><%= link_to 'Modifier', edit_offre_path(offre), :class => "btn btn-sm btn-warning" %></td>
+    <td><%= link_to 'Supprimer', offre, :confirm => {:data => 'Are you sure?'}, :method => :delete, :class => "btn btn-sm btn-danger" %></td>
   </tr>
 <% end %>
 </table>
 
-<%= link_to 'Ajouter une offre', new_offre_path, :class => "button small midmedium" %>
+<%= link_to 'Ajouter une offre', new_offre_path, :class => "btn btn-sm btn-success" %>

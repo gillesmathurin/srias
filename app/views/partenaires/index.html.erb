@@ -25,8 +25,8 @@
         </p>
         <% if current_user %>
           <p>
-            <%= link_to 'Modifier', edit_partenaire_path(partenaire), :class => "button small" %>
-            <%= link_to 'Supprimer', partenaire, :confirm => 'En êtes vous sur?', :method => :delete, :class => "button small" %> <%= link_to "Enregistrer une offre", new_partenaire_offre_path(partenaire), :class => "button small midmedium" %>
+            <%= link_to 'Modifier', edit_partenaire_path(partenaire), :class => "btn btn-sm btn-warning" %>
+            <%= link_to 'Supprimer', partenaire, :confirm => 'En êtes vous sur?', :method => :delete, :class => "btn btn-sm btn-danger" %> <%= link_to "Enregistrer une offre", new_partenaire_offre_path(partenaire), :class => "btn btn-sm btn-primary" %>
           </p>
         <% end %>
       
@@ -39,7 +39,7 @@
                 <%= link_to offre.nom, partenaire_offre_path(partenaire.id, offre), :class => "offre_link" %> - Du <%= l offre.date_debut,:format => :default  %> Au <%= l offre.date_fin, :format => :default %><br/>
                 <%= offre.description %>
                 <% if current_user %>
-                  <br/><%= link_to "Supprimer cette offre", offre_path(offre), :method => :delete, :data => {:confirm => "En êtes vous sur ?" }, :class => "button small midmedium" %>
+                  <br/><%= link_to "Supprimer cette offre", offre_path(offre), :method => :delete, :data => {:confirm => "En êtes vous sur ?" }, :class => "btn btn-sm btn-danger" %>
                 <% end %>
               </p>
             </div>
@@ -54,7 +54,7 @@
 
 	<br />
 <% if current_user %>
-	<%= link_to 'Ajouter partenaire', new_partenaire_path, :class => "button small midmedium" %>
+	<%= link_to 'Ajouter partenaire', new_partenaire_path, :class => "btn btn-sm btn-success" %>
 <% end %>
 </div>
 

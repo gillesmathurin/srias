@@ -23,12 +23,12 @@
 
   <% if current_user %>  
     <p>
-  		<%= link_to "Ajoutez un fichier joint", new_offre_fichier_path(@offre), :class => "button small midmedium" %>
-  		<%= link_to "Modifiez un fichier joint", offre_fichiers_path(@offre), :class => "button small midmedium" %>
+  		<%= link_to "Ajoutez un fichier joint", new_offre_fichier_path(@offre), :class => "btn btn-sm btn-success" %>
+  		<%= link_to "Modifiez un fichier joint", offre_fichiers_path(@offre), :class => "btn btn-sm btn-warning" %>
   	</p>
   	<p>
-  	  <%= link_to 'Modifier', edit_partenaire_offre_path(@partenaire, @offre), :class => "button small" %>
-      <%= link_to 'Retour', partenaires_path(), :class => "button small" %>
+  	  <%= link_to 'Modifier', edit_partenaire_offre_path(@partenaire, @offre), :class => "btn btn-sm btn-warning" %>
+      <%= link_to 'Retour', partenaires_path(), :class => "btn btn-sm" %>
   	</p>
   <% end %>
 </div>

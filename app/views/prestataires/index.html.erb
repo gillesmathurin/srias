@@ -21,10 +21,10 @@
     <td><%= prestataire.mob %></td>
     <td><%= prestataire.fax %></td>
     <td><%= prestataire.description %></td>
-    <td><%= link_to 'Voir', prestataire, :class => "button small" %></td>
+    <td><%= link_to 'Voir', prestataire, :class => "btn btn-sm btn-success" %></td>
     <% if current_user %>
-    <td><%= link_to 'Modifier', edit_prestataire_path(prestataire), :class => "button small" %></td>
-    <td><%= link_to 'Supprimer', prestataire, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button small" %></td>
+    <td><%= link_to 'Modifier', edit_prestataire_path(prestataire), :class => "btn btn-sm btn-warning" %></td>
+    <td><%= link_to 'Supprimer', prestataire, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-danger" %></td>
     <% end %>
   </tr>
 <% end %>
@@ -32,5 +32,5 @@
 
 <br />
 <% if current_user %>
-<%= link_to 'Ajouter un prestataire', new_prestataire_path, :class => "button small midmedium" %>
+<%= link_to 'Ajouter un prestataire', new_prestataire_path, :class => "btn btn-sm btn-success" %>
 <% end %>
