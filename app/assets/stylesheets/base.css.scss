@@ -52,44 +52,44 @@ html {
 			// padding-top:10px;
 			// padding-bottom:10px;
 
-			.coda-slider-wrapper { 
-				clear:none;
-				background: lighten($myGray,2%);
-				border-radius:5px;
-				border:1px solid darken($myGray, 10%);
-				margin-bottom:10px;
+			// .coda-slider-wrapper { 
+			// 	clear:none;
+			// 	background: lighten($myGray,2%);
+			// 	border-radius:5px;
+			// 	border:1px solid darken($myGray, 10%);
+			// 	margin-bottom:10px;
 
-				/* Change the width of the entire slider (without dynamic arrows) */
-				.coda-slider, .coda-slider .panel { 
-					width: 700px;
-					// margin-left:15px;
-					background:transparent;
-				} 
+			// 	/* Change the width of the entire slider (without dynamic arrows) */
+			// 	.coda-slider, .coda-slider .panel { 
+			// 		width: 700px;
+			// 		// margin-left:15px;
+			// 		background:transparent;
+			// 	} 
 
-				div.panel-wrapper {
-				  min-height:130px;
+			// 	div.panel-wrapper {
+			// 	  min-height:130px;
 
-				  p.annonce-texte {
-				  	a.nom, span.nom {
-				  		@include custom-font("fonts/Ayuthaya", 'Ayuthaya');
-				  		color:darken($myOrange,10%);
-				  		text-decoration:none;
-				  	}
+			// 	  p.annonce-texte {
+			// 	  	a.nom, span.nom {
+			// 	  		@include custom-font("fonts/Ayuthaya", 'Ayuthaya');
+			// 	  		color:darken($myOrange,10%);
+			// 	  		text-decoration:none;
+			// 	  	}
 
-				  	span.lieu-date {
-				  		font-size: 1.3em;
-				  		font-weight:bold;
-				  	}
-				  }
-				  p.annonce-image {
-				  	img {
-				  		float: left;
-				  		margin-right:10px;
-						border-radius:4px;
-				  	}
-				  }
-				}
-			 }
+			// 	  	span.lieu-date {
+			// 	  		font-size: 1.3em;
+			// 	  		font-weight:bold;
+			// 	  	}
+			// 	  }
+			// 	  p.annonce-image {
+			// 	  	img {
+			// 	  		float: left;
+			// 	  		margin-right:10px;
+			// 			border-radius:4px;
+			// 	  	}
+			// 	  }
+			// 	}
+			//  }
 
 			#left_sidebar {
 				// float:left;
@@ -164,6 +164,15 @@ html {
 				// margin-top:25px;
 				// margin-bottom:25px;
 				@include buttons-style;
+
+				#carousel-example-generic {
+					display: block;
+					margin-bottom: 20px;
+					margin-top: 20px;
+					.carousel-inner {
+						min-height:130px;
+					}
+				}
 
 				div.form_contact {
 					border:2px solid $myGreen2;

@@ -1,16 +1,12 @@
-<% content_for :head do %>
-<% end %>
-
-<!-- <div class="span-16"> -->
 	<%= render :partial => "shared/flash_messages" %>
-	
-  	<%= render :partial => "shared/annonces" %>
 
-  	<% if @texte %>
+ 	<%= render :partial => "shared/annonces" %>
+
+  <% if @texte %>
 		
-	<h1 class="section-title"><%= @texte.titre %></h1>
-	
-	<p><%= raw @texte.content %></p>
+		<h1 class="section-title"><%= @texte.titre %></h1>
+		
+		<p><%= raw @texte.content %></p>
 
 	<% end %>
 	

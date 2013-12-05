@@ -2,8 +2,7 @@
 <html>
 <head>
 	<title><%= h(yield(:title) || "SRIAS GUADELOUPE") %></title>
-	<%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+	<%= stylesheet_link_tag "application", :media => "all" %>
 	<%= yield(:head) %>
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
@@ -25,7 +24,7 @@
 	<section id="header">
 		<header class="container">
 			<div id="logo">
-				<%= link_to(image_tag("SRIAS-Logo.png"), root_path) %>
+				<%= link_to(image_tag("SRIAS-Logo.png", class: 'img-rounded'), root_path) %>
 				<p>Section Régionale Interministérielle d'Action Sociale</p>
 			</div>
 			<div id="vignettes_hd"><%= image_tag("vignettes_hd.jpg") %></div>
@@ -90,7 +89,6 @@
 				<%= yield %>
 			</div>
 		</article>
-
 	</section>
 
 	<section id="footer">
@@ -130,6 +128,8 @@
 			</div>
 		</article>		
 	</section>
-  
+
+  <%= javascript_include_tag "application" %>
+
 </body>
 </html>
