@@ -11,7 +11,7 @@
       <% end %>
       <p><%= image_tag(annonce.image.url(:thumb)) unless missing_annonce_image(annonce) %></p>
       <p>
-        <%= link_to 'Voir', annonce, :class => "button small" %> <% if current_user %> <%= link_to 'Modifier', edit_annonce_path(annonce), :class => "button small" %> <%= link_to 'Supprimer', annonce, :confirm => 'En êtes vous sur?', :method => :delete, :class => "button small" %><% end %>
+        <%= link_to 'Voir', annonce, :class => "btn btn-success btn-sm" %> <% if current_user %> <%= link_to 'Modifier', edit_annonce_path(annonce), :class => "btn btn-sm btn-warning" %> <%= link_to 'Supprimer', annonce, :confirm => 'En êtes vous sur?', :method => :delete, :class => "btn btn-sm btn-danger" %><% end %>
       </p>
     </div>
   <% end %>
@@ -19,6 +19,6 @@
   <br />
   
   <%- if current_user -%>
-    <%= link_to 'Nouvelle Annonce', new_annonce_path, :class => "button small midmedium" %>
+    <%= link_to 'Nouvelle Annonce', new_annonce_path, :class => "btn btn-sm btn-success" %>
   <%- end -%>
 </div>

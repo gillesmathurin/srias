@@ -21,6 +21,6 @@
     <%= image_tag(@annonce.image.url(:thumb)) %>
   </p>
 
-  <% if current_user %> <%= link_to 'Modifier', edit_annonce_path(@annonce), :class => "button small" %><% end %> <%= link_to 'Retour', annonces_path, :class => "button small" %>
+  <% if current_user %> <%= link_to 'Modifier', edit_annonce_path(@annonce), :class => "btn btn-sm" %><% end %> <%= link_to 'Retour', annonces_path, :class => "btn btn-sm" %>
 </div>
 
