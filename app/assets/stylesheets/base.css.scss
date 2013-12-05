@@ -6,9 +6,9 @@ html {
 
 	body {
 		background:image-url("fond-srias2.jpg") repeat-x;
-		background-color:#2b4d1a;
+		background-color:#355111;
 		background-attachment: fixed;
-		background-position: center center; 
+		background-position: top center; 
 		margin:0;
 		padding:0;
 		// font-family:Helvetica,Verdana;
@@ -47,7 +47,7 @@ html {
 
 		#content {
 			padding:0 15px;
-			min-height:620px;
+			min-height:790px;
 			display:block;
 			background:lighten(rgba(111,170,80,0.9), 45%);
 			// padding-top:10px;
@@ -325,8 +325,8 @@ html {
 
 		#footer {
 			width:100%;
-			background:#2b4d1a;
-			color:white;
+			background:$myGray;
+			// color:white;
 			min-height:128px;
 			display:block;
 			margin-bottom:-10px;
