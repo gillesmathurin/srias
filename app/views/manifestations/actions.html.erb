@@ -9,9 +9,9 @@
 
 	<br />
 	<% if can? :create, Manifestation %>
-		<%= link_to 'Ajouter une action', new_manifestation_path(), :class => "button small midmedium" %>
+		<%= link_to 'Ajouter une action', new_manifestation_path(), :class => "btn btn-primary btn-sm" %>
 	<% end %>
 	<% if can? :modify, Manifestation %>
-		<%= link_to "Actions et Manifestations à Valider #{Manifestation.pending.count}", pending_manifestations_path(), :remote => true, :method => :put, :class => "button small medium" %>
+		<%= link_to "Actions et Manifestations à Valider #{Manifestation.pending.count}", pending_manifestations_path(), :remote => true, :method => :put, :class => "btn btn-primary btn-sm" %>
 	<% end %>
 </div>

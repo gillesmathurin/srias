@@ -11,10 +11,10 @@
   </div>
 
   <div class="link-box">
-    <%= link_to 'Voir', information, :class => "button small" %>
+    <%= link_to 'Voir', information, :class => "btn btn-success btn-sm" %>
     <% if can? :update, information %>
-      <%= link_to 'Modifier', edit_information_path(information), :class => "button small" %>
-      <%= link_to 'Supprimer', information, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button small" %>
+      <%= link_to 'Modifier', edit_information_path(information), :class => "btn btn-success btn-sm" %>
+      <%= link_to 'Supprimer', information, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
     <% end %>
   </div>
 <% end %>
@@ -23,5 +23,5 @@
 
 <br />
 <% if can? :update, Information %>
-  <%= link_to 'Ajouter une Information', new_information_path, :class => "button small midmedium" %>
+  <%= link_to 'Ajouter une Information', new_information_path, :class => "btn btn-success btn-sm" %>
 <% end %>

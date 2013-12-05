@@ -1,7 +1,7 @@
 <% @manifestations.each do |group_by_year| %>
 
 	<p class="group-by-year">
-		<%= link_to "#{group_by_year[0]}", "#", :class =>"hide_show button small midmedium", :alt => "masquer/montrer", :data => {:year => group_by_year[0]} %>
+		<%= link_to "#{group_by_year[0]}", "#", :class =>"hide_show btn btn-primary", :alt => "masquer/montrer", :data => {:year => group_by_year[0]} %>
 	</p>
 	
 	<div class="yeargroup manif-resume" data-year="<%= group_by_year[0] %>">
@@ -22,15 +22,15 @@
 				  <%= manif_or_action_show_link(manifestation, @actions_links) %>
 
   				<% if can? :update, manifestation %>	
-  					<%= link_to 'Modifier', edit_manifestation_path(manifestation), :class => "button small" %> 
-  					<%= link_to 'Supprimer', manifestation, :data => {:confirm => 'En êtes vous sur ?'}, :method => :delete, :class => "button small" %>
+  					<%= link_to 'Modifier', edit_manifestation_path(manifestation), :class => "btn btn-warning btn-sm" %> 
+  					<%= link_to 'Supprimer', manifestation, :data => {:confirm => 'En êtes vous sur ?'}, :method => :delete, :class => "btn btn-danger btn-sm" %>
   				<% end %>
 
   				<% if can? :modify, manifestation %>
   					<% if manifestation.validate? %>
-  					<%= link_to "Retirer", un_validate_manifestation_path(manifestation), :method => :put, :class => "button small" %>
+  					<%= link_to "Retirer", un_validate_manifestation_path(manifestation), :method => :put, :class => "btn btn-primary btn-sm" %>
   					<% else %>
-  					<%= link_to "Publier", un_validate_manifestation_path(manifestation), :method => :put, :class => "button small" %>
+  					<%= link_to "Publier", un_validate_manifestation_path(manifestation), :method => :put, :class => "btn btn-primary btn-sm" %>
   					<% end %>
   				<% end %>  				
 				</div>					

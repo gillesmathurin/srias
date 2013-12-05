@@ -17,10 +17,10 @@
 		<%= render :partial => 'form', :locals => {:f => f} %>
 
 	  <p>
-	    <%= f.submit 'Modifier' %>
+	    <%= f.submit 'Modifier', class: 'btn' %>
 	  </p>
 	<% end %>
 
-	<%= link_to 'Voir', @manifestation, :class => "button small" %>
-	<%= link_to 'Retour', manifestations_path, :class => "button small" %>
+	<%= link_to 'Voir', @manifestation, :class => "btn btn-sm btn-success" %>
+	<%= link_to 'Retour', manifestations_path, :class => "btn btn-sm" %>
 </div>

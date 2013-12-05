@@ -7,9 +7,9 @@
 		<% if can? :modify, @manifestation %>
 			<% if @manifestation.validate? %>
 			<%= link_to "Retirer de la publication", un_validate_manifestation_path(@manifestation),
-			 :method => :put, :class => "button small midmedium" %>
+			 :method => :put, :class => "btn btn-sm btn-warning" %>
 			<% else %>
-			| <%= link_to "Publier", un_validate_manifestation_path(@manifestation), :method => :put, :class => "button small" %>
+			| <%= link_to "Publier", un_validate_manifestation_path(@manifestation), :method => :put, :class => "btn btn-sm btn-success" %>
 			<% end %>
 		<% end %>
 	</p>
@@ -31,7 +31,7 @@
 	<% end %>
 
 <% if current_user %>
-	<%= link_to 'Modifier', edit_manifestation_path(@manifestation), :class => "button small" %>
+	<%= link_to 'Modifier', edit_manifestation_path(@manifestation), :class => "btn btn-sm btn-warning" %>
 <% end %>
 
 <!-- Galerie de photos  -->
@@ -43,7 +43,7 @@
 				<td>
 					<%= link_to image_tag(photo.photo.url(:thumb)), photo.photo.url(:large), :class => "lightbox" %><br/>
 					<% if current_user %>
-						<%= link_to "Supprimer", manifestation_photo_path(@manifestation, photo), :method => :delete, :confirm => "Certain ?", :class => "button small" %>
+						<%= link_to "Supprimer", manifestation_photo_path(@manifestation, photo), :method => :delete, :confirm => "Certain ?", :class => "btn btn-sm btn-danger" %>
 					<% end %>
 				</td>
 				<% end %>
@@ -69,9 +69,9 @@
 	
 	<% if can? :modify, @manifestation %>	
 		<p>
-			<%= link_to "Ajouter une photo", new_manifestation_photo_path(@manifestation), :class => "button small midmedium" %>
-			<%= link_to "Ajoutez un fichier joint", new_manifestation_fichier_path(@manifestation), :class => "button small midmedium" %>
-			<%= link_to "Modifiez un fichier joint", manifestation_fichiers_path(@manifestation), :class => "button small midmedium" %>
+			<%= link_to "Ajouter une photo", new_manifestation_photo_path(@manifestation), :class => "btn btn-sm btn-success" %>
+			<%= link_to "Ajoutez un fichier joint", new_manifestation_fichier_path(@manifestation), :class => "btn btn-sm btn-success" %>
+			<%= link_to "Modifiez un fichier joint", manifestation_fichiers_path(@manifestation), :class => "btn btn-sm btn-warning" %>
 		</p>
  	<% end %>
  	
