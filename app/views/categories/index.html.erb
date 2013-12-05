@@ -9,13 +9,13 @@
   <% @categories.each do |category| %>
     <tr>
       <td><%= category.nom %></td>
-      <td><%= link_to 'Modifier', edit_category_path(category), :class => "button small" %></td>
-      <td><%= link_to 'Supprimer', category, :confirm => 'Sur de votre decision ?', :method => :delete, :class => "button small" %></td>
+      <td><%= link_to 'Modifier', edit_category_path(category), :class => "btn btn-sm btn-warning" %></td>
+      <td><%= link_to 'Supprimer', category, :confirm => 'Sur de votre decision ?', :method => :delete, :class => "btn btn-sm btn-danger" %></td>
     </tr>
   <% end %>
   </table>
 
   <br />
 
-  <%= link_to 'Ajouter une Categorie', new_category_path, :class => "button small midmedium" %>
+  <%= link_to 'Ajouter une Categorie', new_category_path, :class => "btn btn-sm btn-success" %>
 </div>
