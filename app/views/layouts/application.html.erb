@@ -3,6 +3,7 @@
 <head>
 	<title><%= h(yield(:title) || "SRIAS GUADELOUPE") %></title>
 	<%= stylesheet_link_tag "application", :media => "all" %>
+	 <%= javascript_include_tag "application" %>
 	<%= yield(:head) %>
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
@@ -128,8 +129,6 @@
 			</div>
 		</article>		
 	</section>
-
-  <%= javascript_include_tag "application" %>
 
 </body>
 </html>
