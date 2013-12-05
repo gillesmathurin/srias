@@ -15,13 +15,13 @@
 		</p>
 		<% if can? :manage, Contact %>
 		<p>
-			<%= link_to "modifier", edit_contact_path(contact), :class => "button small" %> <%= link_to "supprimer", contact_path(contact), :method => :delete, :class => "button small" %>
+			<%= link_to "modifier", edit_contact_path(contact), :class => "btn btn-sm btn-warning" %> <%= link_to "supprimer", contact_path(contact), :method => :delete, :class => "btn btn-sm btn-danger" %>
 		</p>
 		<% end %>
 	<% end %>
 
 	<% if can? :manage, Contact %>
-		<p><%= link_to "Ajouter un contact", new_contact_path(), :class => "button small midmedium" %></p>
+		<p><%= link_to "Ajouter un contact", new_contact_path(), :class => "btn btn-sm btn-success" %></p>
 	<% end %>
 
 	<div class="form_contact">
