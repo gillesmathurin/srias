@@ -1,4 +1,4 @@
-<% render :partial => "shared/tinymce_init" %>
+<%# render :partial => "shared/tinymce_init" %>
 <%= form_for(@information) do |f| %>
   <% if @information.errors.any? %>
     <div id="error_explanation">
@@ -19,6 +19,7 @@
   <div class="field">
     <%= f.label :content, "Contenu" %><br/>
     <%= f.text_area :content, :class => "tinymce", :cols => "90" %>
+    <%= tinymce :theme => "modern" %>
   </div>
   <div class="field">
     <%= f.label :information_file, "Fichier joint" %><br/>

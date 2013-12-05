@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 Srias::Application.routes.draw do
-  mount Forem::Engine, :at => "/forums"
+  # mount Forem::Engine, :at => "/forums"
 
   resources :messages
 
