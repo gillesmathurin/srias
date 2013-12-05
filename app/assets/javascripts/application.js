@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require tinymce
+// Loads all Bootstrap javascripts
+//= require bootstrap
 //= require_tree .
 
 $().ready(function() {

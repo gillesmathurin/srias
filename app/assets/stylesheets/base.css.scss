@@ -1,15 +1,16 @@
+@import "bootstrap";
+@import "bootstrap/theme";
 @import "common";
 
 html {
 
 	body {
 		background:white;
-		background-image:image-url("fond-srias.jpg");
-		background-repeat:repeat-y;
-		background-position: center center;
+		background:image-url("fond-srias.jpg") repeat-x;
+		background-position: fixed;
 		margin:0;
 		padding:0;
-		font-family:Helvetica,Verdana;
+		// font-family:Helvetica,Verdana;
 		font-size:12px;
 		letter-spacing:1px;
 		color:darken($myGray, 75%);
@@ -44,11 +45,12 @@ html {
 		}
 
 		#content {
+			padding:0 15px;
 			min-height:620px;
 			display:block;
 			background:lighten(rgba(111,170,80,0.9), 45%);
-			padding-top:10px;
-			padding-bottom:10px;
+			// padding-top:10px;
+			// padding-bottom:10px;
 
 			.coda-slider-wrapper { 
 				clear:none;
@@ -90,18 +92,18 @@ html {
 			 }
 
 			#left_sidebar {
-				float:left;
-				display:block;
-				width:204px;
-				height:100%;
-				margin-right:10px;
+				// float:left;
+				// display:block;
+				// width:204px;
+				// height:100%;
+				// margin-right:10px;
 				margin-top:25px;
-				margin-left:10px;
+				// margin-left:10px;
 
 				#login_box {
-					margin-top:10px;
+					margin-top:20px;
 					margin-bottom:10px;
-					@include buttons-style;
+					// @include buttons-style;
 				}
 
 				.menus_box {
@@ -157,10 +159,10 @@ html {
 			}
 
 			#main_content {
-				width:716px;
-				margin-left:230px;
-				margin-top:25px;
-				margin-bottom:25px;
+				// width:716px;
+				// margin-left:230px;
+				// margin-top:25px;
+				// margin-bottom:25px;
 				@include buttons-style;
 
 				div.form_contact {

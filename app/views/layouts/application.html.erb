@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html>
 <head>
 	<title><%= h(yield(:title) || "SRIAS GUADELOUPE") %></title>
 	<%= stylesheet_link_tag    "application", :media => "all" %>
-  	<%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application" %>
 	<%= yield(:head) %>
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
@@ -19,6 +18,7 @@
 	</script>
 	<%= csrf_meta_tags %>
 	<meta name="google-site-verification" content="hibBM5k3zfL2lM0PGwuSVJcva3BbAGBAnZ-VLqr1PxM" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -33,61 +33,64 @@
 	</section>
 
 	<section id="content" class="container">
-		<article id="left_sidebar">
-			<div id="login_box">
-				<% if current_user %>
-					<%= link_to "#{current_user.login} : Logout", main_app.logout_path(), :class => "button" %> 
-				<% else %>
-					<%= link_to "Login", main_app.login_path(), :class => "button" %>
-				<% end %>
-			</div>
+		<article class="row">
+			<div id="left_sidebar" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<div id="login_box">
+					<% if current_user %>
+						<%= link_to "#{current_user.login} : Logout", main_app.logout_path(), :class => "btn btn-success btn-block" %> 
+					<% else %>
+						<%= link_to "Login", main_app.login_path(), :class => "btn btn-success btn-block" %>
+					<% end %>
+				</div>
 
-			<div class="menus_box">
-				<h3 class="h3_hd">Menus</h3>
-				<ul>
-					<li><%= link_to "Missions", main_app.missions_path() %></li>
-					<li><%= link_to "Actions", main_app.actions_path() %></li>
-					<li><%= link_to "Manifestations", main_app.manifestations_path() %></li>
-					<li><%= link_to "Informations", main_app.informations_path() %></li>
-					<li><%= link_to "Partenaires", main_app.partenaires_path() %></li>
-					<li><%= link_to "Liens", main_app.liens_path() %></li>
-					<li><%= link_to "Forum", forem.root_path %></li>
-					<li><%= link_to "Contacts", main_app.contacts_path() %></li>
-				</ul>
-			</div>
-
-			<% if can? :manage, :all %>
 				<div class="menus_box">
-					<h3 class="h3_hd">Administration</h3>
+					<h3><span class="label label-success">Menus</span></h3>
 					<ul>
-					  <li><%= link_to "Annonces", main_app.annonces_path() %></li>
-						<li><%= link_to "Newsletter", main_app.newsletters_path() %></li>
-						<li><%= link_to "Abonnés", main_app.abonnes_path() %></li>
-						<li><%= link_to "Catégories Partenaire", main_app.categories_path() %></li>
-						<li><%= link_to "Prestataires", main_app.prestataires_path() %></li>
-						<li><%= link_to "Informations", main_app.informations_path() %> </li>
+						<li><%= link_to "Missions", main_app.missions_path() %></li>
+						<li><%= link_to "Actions", main_app.actions_path() %></li>
+						<li><%= link_to "Manifestations", main_app.manifestations_path() %></li>
+						<li><%= link_to "Informations", main_app.informations_path() %></li>
+						<li><%= link_to "Partenaires", main_app.partenaires_path() %></li>
+						<li><%= link_to "Liens", main_app.liens_path() %></li>
+						<li><%= link_to "Forum", forem.root_path %></li>
+						<li><%= link_to "Contacts", main_app.contacts_path() %></li>
 					</ul>
 				</div>
-			<% end %>
 
-			<div class="menus_box">
-				<h3 class="h3_hd">Newsletter</h3>
-				<%= form_for @abonne, :url => main_app.abonnes_path, :remote => true do |f| %>					
-					<p>
-						<%= f.label :email, "Email" %><br/>
-						<%= f.text_field :email, :size => 18, :placeholder => "email@address.com" %>
-					</p>
-					<p><%= submit_tag "S'abonner" %></p>
+				<% if can? :manage, :all %>
+					<div class="menus_box">
+						<h3><span class="label label-success">Administration</span></h3>
+						<ul>
+						  <li><%= link_to "Annonces", main_app.annonces_path() %></li>
+							<li><%= link_to "Newsletter", main_app.newsletters_path() %></li>
+							<li><%= link_to "Abonnés", main_app.abonnes_path() %></li>
+							<li><%= link_to "Catégories Partenaire", main_app.categories_path() %></li>
+							<li><%= link_to "Prestataires", main_app.prestataires_path() %></li>
+							<li><%= link_to "Informations", main_app.informations_path() %> </li>
+						</ul>
+					</div>
 				<% end %>
-				<div id="result" style="display: none;" >
-					Vous êtes abonné(e)s !
+
+				<div class="menus_box">
+					<h3><span class="label label-info">Newsletter</span></h3>
+					<%= form_for @abonne, :url => main_app.abonnes_path, :remote => true do |f| %>					
+						<p>
+							<%= f.label :email, "Email" %><br/>
+							<%= f.text_field :email, :size => 18, :placeholder => "email@address.com" %>
+						</p>
+						<p><%= submit_tag "S'abonner" %></p>
+					<% end %>
+					<div id="result" style="display: none;" >
+						Vous êtes abonné(e)s !
+					</div>
 				</div>
+			</div>
+			
+			<div id="main_content" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+				<%= yield %>
 			</div>
 		</article>
 
-		<article id="main_content">
-			<%= yield %>
-		</article>
 	</section>
 
 	<section id="footer">

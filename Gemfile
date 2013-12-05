@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.14'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -18,6 +18,7 @@ gem 'tinymce-rails-langs'
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'forem', :git => "git://github.com/gillesmathurin/forem.git"
+gem 'bootstrap-sass', '~> 3.0.2.0'
 # gem 'forem', :git => "git://github.com/radar/forem.git"
 
 # Gems used only for assets and not required
