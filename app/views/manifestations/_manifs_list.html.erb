@@ -1,7 +1,7 @@
 <% @manifestations.each do |group_by_year| %>
 
 	<p class="group-by-year">
-		<%= link_to "#{group_by_year[0]}", "#", :class =>"hide_show btn btn-primary", :alt => "masquer/montrer", :data => {:year => group_by_year[0]} %>
+    <%= link_to "#{group_by_year[0]}", "#", :class =>"hide_show btn btn-primary", :alt => "masquer/montrer", :data => { :year => group_by_year[0], :toggle => "tooltip", :placement => "right", :title => "Voir/Masquer les manifestations de cette année" } %>
 	</p>
 	
 	<div class="yeargroup manif-resume" data-year="<%= group_by_year[0] %>">
