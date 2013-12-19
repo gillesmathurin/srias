@@ -19,10 +19,20 @@
 	<%= csrf_meta_tags %>
 	<meta name="google-site-verification" content="hibBM5k3zfL2lM0PGwuSVJcva3BbAGBAnZ-VLqr1PxM" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!--[if IE] -->
+	<style type="text/css">
+		div#content { 
+			background: transparent;
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#D8FFFFFF,endColorstr=#D8FFFFFF)"; /* IE8 */
+      zoom: 1;
+		}
+	</style>
+	<!--[endif] -->
 </head>
 
 <body>
-	<section id="header">
+	<div id="header">
 		<header class="container">
 			<div id="logo">
 				<%= link_to(image_tag("SRIAS-Logo.png", class: 'img-rounded'), root_path) %>
@@ -30,9 +40,9 @@
 			</div>
 			<div id="vignettes_hd"><%= image_tag("vignettes_hd.jpg") %></div>
 		</header>
-	</section>
+	</div>
 
-	<section id="content" class="container">
+	<div id="content" class="container">
 		<article class="row">
 			<div id="left_sidebar" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 				<div id="login_box">
@@ -90,9 +100,9 @@
 				<%= yield %>
 			</div>
 		</article>
-	</section>
+	</div>
 
-	<section id="footer">
+	<div id="footer">
 		<article class="container">
 			<div id="credits" class="row">
 				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -132,7 +142,7 @@
 				</div>
 			</div>
 		</article>		
-	</section>
+	</div>
 
 </body>
 </html>

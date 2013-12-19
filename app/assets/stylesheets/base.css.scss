@@ -23,6 +23,8 @@ html {
 			display:block;
 			margin-top:0px;
 			#logo {
+				position:relative;
+				z-index:10;
 				margin-left:10px;
 				display:inline-block;
 				width:100%;
@@ -49,9 +51,7 @@ html {
 			padding:0 15px;
 			min-height:790px;
 			display:block;
-			background:lighten(rgba(111,170,80,0.9), 45%);
-			// padding-top:10px;
-			// padding-bottom:10px;
+			background:lighten(rgba(111,170,80,0.9), 45%); /*browsers*/
 
 			.coda-slider-wrapper { 
 				clear:none;
