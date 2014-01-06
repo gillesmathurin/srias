@@ -88,7 +88,7 @@
 							<%= f.label :email, "Email" %><br/>
 							<%= f.text_field :email, :size => 18, :placeholder => "email@address.com" %>
 						</p>
-						<p><%= submit_tag "S'abonner" %></p>
+						<p><%= submit_tag "S'abonner", data: { disable_with: "Vérification de l'adresse" } %></p>
 					<% end %>
 					<div id="result" style="display: none;" >
 						Vous êtes abonné(e)s !

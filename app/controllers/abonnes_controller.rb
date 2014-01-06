@@ -54,6 +54,7 @@ class AbonnesController < ApplicationController
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @abonne.errors, :status => :unprocessable_entity }
+        format.js { }
       end
     end
   end

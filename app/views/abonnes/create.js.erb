@@ -1,3 +1,10 @@
-$("#result").slideDown(600, 'linear', function() {
-	$(this).delay(2000).slideUp("normal");
-});
+<% if @abonne.errors.empty? %>
+  $("#result").text("Vous êtes abonne(e)s");
+  $("#result").slideDown(600, 'linear', function() {
+  	$(this).delay(2000).slideUp("normal");
+  });
+<% else %>
+  $("#result").text("adresse invalide").slideDown(600, 'linear', function() {
+    $(this).delay(2000).slideUp("normal");
+  });
+<% end %>
