@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   helper_method :forem_user
 
   helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  protect_from_forgery  with: :exception # See ActionController::RequestForgeryProtection for details
   helper_method :current_user_session, :current_user
   
   before_filter :create_abonne, :update_visitor_counter
