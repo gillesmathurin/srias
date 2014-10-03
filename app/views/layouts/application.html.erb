@@ -125,8 +125,8 @@
 					   <%= c.nom %><br/>
 					   <%= c.tel %><br/>
 					   <% unless c.fax == "" || c.fax.nil? %>
-								<%= c.fax %><br/>
-							<% end %>
+							<%= c.fax %><br/>
+						<% end %>
 							<%= mail_to(c.mail, "Email") %>
 					 </p>
 					 <p><%= image_tag("marianne.jpg") %></p>
