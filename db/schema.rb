@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120809220560) do
+ActiveRecord::Schema.define(:version => 20141003182147) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
@@ -171,7 +171,7 @@ ActiveRecord::Schema.define(:version => 20120809220560) do
   add_index "forem_views", ["user_id"], :name => "index_forem_views_on_user_id"
   add_index "forem_views", ["viewable_id"], :name => "index_forem_views_on_topic_id"
 
-  create_table "information", :force => true do |t|
+  create_table "informations", :force => true do |t|
     t.string   "title"
     t.text     "content"
     t.datetime "created_at",                    :null => false

@@ -1,16 +1,5 @@
-<%# render :partial => "shared/tinymce_init" %>
 <%= form_for(@information) do |f| %>
-  <% if @information.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@information.errors.count, "erreur") %> empêchèrent cette information d'être enregistrée:</h2>
-
-      <ul>
-      <% @information.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render :partial => 'shared/form_errors', :locals => {:object => @information} %>
 
   <div class="field">
     <%= f.label :title, "Titre" %><br/>
