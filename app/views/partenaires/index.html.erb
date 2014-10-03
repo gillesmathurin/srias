@@ -36,7 +36,7 @@
           <% partenaire.offres.each do |offre| %>
             <div class="offre">
               <p>
-                <%= link_to offre.nom, partenaire_offre_path(partenaire.id, offre), :class => "offre_link" %> - Du <%= l offre.date_debut,:format => :default  %> Au <%= l offre.date_fin, :format => :default %><br/>
+                <%= link_to offre.nom, partenaire_offre_path(partenaire.id, offre), :class => "offre_link" %> - <%= offre_debut(offre) %>  <%= offre_fin(offre) %><br/>
                 <%= offre.description %>
                 <% if current_user %>
                   <br/><%= link_to "Supprimer cette offre", offre_path(offre), :method => :delete, :data => {:confirm => "En êtes vous sur ?" }, :class => "btn btn-sm btn-danger" %>
