@@ -15,7 +15,5 @@
 #   inflect.acronym 'RESTful'
 # end
 ActiveSupport::Inflector.inflections do |inflect|
-  # inflect.irregular 'person', 'people'
   inflect.irregular 'information', 'informations'
-  # inflect.uncountable %w( fish sheep information)
 end
