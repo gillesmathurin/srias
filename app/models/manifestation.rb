@@ -21,7 +21,7 @@ class Manifestation < ActiveRecord::Base
   accepts_nested_attributes_for :photos, :allow_destroy => true
 
   # Constant
-  PUBLIC_CONCERNE = %w(Agent Enfant)
+  PUBLIC_CONCERNE = %w(Agent Enfant Agent-famille Retraité)
   
   # Scope
   default_scope :order => "date_debut desc"  
