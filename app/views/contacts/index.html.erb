@@ -1,10 +1,6 @@
 <div class="span-16">
 	<h1 class="section-title">Contacts</h1>
-	
-<!-- 	<p>
-		<b>Email :</b> <1%= mail_to("georges.guillou@guadeloupe.pref.gouv.fr", "georges.guillou@guadeloupe.pref.gouv.fr") %>		
-	</p> -->
-	
+		
 	<% @contacts.each do |contact| %>
 		<p>
 			<b><%= contact.role if contact.role.present? %> <%= contact.nom if contact.nom.present? %></b>
