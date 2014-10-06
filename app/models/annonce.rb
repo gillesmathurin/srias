@@ -8,9 +8,11 @@ class Annonce < ActiveRecord::Base
   
   # validates_attachment_content_type :image, :content_type => [ 'image/jpeg', 'image/pjpeg', 'image/jpg', 'image/png']
   # validates_attachment_size :image, :less_than => 2.megabytes
+
+  validates :message, presence: true
   
   def self.courantes(hide_time)
-    with_scope :find => where("starts_at <= now() AND ends_at >= now()") do
+    with_scope :find => where("ends_at >= now()") do
       hide_time.nil? ? all : where("updated_at > ? OR starts_at > ?", hide_time, hide_time).all
     end
   end
