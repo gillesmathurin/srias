@@ -16,7 +16,7 @@ class NewsletterMailer < ActionMailer::Base
 
   def contact_message(message)
     @message = message
-    mail( :to => "srias.guadeloupe@orange.fr",
+    mail( :to => "georges.guillou@guadeloupe.pref.gouv.fr",
           :subject => "Demande d'informations provenant du site",
           :charset => "UTF-8",
           :content_type => "text/html")

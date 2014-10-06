@@ -1,17 +1,20 @@
 <div class="span-16">
 	<h1 class="section-title">Contacts</h1>
 	
-	<p>
-		<b>Email :</b> <%= mail_to("srias.guadeloupe@orange.fr", "srias.guadeloupe@orange.fr") %>		
-	</p>
+<!-- 	<p>
+		<b>Email :</b> <1%= mail_to("georges.guillou@guadeloupe.pref.gouv.fr", "georges.guillou@guadeloupe.pref.gouv.fr") %>		
+	</p> -->
 	
 	<% @contacts.each do |contact| %>
 		<p>
-			<b><%= contact.role %> : <%= contact.nom %></b> - Tel : <b><%= contact.tel %></b>
-			<% unless contact.fax == "" || contact.fax.nil? %>
+			<b><%= contact.role if contact.role.present? %> <%= contact.nom if contact.nom.present? %></b>
+			<% if contact.tel.present? %>
+			 - Tel : <b><%= contact.tel %></b>
+			<% end %>
+			<% if contact.fax.present? %>
 				- Fax : <b><%= contact.fax %></b>
 			<% end %>
-			- Email : <b><%= contact.mail %></b>
+			<b>Email :</b> <b><%= mail_to(contact.mail, contact.mail) %></b>
 		</p>
 		<% if can? :manage, Contact %>
 		<p>
