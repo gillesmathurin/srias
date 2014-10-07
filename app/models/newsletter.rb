@@ -12,6 +12,7 @@ class Newsletter < ActiveRecord::Base
     @abonnes = Abonne.all.collect(&:email)
     @abonnes.each do |abonne|
       # NewsletterMailer.newsletter(abonne, self).deliver
+      logger.info("Sending newsletter to #{abonne}")
       NewsletterMailer.delay.newsletter(abonne, self)
     end
     # Set the delivered_at time to now
@@ -22,6 +23,7 @@ class Newsletter < ActiveRecord::Base
     @abonnes = %w(gillesmath@me.com guillou.g3@wanadoo.fr)
     @abonnes.each do |abonne|
       # NewsletterMailer.newsletter(abonne, self).deliver
+      logger.info("Sending newsletter to #{abonne}")
       NewsletterMailer.delay.newsletter(abonne, self)
     end
     self.update_attribute(:delivered_at, Time.now)
