@@ -8,7 +8,7 @@ class NewsletterMailer < ActionMailer::Base
          :subject => "Newsletter du Srias de Guadeloupe",
          :charset => "UTF-8",
          :content_type => "text/html",
-         :from => "srias.guadeloupe@orange.fr")
+         :from => "guillougeorges@gmail.com")
     if newsletter.file.url != "/files/original/missing.png" && File.exists?(newsletter.file.path)
       attachments[newsletter.file.original_filename] = File.read("#{RAILS.root}/public#{newsletter.file.url(nil,false)}")
     end
