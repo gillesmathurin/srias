@@ -16,7 +16,7 @@ gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
 gem 'delayed_job'
 gem 'delayed_job_active_record'
-gem 'sidekiq'
+# gem 'sidekiq'
 gem 'daemons'
 gem 'forem', :git => "git://github.com/gillesmathurin/forem.git"
 
