@@ -3,7 +3,7 @@
 module ApplicationHelper
   
   def annonces_courantes
-    @annonces_courantes ||= Annonce.courantes(session[:announcement_hide_time])
+    @annonces_courantes ||= Annonce.courantes(nil)
   end
   
   def missing_annonce_image(annonce)

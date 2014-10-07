@@ -12,13 +12,13 @@ gem 'authlogic'
 gem 'cancan', '1.6.7'
 gem 'will_paginate'
 gem 'paperclip'#, :git => "git://github.com/thoughtbot/paperclip.git"
-# gem 'delayed_job'
 gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
+gem 'delayed_job'
 gem 'delayed_job_active_record'
+# gem 'sidekiq'
 gem 'daemons'
 gem 'forem', :git => "git://github.com/gillesmathurin/forem.git"
-# gem 'forem', :git => "git://github.com/radar/forem.git"
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -6,7 +6,8 @@ class NewslettersController < ApplicationController
   def deliver
     @newsletter = Newsletter.find(params[:id])
     system("script/delayed_job", "start") # check if the daemon is running, start it otherwise
-    @newsletter.delay.deliver
+    # @newsletter.delay.deliver
+    @newsletter.deliver
     flash[:notice] = "Newsletter en cours d'envoi …"
     redirect_to(newsletters_url())
   end
@@ -14,8 +15,8 @@ class NewslettersController < ApplicationController
   def deliver_test
     @newsletter = Newsletter.find(params[:id])
     system("script/delayed_job", "start") # check if the daemon is running, start it otherwise
-    @newsletter.delay.deliver_test
-    # @newsletter.deliver_test
+    # @newsletter.delay.deliver_test
+    @newsletter.deliver_test
     flash[:notice] = "Newsletter en cours d'envoi test …"
     redirect_to(newsletters_url())
   end
