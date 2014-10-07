@@ -22,7 +22,7 @@ class Newsletter < ActiveRecord::Base
     @abonnes = %w(gillesmath@me.com guillou.g3@wanadoo.fr)
     @abonnes.each do |abonne|
       # NewsletterMailer.newsletter(abonne, self).deliver
-      NewsletterMailer.deliver.newsletter(abonne, self)
+      NewsletterMailer.delay.newsletter(abonne, self)
     end
     self.update_attribute(:delivered_at, Time.now)
   end
