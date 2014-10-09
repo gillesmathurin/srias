@@ -48,9 +48,10 @@ Srias::Application.configure do
     :address => "smtp.gmail.com", 
     :port => 587, 
     :authentication => "plain",
+    :domain => "srias-guadeloupe.fr",
     :enable_starttls_auto => true, 
-    :user_name => "gillesmath@gmwebagency.com", 
-    :password => "razed79}jerk"
+    :user_name => "guillougeorges@gmail.com", 
+    :password => "passsitesrias"
   }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
