@@ -7,11 +7,12 @@
 		<%= render :partial => 'manifs_list', :object => @manifestations, :locals => {:actions_link => @actions_links} %>
 	</div>
 
-	<br />
-	<% if can? :create, Manifestation %>
-		<%= link_to 'Ajouter une action', new_manifestation_path(), :class => "btn btn-primary btn-sm" %>
-	<% end %>
-	<% if can? :modify, Manifestation %>
-		<%= link_to "Actions et Manifestations à Valider #{Manifestation.pending.count}", pending_manifestations_path(), :remote => true, :method => :put, :class => "btn btn-primary btn-sm" %>
-	<% end %>
+	<div class="row link-box">
+		<% if can? :create, Manifestation %>
+			<%= link_to 'Ajouter une action', new_manifestation_path(), :class => "btn 	btn-primary btn-sm" %>
+		<% end %>
+		<% if can? :modify, Manifestation %>
+			<%= link_to "Actions et Manifestations à Valider #{Manifestation.pending.	count}", pending_manifestations_path(), :remote => true, :method => :put,	 :class => "btn btn-primary btn-sm" %>
+		<% end %>
+	</div>
 </div>
