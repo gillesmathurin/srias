@@ -2,7 +2,7 @@
 class Manifestation < ActiveRecord::Base
   # include Assets::Normalizer
 
-  attr_accessible :nom, :lieu, :date_debut, :date_fin, :description, :mission_id, :validate, :as_annonce, :illustration, :prestataire_ids, :public_concerne, :photos_attributes
+  attr_accessible :nom, :lieu, :date_debut, :date_fin, :description, :mission_id, :validate, :as_annonce, :illustration, :prestataire_ids, :public_concerne, :photos_attributes, :external_link
   # Validations
   validates :nom, :lieu, :date_debut, :date_fin, :mission_id,
    :presence => { :on => :create, :message => "doit être renseigné." }

@@ -35,8 +35,13 @@
     <%= f.text_area :description, :class => "tinymce", :cols => "90" %>
     <%= tinymce :theme => "modern" %>
   </p>
-  <p>
-    <%= f.check_box :as_annonce %> : <%= f.label :as_annonce, "Spécifier comme annonce" %>
+  <div class="row">
+    <div class="col-xs-8">
+      <%= f.label :external_link, "Lien Externe" %><br>
+      <%= f.text_field :external_link, placeholder: 'http://lien-vers-offre-prestataire.fr', class: 'form-control' %>
+    </div>  
+  </div>
+  <%= f.check_box :as_annonce %> : <%= f.label :as_annonce, "Spécifier comme annonce" %>
   </p>
 
 	<%= f.fields_for :photos do |photo_form| %>

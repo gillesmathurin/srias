@@ -1,36 +1,36 @@
-<h1 class="section-title">Listing prestataires</h1>
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1 class="section-title">Listing prestataires</h1>
+        
+        <table class="table table-striped table-hover">
+          <tr>
+            <th>Nom</th>
+            <th>Website</th>
+            <th>Tel</th>
+            <th>Mob</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
 
-<table>
-  <tr>
-    <th>Nom</th>
-    <th>Website</th>
-    <th>Tel</th>
-    <th>Mob</th>
-    <th>Fax</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+        <% @prestataires.each do |prestataire| %>
+          <tr>
+            <td><%= prestataire.nom %></td>
+            <td><%= prestataire.website %></td>
+            <td><%= prestataire.tel %></td>
+            <td><%= prestataire.mob %></td>
+            <td><%= link_to 'Voir', prestataire, :class => "btn btn-xs btn-success" %></td>
+            <% if current_user %>
+            <td><%= link_to 'Modifier', edit_prestataire_path(prestataire), :class => "btn btn-xs btn-warning" %></td>
+            <td><%= link_to 'Supprimer', prestataire, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-xs btn-danger" %></td>
+            <% end %>
+          </tr>
+        <% end %>
+        </table>
 
-<% @prestataires.each do |prestataire| %>
-  <tr>
-    <td><%= prestataire.nom %></td>
-    <td><%= prestataire.website %></td>
-    <td><%= prestataire.tel %></td>
-    <td><%= prestataire.mob %></td>
-    <td><%= prestataire.fax %></td>
-    <td><%= prestataire.description %></td>
-    <td><%= link_to 'Voir', prestataire, :class => "btn btn-sm btn-success" %></td>
-    <% if current_user %>
-    <td><%= link_to 'Modifier', edit_prestataire_path(prestataire), :class => "btn btn-sm btn-warning" %></td>
-    <td><%= link_to 'Supprimer', prestataire, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-danger" %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
-
-<br />
-<% if current_user %>
-<%= link_to 'Ajouter un prestataire', new_prestataire_path, :class => "btn btn-sm btn-success" %>
-<% end %>
+        <br />
+        <% if current_user %>
+        <%= link_to 'Ajouter un prestataire', new_prestataire_path, :class => "btn btn-sm btn-success" %>
+        <% end %>
+    </div>
+</div>

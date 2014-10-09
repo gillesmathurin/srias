@@ -19,5 +19,10 @@
 # Creation des tuples de Category
 categories = ["Hotelier", "Culture", "Transport", "Centre de Loisirs"]
 categories.each do |category|
-  Category.create!(:nom => category)
+  Category.create!(:nom => category) unless Category.where(nom: category).any?
+end
+
+public_categories = %w(Agent Enfant Agent-famille Retraite)
+public_categories.each do |category|
+  CategoryPublic.create!(nom: category) unless CategoryPublic.where(nom: category).any?
 end
