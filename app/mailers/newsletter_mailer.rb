@@ -7,7 +7,7 @@ class NewsletterMailer < ActionMailer::Base
     mail(:to => abonne,
          :subject => "Newsletter du Srias de Guadeloupe",
          :charset => "UTF-8",
-         :content_type => "multipart/mixed",
+         :content_type => "text/html",
          :from => "georges.guillou@guadeloupe.pref.gouv.fr")
     if newsletter.file.url != "/files/original/missing.png" && File.exists?(newsletter.file.path)
       attachments[newsletter.file.original_filename] = File.read("/var/rails/srias2/current/public#{newsletter.file.url(nil,false)}")
