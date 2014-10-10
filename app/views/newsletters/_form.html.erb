@@ -9,12 +9,14 @@
   <p>
     <%= f.label :sommaire %><br />
     <%= f.text_area :sommaire, :class =>"tinymce", :cols => "90" %>
+    <%= tinymce theme: 'modern' %>
   </p>
   <p>
-    <%= f.label :content %><br />
+    <%= f.label :content, "Contenu" %><br />
     <%= f.text_area :content, :class =>"tinymce", :cols => "90" %>
+    <%= tinymce theme: 'modern' %>
   </p>
-  <p>
-  	<%= f.label :file, "Fichier" %><br/>
-	<%= f.file_field :file %>
-  </p>
+  <!-- <p> -->
+  	<!-- <%#= f.label :file, "Fichier" %><br/> -->
+	  <%#= f.file_field :file %>
+  <!-- </p> -->

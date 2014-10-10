@@ -44,7 +44,7 @@ class NewslettersController < ApplicationController
   # GET /newsletters/new
   # GET /newsletters/new.xml
   def new
-    @newsletter = Newsletter.new
+    @newsletter = Newsletter.new(numero: (Newsletter.last.id + 1).to_s)
 
     respond_to do |format|
       format.html # new.html.erb
