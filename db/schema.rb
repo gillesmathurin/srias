@@ -11,12 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141010175818) do
+ActiveRecord::Schema.define(:version => 20141016153638) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "actu_categories", :force => true do |t|
+    t.string   "nom"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "annonces", :force => true do |t|
@@ -181,12 +187,14 @@ ActiveRecord::Schema.define(:version => 20141010175818) do
   create_table "informations", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "information_file_file_name"
     t.string   "information_file_content_type"
     t.integer  "information_file_file_size"
     t.datetime "information_file_updated_at"
+    t.integer  "actu_category_id"
+    t.boolean  "published", :default => true
   end
 
   create_table "liens", :force => true do |t|

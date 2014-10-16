@@ -32,7 +32,7 @@
 	.coda-nav ul li a.current { background: #39c }
 	
 	/* Panel padding */
-	.coda-slider .panel-wrapper { padding: 20px }
+	.coda-slider .panel-wrapper { padding: 10px }
 	
 	/* Preloader */
 	.coda-slider p.loading { padding: 20px; text-align: center }

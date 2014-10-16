@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery  with: :exception # See ActionController::RequestForgeryProtection for details
   helper_method :current_user_session, :current_user
   
-  before_filter :create_abonne, :update_visitor_counter
+  before_filter :create_abonne, :update_visitor_counter, :latest_actualites
   
   rescue_from CanCan::AccessDenied do |exception|
     flash[:error] = exception.message
@@ -26,9 +26,12 @@ class ApplicationController < ActionController::Base
     Visitor.find_or_create_by_ip(request.ip)
     @visitors_count = Visitor.count
   end
+
+  def latest_actualites
+    @actualites ||= Information.published.latest(3)
+  end
   
   protected
-
   
   def create_abonne
     @abonne = Abonne.new

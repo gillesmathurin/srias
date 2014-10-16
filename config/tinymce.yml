@@ -14,4 +14,5 @@ theme_advanced_buttons3_add:
 plugins:
   - table
   - textcolor
+  - link
 toolbar: undo redo | textcolor | styleselect | bold italic | link | table | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | forecolor backcolor

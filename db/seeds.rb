@@ -26,3 +26,9 @@ public_categories = %w(Agent Enfant Agent-famille Retraite)
 public_categories.each do |category|
   CategoryPublic.create!(nom: category) unless CategoryPublic.where(nom: category).any?
 end
+
+# Categories d'actualites
+actu_categories = ["Logement temporaire", "Logement d'urgence", "Aide aux nouveaux arrivants"]
+actu_categories.each do |cat|
+  ActuCategory.create!(nom: cat) unless ActuCategory.where(nom: cat).any?
+end

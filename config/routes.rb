@@ -4,7 +4,11 @@ Srias::Application.routes.draw do
 
   resources :messages
 
-  resources :informations
+  resources :informations do
+    member do
+      put 'publish'
+    end
+  end
 
   resources :prestataires
 

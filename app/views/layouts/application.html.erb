@@ -44,7 +44,8 @@
 
 	<div id="content" class="container">
 		<article class="row">
-			<div id="left_sidebar" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<!-- Left Sidebar -->
+			<div id="left_sidebar" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 				<div id="login_box">
 					<% if current_user %>
 						<%= link_to "#{current_user.login} : Logout", main_app.logout_path(), :class => "btn btn-success btn-block" %> 
@@ -59,7 +60,7 @@
 						<li><%= link_to "Missions", main_app.missions_path() %></li>
 						<li><%= link_to "Actions", main_app.actions_path() %></li>
 						<li><%= link_to "Manifestations", main_app.manifestations_path() %></li>
-						<li><%= link_to "Informations", main_app.informations_path() %></li>
+						<li><%= link_to "Actualités", main_app.informations_path() %></li>
 						<li><%= link_to "Partenaires", main_app.partenaires_path() %></li>
 						<li><%= link_to "Liens", main_app.liens_path() %></li>
 						<!-- <li><%#= link_to "Forum", forem.root_path %></li> -->
@@ -76,7 +77,7 @@
 							<li><%= link_to "Abonnés", main_app.abonnes_path() %></li>
 							<li><%= link_to "Catégories Partenaire", main_app.categories_path() %></li>
 							<li><%= link_to "Prestataires", main_app.prestataires_path() %></li>
-							<li><%= link_to "Informations", main_app.informations_path() %> </li>
+							<li><%= link_to "Actualités", main_app.informations_path() %> </li>
 						</ul>
 					</div>
 				<% end %>
@@ -96,8 +97,21 @@
 				</div>
 			</div>
 			
-			<div id="main_content" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+			<!-- Main content -->
+			<div id="main_content" class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 				<%= yield %>
+			</div>
+
+			<!-- Right sidebar -->
+			<div id="right_sidebar" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+				<div class="menus_box">
+					<h3><span class="label label-success">Actualités</span></h3>
+					<ul class="list-unstyled">
+						<% @actualites.each do |actu| %>
+							<li><%= link_to actu.title, information_path(actu.id) %></li>
+						<% end %>
+					</ul>
+				</div>
 			</div>
 		</article>
 	</div>

@@ -1,19 +1,27 @@
-<h1 class="section-title">Informations Utiles</h1>
+<h1 class="section-title">Actualités</h1>
 
 <% @informations.each do |information| %>
   <hr/>
   <p class="titre-manif">
     <span class="nom-manif"><%= information.title %></span>
   </p>
+  <p>
+    <span><%= l information.created_at, format: :default %></span>
+  </p>
 
   <div class="manifestation-desc">
-    <%=raw information.content %>
+    <%= raw information.content %>
   </div>
 
   <div class="link-box">
     <%= link_to 'Voir', information, :class => "btn btn-success btn-sm" %>
     <% if can? :update, information %>
-      <%= link_to 'Modifier', edit_information_path(information), :class => "btn btn-success btn-sm" %>
+      <% if information.published? %>
+        <%= link_to "Retirer", publish_information_path(information), method: :put, class: "btn btn-primary btn-sm" %>
+      <% else %>
+        <%= link_to "Publier", publish_information_path(information), method: :put, class: "btn btn-primary btn-sm" %>
+      <% end %>
+      <%= link_to 'Modifier', edit_information_path(information), :class => "btn btn-warning btn-sm" %>
       <%= link_to 'Supprimer', information, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
     <% end %>
   </div>
@@ -23,5 +31,5 @@
 
 <br />
 <% if can? :update, Information %>
-  <%= link_to 'Ajouter une Information', new_information_path, :class => "btn btn-success btn-sm" %>
+  <%= link_to 'Ajouter une Actualité', new_information_path, :class => "btn btn-success btn-sm" %>
 <% end %>

@@ -8,5 +8,9 @@ module InformationsHelper
         link_to("Téléchargez #{information.information_file.original_filename}", information.information_file.url(nil, false), :class => "button small medium")
       end
     end
-  end 
+  end
+
+  def information_category(id)
+    ActuCategory.find(id).nom
+  end
 end

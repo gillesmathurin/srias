@@ -82,4 +82,13 @@ class InformationsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def publish
+    @information = Information.find(params[:id])
+    @information.published ? @information.update_attribute(:published, false) : @information.update_attribute(:published, true)
+
+    respond_to do |format|
+      format.html { redirect_to information_url(@information) }
+    end
+  end
 end

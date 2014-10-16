@@ -13,5 +13,10 @@
 
 <% if current_user %>
 	<%= link_to 'Modifier', edit_information_path(@information), :class => "btn btn-sm btn-warning" %>
+  <% if @information.published? %>
+    <%= link_to "Retirer", publish_information_path(@information), method: :put, class: "btn btn-primary btn-sm" %>
+  <% else %>
+    <%= link_to "Publier", publish_information_path(@information), method: :put, class: "btn btn-primary btn-sm" %>
+  <% end %>
 <% end %>
 <%= link_to 'Retour', informations_path , :class => "btn btn-sm btn-primary" %>
