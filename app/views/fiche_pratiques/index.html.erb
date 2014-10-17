@@ -1,6 +1,6 @@
 <h1 class="section-title">Fiches Pratiques</h1>
 
-<% @fiches.each do |fiche| %>
+<% @fiche_pratiques.each do |fiche| %>
   <div class="row">
     <div class="col-sm-3 col-md-3 col-lg-4">
       <div class="thumbnail actu">
@@ -22,8 +22,8 @@
         <div class="link-box">
           <%= link_to "Voir", fiche %>
           <% if can? :update, fiche %>
-            <%= link_to 'Modifier', edit_information_path(actu) %>
-            <%= link_to 'Supprimer', actu, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Modifier', edit_information_path(fiche) %>
+            <%= link_to 'Supprimer', fiche, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
         </div>
       </div>
@@ -33,6 +33,6 @@
 
 <div class="row">
   <% if can? :update, FichePratique %>
-    <%= link_to "Ajouter une fiche pratique", new_fiche_pratique_path(), class: 'btn btn-success btn-sm' %>
+    <%= link_to "Ajouter une fiche pratique", new_fiche_pratique_path(), class: 'btn btn-success btn-sm box-aligned' %>
   <% end %>
 </div>

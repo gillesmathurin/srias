@@ -1,20 +1,18 @@
-<p id="notice"><%= notice %></p>
+<%= render :partial => "shared/flash_messages" %>
+
+<h1 class="section-title"><%= @fiche_pratique.title %> </h1>
+
+<%= raw @fiche_pratique.content %>
 
 <p>
-  <b>Title:</b>
-  <%= @fiche_pratique.title %>
+  <b>Lien:</b>
+  <%= link_to @fiche_pratique.external_link, @fiche_pratique.external_link, target: '_blank' %>
 </p>
 
-<p>
-  <b>Content:</b>
-  <%= @fiche_pratique.content %>
-</p>
-
-<p>
-  <b>External link:</b>
-  <%= @fiche_pratique.external_link %>
-</p>
+<p><%= link_or_image_of(@fiche_pratique) %></p>
 
 
-<%= link_to 'Edit', edit_fiche_pratique_path(@fiche_pratique) %> |
-<%= link_to 'Back', fiche_pratiques_path %>
+<% if current_user %>
+  <%= link_to 'Modifier', edit_fiche_pratique_path(@fiche_pratique), class: 'btn btn-warning btn-sm' %> 
+<% end %>
+<%= link_to 'Retour', fiche_pratiques_path, class: 'btn btn-primary btn-sm' %>
