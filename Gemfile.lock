@@ -261,6 +261,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    truncate_html (0.9.3)
     tzinfo (0.3.41)
     uglifier (2.3.1)
       execjs (>= 0.3.0)
@@ -308,5 +309,6 @@ DEPENDENCIES
   therubyracer
   tinymce-rails
   tinymce-rails-langs
+  truncate_html
   uglifier (>= 1.0.3)
   will_paginate

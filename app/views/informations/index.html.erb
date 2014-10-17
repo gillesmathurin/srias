@@ -1,35 +1,43 @@
 <h1 class="section-title">Actualités</h1>
 
-<% @informations.each do |information| %>
-  <hr/>
-  <p class="titre-manif">
-    <span class="nom-manif"><%= information.title %></span>
-  </p>
-  <p>
-    <span><%= l information.created_at, format: :default %></span>
-  </p>
-
-  <div class="manifestation-desc">
-    <%= raw information.content %>
-  </div>
-
-  <div class="link-box">
-    <%= link_to 'Voir', information, :class => "btn btn-success btn-sm" %>
-    <% if can? :update, information %>
-      <% if information.published? %>
-        <%= link_to "Retirer", publish_information_path(information), method: :put, class: "btn btn-primary btn-sm" %>
-      <% else %>
-        <%= link_to "Publier", publish_information_path(information), method: :put, class: "btn btn-primary btn-sm" %>
-      <% end %>
-      <%= link_to 'Modifier', edit_information_path(information), :class => "btn btn-warning btn-sm" %>
-      <%= link_to 'Supprimer', information, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %>
+<% @informations.each do |group| %>
+  <h4 class="actu-categorie"><%= information_category(group[0]) %></h4>
+  <div class="row">
+    <% group[1].each do |actu| %>
+      <div class="col-sm-3 col-md-3 col-lg-4">
+        <div class="thumbnail actu">
+          <p class="titre-actu"><%= actu.title %></p>
+          <p class="timestamp-actu">
+            <%= l actu.created_at, format: :only_date %>
+          </p>
+          <% if actu.information_file.present? %>
+            <div class="link_or_image">
+              <%= display_link_or_image_of(actu) %>
+            </div>
+          <% end %>
+          <div class="manifestation-desc">
+            <%= raw(truncate_html(actu.content, lenght: 100, omission: '...')) %>
+          </div>
+          <div class="link-box">
+            <%= link_to "voir", actu %>
+            <% if can? :update, actu %>
+              <% if actu.published? %>
+                <%= link_to "Retirer", publish_information_path(actu), method: :put %>
+              <% else %>
+                <%= link_to "Publier", publish_information_path(actu), method: :put %>
+              <% end %>
+              <%= link_to 'Modifier', edit_information_path(actu) %>
+              <%= link_to 'Supprimer', actu, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
 <% end %>
 
-<%= will_paginate @informations %>
-
-<br />
-<% if can? :update, Information %>
-  <%= link_to 'Ajouter une Actualité', new_information_path, :class => "btn btn-success btn-sm" %>
-<% end %>
+<div class="row">
+  <% if can? :update, Information %>
+    <%= link_to 'Ajouter une Actualité', new_information_path, :class => "btn btn-success btn-sm" %>
+  <% end %>
+</div>

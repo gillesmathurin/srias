@@ -19,6 +19,7 @@ gem 'delayed_job_active_record'
 # gem 'sidekiq'
 gem 'daemons'
 gem 'forem', :git => "git://github.com/gillesmathurin/forem.git"
+gem 'truncate_html'
 
 # Gems used only for assets and not required
 # in production environments by default.

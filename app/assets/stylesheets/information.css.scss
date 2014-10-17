@@ -1,3 +1,30 @@
 // Place all the styles related to the Information controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "common";
+h4.actu-categorie {
+  margin-top: 15px;
+  text-decoration: underline;
+  font-style: italic;
+  color:$myGreen;
+}
+div.actu {
+  padding:10px;
+  a { text-decoration: underline; }
+}
+p.titre-actu {
+  font-size: 1.2em;
+  color: $myOrange;
+  font-weight: bold;
+}
+p.timestamp-actu {
+  color: $myGreen2;
+  font-style: italic;
+  font-size: 0.9em;
+  text-align: right;
+}
+div.link_or_image {
+  margin-bottom: 10px;
+  display: inline-block;
+  word-break: break-all;
+}

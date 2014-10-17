@@ -5,7 +5,7 @@ module InformationsHelper
       if information.information_file.content_type =~ /image/
         image_tag(information.information_file.url(nil,false), :width => "100")
       else
-        link_to("Téléchargez #{information.information_file.original_filename}", information.information_file.url(nil, false), :class => "button small medium")
+        link_to("Téléchargez #{information.information_file.original_filename}", information.information_file.url(nil, false))
       end
     end
   end

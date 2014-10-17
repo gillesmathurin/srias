@@ -8,7 +8,7 @@ class Information < ActiveRecord::Base
 
   has_many :fichiers, :dependent => :destroy
 
-  scope :published, where(published: true)
+  scope :published, where(published: true).order('created_at desc')
   scope :latest, ->(count) { limit(count).order('created_at desc') }
 
   def self.grouped_by_category

@@ -4,7 +4,8 @@ class InformationsController < ApplicationController
   # GET /information
   # GET /information.json
   def index
-    @informations = Information.paginate(:page => params[:page], :per_page => 10).order('id DESC')
+    # @informations = Information.paginate(:page => params[:page], :per_page => 10).order('id DESC')
+    @informations = Information.published.grouped_by_category
 
     respond_to do |format|
       format.html # index.html.erb
