@@ -11,6 +11,6 @@ module InformationsHelper
   end
 
   def information_category(id)
-    ActuCategory.find(id).nom
+    ActuCategory.find(id).nom if id
   end
 end
