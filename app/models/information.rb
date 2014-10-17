@@ -1,5 +1,5 @@
 class Information < ActiveRecord::Base
-  attr_accessible :content, :title, :information_file, :actu_category_id
+  attr_accessible :content, :title, :information_file, :actu_category_id, :published, :in_right_sidebar
   belongs_to :actu_category
   # Attachment
   has_attached_file :information_file,
@@ -10,6 +10,7 @@ class Information < ActiveRecord::Base
 
   scope :published, where(published: true).order('created_at desc')
   scope :latest, ->(count) { limit(count).order('created_at desc') }
+  scope :in_right_sidebar, where(in_right_sidebar: true).order('created_at desc')
 
   def self.grouped_by_category
     all.group_by(&:actu_category_id)

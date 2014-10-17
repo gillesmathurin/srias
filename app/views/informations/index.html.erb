@@ -19,12 +19,17 @@
             <%= raw(truncate_html(actu.content, lenght: 100, omission: '...')) %>
           </div>
           <div class="link-box">
-            <%= link_to "voir", actu %>
+            <%= link_to "Voir", actu %>
             <% if can? :update, actu %>
               <% if actu.published? %>
-                <%= link_to "Retirer", publish_information_path(actu), method: :put %>
+                <%= link_to "Masquer", publish_information_path(actu), method: :put %>
               <% else %>
                 <%= link_to "Publier", publish_information_path(actu), method: :put %>
+              <% end %>
+              <% if actu.in_right_sidebar? %>
+                <p><%= link_to "Retirer de la colonne de droite", sidebar_status_information_path(actu), method: :put %></p>
+              <% else %>
+                <p><%= link_to "Mettre dans la colonne de droite", sidebar_status_information_path(actu), method: :put %></p>
               <% end %>
               <%= link_to 'Modifier', edit_information_path(actu) %>
               <%= link_to 'Supprimer', actu, method: :delete, data: { confirm: 'Are you sure?' } %>

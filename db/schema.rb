@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141016153638) do
+ActiveRecord::Schema.define(:version => 20141017124914) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
@@ -187,14 +187,15 @@ ActiveRecord::Schema.define(:version => 20141016153638) do
   create_table "informations", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
     t.string   "information_file_file_name"
     t.string   "information_file_content_type"
     t.integer  "information_file_file_size"
     t.datetime "information_file_updated_at"
     t.integer  "actu_category_id"
-    t.boolean  "published", :default => true
+    t.boolean  "published",                     :default => true
+    t.boolean  "in_right_sidebar",              :default => false
   end
 
   create_table "liens", :force => true do |t|

@@ -92,4 +92,13 @@ class InformationsController < ApplicationController
       format.html { redirect_to information_url(@information) }
     end
   end
+
+  def sidebar_status
+    @information = Information.find(params[:id])
+    @information.in_right_sidebar ? @information.update_attribute(:in_right_sidebar, false) : @information.update_attribute(:in_right_sidebar, true)
+
+    respond_to do |format|
+      format.html { redirect_to information_url(@information) }
+    end
+  end
 end

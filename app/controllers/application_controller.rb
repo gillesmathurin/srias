@@ -28,7 +28,11 @@ class ApplicationController < ActionController::Base
   end
 
   def latest_actualites
-    @actualites ||= Information.published.latest(3)
+    if Information.in_right_sidebar.any?
+      @actualites ||= Information.in_right_sidebar
+    else
+      @actualites ||= Information.published.latest(3)
+    end
   end
   
   protected

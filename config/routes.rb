@@ -7,6 +7,7 @@ Srias::Application.routes.draw do
   resources :informations do
     member do
       put 'publish'
+      put 'sidebar_status'
     end
   end
 

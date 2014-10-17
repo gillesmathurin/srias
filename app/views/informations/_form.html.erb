@@ -19,6 +19,16 @@
     <%= f.label :information_file, "Fichier joint" %><br/>
     <%= f.file_field :information_file %>
   </div>
+  <div class="field">
+    <%= f.check_box :in_right_sidebar %>
+    <%= f.label :in_right_sidebar, "Afficher dans la colonne de droite ?" %>
+    <p>En cochant cette case cette actualité sera visible tout le temps dans la colonne de droite 'Actualités'</p>
+  </div>
+  <div class="field">
+    <%= f.check_box :published %>
+    <%= f.label :published, "Publiez cette actualité" %>
+    <p>En cochant cette case, cette actualité sera visible sur la page 'Actualité', dans sa catégorie. Décochez la si vous ne souhaitez plus que les visiteurs lisent cette information.</p>
+  </div>
   <div class="actions">
     <p><%= f.submit "Enregistrer", class: 'btn' %></p>
   </div>
