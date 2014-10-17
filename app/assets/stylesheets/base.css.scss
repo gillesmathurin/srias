@@ -280,6 +280,10 @@ html {
 					border:1px solid $myGray;
 				}
 				p.mini-diapo {text-align:center;}
+				img.presta-logo {
+					width:150px;
+					padding-right: 10px;
+				}
 				p.titre-manif {
 					span.nom-manif {
 						@include custom-font('Geneva', "Geneva", bold, 20px);

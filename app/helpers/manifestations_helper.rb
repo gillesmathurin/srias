@@ -18,5 +18,14 @@ module ManifestationsHelper
   def missing_manif_illustration(manifestation)
     manifestation.illustration.url(:thumb) == "/illustrations/thumb/missing.png"
   end
+
+  def prestataires_with_logo?(manif)
+    prestataires = manif.prestataires.select { |e| e.logopic.present? }
+    return prestataires.size > 0
+  end
+
+  def prestataires_with_logo(manif)
+    manif.prestataires.select { |e| e.logopic.present? }
+  end
   
 end

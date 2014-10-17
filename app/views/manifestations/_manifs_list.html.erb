@@ -10,6 +10,13 @@
 			
 			<% manifestations.sort_by { |m| m.date_debut }.reverse.each do |manifestation| %>
 			  <hr/>
+        <% if prestataires_with_logo?(manifestation) %>
+          <% prestataires_with_logo(manifestation).each do |prestataire| %>
+            <div class="pull-left">
+              <%= image_tag prestataire.logopic.url(:thumb), class: 'presta-logo' %>
+            </div>
+          <% end %>
+        <% end %>
 				<p class="titre-manif">
 					<span class="nom-manif"><%= manifestation.nom.capitalize %></span><br/><%= manifestation.lieu %> du <%=l(manifestation.date_debut, :format => :only_date) %> au <%=l(manifestation.date_fin,:format => :only_date) %>
 				</p>	
