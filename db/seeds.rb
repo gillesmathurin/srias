@@ -28,7 +28,7 @@ public_categories.each do |category|
 end
 
 # Categories d'actualites
-actu_categories = ["Logement temporaire", "Logement d'urgence", "Aide aux nouveaux arrivants"]
+actu_categories = ["Logement temporaire", "Logement d'urgence", "Aide aux nouveaux arrivants", "Autres"]
 actu_categories.each do |cat|
   ActuCategory.create!(nom: cat) unless ActuCategory.where(nom: cat).any?
 end

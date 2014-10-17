@@ -2,6 +2,11 @@
   <%= render :partial => 'shared/form_errors', :locals => {:object => @information} %>
 
   <div class="field">
+    <%= f.label :actu_category_id, "Categorie" %><br>
+    <%= f.select :actu_category_id, ActuCategory.all.collect{|m| [m.nom, m.id]}, prompt: "Autres" %>
+  </div>
+
+  <div class="field">
     <%= f.label :title, "Titre" %><br/>
     <%= f.text_field :title %>
   </div>

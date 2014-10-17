@@ -8,21 +8,17 @@ class Newsletter < ActiveRecord::Base
   
   # Deliver newsletter to subscriber
   def deliver
-    #find all the abonnes emails
     @abonnes = Abonne.all.collect(&:email)
     @abonnes.each do |abonne|
-      # NewsletterMailer.newsletter(abonne, self).deliver
       logger.info("Sending newsletter to #{abonne}")
       NewsletterMailer.delay.newsletter(abonne, self)
     end
-    # Set the delivered_at time to now
     self.update_attribute(:delivered_at, Time.now)
   end
   
   def deliver_test
     @abonnes = %w(gillesmath@me.com guillou.g3@wanadoo.fr)
     @abonnes.each do |abonne|
-      # NewsletterMailer.newsletter(abonne, self).deliver
       logger.info("Sending newsletter to #{abonne}")
       NewsletterMailer.delay.newsletter(abonne, self)
     end
