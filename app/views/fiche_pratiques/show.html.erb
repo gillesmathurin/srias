@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @fiche_pratique.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @fiche_pratique.content %>
+</p>
+
+<p>
+  <b>External link:</b>
+  <%= @fiche_pratique.external_link %>
+</p>
+
+
+<%= link_to 'Edit', edit_fiche_pratique_path(@fiche_pratique) %> |
+<%= link_to 'Back', fiche_pratiques_path %>

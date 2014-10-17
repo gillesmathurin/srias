@@ -1,0 +1,27 @@
+<h1>Listing fiche_pratiques</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>External link</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fiche_pratiques.each do |fiche_pratique| %>
+  <tr>
+    <td><%= fiche_pratique.title %></td>
+    <td><%= fiche_pratique.content %></td>
+    <td><%= fiche_pratique.external_link %></td>
+    <td><%= link_to 'Show', fiche_pratique %></td>
+    <td><%= link_to 'Edit', edit_fiche_pratique_path(fiche_pratique) %></td>
+    <td><%= link_to 'Destroy', fiche_pratique, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Fiche pratique', new_fiche_pratique_path %>

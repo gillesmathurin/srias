@@ -1,0 +1,2 @@
+module FichePratiquesHelper
+end

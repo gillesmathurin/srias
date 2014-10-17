@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141017124914) do
+ActiveRecord::Schema.define(:version => 20141017153131) do
 
   create_table "abonnes", :force => true do |t|
     t.string   "email"
@@ -76,6 +76,18 @@ ActiveRecord::Schema.define(:version => 20141017124914) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "fiche_pratiques", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "external_link"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "fichier_file_name"
+    t.string   "fichier_content_type"
+    t.integer  "fichier_file_size"
+    t.datetime "fichier_updated_at"
+  end
 
   create_table "fichiers", :force => true do |t|
     t.string   "fichier_file_name"
