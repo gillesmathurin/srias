@@ -3,7 +3,7 @@
 
   <div class="field">
     <%= f.label :actu_category_id, "Categorie" %><br>
-    <%= f.select :actu_category_id, ActuCategory.all.collect{|m| [m.nom, m.id]}, prompt: "Autres" %>
+    <%= f.select :actu_category_id, ActuCategory.all.collect{|m| [m.nom, m.id]}, {:include_blank => true} %>
   </div>
 
   <div class="field">
