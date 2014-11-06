@@ -1,7 +1,7 @@
 <h1 class="section-title">Fiches Pratiques</h1>
 
-<% @fiche_pratiques.each do |fiche| %>
   <div class="row">
+<% @fiche_pratiques.each do |fiche| %>
     <div class="col-sm-3 col-md-3 col-lg-4">
       <div class="thumbnail actu">
         <p class="titre-actu"><%= fiche.title%></p>
@@ -11,7 +11,7 @@
 
         <% if fiche.fichier.present? %>
           <div class="link_or_image">
-            <%= display_link_or_image_of(fiche) %>
+            <%= link_or_image_of(fiche) %>
           </div>
         <% end %>
 
@@ -22,14 +22,14 @@
         <div class="link-box">
           <%= link_to "Voir", fiche %>
           <% if can? :update, fiche %>
-            <%= link_to 'Modifier', edit_information_path(fiche) %>
+            <%= link_to 'Modifier', edit_fiche_pratique_path(fiche) %>
             <%= link_to 'Supprimer', fiche, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
         </div>
       </div>
     </div>
-  </div>
 <% end %>
+  </div>
 
 <div class="row">
   <% if can? :update, FichePratique %>
