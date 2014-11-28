@@ -20,7 +20,7 @@
         </div>
 
         <div class="link-box">
-          <%= link_to "Voir", fiche %>
+          <%= link_to "Voir", fiche, class: 'btn btn-success btn-xs' %>
           <% if can? :update, fiche %>
             <%= link_to 'Modifier', edit_fiche_pratique_path(fiche) %>
             <%= link_to 'Supprimer', fiche, method: :delete, data: { confirm: 'Are you sure?' } %>
