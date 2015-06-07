@@ -47,7 +47,7 @@ group :development, :test do
   gem 'spork'
   gem 'passenger', '~>4.0.25'
   gem 'database_cleaner'
-  # gem 'debugger'
+  gem 'byebug'
   gem 'capistrano', '~> 3.0.1'
   gem 'capistrano-bundler'
   gem 'capistrano-rails', '~> 1.1.0'
@@ -59,7 +59,7 @@ group :test do
 end
 
 group :production do
-  gem 'execjs'
+  # gem 'execjs'
   gem 'therubyracer', :platforms => :ruby
 end
 
