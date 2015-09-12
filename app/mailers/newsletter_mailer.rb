@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class NewsletterMailer < ActionMailer::Base
-  default :from => "georges.guillou@guadeloupe.pref.gouv.fr"
+  default :from => "srias.guadeloupe@gmail.com"
 
   def newsletter(abonne, newsletter)
     @newsletter = newsletter
@@ -16,7 +16,7 @@ class NewsletterMailer < ActionMailer::Base
 
   def contact_message(message)
     @message = message
-    mail( :to => "georges.guillou@guadeloupe.pref.gouv.fr",
+    mail( :to => "srias.guadeloupe@gmail.com",
           :subject => "Demande d'informations provenant du site",
           :charset => "UTF-8",
           :content_type => "text/html")
