@@ -9,7 +9,7 @@ gem 'mysql2'
 gem 'rake', '10.1.0'
 
 gem 'authlogic'
-gem 'cancan', '1.6.7'
+gem 'cancan', '>=1.6.7'
 gem 'will_paginate'
 gem 'paperclip'#, :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'tinymce-rails'
@@ -18,7 +18,7 @@ gem 'delayed_job'
 gem 'delayed_job_active_record'
 # gem 'sidekiq'
 gem 'daemons'
-# gem 'forem', :git => "git://github.com/gillesmathurin/forem.git"
+gem 'forem', :github => "radar/forem", :branch => "rails3"
 gem 'truncate_html'
 
 # Gems used only for assets and not required
