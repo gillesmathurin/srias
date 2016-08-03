@@ -31,7 +31,7 @@ Srias::Application.routes.draw do
   end
   resources :abonnes do
     collection do
-      get 'delete_all'
+      delete 'delete_all'
     end
   end
   resources :partenaires do
