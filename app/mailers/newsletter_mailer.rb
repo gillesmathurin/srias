@@ -19,7 +19,7 @@ class NewsletterMailer < ActionMailer::Base
     mail( :to => "srias.guadeloupe@gmail.com",
           :subject => "Demande d'informations provenant du site",
           :charset => "UTF-8",
-          :content_type => "text/html")
+          :content_type => "text/html" )
   end
 
 end

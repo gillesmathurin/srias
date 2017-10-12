@@ -5,7 +5,7 @@ Srias::Application.routes.draw do
 
   # mount Forem::Engine, :at => "/forums"
 
-  resources :messages
+  resources :messages, only: [:new, :create, :index]
 
   resources :informations do
     member do

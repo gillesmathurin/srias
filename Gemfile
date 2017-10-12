@@ -5,7 +5,7 @@ gem 'rails', '3.2.19'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.21'
 gem 'rake', '10.1.0'
 
 gem 'authlogic'
@@ -18,7 +18,7 @@ gem 'delayed_job'
 gem 'delayed_job_active_record'
 # gem 'sidekiq'
 gem 'daemons'
-gem 'forem', :github => "radar/forem", :branch => "rails3"
+# gem 'forem', :github => "radar/forem", :branch => "rails3"
 gem 'truncate_html'
 
 # Gems used only for assets and not required

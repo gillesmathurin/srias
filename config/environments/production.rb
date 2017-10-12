@@ -75,7 +75,7 @@ Srias::Application.configure do
     :domain => "srias-guadeloupe.fr",
     :enable_starttls_auto => true, 
     :user_name => "srias.guadeloupe@gmail.com", 
-    :password => "srias971"
+    :password => "srias97122"
   }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
