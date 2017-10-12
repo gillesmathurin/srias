@@ -1,6 +1,6 @@
 set :stage, :production
-set :deploy_to, "/home/deployer/srias"
-set :keep_releases, 3
+# set :deploy_to, "/home/deployer/srias"
+set :keep_releases, 5
 
 # Simple Role Syntax
 # ==================
@@ -18,7 +18,7 @@ set :rvm_ruby_version, '2.3.1@srias'
 # RAILS Asset Pipeline
 # ====================
 set :assets_roles, [:web, :app] 
-set :normalize_asset_timestamps, %{public/assets}
+# set :normalize_asset_timestamps, %{public/assets}
 
 namespace :deploy do
   desc 'Restart application'
