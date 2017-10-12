@@ -13,7 +13,7 @@ role :db,  %w{deployer@104.236.44.70}
 
 # RVM Syntax
 # ==========
-set :rvm_ruby_version, '2.0.0-p353@srias'
+set :rvm_ruby_version, '2.3.1@srias'
 
 # RAILS Asset Pipeline
 # ====================

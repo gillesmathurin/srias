@@ -1,23 +1,13 @@
 set :stage, :staging
-set :rails_env, :production
 
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
-role :app, %w{root@208.88.125.46}
-role :web, %w{root@208.88.125.46}
-role :db,  %w{root@208.88.125.46}
-
-# RVM Syntax
-# ==========
-set :rvm_ruby_version, '2.0.0-p353@srias'
-
-# RAILS Asset Pipeline
-# ====================
-set :assets_roles, [:web, :app] 
-set :normalize_asset_timestamps, %{public/assets}
+role :app, %w{deploy@example.com}
+role :web, %w{deploy@example.com}
+role :db,  %w{deploy@example.com}
 
 # Extended Server Syntax
 # ======================
@@ -25,7 +15,7 @@ set :normalize_asset_timestamps, %{public/assets}
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-# server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
+server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
