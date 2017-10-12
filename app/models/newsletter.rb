@@ -13,7 +13,7 @@ class Newsletter < ActiveRecord::Base
       logger.info("Sending newsletter to #{abonne}")
       NewsletterMailer.delay.newsletter(abonne, self)
     end
-    self.update_attribute(:delivered_at, Time.now)
+    # self.update_attribute(:delivered_at, Time.now)
   end
   
   def deliver_test
@@ -22,6 +22,6 @@ class Newsletter < ActiveRecord::Base
       logger.info("Sending newsletter to #{abonne}")
       NewsletterMailer.delay.newsletter(abonne, self)
     end
-    self.update_attribute(:delivered_at, Time.now)
+    # self.update_attribute(:delivered_at, Time.now)
   end
 end
